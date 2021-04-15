@@ -133,7 +133,7 @@ gltfLoader.load(
 //LUZ
 const luzFill = new THREE.AmbientLight( 0xffffff,2)
 scene.add(luzFill);
-const directionalLight = new THREE.DirectionalLight(0x00fffc, 0.3)
+const directionalLight = new THREE.DirectionalLight(0xffffff, 0.3)
 scene.add(directionalLight)
 // Renderer
 const renderer = new THREE.WebGLRenderer({
