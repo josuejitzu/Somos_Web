@@ -104,18 +104,18 @@ const gltfLoader = new GLTFLoader(loadingManager)
 const materialEdificio = new THREE.MeshStandardMaterial({color:'#ffffff'})
 
 gltfLoader.load(
-    './src/modelos3D/edificio_01.glb',
+    './src/modelos3D/edificio_02.glb',
     (gltf) =>
     {
         console.log('success')
         console.log(gltf)
         scene.add(gltf.scene);
-        gltf.scene.traverse((obj)=>{
-            if(obj.isMesh)
-            {
-                obj.material = materialEdificio;
-            }
-        })
+        // gltf.scene.traverse((obj)=>{
+        //     if(obj.isMesh)
+        //     {
+        //         obj.material = materialEdificio;
+        //     }
+        // })
     },
     (progress) =>
     {
@@ -131,7 +131,7 @@ gltfLoader.load(
 
 
 //LUZ
-const luzFill = new THREE.AmbientLight( 0xffffff,0.5)
+const luzFill = new THREE.AmbientLight( 0xffffff,2)
 scene.add(luzFill);
 const directionalLight = new THREE.DirectionalLight(0x00fffc, 0.3)
 scene.add(directionalLight)
@@ -142,7 +142,7 @@ const renderer = new THREE.WebGLRenderer({
 renderer.setSize(sizes.width, sizes.height)
 renderer.setPixelRatio(Math.min(window.devicePixelRatio,2))
 renderer.render(scene, camera)
-renderer.setClearColor('#E4E0DD')
+renderer.setClearColor('#D2CFCA')
 
 //UPDATE TICK
 const clock = new THREE.Clock()
