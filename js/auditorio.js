@@ -1,4 +1,4 @@
-const panoramaLobby = new PANOLENS.ImagePanorama( '../src/img/360/05_Ludoteca.jpg' );
+const panoramaLobby = new PANOLENS.ImagePanorama( 'src/img/360/05_Ludoteca.jpg' );
 const panoramaAuditorio = new PANOLENS.ImagePanorama( '../src/img/360/05_Ludoteca.jpg' );
 let viewer;
 
@@ -9,7 +9,7 @@ const progressBar = document.getElementById( 'progress-bar' );
 // const closeButton = panoramaContainer.querySelector( '.close' );
 
 var infospotAuditorio;
-infospotAuditorio = new PANOLENS.Infospot(600,"../src/img/simbolos/VER_MAS.png");
+infospotAuditorio = new PANOLENS.Infospot(600,"src/img/simbolos/VER_MAS.png");
 infospotAuditorio.position.set( 5000.00, -665.23, -3996.49 );
 infospotAuditorio.addHoverText( 'AUDITORIO' );
 infospotAuditorio.addEventListener('click',()=>{
@@ -21,7 +21,7 @@ infospotAuditorio.addEventListener('click',()=>{
 })
 panoramaLobby.add(infospotAuditorio);
 
-var infospotSomos = new PANOLENS.Infospot(6000,"../src/img/simbolos/VER_MAS.png");
+var infospotSomos = new PANOLENS.Infospot(6000,"src/img/simbolos/VER_MAS.png");
 infospotSomos.position.set( 5000.00, -565.23, 197.49 );
 infospotSomos.addHoverText( 'SOMOS' );
 infospotSomos.addEventListener('click',()=>{
