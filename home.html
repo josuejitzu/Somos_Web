@@ -5,43 +5,67 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Somos - Inicio</title>
-    <link rel="stylesheet" href="estilo.css">
+    <!-- <script  type="text/javascript" src="./js/three/build/three.min.js"></script> -->
+    <script type="text/javascript" src="./js/dat.gui.min.js"></script>
+    <script type="module" src="./js/three/examples/jsm/controls/OrbitControls.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/EasePack.min.js"></script>
     <script src="js/scrollfade.js"></script>
+    <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
-    <div class="centro">
-        <div class="bloquea" >
-            <img class="logoinicial"src="src/img/logos_1_placeholder.png" 
-            style="
-               
+    <canvas class="webgl"></canvas>
+        <div class="panelLoad"
+            style="position: absolute; z-index:99;
+            background-color: black; width: 100%; height:100vh"
+            >
+            <div class="loading-bar"></div>
+            
+        </div>
+        <div class="point point-0">
+            
+            <div class="logoInicio">
+                <!-- <img class="logoInicio" src="<%=require('../static/placeholders/logos_1_placeholder.png')%>"> -->
+                <img  src="./src/img/iconos/LOGO_PRESENTA.png" style="max-width:300px;">
                 
-                max-width: 70%;
-                height:auto"
-                >
-                <!-- <a href="#middle">Go To Middle</a> -->
-            <input type="button" onClick="document.getElementById('entrada').scrollIntoView();" />
 
+                
+                <img class="botonFlecha" src="./src/img/iconos/FLECHA.png" style="max-width:100px;">
+
+               
+          
+            </div>  
         </div>
-        <div id="entrada" class="bloqueentrada">
-            <div class="logosinicio" >
+        <div class="logosinicio" >
                 <div >
-                    <img src="src/img/placeholders/logo-mmyt-black.png"
-                    style="width: 200px;"
-                    >
+                    <img src="./src/img/iconos/logo-mmyt-black.png">
                 </div>
                 <div>
-                    <img src="src/img/placeholders/somosLogo.png" style="width: 200px;">
-
+                    <img src="./src/img/iconos/LOGO_SOMOS_UNA_EXPO.png">
                 </div>
                 <div>
-                    <img src="src/img/placeholders/Netflix-Logo.png" style="width: 200px;">
-
+                        <img src="./src/img/iconos/Netflix-Logo_baja.png" >
+    
                 </div>
-            </div>
-            <img src="src/img/edificio_placeholder.png" 
-            style="max-width:150%; display:block; bottom:0">
-        </div>
-    </div>
+        </div> 
+        <div
+            style ="position:absolute; 
+                    bottom:0;
+                    background-color:rgba(47, 53, 47, 0);
+                    /* height: 10vh; */
+                    width:100%;
+                    flex-direction: row;
+                    flex-wrap:nowrap;
+                    justify-content:space-around;
+                    text-align: center;
+                    margin:0;
+                    padding:0;">
+            <img class="botonInicio" 
+            style="width: 200px;"
+            src="./src/img/iconos//BOTON_INICIAR_RECORRIDO.png"/>
+        </div> 
+    <script type="module" src="./js/home.js"></script>
 
 </body>
 </html>
