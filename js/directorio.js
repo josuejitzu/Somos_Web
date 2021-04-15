@@ -1,3 +1,6 @@
+
+
+
 function cambiarA(dir){
 
     if(dir === "lobby"){

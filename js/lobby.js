@@ -132,3 +132,21 @@ function ocularLoad(){
     document.querySelector(".panelCarga").style.opacity = 0.0;
     //document.querySelector(".panelCarga").style.visibility = "hidden";
 }
+
+var botonCerrar = document.getElementById("botonCerrar");
+console.log(botonCerrar);
+botonCerrar.addEventListener('click',()=>
+{
+    console.log("cerrar");
+    let barraCarga = document.getElementById("barraCarga");
+    barraCarga.parentNode.removeChild(barraCarga);
+    document.querySelector(".panelCarga").style.opacity = 1.0;
+    var id = setInterval(frame, 1001);
+    function frame(){
+
+            window.location.href = 'home.html';
+    }
+  
+    //directorio.cambiarA("lobby");
+
+})
