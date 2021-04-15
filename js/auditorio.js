@@ -1,4 +1,4 @@
-const panoramaLobby = new PANOLENS.ImagePanorama( '../src/img/360/01_Acceso.jpg' );
+const panoramaLobby = new PANOLENS.ImagePanorama( '../src/img/360/05_Ludoteca.jpg' );
 const panoramaAuditorio = new PANOLENS.ImagePanorama( '../src/img/360/05_Ludoteca.jpg' );
 let viewer;
 
@@ -14,8 +14,6 @@ infospotAuditorio.position.set( 5000.00, -665.23, -3996.49 );
 infospotAuditorio.addHoverText( 'AUDITORIO' );
 infospotAuditorio.addEventListener('click',()=>{
     console.log("spot Auditorio")
-    window.location.href = 'auditorio.html';
-
     // panoramaLobby.dispose();
     // viewer.remove(panoramaLobby);
     // viewer.add(panoramaAuditorio);
@@ -103,24 +101,16 @@ bar1.set(10)
 function move() {
   if (i == 0) {
     i = 1;
-    // var elem = document.getElementById("myBar");
-    // var width = 1;
     var id = setInterval(frame, 10);
     function frame() {
-    //   if (bar1. >= 100) {
-    //     clearInterval(id);
-    //     i = 0;
-    //   } else {
-    //     // width++;
-    //     // elem.style.width = width + "%";
-    //   }
-    if(i>=100)
-    {
-        clearInterval(id);
-        ocularLoad();
-    }else{ i++
-        bar1.set(i);
-    }
+        if(i>=100)
+        {
+            clearInterval(id);
+            ocularLoad();
+        }else{ i++
+            bar1.set(i);
+        }
+        
     }
   }
 //    loadBar.set(2);
@@ -132,3 +122,21 @@ function ocularLoad(){
     document.querySelector(".panelCarga").style.opacity = 0.0;
     //document.querySelector(".panelCarga").style.visibility = "hidden";
 }
+
+var botonCerrar = document.getElementById("botonCerrar");
+console.log(botonCerrar);
+botonCerrar.addEventListener('click',()=>
+{
+    console.log("cerrar");
+    let barraCarga = document.getElementById("barraCarga");
+    barraCarga.parentNode.removeChild(barraCarga);
+    document.querySelector(".panelCarga").style.opacity = 1.0;
+    var id = setInterval(frame, 1001);
+    function frame(){
+
+            window.location.href = 'lobby.html';
+    }
+  
+    //directorio.cambiarA("lobby");
+
+})

@@ -79,24 +79,27 @@ body
     display: flex;
     flex-direction: row;
     flex-wrap:nowrap;
-    justify-content:space-around;
+    justify-content:space-evenly;
     align-items:center;
     position: absolute;
     top: 0;
-    /* align-content:center;
-    align-self: flex-start; */
+    text-align: center;
+    /* align-content:center;*/
+    align-self: center; 
     background-color:rgba(31, 34, 31, 0);
     width: 100%;
-    height:20vh;
+    height:20%;
     opacity:0;
-    transition: opacity 1.0s
+    transition: opacity 1.0s;
+    overflow: hidden;
 
 }
 .logosinicio img{
     /* min-width:50px; 
     max-width: 200px;
     flex-basis: auto; */
-    width:20vw;
+    width:40%;
+    
 } 
 .botonInicio{
     opacity:0;
@@ -106,8 +109,28 @@ body
 
 .panelLoading{
     pointer-events:none;
-     transition: opacity 2.0s
+    transition: opacity 2.0s;
+    overflow: hidden;
+
     
+}
+.panelLoad{
+    position: absolute; 
+    z-index:99;
+    background-color: black;
+    width: 100%; 
+    height:100vh;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap:nowrap;
+    justify-content:center;
+    align-items:center;
+    overflow: hidden;
+    transition: opacity 1.0s;
+    pointer-events:none;
+    overflow: hidden;
+
 }
 .loading-bar
 {
@@ -127,3 +150,25 @@ body
     transform-origin: 100% 0; */
     transition: transform 1.5s ease-in-out;
 }
+
+
+.ldBar path
+{
+      width: 400px;
+      stroke-width:  100px;
+  }
+  .ldBar path.mainline{
+      stroke-width: 15;
+      stroke:100;
+      stroke: #DA0C14;
+  }
+  .ldBar path.baseline{
+       stroke-width: 15;
+        stroke:#222222;
+  }
+  .ldBar-label{
+      color:white;
+  }
+  .ldBar-label:before{
+      content:"Loading "
+  }

@@ -73,6 +73,10 @@ gui.add(camera.rotation,"z").min(-Math.PI).max(Math.PI).step(0.001).name("fronta
  overlay.position.z=30
  scene.add(overlay)
 
+var bar1 = new ldBar("#barraCarga");
+var bar2 = document.getElementById("barraCarga").ldBar;
+// bar1.style.width = "100%";
+ bar1.set(100)
 //EDificio Modelo
 const loadingManager = new THREE.LoadingManager(
     //cargado
@@ -84,15 +88,15 @@ const loadingManager = new THREE.LoadingManager(
         document.querySelector(".panelLoad").style.visibility = "hidden";
 
         gsap.to(overlayMaterial.uniforms.uAlpha, { duration: 3, value: 0 })
-        loadingBarElement.classList.add('ended')
+        // loadingBarElement.classList.add('ended')
      
     },
     (itemUrl, itemsLoaded, itemsTotal)=>{
         
         const progressRatio = itemsLoaded / itemsTotal
         console.log(progressRatio)
-        loadingBarElement.style.transform = `scaleX(${progressRatio})`
-       
+        // loadingBarElement.style.transform = `scaleX(${progressRatio})`
+        bar1.set(progressRatio * 100)
     
     }
 )
@@ -195,12 +199,19 @@ botonFlecha.addEventListener('click',()=>{
 botonIniciar.addEventListener('click',()=>{
     console.log('boton inicio presionado')
     document.querySelector(".panelLoad").style.visibility = "visible";
-    gsap.to(camera.rotation,{duration:2,ease:"sine.out",x:0})
-
-    gsap.to(camera.position,{duration:2,ease:"sine.out",y:3}).eventCallback('onComplete',()=>{})
-    gsap.to(camera.position,{duration:2,ease:"sine.out",z:13}).eventCallback('onComplete',()=>{
+    gsap.to(camera.rotation,{duration:4,ease:"sine.out",x:0})
+    let barraCarga = document.getElementById("barraCarga");
+    barraCarga.parentNode.removeChild(barraCarga);
+    document.querySelector(".panelLoad").style.visibility = "visible";
+    gsap.to(camera.position,{duration:4,ease:"sine.out",y:3}).eventCallback('onComplete',()=>{})
+    gsap.to(camera.position,{duration:4,ease:"sine.out",z:13}).eventCallback('onComplete',()=>{
+        // document.querySelector(".panelLoad").style.opacity = 0.0;
         document.querySelector(".panelLoad").style.opacity = 1.0;
-        window.location.href = 'lobby.html';
+        var id = setInterval(frame, 1001);
+        function frame(){
+
+            window.location.href = 'lobby.html';
+        }
     })
 
 })
