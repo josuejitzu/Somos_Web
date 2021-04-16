@@ -1,4 +1,4 @@
-const panoramaLobby = new PANOLENS.ImagePanorama( 'src/img/360/01_Acceso.jpg' );
+const panoramaLobby = new PANOLENS.ImagePanorama( 'src/img/360/posicion01.jpg' );
 
 let viewer;
 
