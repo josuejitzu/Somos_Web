@@ -177,3 +177,38 @@ body
     width:40%;
     
 } 
+
+.panelSomos
+{
+  position: absolute; 
+  /* width: 90%;  */
+  /* overflow-y: scroll; */
+  background-color:black; 
+  z-index:99;
+ 
+  padding: 40px;
+  text-align: justify;
+  color: white;
+  left:5%;
+  right:5%;
+  top:5%;
+  bottom:5%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap:nowrap;
+  justify-content:flex-start;
+  align-items:center;
+  visibility: hidden;
+  transition: opacity 1.0s;
+  /* pointer-events:none; */
+}
+.panelSomosTexto
+{
+  overflow-y: scroll;
+
+  background-color: #DA0C14;
+  padding:40px;
+  width:40%;
+
+
+}

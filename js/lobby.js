@@ -7,10 +7,14 @@ const panoramaContainer = document.getElementById( 'panorama-container' );
 const mainContainer = document.getElementById( 'main-container' );
 const progressBar = document.getElementById( 'progress-bar' );
 // const closeButton = panoramaContainer.querySelector( '.close' );
+const botonCerrarTextoSomos = document.querySelector(".botonCerrarTextoSomos");
+const panelTextoSomos = document.querySelector(".panelSomos");
+panelTextoSomos.style.visibility = 'hidden';
+
 
 var infospotAuditorio;
-infospotAuditorio = new PANOLENS.Infospot(600,"src/img/simbolos/VER_MAS.png");
-infospotAuditorio.position.set( 5000.00, -665.23, -3996.49 );
+infospotAuditorio = new PANOLENS.Infospot(600,"src/img/simbolos/VER_MAS.png?v=123456781");
+infospotAuditorio.position.set( 5000.00, -665.23, -3000 );
 infospotAuditorio.addHoverText( 'AUDITORIO' );
 infospotAuditorio.addEventListener('click',()=>{
     console.log("spot Auditorio")
@@ -23,15 +27,29 @@ infospotAuditorio.addEventListener('click',()=>{
 })
 panoramaLobby.add(infospotAuditorio);
 
-var infospotSomos = new PANOLENS.Infospot(6000,"src/img/simbolos/VER_MAS.png");
-infospotSomos.position.set( 5000.00, -565.23, 197.49 );
+var infospotSomos ;
+infospotSomos = new PANOLENS.Infospot(600,"src/img/simbolos/VER_MAS.png?v=123456782");
+infospotSomos.position.set( 0000, -565.23, -3000 );
 infospotSomos.addHoverText( 'SOMOS' );
 infospotSomos.addEventListener('click',()=>{
     console.log("spot somos")
- 
+    panelTextoSomos.style.visibility = 'visible';
+    viewer.disableControl();
     
 })
 panoramaLobby.add(infospotSomos);
+
+
+var infospotNucleo1 = new PANOLENS.Infospot(600,"src/img/simbolos/VER_MAS.png?v=123456783");
+infospotNucleo1.position.set( 1000, -565.23, -3000 );
+infospotNucleo1.addHoverText( 'Nucleo 1' );
+infospotNucleo1.addEventListener('click',()=>{
+    console.log("spot nucleo 1")
+ 
+    
+})
+panoramaLobby.add(infospotNucleo1);
+
 
 
 //Se construye viewer 360
@@ -45,6 +63,8 @@ function setupPanolens () {
         } 
     );
     viewer.add( panoramaLobby );
+    viewer.OrbitControls.noZoom = true;
+    viewer.autoHideInfospot = false;
 }
 
 function createWidget(){
@@ -148,5 +168,12 @@ botonCerrar.addEventListener('click',()=>
     }
   
     //directorio.cambiarA("lobby");
+
+})
+
+botonCerrarTextoSomos.addEventListener('click',()=>{
+    console.log("cerrando texto");
+    panelTextoSomos.style.visibility = "hidden";
+    viewer.enableControl(0);
 
 })
