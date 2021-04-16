@@ -1,5 +1,5 @@
 const panoramaLobby = new PANOLENS.ImagePanorama( 'src/img/360/05_Ludoteca.jpg' );
-const panoramaAuditorio = new PANOLENS.ImagePanorama( '../src/img/360/05_Ludoteca.jpg' );
+
 let viewer;
 
 const panoramaContainer = document.getElementById( 'panorama-container' );
@@ -7,32 +7,40 @@ const panoramaContainer = document.getElementById( 'panorama-container' );
 const mainContainer = document.getElementById( 'main-container' );
 const progressBar = document.getElementById( 'progress-bar' );
 // const closeButton = panoramaContainer.querySelector( '.close' );
+const botonCerrarTextoSomos = document.querySelector(".botonCerrarTextoSomos");
+const panelTextoSomos = document.querySelector(".panelSomos");
+panelTextoSomos.style.visibility = 'hidden';
 
-var infospotAuditorio;
-infospotAuditorio = new PANOLENS.Infospot(600,"src/img/simbolos/VER_MAS.png");
-infospotAuditorio.position.set( 5000.00, -665.23, -3996.49 );
-infospotAuditorio.addHoverText( 'AUDITORIO' );
-infospotAuditorio.addEventListener('click',()=>{
-    console.log("spot Auditorio")
-    // panoramaLobby.dispose();
-    // viewer.remove(panoramaLobby);
-    // viewer.add(panoramaAuditorio);
+
+var infospotVideos;
+infospotVideos = new PANOLENS.Infospot(600,"src/img/simbolos/VER_MAS.png?v=123456781");
+infospotVideos.position.set( 5000.00, -665.23, -3000 );
+infospotVideos.addHoverText( 'VIDEOS' );
+infospotVideos.addEventListener('click',()=>{
+    console.log("spot Videos")
+    
     
 })
-panoramaLobby.add(infospotAuditorio);
+panoramaLobby.add(infospotVideos);
 
-var infospotSomos = new PANOLENS.Infospot(6000,"src/img/simbolos/VER_MAS.png");
-infospotSomos.position.set( 5000.00, -565.23, 197.49 );
+var infospotSomos ;
+infospotSomos = new PANOLENS.Infospot(600,"src/img/simbolos/VER_MAS.png?v=123456782");
+infospotSomos.position.set( 0000, -565.23, -3000 );
 infospotSomos.addHoverText( 'SOMOS' );
 infospotSomos.addEventListener('click',()=>{
     console.log("spot somos")
- 
+    panelTextoSomos.style.visibility = 'visible';
+    viewer.disableControl();
     
 })
 panoramaLobby.add(infospotSomos);
 
 
-//Se construye viewer 360
+
+
+
+
+//Se construye viewer 360 FOV,panorama,etc
 function setupPanolens () {
     // viewer = new PANOLENS.ImagePanorama(panorama);
     viewer = new PANOLENS.Viewer( 
@@ -43,6 +51,8 @@ function setupPanolens () {
         } 
     );
     viewer.add( panoramaLobby );
+    viewer.OrbitControls.noZoom = true;
+    viewer.autoHideInfospot = false;
 }
 
 function createWidget(){
@@ -76,15 +86,14 @@ function init () {
     setupPanolens();
 
     createWidget();
-
-    // Dispose panorama when close
-    // closeButton.addEventListener( 'click', function () {
-    //     disposePanorama();
-    //     progressBar.style.width = 0;
-    //     progressBar.style.opacity = 1;
-    //     panoramaContainer.classList.remove( 'open' );
-    // }, false );
 }
 
 init();
 
+
+botonCerrarTextoSomos.addEventListener('click',()=>{
+    console.log("cerrando texto");
+    panelTextoSomos.style.visibility = "hidden";
+    viewer.enableControl(0);
+
+})

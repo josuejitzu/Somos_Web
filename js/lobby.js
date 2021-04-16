@@ -45,7 +45,8 @@ infospotNucleo1.position.set( 1000, -565.23, -3000 );
 infospotNucleo1.addHoverText( 'Nucleo 1' );
 infospotNucleo1.addEventListener('click',()=>{
     console.log("spot nucleo 1")
- 
+    window.location.href = 'nucleo1.html';
+    
     
 })
 panoramaLobby.add(infospotNucleo1);
@@ -111,47 +112,47 @@ function init () {
 init();
 
 
-//FAKE loading
-var i = 0;
-// var loadBar = document.getElementById("barraCarga").ldBar;
+// //FAKE loading
+// var i = 0;
+// // var loadBar = document.getElementById("barraCarga").ldBar;
 
-var bar1 = new ldBar("#barraCarga");
-var bar2 = document.getElementById("barraCarga").ldBar;
-// bar1.style.width = "100%";
-bar1.set(10)
-// bar1.style.width = "100px";
-function move() {
-  if (i == 0) {
-    i = 1;
-    // var elem = document.getElementById("myBar");
-    // var width = 1;
-    var id = setInterval(frame, 10);
-    function frame() {
-    //   if (bar1. >= 100) {
-    //     clearInterval(id);
-    //     i = 0;
-    //   } else {
-    //     // width++;
-    //     // elem.style.width = width + "%";
-    //   }
-    if(i>=100)
-    {
-        clearInterval(id);
-        ocularLoad();
-    }else{ i++
-        bar1.set(i);
-    }
-    }
-  }
-//    loadBar.set(2);
-}
-move()
+// var bar1 = new ldBar("#barraCarga");
+// var bar2 = document.getElementById("barraCarga").ldBar;
+// // bar1.style.width = "100%";
+// bar1.set(10)
+// // bar1.style.width = "100px";
+// function move() {
+//   if (i == 0) {
+//     i = 1;
+//     // var elem = document.getElementById("myBar");
+//     // var width = 1;
+//     var id = setInterval(frame, 10);
+//     function frame() {
+//     //   if (bar1. >= 100) {
+//     //     clearInterval(id);
+//     //     i = 0;
+//     //   } else {
+//     //     // width++;
+//     //     // elem.style.width = width + "%";
+//     //   }
+//     if(i>=100)
+//     {
+//         clearInterval(id);
+//         ocularLoad();
+//     }else{ i++
+//         bar1.set(i);
+//     }
+//     }
+//   }
+// //    loadBar.set(2);
+// }
+// move()
 
-function ocularLoad(){
-    console.log("ocultar load")
-    document.querySelector(".panelCarga").style.opacity = 0.0;
-    //document.querySelector(".panelCarga").style.visibility = "hidden";
-}
+// function ocularLoad(){
+//     console.log("ocultar load")
+//     document.querySelector(".panelCarga").style.opacity = 0.0;
+//     //document.querySelector(".panelCarga").style.visibility = "hidden";
+// }
 
 var botonCerrar = document.getElementById("botonCerrar");
 console.log(botonCerrar);

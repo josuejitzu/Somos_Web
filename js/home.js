@@ -86,11 +86,13 @@ const loadingManager = new THREE.LoadingManager(
         
         
         document.querySelector(".panelLoad").style.opacity = 0.0;
-        document.querySelector(".panelLoad").style.visibility = "hidden";
+        // document.querySelector(".panelLoad").style.visibility = "hidden";
 
         gsap.to(overlayMaterial.uniforms.uAlpha, { duration: 3, value: 0 })
         // loadingBarElement.classList.add('ended')
-     
+        gsap.to(document.querySelector(".point"), {delay:1,duration:1.5, opacity:1});
+
+    
     },
     (itemUrl, itemsLoaded, itemsTotal)=>{
         
@@ -239,6 +241,8 @@ botonIniciar.addEventListener('click',()=>{
     console.log('boton inicio presionado')
     controlesHabilitados = false;
     document.querySelector(".panelLoad").style.visibility = "visible";
+    document.querySelector(".logosinicio").style.opacity = 0.0;
+    document.querySelector(".botonInicio").style.opacity = 0.0;
 
     
     let barraCarga = document.getElementById("barraCarga");
