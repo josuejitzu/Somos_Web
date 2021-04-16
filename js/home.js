@@ -27,7 +27,7 @@ const sizes = {
 
 // Camera
 const camera = new THREE.PerspectiveCamera(90, sizes.width / sizes.height)
-camera.position.x = -7
+camera.position.x = -6
 camera.position.y = 30
 camera.position.z = 30
 camera.rotation.x = 0.2;
@@ -194,24 +194,41 @@ botonFlecha.addEventListener('click',()=>{
      document.querySelector(".botonInicio").style.opacity = 1.0;
 
 })
-
+gsap.registerPlugin(MotionPathPlugin);
+let mimotionPath = {
+    path: [{y:1.05, z:10.58}, {y:1.05, z:4.52}, {x:0.047, z:1.835}],
+    type: "cubic"
+  }
 //BOTON Inicio
 botonIniciar.addEventListener('click',()=>{
     console.log('boton inicio presionado')
     document.querySelector(".panelLoad").style.visibility = "visible";
-    gsap.to(camera.rotation,{duration:4,ease:"sine.out",x:0})
+
+    
     let barraCarga = document.getElementById("barraCarga");
     barraCarga.parentNode.removeChild(barraCarga);
     document.querySelector(".panelLoad").style.visibility = "visible";
-    gsap.to(camera.position,{duration:4,ease:"sine.out",y:3}).eventCallback('onComplete',()=>{})
-    gsap.to(camera.position,{duration:4,ease:"sine.out",z:13}).eventCallback('onComplete',()=>{
-        // document.querySelector(".panelLoad").style.opacity = 0.0;
-        document.querySelector(".panelLoad").style.opacity = 1.0;
-        var id = setInterval(frame, 1001);
-        function frame(){
+    
+    gsap.to(camera.rotation,{duration:4,ease:"sine.out",x:0})
+    let tl = gsap.timeline();
+    tl.to(camera.position,{duration:4,y:1.05,z:10.58})
+      .to(camera.position,{duration:2,y:1.05,z:4.52})
+      .to(camera.position,{duration:2,x:0.047,z:2.835})
+      .eventCallback('onComplete',() =>{
+            gsap.to(camera.position,{duration:2,ease:"sine.out",z:1.835})
 
-            window.location.href = 'lobby.html';
-        }
-    })
+          cambiarALobby();
+      })
+
 
 })
+
+function cambiarALobby(){
+    document.querySelector(".panelLoad").style.opacity = 1.0;
+            var id = setInterval(frame, 1001);
+            function frame(){
+    
+                window.location.href = 'lobby.html';
+            }
+
+}
