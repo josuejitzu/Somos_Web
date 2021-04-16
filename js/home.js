@@ -131,7 +131,7 @@ gltfLoader.load(
 
 
 //LUZ
-const luzFill = new THREE.AmbientLight( 0xffffff,2)
+const luzFill = new THREE.AmbientLight( 0xffffff,1.5)
 scene.add(luzFill);
 const directionalLight = new THREE.DirectionalLight(0xffffff, 0.3)
 scene.add(directionalLight)
@@ -143,7 +143,7 @@ renderer.setSize(sizes.width, sizes.height)
 renderer.setPixelRatio(Math.min(window.devicePixelRatio,2))
 renderer.render(scene, camera)
 renderer.setClearColor('#D2CFCA')
-
+// renderer.outputEncoding = THREE.sRGBEncoding
 //UPDATE TICK
 const clock = new THREE.Clock()
 
