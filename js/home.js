@@ -257,7 +257,7 @@ botonIniciar.addEventListener('click',()=>{
       .eventCallback('onComplete',() =>{
             gsap.to(camera.position,{duration:2,ease:"sine.out",z:1.835})
 
-            // cambiarALobby();
+            cambiarALobby();
       })
 
 
