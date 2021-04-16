@@ -9,6 +9,7 @@ const loadingBarElement = document.querySelector('.loading-bar');
 const botonFlecha = document.querySelector('.botonFlecha');
 const botonIniciar = document.querySelector('.botonInicio');
 
+var controlesHabilitados = false;
 // Scene
 const scene = new THREE.Scene()
 const gui = new dat.GUI();
@@ -27,7 +28,7 @@ const sizes = {
 
 // Camera
 const camera = new THREE.PerspectiveCamera(90, sizes.width / sizes.height)
-camera.position.x = -6
+camera.position.x = 0// -6.3
 camera.position.y = 30
 camera.position.z = 30
 camera.rotation.x = 0.2;
@@ -101,21 +102,25 @@ const loadingManager = new THREE.LoadingManager(
     }
 )
 const gltfLoader = new GLTFLoader(loadingManager)
-const materialEdificio = new THREE.MeshStandardMaterial({color:'#ffffff'})
-
+// const materialEdificio = new THREE.MeshStandardMaterial({color:'#ffffff'})
+let edificioModelo = null;
 gltfLoader.load(
-    './src/modelos3D/edificio_02.glb',
+    './src/modelos3D/edificio_03.glb',
     (gltf) =>
     {
         console.log('success')
         console.log(gltf)
         scene.add(gltf.scene);
+        edificioModelo = gltf.scene;
+        edificioModelo.position.x = 6.3
         // gltf.scene.traverse((obj)=>{
         //     if(obj.isMesh)
         //     {
         //         obj.material = materialEdificio;
         //     }
         // })
+    //    controls.target = edificioModelo.position;
+
     },
     (progress) =>
     {
@@ -129,7 +134,7 @@ gltfLoader.load(
     }
 )
 
-
+const canvas = document.querySelector('canvas.webgl')
 //LUZ
 const luzFill = new THREE.AmbientLight( 0xffffff,1.5)
 scene.add(luzFill);
@@ -137,13 +142,37 @@ const directionalLight = new THREE.DirectionalLight(0xffffff, 0.3)
 scene.add(directionalLight)
 // Renderer
 const renderer = new THREE.WebGLRenderer({
-    canvas: document.querySelector('canvas.webgl')
+    canvas: document.querySelector('canvas.webgl'),
+    antialias: true
 })
 renderer.setSize(sizes.width, sizes.height)
 renderer.setPixelRatio(Math.min(window.devicePixelRatio,2))
 renderer.render(scene, camera)
 renderer.setClearColor('#D2CFCA')
-// renderer.outputEncoding = THREE.sRGBEncoding
+renderer.outputEncoding = THREE.sRGBEncoding
+
+
+
+// Cursor
+const cursor = {
+    x: 0,
+    y: 0
+   
+}
+window.addEventListener('mousemove', (event) =>
+{
+    cursor.x = event.clientX / sizes.width - 0.5
+    
+
+    // console.log(cursor.x)
+})
+// window.addEventListener('touchmove',(e)=>{
+    
+//     cursor.x = e.clientX / sizes.width - 0.5
+    
+
+//     console.log(cursor.x)
+// })
 //UPDATE TICK
 const clock = new THREE.Clock()
 
@@ -152,8 +181,17 @@ const tick = () =>
     // console.log('tick')
 
     const elapsedTime = clock.getElapsedTime()
+
+    
+    // controls.enabled = controlesHabilitados;
+    if(controlesHabilitados)
+    {
+        camera.position.x = cursor.x * 5;
+    }
+    
+  
      // Render
-     renderer.render(scene, camera)
+    renderer.render(scene, camera)
 
     window.requestAnimationFrame(tick)
 }
@@ -181,12 +219,13 @@ window.addEventListener('resize', () =>
 // console.log(botonFlecha);
 botonFlecha.addEventListener('click',()=>{
 
+   
     console.log('boton flecha presionado');
     gsap.to(camera.rotation,{duration:2,ease:"sine.out",x:-0.1})
 
-    gsap.to(camera.position,{duration:1,ease:"sine.out",delay:0,x:-7})
+    gsap.to(camera.position,{duration:1,ease:"sine.out",delay:0,x:0})
     gsap.to(camera.position,{duration:1,ease:"sine.out",delay:0,y:19}).eventCallback('onComplete',()=>{
-
+        controlesHabilitados = true;
     })
     // gsap.to(camera.position,{duration:1,delay:0,z:30})
      document.querySelector(".logoInicio").style.opacity = 0.0;
@@ -194,14 +233,11 @@ botonFlecha.addEventListener('click',()=>{
      document.querySelector(".botonInicio").style.opacity = 1.0;
 
 })
-// gsap.registerPlugin(MotionPathPlugin);
-// let mimotionPath = {
-//     path: [{y:1.05, z:10.58}, {y:1.05, z:4.52}, {x:0.047, z:1.835}],
-//     type: "cubic"
-//   }
+
 //BOTON Inicio
 botonIniciar.addEventListener('click',()=>{
     console.log('boton inicio presionado')
+    controlesHabilitados = false;
     document.querySelector(".panelLoad").style.visibility = "visible";
 
     
@@ -211,13 +247,13 @@ botonIniciar.addEventListener('click',()=>{
     
     gsap.to(camera.rotation,{duration:4,ease:"sine.out",x:0})
     let tl = gsap.timeline();
-    tl.to(camera.position,{duration:4,y:1.05,z:10.58})
+    tl.to(camera.position,{duration:4,x:0,y:1.05,z:10.58})
       .to(camera.position,{duration:2,y:1.05,z:4.52})
-      .to(camera.position,{duration:2,x:0.047,z:2.835})
+      .to(camera.position,{duration:2,x:5.7,z:2.835})
       .eventCallback('onComplete',() =>{
             gsap.to(camera.position,{duration:2,ease:"sine.out",z:1.835})
 
-          cambiarALobby();
+            cambiarALobby();
       })
 
 
