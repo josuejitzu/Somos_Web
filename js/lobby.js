@@ -55,7 +55,7 @@ panoramaLobbyA.add(infospotNucleo1);
 
 
 var infospotPosicionA = new PANOLENS.Infospot(400,"src/img/simbolos/FLECHA.png?v=123456781");
-infospotPosicionA.position.set( -1800, -565.23, 3000 );
+infospotPosicionA.position.set( -1500, -565.23, 3000 );
 infospotPosicionA.addHoverText( 'Posicion A' );
 infospotPosicionA.addEventListener('click',()=>{
     console.log("posicionA")

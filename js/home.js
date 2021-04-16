@@ -90,7 +90,7 @@ const loadingManager = new THREE.LoadingManager(
 
         gsap.to(overlayMaterial.uniforms.uAlpha, { duration: 3, value: 0 })
         // loadingBarElement.classList.add('ended')
-        gsap.to(document.querySelector(".point"), {delay:1,duration:1.5, opacity:1});
+        gsap.to(document.querySelector(".point"), {delay:1,duration:1, opacity:1});
 
     
     },
@@ -249,13 +249,13 @@ botonIniciar.addEventListener('click',()=>{
     barraCarga.parentNode.removeChild(barraCarga);
     document.querySelector(".panelLoad").style.visibility = "visible";
     
-    gsap.to(camera.rotation,{duration:4,ease:"sine.out",x:0})
+    gsap.to(camera.rotation,{duration:8,ease:"sine.in",x:0})
     let tl = gsap.timeline();
-    tl.to(camera.position,{duration:4,x:0,y:1.05,z:10.58})
-      .to(camera.position,{duration:4,y:1.05,z:4.52})
-      .to(camera.position,{duration:2,x:5.7,z:2.835})
+    tl.to(camera.position,{duration:4,x:0,y:1.05,z:10.58 ,ease:"linear"})
+      .to(camera.position,{duration:4,y:1.05,z:4.52,ease:"linear"})
+      .to(camera.position,{duration:2,x:5.7,z:2.835,ease:"linear"})
       .eventCallback('onComplete',() =>{
-            gsap.to(camera.position,{duration:2,ease:"sine.out",z:1.835})
+            gsap.to(camera.position,{duration:1,ease:"sine.out",z:1.835})
 
             cambiarALobby();
       })
