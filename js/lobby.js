@@ -14,8 +14,8 @@ panelTextoSomos.style.visibility = 'hidden';
 
 
 var infospotAuditorio;
-infospotAuditorio = new PANOLENS.Infospot(400,"src/img/simbolos/VER_MAS.png?v=123456781");
-infospotAuditorio.position.set( 5000.00, -665.23, -3000 );
+infospotAuditorio = new PANOLENS.Infospot(400,"src/img/simbolos/FLECHA.png?v=123456782");
+infospotAuditorio.position.set( 4000.00, -665.23, 100 );
 infospotAuditorio.addHoverText( 'AUDITORIO' );
 infospotAuditorio.addEventListener('click',()=>{
     console.log("spot Auditorio")
@@ -28,7 +28,7 @@ infospotAuditorio.addEventListener('click',()=>{
     // viewer.add(panoramaAuditorio);
     
 })
-panoramaLobbyA.add(infospotAuditorio);
+panoramaLobbyB.add(infospotAuditorio);
 
 var infospotSomos ;
 infospotSomos = new PANOLENS.Infospot(400,"src/img/simbolos/VER_MAS.png?v=123456782");

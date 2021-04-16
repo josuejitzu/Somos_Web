@@ -252,12 +252,12 @@ botonIniciar.addEventListener('click',()=>{
     gsap.to(camera.rotation,{duration:4,ease:"sine.out",x:0})
     let tl = gsap.timeline();
     tl.to(camera.position,{duration:4,x:0,y:1.05,z:10.58})
-      .to(camera.position,{duration:2,y:1.05,z:4.52})
+      .to(camera.position,{duration:4,y:1.05,z:4.52})
       .to(camera.position,{duration:2,x:5.7,z:2.835})
       .eventCallback('onComplete',() =>{
             gsap.to(camera.position,{duration:2,ease:"sine.out",z:1.835})
 
-            cambiarALobby();
+            // cambiarALobby();
       })
 
 
