@@ -1,4 +1,5 @@
-const panoramaLobby = new PANOLENS.ImagePanorama( 'src/img/360/posicion01.jpg' );
+const panoramaLobbyA = new PANOLENS.ImagePanorama( 'src/img/360/posicion01.jpg' );
+const panoramaLobbyB = new PANOLENS.ImagePanorama( 'src/img/360/posicion02.jpg' );
 
 let viewer;
 
@@ -13,7 +14,7 @@ panelTextoSomos.style.visibility = 'hidden';
 
 
 var infospotAuditorio;
-infospotAuditorio = new PANOLENS.Infospot(600,"src/img/simbolos/VER_MAS.png?v=123456781");
+infospotAuditorio = new PANOLENS.Infospot(400,"src/img/simbolos/VER_MAS.png?v=123456781");
 infospotAuditorio.position.set( 5000.00, -665.23, -3000 );
 infospotAuditorio.addHoverText( 'AUDITORIO' );
 infospotAuditorio.addEventListener('click',()=>{
@@ -22,16 +23,16 @@ infospotAuditorio.addEventListener('click',()=>{
 
     // window.location.href = 'auditorio.html';
     cambiarA("auditorio");
-    // panoramaLobby.dispose();
-    // viewer.remove(panoramaLobby);
+    // panoramaLobbyA.dispose();
+    // viewer.remove(panoramaLobbyA);
     // viewer.add(panoramaAuditorio);
     
 })
-panoramaLobby.add(infospotAuditorio);
+panoramaLobbyA.add(infospotAuditorio);
 
 var infospotSomos ;
-infospotSomos = new PANOLENS.Infospot(600,"src/img/simbolos/VER_MAS.png?v=123456782");
-infospotSomos.position.set( 0000, -565.23, -3000 );
+infospotSomos = new PANOLENS.Infospot(400,"src/img/simbolos/VER_MAS.png?v=123456782");
+infospotSomos.position.set( -100, -765.23, -3000 );
 infospotSomos.addHoverText( 'SOMOS' );
 infospotSomos.addEventListener('click',()=>{
     console.log("spot somos")
@@ -39,21 +40,62 @@ infospotSomos.addEventListener('click',()=>{
     viewer.disableControl();
     
 })
-panoramaLobby.add(infospotSomos);
+panoramaLobbyA.add(infospotSomos);
 
-
-var infospotNucleo1 = new PANOLENS.Infospot(600,"src/img/simbolos/VER_MAS.png?v=123456783");
-infospotNucleo1.position.set( 1000, -565.23, -3000 );
+//nucleo2 pos 2800, -1200, -2500
+var infospotNucleo1 = new PANOLENS.Infospot(400,"src/img/simbolos/VER_MAS.png?v=123456783");
+infospotNucleo1.position.set( 2800, -850, 800 );
 infospotNucleo1.addHoverText( 'Nucleo 1' );
 infospotNucleo1.addEventListener('click',()=>{
     console.log("spot nucleo 1")
     cambiarA("nucleo1");
-    
-    
+     
+})
+panoramaLobbyA.add(infospotNucleo1);
+
+
+var infospotPosicionA = new PANOLENS.Infospot(400,"src/img/simbolos/FLECHA.png?v=123456781");
+infospotPosicionA.position.set( -1800, -565.23, 3000 );
+infospotPosicionA.addHoverText( 'Posicion A' );
+infospotPosicionA.addEventListener('click',()=>{
+    console.log("posicionA")
+    // cambiarA("nucleo1");
+    cambioPosicion('posA')
     
 })
-panoramaLobby.add(infospotNucleo1);
+panoramaLobbyB.add(infospotPosicionA);
 
+var infospotPosicionB = new PANOLENS.Infospot(400,"src/img/simbolos/FLECHA.png?v=123456783");
+infospotPosicionB.position.set( 1000, -565.23, -3000 );
+infospotPosicionB.addHoverText( 'Posicion B' );
+infospotPosicionB.addEventListener('click',()=>{
+    console.log("posicionB")
+    // cambiarA("nucleo1");
+    cambioPosicion('posB')
+    
+})
+panoramaLobbyA.add(infospotPosicionB);
+
+
+function cambioPosicion(pos)
+{
+    if(pos=="posA")
+    {   
+        // panoramaLobbyA = new PANOLENS.ImagePanorama( 'src/img/360/posicion01.jpg' );
+        // panoramaLobbyB.dispose();
+        // viewer.remove(panoramaLobbyB)
+        // viewer.add(panoramaLobbyA)
+        viewer.setPanorama(panoramaLobbyA);
+
+    }else if(pos == "posB")
+    {
+        // panoramaLobbyB = new PANOLENS.ImagePanorama( 'src/img/360/posicion02.jpg' );
+        // panoramaLobbyA.dispose();
+        // viewer.remove(panoramaLobbyA)
+        viewer.add(panoramaLobbyB)
+        viewer.setPanorama(panoramaLobbyB);
+    }
+}
 
 
 //Se construye viewer 360
@@ -66,7 +108,7 @@ function setupPanolens () {
              cameraFov:90
         } 
     );
-    viewer.add( panoramaLobby );
+    viewer.add( panoramaLobbyA );
     viewer.OrbitControls.noZoom = true;
     viewer.autoHideInfospot = false;
 }
