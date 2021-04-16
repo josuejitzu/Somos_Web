@@ -194,11 +194,11 @@ botonFlecha.addEventListener('click',()=>{
      document.querySelector(".botonInicio").style.opacity = 1.0;
 
 })
-gsap.registerPlugin(MotionPathPlugin);
-let mimotionPath = {
-    path: [{y:1.05, z:10.58}, {y:1.05, z:4.52}, {x:0.047, z:1.835}],
-    type: "cubic"
-  }
+// gsap.registerPlugin(MotionPathPlugin);
+// let mimotionPath = {
+//     path: [{y:1.05, z:10.58}, {y:1.05, z:4.52}, {x:0.047, z:1.835}],
+//     type: "cubic"
+//   }
 //BOTON Inicio
 botonIniciar.addEventListener('click',()=>{
     console.log('boton inicio presionado')
