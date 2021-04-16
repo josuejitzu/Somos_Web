@@ -18,8 +18,10 @@ infospotAuditorio.position.set( 5000.00, -665.23, -3000 );
 infospotAuditorio.addHoverText( 'AUDITORIO' );
 infospotAuditorio.addEventListener('click',()=>{
     console.log("spot Auditorio")
-    window.location.href = 'auditorio.html';
+    // document.querySelector(".panelCarga").style.opacity = 1.0;
 
+    // window.location.href = 'auditorio.html';
+    cambiarA("auditorio");
     // panoramaLobby.dispose();
     // viewer.remove(panoramaLobby);
     // viewer.add(panoramaAuditorio);
@@ -45,7 +47,8 @@ infospotNucleo1.position.set( 1000, -565.23, -3000 );
 infospotNucleo1.addHoverText( 'Nucleo 1' );
 infospotNucleo1.addEventListener('click',()=>{
     console.log("spot nucleo 1")
-    window.location.href = 'nucleo1.html';
+    cambiarA("nucleo1");
+    
     
     
 })
@@ -112,63 +115,12 @@ function init () {
 init();
 
 
-// //FAKE loading
-// var i = 0;
-// // var loadBar = document.getElementById("barraCarga").ldBar;
-
-// var bar1 = new ldBar("#barraCarga");
-// var bar2 = document.getElementById("barraCarga").ldBar;
-// // bar1.style.width = "100%";
-// bar1.set(10)
-// // bar1.style.width = "100px";
-// function move() {
-//   if (i == 0) {
-//     i = 1;
-//     // var elem = document.getElementById("myBar");
-//     // var width = 1;
-//     var id = setInterval(frame, 10);
-//     function frame() {
-//     //   if (bar1. >= 100) {
-//     //     clearInterval(id);
-//     //     i = 0;
-//     //   } else {
-//     //     // width++;
-//     //     // elem.style.width = width + "%";
-//     //   }
-//     if(i>=100)
-//     {
-//         clearInterval(id);
-//         ocularLoad();
-//     }else{ i++
-//         bar1.set(i);
-//     }
-//     }
-//   }
-// //    loadBar.set(2);
-// }
-// move()
-
-// function ocularLoad(){
-//     console.log("ocultar load")
-//     document.querySelector(".panelCarga").style.opacity = 0.0;
-//     //document.querySelector(".panelCarga").style.visibility = "hidden";
-// }
-
 var botonCerrar = document.getElementById("botonCerrar");
 console.log(botonCerrar);
 botonCerrar.addEventListener('click',()=>
 {
     console.log("cerrar");
-    let barraCarga = document.getElementById("barraCarga");
-    barraCarga.parentNode.removeChild(barraCarga);
-    document.querySelector(".panelCarga").style.opacity = 1.0;
-    var id = setInterval(frame, 1001);
-    function frame(){
-
-            window.location.href = 'home.html';
-    }
-  
-    //directorio.cambiarA("lobby");
+    cambiarA("home");
 
 })
 
@@ -178,3 +130,38 @@ botonCerrarTextoSomos.addEventListener('click',()=>{
     viewer.enableControl(0);
 
 })
+
+function cambiarA(dir){
+    let barraCarga = document.getElementById("barraCarga");
+    barraCarga.parentNode.removeChild(barraCarga);
+    document.querySelector(".panelCarga").style.opacity = 1.0;
+  
+    let direccionFinal;
+    if(dir == "home")
+    {
+        direccionFinal = "home.html"
+    }
+    if(dir == "nucleo1"){
+        direccionFinal = "nucleo1.html"
+
+
+    }
+    else if(dir =="nucleo2")
+    {
+
+    }
+    else if(dir =="nucleo3")
+    {
+
+    }
+    else if(dir =="auditorio")
+    {
+        direccionFinal = "auditorio.html"
+
+    }else{ }
+    var id = setInterval(frame, 1001);
+    function frame(){
+
+            window.location.href = direccionFinal;
+    }
+}
