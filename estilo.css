@@ -46,6 +46,7 @@ body
 .panelLoadLogo
 {
     content:url("src/img/iconos/LOGO_LOADING_low.png");
+    /* content:url("src/"); */
     width:300px;
 }
 
