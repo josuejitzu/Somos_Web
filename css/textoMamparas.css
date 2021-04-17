@@ -62,7 +62,9 @@
       font-size: 14px;
     line-height: 30px;
     /* white-space: nowrap; */
-    word-spacing: 0px;
+    /* word-spacing: -2px; */
+    /* text-align: justify; */
+
   }
   .panelSomosTexto h2{
    
@@ -71,5 +73,28 @@
     text-align: left;
 
   
+  } 
+  .panelSomosLogos img{
+    width: 100%;
   }
+  .panelSomosLogos div{
+    width:50%;
+    flex: 1;
+  }
+}
+
+.panelSomosLogos
+{
+  width:90%; 
+  display:flex;
+  flex-direction:row; 
+  
+  align-items:center;
+  background-color:rgba(22, 189, 92, 0)
+}
+.panelSomosLogos div{
+  width:10%;
+}
+.panelSomosLogos img{
+  width: 100%;
 }
