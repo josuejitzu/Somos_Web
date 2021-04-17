@@ -176,7 +176,9 @@ function cambioPosicion(pos)
     }
 }
 
-
+const camaraRot={ 
+    x:0, y:0,z:0
+}
 //Se construye viewer 360
 function setupPanolens () {
     // viewer = new PANOLENS.ImagePanorama(panorama);
@@ -184,16 +186,25 @@ function setupPanolens () {
         {
              container: mainContainer,
              //  controlButtons: deteccionIphone() ? controlesIos:controles,
-             cameraFov:70
+             cameraFov:70,
+             initialLookAt:new THREE.Vector3(Math.PI/4,1,0.0)
         } 
     );
     viewer.add( panoramaLobbyA );
     viewer.add(panoramaLobbyB);
     // viewer.setPanorama(panoramaLobbyB);
+    // viewer.tweenControlCenter( new THREE.Vector3(camaraRot.x, 0, 0), 0 );
+    // viewer.initialLookAt(new THREE.Vector3(0,1,0));
+     viewer.initialLookAt = new THREE.Vector3(0.5,0,0);
 
     viewer.OrbitControls.noZoom = true;
     viewer.autoHideInfospot = false;
 }
+// gui.add(camaraRot,"x").min(-1).max(1).step(0.001).name("nucleo3_z").onFinishChange(()=>{
+//      viewer.initialLookAt = new THREE.Vector3(camaraRot.x,0,0);
+//      // viewer.tweenControlCenter( new THREE.Vector3(camaraRot.x, 0, 0), 0 );
+
+// })
 
 function createWidget(){
     //Giroscopio

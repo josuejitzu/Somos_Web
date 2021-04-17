@@ -44,7 +44,9 @@ function setupPanolens () {
         {
              container: mainContainer,
              //  controlButtons: deteccionIphone() ? controlesIos:controles,
-             cameraFov:70
+             cameraFov:70,
+             initialLookAt:new THREE.Vector3(Math.PI/4,1,0.0)
+
         } 
     );
     viewer.add( panoramaLobby );
