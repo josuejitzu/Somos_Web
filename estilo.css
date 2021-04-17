@@ -43,12 +43,12 @@ body
     background-color:rgba(31, 34, 31, 0);
 
 }
-.panelLoadLogo
+/* .panelLoadLogo
 {
     content:url("../src/img/iconos/LOGO_LOADING_low.png");
-    /* content:url("src/"); */
+  
     width:300px;
-}
+} */
 
 /* .bloqueentrada{
     
@@ -215,9 +215,9 @@ body
 
 @media  (max-width:940px)
 {
-  .panelLoadLogo
+  /* .panelLoadLogo
   {
  
     width:300px;
-  }
+  } */
 }
