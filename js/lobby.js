@@ -1,5 +1,5 @@
-const panoramaLobbyA = new PANOLENS.ImagePanorama( 'src/img/360/posicion01_1.jpg' );
-const panoramaLobbyB = new PANOLENS.ImagePanorama( 'src/img/360/posicion02_1.jpg' );
+const panoramaLobbyA = new PANOLENS.ImagePanorama( 'src/img/360/posicion01_2.jpg' );
+const panoramaLobbyB = new PANOLENS.ImagePanorama( 'src/img/360/posicion02_2.jpg' );
 
 let viewer;
 
@@ -12,7 +12,6 @@ const botonCerrarTextoSomos = document.querySelector(".botonCerrarTextoSomos");
 const panelTextoSomos = document.querySelector(".panelSomos");
 panelTextoSomos.style.visibility = 'hidden';
 
-const gui = new dat.GUI();
 
 var infospotAuditorio;
 infospotAuditorio = new PANOLENS.Infospot(400,"src/img/simbolos/FLECHA.png?v=123456782");
@@ -105,33 +104,35 @@ infospotPosicionB.addEventListener('click',()=>{
 panoramaLobbyA.add(infospotPosicionB);
 
 //DEBUG GUI
-gui.add(infospotSomos.position,"x").min(-5000).max(5000).step(0.0001).name("Somos_x")
-gui.add(infospotSomos.position,"y").min(-5000).max(5000).step(0.0001).name("Somos_y")
-gui.add(infospotSomos.position,"z").min(-5000).max(5000).step(0.0001).name("Somos_z")
+// const gui = new dat.GUI();
 
-gui.add(infospotAuditorio.position,"x").min(-5000).max(5000).step(0.0001).name("Auditorio_x")
-gui.add(infospotAuditorio.position,"y").min(-5000).max(5000).step(0.0001).name("Auditorio_y")
-gui.add(infospotAuditorio.position,"z").min(-5000).max(5000).step(0.0001).name("Auditorio_z")
+// gui.add(infospotSomos.position,"x").min(-5000).max(5000).step(0.0001).name("Somos_x")
+// gui.add(infospotSomos.position,"y").min(-5000).max(5000).step(0.0001).name("Somos_y")
+// gui.add(infospotSomos.position,"z").min(-5000).max(5000).step(0.0001).name("Somos_z")
 
-gui.add(infospotPosicionA.position,"x").min(-5000).max(5000).step(0.0001).name("PosA_x")
-gui.add(infospotPosicionA.position,"y").min(-5000).max(5000).step(0.0001).name("PosA_y")
-gui.add(infospotPosicionA.position,"z").min(-5000).max(5000).step(0.0001).name("PosA_z")
+// gui.add(infospotAuditorio.position,"x").min(-5000).max(5000).step(0.0001).name("Auditorio_x")
+// gui.add(infospotAuditorio.position,"y").min(-5000).max(5000).step(0.0001).name("Auditorio_y")
+// gui.add(infospotAuditorio.position,"z").min(-5000).max(5000).step(0.0001).name("Auditorio_z")
 
-gui.add(infospotPosicionB.position,"x").min(-5000).max(5000).step(0.0001).name("PosB_x")
-gui.add(infospotPosicionB.position,"y").min(-5000).max(5000).step(0.0001).name("PosB_y")
-gui.add(infospotPosicionB.position,"z").min(-5000).max(5000).step(0.0001).name("PosB_z")
+// gui.add(infospotPosicionA.position,"x").min(-5000).max(5000).step(0.0001).name("PosA_x")
+// gui.add(infospotPosicionA.position,"y").min(-5000).max(5000).step(0.0001).name("PosA_y")
+// gui.add(infospotPosicionA.position,"z").min(-5000).max(5000).step(0.0001).name("PosA_z")
 
-gui.add(infospotNucleo1.position,"x").min(-5000).max(5000).step(0.0001).name("nucleo1_x")
-gui.add(infospotNucleo1.position,"y").min(-5000).max(5000).step(0.0001).name("nucleo1_y")
-gui.add(infospotNucleo1.position,"z").min(-5000).max(5000).step(0.0001).name("nucleo1_z")
+// gui.add(infospotPosicionB.position,"x").min(-5000).max(5000).step(0.0001).name("PosB_x")
+// gui.add(infospotPosicionB.position,"y").min(-5000).max(5000).step(0.0001).name("PosB_y")
+// gui.add(infospotPosicionB.position,"z").min(-5000).max(5000).step(0.0001).name("PosB_z")
 
-gui.add(infospotNucleo2.position,"x").min(-5000).max(5000).step(0.0001).name("nucleo2_x")
-gui.add(infospotNucleo2.position,"y").min(-5000).max(5000).step(0.0001).name("nucleo2_y")
-gui.add(infospotNucleo2.position,"z").min(-5000).max(5000).step(0.0001).name("nucleo2_z")
+// gui.add(infospotNucleo1.position,"x").min(-5000).max(5000).step(0.0001).name("nucleo1_x")
+// gui.add(infospotNucleo1.position,"y").min(-5000).max(5000).step(0.0001).name("nucleo1_y")
+// gui.add(infospotNucleo1.position,"z").min(-5000).max(5000).step(0.0001).name("nucleo1_z")
 
-gui.add(infospotNucleo3.position,"x").min(-5000).max(5000).step(0.0001).name("nucleo3_x")
-gui.add(infospotNucleo3.position,"y").min(-5000).max(5000).step(0.0001).name("nucleo3_y")
-gui.add(infospotNucleo3.position,"z").min(-5000).max(5000).step(0.0001).name("nucleo3_z")
+// gui.add(infospotNucleo2.position,"x").min(-5000).max(5000).step(0.0001).name("nucleo2_x")
+// gui.add(infospotNucleo2.position,"y").min(-5000).max(5000).step(0.0001).name("nucleo2_y")
+// gui.add(infospotNucleo2.position,"z").min(-5000).max(5000).step(0.0001).name("nucleo2_z")
+
+// gui.add(infospotNucleo3.position,"x").min(-5000).max(5000).step(0.0001).name("nucleo3_x")
+// gui.add(infospotNucleo3.position,"y").min(-5000).max(5000).step(0.0001).name("nucleo3_y")
+// gui.add(infospotNucleo3.position,"z").min(-5000).max(5000).step(0.0001).name("nucleo3_z")
 
 
 
@@ -183,7 +184,7 @@ function setupPanolens () {
         {
              container: mainContainer,
              //  controlButtons: deteccionIphone() ? controlesIos:controles,
-             cameraFov:90
+             cameraFov:70
         } 
     );
     viewer.add( panoramaLobbyA );

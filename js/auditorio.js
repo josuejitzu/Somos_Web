@@ -1,4 +1,4 @@
-const panoramaLobby = new PANOLENS.ImagePanorama( 'src/img/360/05_Ludoteca.jpg' );
+const panoramaLobby = new PANOLENS.ImagePanorama( 'src/img/360/auditorio_01_1.jpg' );
 
 let viewer;
 
@@ -8,28 +8,33 @@ const mainContainer = document.getElementById( 'main-container' );
 const progressBar = document.getElementById( 'progress-bar' );
 // const closeButton = panoramaContainer.querySelector( '.close' );
 
-var infospotAuditorio;
-infospotAuditorio = new PANOLENS.Infospot(600,"src/img/simbolos/VER_MAS.png");
-infospotAuditorio.position.set( 5000.00, -665.23, -3996.49 );
-infospotAuditorio.addHoverText( 'AUDITORIO' );
-infospotAuditorio.addEventListener('click',()=>{
-    console.log("spot Auditorio")
-    // panoramaLobby.dispose();
-    // viewer.remove(panoramaLobby);
-    // viewer.add(panoramaAuditorio);
+var infospotVideo;
+infospotVideo = new PANOLENS.Infospot(600,"src/img/simbolos/PLAY.png?v=123456781");
+infospotVideo.position.set( 5000.00, -576, -300 );
+// infospotVideo.addHoverText( 'AUDITORIO' );
+infospotVideo.addEventListener('click',()=>{
+    console.log("spot video")
+   
     
 })
-panoramaLobby.add(infospotAuditorio);
+panoramaLobby.add(infospotVideo);
 
-var infospotSomos = new PANOLENS.Infospot(6000,"src/img/simbolos/VER_MAS.png");
-infospotSomos.position.set( 5000.00, -565.23, 197.49 );
-infospotSomos.addHoverText( 'SOMOS' );
-infospotSomos.addEventListener('click',()=>{
-    console.log("spot somos")
+// var infospotSomos = new PANOLENS.Infospot(6000,"src/img/simbolos/VER_MAS.png");
+// infospotSomos.position.set( 5000.00, -565.23, 197.49 );
+// infospotSomos.addHoverText( 'SOMOS' );
+// infospotSomos.addEventListener('click',()=>{
+//     console.log("spot somos")
  
     
-})
-panoramaLobby.add(infospotSomos);
+// })
+// panoramaLobby.add(infospotSomos);
+
+//DEBUG UI
+
+const gui = new dat.GUI();
+gui.add(infospotVideo.position,"x").min(-5000).max(5000).step(0.0001).name("video_x")
+gui.add(infospotVideo.position,"y").min(-5000).max(5000).step(0.0001).name("video_y")
+gui.add(infospotVideo.position,"z").min(-5000).max(5000).step(0.0001).name("video_z")
 
 
 //Se construye viewer 360
@@ -39,7 +44,7 @@ function setupPanolens () {
         {
              container: mainContainer,
              //  controlButtons: deteccionIphone() ? controlesIos:controles,
-             cameraFov:90
+             cameraFov:70
         } 
     );
     viewer.add( panoramaLobby );
