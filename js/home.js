@@ -26,12 +26,12 @@ const sizes = {
 
 
 
-// Camera
+// Camera fov pc = 90 mobile = 120
 const camera = new THREE.PerspectiveCamera(90, sizes.width / sizes.height)
-camera.position.x = 0// -6.3
+camera.position.x = 0.05// -6.3
 camera.position.y = 30
 camera.position.z = 30
-camera.rotation.x = 0.2;
+camera.rotation.x = 0.4;
 //final -7,19,30
 camera.fov = 90
 scene.add(camera)
@@ -251,7 +251,7 @@ botonIniciar.addEventListener('click',()=>{
     
     gsap.to(camera.rotation,{duration:8,ease:"sine.in",x:0})
     let tl = gsap.timeline();
-    tl.to(camera.position,{duration:4,x:0,y:1.05,z:10.58 ,ease:"linear"})
+    tl.to(camera.position,{duration:4,x:0.05,y:1.05,z:10.58 ,ease:"linear"})
       .to(camera.position,{duration:4,y:1.05,z:4.52,ease:"linear"})
       .to(camera.position,{duration:2,x:5.7,z:2.835,ease:"linear"})
       .eventCallback('onComplete',() =>{

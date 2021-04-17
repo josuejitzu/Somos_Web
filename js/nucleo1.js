@@ -15,7 +15,7 @@ panelTextoSomos.style.visibility = 'hidden';
 var infospotVideos;
 infospotVideos = new PANOLENS.Infospot(600,"src/img/simbolos/VER_MAS.png?v=123456781");
 infospotVideos.position.set( 5000.00, -665.23, -3000 );
-infospotVideos.addHoverText( 'VIDEOS' );
+// infospotVideos.addHoverText( 'VIDEOS' );
 infospotVideos.addEventListener('click',()=>{
     console.log("spot Videos")
     
@@ -26,19 +26,15 @@ panoramaLobby.add(infospotVideos);
 var infospotSomos ;
 infospotSomos = new PANOLENS.Infospot(600,"src/img/simbolos/VER_MAS.png?v=123456782");
 infospotSomos.position.set( 0000, -565.23, -3000 );
-infospotSomos.addHoverText( 'SOMOS' );
+// infospotSomos.addHoverText( 'SOMOS' );
 infospotSomos.addEventListener('click',()=>{
     console.log("spot somos")
     panelTextoSomos.style.visibility = 'visible';
+    gsap.fromTo(panelTextoSomos,{opacity:0},{duration:0.5,opacity:1.0})
     viewer.disableControl();
     
 })
 panoramaLobby.add(infospotSomos);
-
-
-
-
-
 
 //Se construye viewer 360 FOV,panorama,etc
 function setupPanolens () {
@@ -93,7 +89,10 @@ init();
 
 botonCerrarTextoSomos.addEventListener('click',()=>{
     console.log("cerrando texto");
-    panelTextoSomos.style.visibility = "hidden";
-    viewer.enableControl(0);
+    gsap.fromTo(panelTextoSomos,{opacity:1},{duration:0.5,opacity:0}).eventCallback('onComplete',()=>{
+
+        panelTextoSomos.style.visibility = "hidden";
+        viewer.enableControl();
+    })
 
 })

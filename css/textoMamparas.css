@@ -1,0 +1,56 @@
+.panelSomos
+{
+  font-family: 'riccione-serialbold', Arial, sans-serif;
+  font-weight:normal;
+  font-style:normal;
+
+  position: absolute; 
+  /* width: 90%;  */
+  /* overflow-y: scroll; */
+  background-color:black; 
+  z-index:99;
+ 
+  padding: 40px;
+  text-align: justify;
+  color: white;
+  left:5%;
+  right:5%;
+  top:5%;
+  bottom:5%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap:nowrap;
+  justify-content:flex-start;
+  align-items:center;
+  visibility: hidden;
+  opacity: 0;
+  /* transition: opacity 1.0s; */
+  /* pointer-events:none; */
+}
+.panelSomosTexto
+{
+  overflow-y: scroll;
+  /* overflow:hidden; */
+  background-color: #da0c1300;
+  padding:40px;
+  width:90%;
+  font-family: 'riccione-serialregular', Arial, sans-serif;
+  font-weight:normal;
+  font-style:normal;
+  font-size: 18px;
+  line-height: 30px;
+  /* white-space: nowrap; */
+  word-spacing: 0px;
+
+
+}
+.panelSomosTexto h2{
+  font-family: 'riccione-serial-heavyregular';
+  font-size: 32px;
+
+}
+.panelSomosTexto::-webkit-scrollbar {
+  display: none;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}

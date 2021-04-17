@@ -1,5 +1,5 @@
 const panoramaLobby = new PANOLENS.ImagePanorama( 'src/img/360/05_Ludoteca.jpg' );
-const panoramaAuditorio = new PANOLENS.ImagePanorama( '../src/img/360/05_Ludoteca.jpg' );
+
 let viewer;
 
 const panoramaContainer = document.getElementById( 'panorama-container' );
