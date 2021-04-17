@@ -18,48 +18,30 @@ body
     outline: none;
 }
 
-.point
-{
-    position: absolute;
-    top: 5%;
-    left: 50%;
-    text-align: center;
-    opacity: 0;
-    transition: opacity 2s;
 
-}
-.point .text
+.logoInicio
 {
     position: absolute;
     top: 10px;
-    /* left: -120px; */
-    /* width: 200px; */
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    /* left: 50%; */
+    /* max-width: 300px; */
     padding: 20px;
     text-align: center;
-    background: #00000041;
-    border: 1px solid #ffffff00;
-    color: #ffffff;
-    line-height: 1.3em;
-    font-family: Helvetica, Arial, sans-serif;
-    font-weight: 100;
-    font-size: 14px;
-}
-.point .logoInicio
-{
-    position: absolute;
-    top: 10px;
-    left: -160px;
-    max-width: 300px;
-    padding: 20px;
-    text-align: center;
-    background: #00000000;
+    width: 100%;
     /* align-self: center; */
     color: #ffffff;
     line-height: 1.3em;
     font-family: Helvetica, Arial, sans-serif;
     font-weight: 100;
     font-size: 14px;
-    transition: opacity 0.5s;
+    /* transition: opacity 1.5s; */
+    opacity: 0;
+    background-color:rgba(31, 34, 31, 0);
+
 }
 .panelLoadLogo
 {
@@ -102,6 +84,49 @@ body
     transition: opacity 1.0s;
     overflow: hidden;
 
+}
+.logosinicio .div
+{
+    width:20%;
+}
+@media (max-width:540px)
+{
+    .logosinicio .div
+    {
+        width:20%;
+
+    }
+}
+@media (max-height:520px)
+{
+    .logoInicio
+    {
+        position: absolute;
+        top: 10px;
+        display:flex;
+        height:60%;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+        /* left: 50%; */
+        /* max-width: 300px; */
+        padding: 0px;
+        text-align: center;
+        width: 100%;
+        /* align-self: center; */
+        color: #ffffff;
+        line-height: 1.3em;
+        font-family: Helvetica, Arial, sans-serif;
+        font-weight: 100;
+        font-size: 14px;
+        transition: opacity 0.5s;
+        background-color:rgba(31, 34, 31, 0);
+    
+    }
+    .logosinicio img {
+        max-width:30px;
+    }
+    
 }
 .logosinicio img{
     /* min-width:50px; 
@@ -181,3 +206,17 @@ body
   .ldBar-label:before{
       content:"Loading "
   }
+  .panelLoadLogo
+  {
+    content:url("../src/img/iconos/LOGO_LOADING_low.png");
+    width:600px;
+  }
+
+@media  (max-width:940px)
+{
+  .panelLoadLogo
+  {
+ 
+    width:300px;
+  }
+}

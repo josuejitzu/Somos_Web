@@ -31,10 +31,10 @@ panoramaLobby.add(infospotVideo);
 
 //DEBUG UI
 
-const gui = new dat.GUI();
-gui.add(infospotVideo.position,"x").min(-5000).max(5000).step(0.0001).name("video_x")
-gui.add(infospotVideo.position,"y").min(-5000).max(5000).step(0.0001).name("video_y")
-gui.add(infospotVideo.position,"z").min(-5000).max(5000).step(0.0001).name("video_z")
+// const gui = new dat.GUI();
+// gui.add(infospotVideo.position,"x").min(-5000).max(5000).step(0.0001).name("video_x")
+// gui.add(infospotVideo.position,"y").min(-5000).max(5000).step(0.0001).name("video_y")
+// gui.add(infospotVideo.position,"z").min(-5000).max(5000).step(0.0001).name("video_z")
 
 
 //Se construye viewer 360

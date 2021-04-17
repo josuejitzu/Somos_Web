@@ -17,7 +17,7 @@ infospotVideos.position.set( 5000.00, -2000, -400 );
 // infospotVideos.addHoverText( 'VIDEOS' );
 infospotVideos.addEventListener('click',()=>{
     console.log("spot Videos")
-    abrirVideos(true);
+    // abrirVideos(true);
     
 })
 panoramaLobby.add(infospotVideos);
@@ -116,14 +116,32 @@ botonCerrarVideo.addEventListener("click",()=>{{
     abrirVideos(false);
 }})
 
-
+const panelVideos = document.querySelector(".panelVideos");
 function abrirVideos(abrir){
     if(abrir)
     {
-        document.querySelector(".panelVideos").style.visibility ="visible";
+        panelVideos.style.visibility ="visible";
+        
+        gsap.fromTo(panelVideos,{opacity:0},{duration:0.5,opacity:1}).eventCallback('onComplete',()=>{
+
+        
+            
+            viewer.disableControl();
+        })
+    
+
     }else if(!abrir)
     {
-        document.querySelector(".panelVideos").style.visibility ="hidden";
+        gsap.fromTo(panelVideos,{opacity:1},{duration:0.5,opacity:0}).eventCallback('onComplete',()=>{
+
+        
+            
+            // viewer.disableControl();
+            viewer.enableControl(0);
+            panelVideos.style.visibility ="hidden";
+
+        })
+
     }
 
 }

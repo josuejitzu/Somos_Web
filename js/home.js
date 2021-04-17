@@ -12,8 +12,8 @@ const botonIniciar = document.querySelector('.botonInicio');
 var controlesHabilitados = false;
 // Scene
 const scene = new THREE.Scene()
-const gui = new dat.GUI();
-gui.close ();
+// const gui = new dat.GUI();
+// gui.close ();
 
 // Object
 
@@ -33,15 +33,30 @@ camera.position.y = 30
 camera.position.z = 30
 camera.rotation.x = 0.4;
 //final -7,19,30
-camera.fov = 90
+// if(sizes.width < 540)
+// {
+//     camera.fov = 180
+
+//     console.log(sizes.width);
+// }else{
+
+//     camera.fov = 90
+    
+// }
+// camera.updateProjectionMatrix () 
 scene.add(camera)
 
-gui.add(camera.position,"x").min(-30).max(50).step(0.001)
-gui.add(camera.position,"y").min(-30).max(50).step(0.001)
-gui.add(camera.position,"z").min(-30).max(50).step(0.001)
-gui.add(camera.rotation,"x").min(-Math.PI).max(Math.PI).step(0.001).name("arriba/abajo")
-gui.add(camera.rotation,"y").min(-Math.PI).max(Math.PI).step(0.001).name("derecha")
-gui.add(camera.rotation,"z").min(-Math.PI).max(Math.PI).step(0.001).name("frontal")
+// gui.add(camera.position,"x").min(-30).max(50).step(0.001)
+// gui.add(camera.position,"y").min(-30).max(50).step(0.001)
+// gui.add(camera.position,"z").min(-30).max(50).step(0.001)
+// gui.add(camera.rotation,"x").min(-Math.PI).max(Math.PI).step(0.001).name("arriba/abajo")
+// gui.add(camera.rotation,"y").min(-Math.PI).max(Math.PI).step(0.001).name("derecha")
+// gui.add(camera.rotation,"z").min(-Math.PI).max(Math.PI).step(0.001).name("frontal")
+// gui.add(camera,"fov").min(25).max(180).step(0.001).name("fov").onFinishChange(()=>{
+
+//     camera.updateProjectionMatrix () 
+
+// })
 
 /**
  * Overlay
@@ -90,7 +105,7 @@ const loadingManager = new THREE.LoadingManager(
 
         gsap.to(overlayMaterial.uniforms.uAlpha, { duration: 3, value: 0 })
         // loadingBarElement.classList.add('ended')
-        gsap.to(document.querySelector(".point"), {delay:1,duration:1, opacity:1});
+        gsap.to(document.querySelector(".logoInicio"), {delay:1,duration:1.5, opacity:1});
 
     
     },
@@ -209,7 +224,15 @@ window.addEventListener('resize', () =>
  
      // Update camera
      camera.aspect = sizes.width / sizes.height
-     camera.updateProjectionMatrix()
+    //  if(sizes.width < 540)
+    //  {
+    //      camera.fov = 120
+    //      console.log(sizes.width);
+    //     }else{
+            
+    //         camera.fov = 90
+    //     }
+    camera.updateProjectionMatrix()
  
      // Update renderer
      renderer.setSize(sizes.width, sizes.height)
