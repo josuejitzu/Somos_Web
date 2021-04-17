@@ -107,7 +107,7 @@ const gltfLoader = new GLTFLoader(loadingManager)
 // const materialEdificio = new THREE.MeshStandardMaterial({color:'#ffffff'})
 let edificioModelo = null;
 gltfLoader.load(
-    './src/modelos3D/edificio_03.glb',
+    './src/modelos3D/edificio_04.glb',
     (gltf) =>
     {
         console.log('success')
