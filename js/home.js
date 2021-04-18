@@ -3,7 +3,7 @@ import * as THREE from "./three/build/three.module.js"
 import { OrbitControls } from './three/examples/jsm/controls/OrbitControls.js';
 import { GLTFLoader } from './three/examples/jsm/loaders/GLTFLoader.js'
 
-
+let flechaPresionada = false;
 // console.log(THREE);
 const loadingBarElement = document.querySelector('.loading-bar');
 const botonFlecha = document.querySelector('.botonFlecha');
@@ -235,7 +235,7 @@ window.addEventListener('resize', () =>
     camera.updateProjectionMatrix()
  
      // Update renderer
-     renderer.setSize(sizes.width, sizes.height)
+    renderer.setSize(sizes.width, sizes.height)
     renderer.setPixelRatio(Math.min(window.devicePixelRatio,2))
     console.log("RESIZE")
 })
@@ -244,7 +244,10 @@ window.addEventListener('resize', () =>
 // console.log(botonFlecha);
 botonFlecha.addEventListener('click',()=>{
 
-   
+   if(flechaPresionada)
+        return;
+
+    flechaPresionada = true;
     console.log('boton flecha presionado');
     gsap.to(camera.rotation,{duration:2,ease:"sine.out",x:-0.1})
 
@@ -253,7 +256,11 @@ botonFlecha.addEventListener('click',()=>{
         controlesHabilitados = true;
     })
     // gsap.to(camera.position,{duration:1,delay:0,z:30})
-     document.querySelector(".logoInicio").style.opacity = 0.0;
+    //  document.querySelector(".logoInicio").style.opacity = 0.0;
+    let logoInicio = document.querySelector(".logoInicio");
+    gsap.to(logoInicio,{duration:0.5,opacity:0}).eventCallback('onComplete',()=>{
+        logoInicio.style.visibility ="hidden";
+    });
      document.querySelector(".logosinicio").style.opacity = 1.0;
      document.querySelector(".botonInicio").style.opacity = 1.0;
 
