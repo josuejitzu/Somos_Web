@@ -17,7 +17,7 @@ infospotVideos.position.set( 5000.00, -2000, -400 );
 // infospotVideos.addHoverText( 'VIDEOS' );
 infospotVideos.addEventListener('click',()=>{
     console.log("spot Videos")
-    // abrirVideos(true);
+    abrirVideos(true);
     
 })
 panoramaLobby.add(infospotVideos);
