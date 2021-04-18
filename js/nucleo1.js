@@ -1,5 +1,7 @@
 const panoramaLobby = new PANOLENS.ImagePanorama( 'src/img/360/nucleo01_2.jpg' );
-
+panoramaLobby.addEventListener( 'enter-fade-start', function(){
+    viewer.tweenControlCenter(  new THREE.Vector3(5500.00, 0, -4000 ), 0 );
+  } );
 let viewer;
 const panoramaContainer = document.getElementById( 'panorama-container' );
 // const galleryContainer = document.getElementById( 'gallery-container' );
@@ -58,8 +60,8 @@ function setupPanolens () {
         {
              container: mainContainer,
              //  controlButtons: deteccionIphone() ? controlesIos:controles,
-             cameraFov:70,
-             initialLookAt:new THREE.Vector3(Math.PI*2,1,0.0)
+             cameraFov:70
+            //  initialLookAt:new THREE.Vector3(Math.PI*2,1,0.0)
 
         } 
     );
