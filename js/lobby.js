@@ -1,6 +1,11 @@
 const panoramaLobbyA = new PANOLENS.ImagePanorama( 'src/img/360/posicion01_2.jpg' );
+panoramaLobbyA.addEventListener( 'enter-fade-start', function(){
+    viewer.tweenControlCenter(  new THREE.Vector3(4083.8273, -450, -2635.9018), 0 );
+  } );
 const panoramaLobbyB = new PANOLENS.ImagePanorama( 'src/img/360/posicion02_2.jpg' );
-
+panoramaLobbyB.addEventListener( 'enter-fade-start', function(){
+    viewer.tweenControlCenter(  new THREE.Vector3(4000.00, -465.23, 100), 0 );
+  } );
 let viewer;
 
 const panoramaContainer = document.getElementById( 'panorama-container' );
@@ -29,7 +34,7 @@ infospotAuditorio.addEventListener('click',()=>{
     
 })
 panoramaLobbyB.add(infospotAuditorio);
-
+panoramaLobbyB.rotation.y = Math.PI*2;
 var infospotSomos ;
 infospotSomos = new PANOLENS.Infospot(400,"src/img/simbolos/VER_MAS.png?v=123456782");
 infospotSomos.position.set( -100, -765.23, -3000 );
@@ -43,6 +48,7 @@ infospotSomos.addEventListener('click',()=>{
     
 })
 panoramaLobbyA.add(infospotSomos);
+
 
 
 
@@ -104,7 +110,7 @@ infospotPosicionB.addEventListener('click',()=>{
 panoramaLobbyA.add(infospotPosicionB);
 
 //DEBUG GUI
-// const gui = new dat.GUI();
+const gui = new dat.GUI();
 
 // gui.add(infospotSomos.position,"x").min(-5000).max(5000).step(0.0001).name("Somos_x")
 // gui.add(infospotSomos.position,"y").min(-5000).max(5000).step(0.0001).name("Somos_y")
@@ -172,6 +178,7 @@ function cambioPosicion(pos)
         infospotNucleo2.position.set( 1100, -1010.1609, 4625.7409);
         infospotNucleo3.position.set( 2024.5555, -1118.5441, 1807.79);
          viewer.autoHideInfospot = false;
+        // viewer.initialLookAt = new THREE.Vector3(Math.PI*4,2,1)
 
     }
 }
@@ -186,8 +193,8 @@ function setupPanolens () {
         {
              container: mainContainer,
              //  controlButtons: deteccionIphone() ? controlesIos:controles,
-             cameraFov:70,
-             initialLookAt:new THREE.Vector3(Math.PI/4,1,0.0)
+             cameraFov:70
+            //  initialLookAt:new THREE.Vector3(Math.PI/4,1,0.0)
         } 
     );
     viewer.add( panoramaLobbyA );
@@ -195,16 +202,21 @@ function setupPanolens () {
     // viewer.setPanorama(panoramaLobbyB);
     // viewer.tweenControlCenter( new THREE.Vector3(camaraRot.x, 0, 0), 0 );
     // viewer.initialLookAt(new THREE.Vector3(0,1,0));
-     viewer.initialLookAt = new THREE.Vector3(0.5,0,0);
+    //  viewer.initialLookAt = new THREE.Vector3(0.5,0,0);
 
     viewer.OrbitControls.noZoom = true;
     viewer.autoHideInfospot = false;
 }
-// gui.add(camaraRot,"x").min(-1).max(1).step(0.001).name("nucleo3_z").onFinishChange(()=>{
-//      viewer.initialLookAt = new THREE.Vector3(camaraRot.x,0,0);
-//      // viewer.tweenControlCenter( new THREE.Vector3(camaraRot.x, 0, 0), 0 );
+gui.add(camaraRot,"x").min(-Math.PI).max(Math.PI).step(0.001).name("nucleo3_z").onFinishChange(()=>{
+    //  viewer.initialLookAt = new THREE.Vector3(camaraRot.x,0,0);
+    //  viewer.camera.rotation.x = camaraRot.x;
+    viewer.tweenControlCenter(  new THREE.Vector3(camaraRot.x, -950, -2635.9018), 0 );
 
-// })
+     viewer.update();
+    //  viewer.camera.updateProjectionMatrix();
+     // viewer.tweenControlCenter( new THREE.Vector3(camaraRot.x, 0, 0), 0 );
+
+})
 
 function createWidget(){
     //Giroscopio

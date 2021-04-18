@@ -1,4 +1,4 @@
-const panoramaLobby = new PANOLENS.ImagePanorama( 'src/img/360/nucleo01_1.jpg' );
+const panoramaLobby = new PANOLENS.ImagePanorama( 'src/img/360/nucleo01_2.jpg' );
 
 let viewer;
 const panoramaContainer = document.getElementById( 'panorama-container' );
@@ -48,20 +48,30 @@ panoramaLobby.add(infospotSomos);
 // gui.add(infospotVideos.position,"z").min(-5000).max(5000).step(0.0001).name("Videos_z")
 
 //Se construye viewer 360 FOV,panorama,etc
+
+const camaraRot={ 
+    x:0, y:0,z:0
+}
 function setupPanolens () {
     // viewer = new PANOLENS.ImagePanorama(panorama);
     viewer = new PANOLENS.Viewer( 
         {
              container: mainContainer,
              //  controlButtons: deteccionIphone() ? controlesIos:controles,
-             cameraFov:70
+             cameraFov:70,
+             initialLookAt:new THREE.Vector3(Math.PI*2,1,0.0)
+
         } 
     );
     viewer.add( panoramaLobby );
     viewer.OrbitControls.noZoom = true;
     viewer.autoHideInfospot = false;
 }
+// gui.add(camaraRot,"x").min(-1).max(1).step(0.001).name("nucleo3_z").onFinishChange(()=>{
+//      viewer.camera.rotation = new THREE.Vector3(camaraRot.x,0,0);
+//     //  viewer.tweenControlCenter( new THREE.Vector3(camaraRot.x, 0, 0), 0 );
 
+// })
 function createWidget(){
     //Giroscopio
     const widget = { 
