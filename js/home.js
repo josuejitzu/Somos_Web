@@ -10,9 +10,7 @@ const botonFlecha = document.querySelector('.botonFlecha');
 const botonIniciar = document.querySelector('.botonInicio');
 
 
-gsap.fromTo(botonFlecha, {autoAlpha: 0}, {autoAlpha: 1, duration: 2,repeat:-1,repeatDelay:0.5}).eventCallback('onRepeat',()=>{
-    // gsap.to(botonFlecha, {autoAlpha:0,duration:0.5})
-});
+gsap.fromTo(botonFlecha, {autoAlpha: 0}, {autoAlpha: 1, duration: 2,repeat:-1,repeatDelay:0.5})
 gsap.to(botonFlecha, {delay:2, duration: 0.5,repeat:-1, repeatDelay:2,autoAlpha:0});
 gsap.to(botonFlecha, {duration: 2,repeat:-1, repeatDelay:0.5,y:100});
 var controlesHabilitados = false;
@@ -271,6 +269,18 @@ botonFlecha.addEventListener('click',()=>{
      document.querySelector(".botonInicio").style.opacity = 1.0;
 
 })
+
+window.onscroll = function() {myFunction()};
+
+function myFunction() {
+  if (document.body.scrollTop > 150 || document.documentElement.scrollTop > 350) {
+    console.log("scroll")
+  }
+}
+
+
+
+
 
 //BOTON Inicio
 botonIniciar.addEventListener('click',()=>{

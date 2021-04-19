@@ -27,7 +27,7 @@ body
     flex-direction:column;
     justify-content:center;
     align-items:center;
-    left: -30px;
+    left: -23px;
     /* left: 50%; */
     /* max-width: 300px; */
     padding: 20px;
@@ -90,6 +90,11 @@ body
 .logosinicio .div
 {
     width:20%;
+}
+.botonFlecha
+{
+    max-width:100px;
+    
 }
 @media (max-width:540px)
 {
@@ -221,4 +226,9 @@ body
  
     width:300px;
   } */
+  .botonFlecha
+    {      
+        max-width: 50px;
+
+    }
 }
