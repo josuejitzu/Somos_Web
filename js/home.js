@@ -244,11 +244,26 @@ window.addEventListener('resize', () =>
     console.log("RESIZE")
 })
 
-
+const divLogoInicio = document.querySelector(".logoInicio");
+divLogoInicio.addEventListener('click',bajarCamara)
 // console.log(botonFlecha);
 botonFlecha.addEventListener('click',()=>{
 
-   if(flechaPresionada)
+   bajarCamara();
+
+})
+
+// window.onscroll = function() {myFunction()};
+
+// function myFunction() {
+//   if (document.body.scrollTop > 150 || document.documentElement.scrollTop > 350) {
+//     console.log("scroll")
+//   }
+// }
+
+function bajarCamara()
+{
+    if(flechaPresionada)
         return;
 
     flechaPresionada = true;
@@ -268,21 +283,13 @@ botonFlecha.addEventListener('click',()=>{
      document.querySelector(".logosinicio").style.opacity = 1.0;
      document.querySelector(".botonInicio").style.opacity = 1.0;
 
-})
-
-window.onscroll = function() {myFunction()};
-
-function myFunction() {
-  if (document.body.scrollTop > 150 || document.documentElement.scrollTop > 350) {
-    console.log("scroll")
-  }
 }
 
 
 
 
-
 //BOTON Inicio
+
 botonIniciar.addEventListener('click',()=>{
     console.log('boton inicio presionado')
     controlesHabilitados = false;
@@ -308,6 +315,7 @@ botonIniciar.addEventListener('click',()=>{
 
 
 })
+
 
 function cambiarALobby(){
     document.querySelector(".panelLoad").style.opacity = 1.0;
