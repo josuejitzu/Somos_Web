@@ -17,9 +17,9 @@ const botonCerrarTextoSomos = document.querySelector(".botonCerrarTextoSomos");
 const panelTextoSomos = document.querySelector(".panelSomos");
 panelTextoSomos.style.visibility = 'hidden';
 
-
+const infoSpotSize = 250;
 var infospotAuditorio;
-infospotAuditorio = new PANOLENS.Infospot(400,"src/img/simbolos/FLECHA.png?v=123456782");
+infospotAuditorio = new PANOLENS.Infospot(infoSpotSize,"src/img/simbolos/FLECHA.png?v=123456782");
 infospotAuditorio.position.set( 4000.00, -665.23, 100 );
 // infospotAuditorio.addHoverText( 'AUDITORIO' );
 infospotAuditorio.addEventListener('click',()=>{
@@ -36,8 +36,8 @@ infospotAuditorio.addEventListener('click',()=>{
 panoramaLobbyB.add(infospotAuditorio);
 panoramaLobbyB.rotation.y = Math.PI*2;
 var infospotSomos ;
-infospotSomos = new PANOLENS.Infospot(400,"src/img/simbolos/VER_MAS.png?v=123456782");
-infospotSomos.position.set( -100, -765.23, -3000 );
+infospotSomos = new PANOLENS.Infospot(infoSpotSize,"src/img/simbolos/VER_MAS.png?v=123456782");
+infospotSomos.position.set( -100, -1226.9262, -4478.4081 );
 
 // infospotSomos.addHoverText( 'SOMOS' );
 infospotSomos.addEventListener('click',()=>{
@@ -53,8 +53,8 @@ panoramaLobbyA.add(infospotSomos);
 
 
 //nucleo2 pos 2800, -1200, -2500
-var infospotNucleo1 = new PANOLENS.Infospot(400,"src/img/simbolos/VER_MAS.png?v=123456783");
-infospotNucleo1.position.set( 3975.4445, -1118.5436, 34.7162 );
+var infospotNucleo1 = new PANOLENS.Infospot(infoSpotSize,"src/img/simbolos/VER_MAS.png?v=123456783");
+infospotNucleo1.position.set( 3975.4445, -1118.5436, -50 );
 // infospotNucleo1.position.y = -850;
 // infospotNucleo1.addHoverText( 'Nucleo 1' );
 infospotNucleo1.addEventListener('click',()=>{
@@ -65,8 +65,8 @@ infospotNucleo1.addEventListener('click',()=>{
 panoramaLobbyA.add(infospotNucleo1);
 
 
-var infospotNucleo2 = new PANOLENS.Infospot(400,"src/img/simbolos/VER_MAS.png?v=123456784");
-infospotNucleo2.position.set(  4083.8273, -950, -2635.9018);
+var infospotNucleo2 = new PANOLENS.Infospot(infoSpotSize,"src/img/simbolos/VER_MAS.png?v=123456784");
+infospotNucleo2.position.set(  4083.8273, -950, -2527.5191);
 infospotNucleo2.addEventListener('click',()=>{
     console.log("spot nucleo 2")
     cambiarA("nucleo2");
@@ -75,8 +75,8 @@ infospotNucleo2.addEventListener('click',()=>{
 panoramaLobbyA.add(infospotNucleo2);
 
 
-var infospotNucleo3 = new PANOLENS.Infospot(400,"src/img/simbolos/VER_MAS.png?v=123456785");
-infospotNucleo3.position.set(  3867.0618, -793.3954, -4500);
+var infospotNucleo3 = new PANOLENS.Infospot(infoSpotSize,"src/img/simbolos/VER_MAS.png?v=123456785");
+infospotNucleo3.position.set(  3867.0618, -793.3954, -4370.0254);
 
 // infospotNucleo3.addHoverText( '' );
 infospotNucleo3.addEventListener('click',()=>{
@@ -87,7 +87,7 @@ infospotNucleo3.addEventListener('click',()=>{
 panoramaLobbyA.add(infospotNucleo3);
 
 
-var infospotPosicionA = new PANOLENS.Infospot(400,"src/img/simbolos/FLECHA.png?v=123456781");
+var infospotPosicionA = new PANOLENS.Infospot(infoSpotSize,"src/img/simbolos/FLECHA.png?v=123456781");
 infospotPosicionA.position.set( -1010.1609, -565.23, 3000 );
 // infospotPosicionA.addHoverText( 'Posicion A' );
 infospotPosicionA.addEventListener('click',()=>{
@@ -98,8 +98,8 @@ infospotPosicionA.addEventListener('click',()=>{
 })
 panoramaLobbyB.add(infospotPosicionA);
 
-var infospotPosicionB = new PANOLENS.Infospot(400,"src/img/simbolos/FLECHA.png?v=123456783");
-infospotPosicionB.position.set( 1000, -565.23, -3000 );
+var infospotPosicionB = new PANOLENS.Infospot(infoSpotSize,"src/img/simbolos/FLECHA.png?v=123456783");
+infospotPosicionB.position.set( 1265.8764, -565.23, -3828.1117 );
 // infospotPosicionB.addHoverText( 'Posicion B' );
 infospotPosicionB.addEventListener('click',()=>{
     console.log("posicionB")
@@ -128,17 +128,17 @@ const gui = new dat.GUI();
 // gui.add(infospotPosicionB.position,"y").min(-5000).max(5000).step(0.0001).name("PosB_y")
 // gui.add(infospotPosicionB.position,"z").min(-5000).max(5000).step(0.0001).name("PosB_z")
 
-// gui.add(infospotNucleo1.position,"x").min(-5000).max(5000).step(0.0001).name("nucleo1_x")
-// gui.add(infospotNucleo1.position,"y").min(-5000).max(5000).step(0.0001).name("nucleo1_y")
-// gui.add(infospotNucleo1.position,"z").min(-5000).max(5000).step(0.0001).name("nucleo1_z")
+gui.add(infospotNucleo1.position,"x").min(-5000).max(5000).step(0.0001).name("nucleo1_x")
+gui.add(infospotNucleo1.position,"y").min(-5000).max(5000).step(0.0001).name("nucleo1_y")
+gui.add(infospotNucleo1.position,"z").min(-5000).max(5000).step(0.0001).name("nucleo1_z")
 
-// gui.add(infospotNucleo2.position,"x").min(-5000).max(5000).step(0.0001).name("nucleo2_x")
-// gui.add(infospotNucleo2.position,"y").min(-5000).max(5000).step(0.0001).name("nucleo2_y")
-// gui.add(infospotNucleo2.position,"z").min(-5000).max(5000).step(0.0001).name("nucleo2_z")
+gui.add(infospotNucleo2.position,"x").min(-5000).max(5000).step(0.0001).name("nucleo2_x")
+gui.add(infospotNucleo2.position,"y").min(-5000).max(5000).step(0.0001).name("nucleo2_y")
+gui.add(infospotNucleo2.position,"z").min(-5000).max(5000).step(0.0001).name("nucleo2_z")
 
-// gui.add(infospotNucleo3.position,"x").min(-5000).max(5000).step(0.0001).name("nucleo3_x")
-// gui.add(infospotNucleo3.position,"y").min(-5000).max(5000).step(0.0001).name("nucleo3_y")
-// gui.add(infospotNucleo3.position,"z").min(-5000).max(5000).step(0.0001).name("nucleo3_z")
+gui.add(infospotNucleo3.position,"x").min(-5000).max(5000).step(0.0001).name("nucleo3_x")
+gui.add(infospotNucleo3.position,"y").min(-5000).max(5000).step(0.0001).name("nucleo3_y")
+gui.add(infospotNucleo3.position,"z").min(-5000).max(5000).step(0.0001).name("nucleo3_z")
 
 
 
@@ -154,9 +154,9 @@ function cambioPosicion(pos)
         panoramaLobbyA.add(infospotNucleo2); 
         panoramaLobbyA.add(infospotNucleo3); 
         infospotSomos.position.set( -100, -765.23, -3000 );
-        infospotNucleo1.position.set( 3975.4445, -1118.5436, 34.7162 );
-        infospotNucleo2.position.set(  4083.8273, -950, -2635.9018);
-        infospotNucleo3.position.set(  3867.0618, -793.3954, -4500);
+        infospotNucleo1.position.set(  3975.4445, -1118.5436, -50 );
+        infospotNucleo2.position.set(  4083.8273, -950, -2527.5191);
+        infospotNucleo3.position.set(  3867.0618, -793.3954, -4370.0254);
 
 
         viewer.autoHideInfospot = false;
