@@ -10,8 +10,11 @@ const botonFlecha = document.querySelector('.botonFlecha');
 const botonIniciar = document.querySelector('.botonInicio');
 
 
-gsap.fromTo(botonFlecha, {autoAlpha: 0}, {autoAlpha: 1, duration: 2,repeat:-1});
-gsap.to(botonFlecha, {duration: 2,repeat:-1,y:100});
+gsap.fromTo(botonFlecha, {autoAlpha: 0}, {autoAlpha: 1, duration: 2,repeat:-1,repeatDelay:0.5}).eventCallback('onRepeat',()=>{
+    // gsap.to(botonFlecha, {autoAlpha:0,duration:0.5})
+});
+gsap.to(botonFlecha, {delay:2, duration: 0.5,repeat:-1, repeatDelay:2,autoAlpha:0});
+gsap.to(botonFlecha, {duration: 2,repeat:-1, repeatDelay:0.5,y:100});
 var controlesHabilitados = false;
 // Scene
 const scene = new THREE.Scene()
