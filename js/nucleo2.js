@@ -1,4 +1,4 @@
-const panoramaLobby = new PANOLENS.ImagePanorama( 'src/img/360/nucleo01_3.jpg' );
+const panoramaLobby = new PANOLENS.ImagePanorama( 'src/img/360/nucleo02.jpg' );
 panoramaLobby.addEventListener( 'enter-fade-start', function(){
     viewer.tweenControlCenter(  new THREE.Vector3(5500.00, 0, -4000 ), 0 );
   } );
@@ -15,7 +15,7 @@ panelTextoSomos.style.visibility = 'hidden';
 var infoSpotSize = 400;
 var infospotVideos;
 infospotVideos = new PANOLENS.Infospot(infoSpotSize,"src/img/simbolos/VER_MAS.png?v=123456781");
-infospotVideos.position.set( 5000.00, -2000, -400 );
+infospotVideos.position.set( 5000.00, -500, -400 );
 // infospotVideos.addHoverText( 'VIDEOS' );
 infospotVideos.addEventListener('click',()=>{
     console.log("spot Videos")
@@ -26,7 +26,7 @@ panoramaLobby.add(infospotVideos);
 
 var infospotSomos ;
 infospotSomos = new PANOLENS.Infospot(infoSpotSize,"src/img/simbolos/VER_MAS.png?v=123456782");
-infospotSomos.position.set( 1900, -1660, -5000 );
+infospotSomos.position.set( 4083.8273, -2202.3709, 3000 );
 // infospotSomos.addHoverText( 'SOMOS' );
 infospotSomos.addEventListener('click',()=>{
     console.log("spot somos")
@@ -37,13 +37,13 @@ infospotSomos.addEventListener('click',()=>{
 })
 panoramaLobby.add(infospotSomos);
 
-gsap.to(infospotSomos.position,{delay:2,duration:1,y:10, repeat:-1}).eventCallback('onComplete',()=>{
-    infospotSomos.position.set( 1900, -1860, -5000)
-});
+// gsap.to(infospotSomos.position,{delay:2,duration:1,y:10, repeat:-1}).eventCallback('onComplete',()=>{
+//     infospotSomos.position.set( 1900, -1860, -5000)
+// });
 
 
 //DEBUG infospots
- const gui = new dat.GUI();
+//  const gui = new dat.GUI();
 
 // gui.add(infospotSomos.position,"x").min(-5000).max(5000).step(0.0001).name("Somos_x")
 // gui.add(infospotSomos.position,"y").min(-5000).max(5000).step(0.0001).name("Somos_y")
@@ -162,18 +162,3 @@ function abrirVideos(abrir){
     }
 
 }
-const materialEsfera = new THREE.MeshBasicMaterial({color: 0xff0000})
-const esfera = new THREE.Mesh( new THREE.SphereGeometry( 500, 32, 32),materialEsfera)
-esfera.position.z = 1000;
-esfera.scale.multiplyScalar(15);
-panoramaLobby.add(esfera);
-const geometry = new THREE.SphereGeometry( 5, 32, 32 );
-const material = new THREE.MeshBasicMaterial( {color: 0xffff00,wireframe:true} );
-const sphere = new THREE.Mesh( geometry, material );
-
-panoramaLobby.add(sphere);
-
-const directionalLight = new THREE.DirectionalLight(0xffffff, 0.3)
-panoramaLobby.add(directionalLight)
-
-gui.add(esfera.position,"x").min(-5000).max(5000).step(0.0001).name("esfera")

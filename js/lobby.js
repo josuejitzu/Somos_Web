@@ -1,8 +1,8 @@
-const panoramaLobbyA = new PANOLENS.ImagePanorama( 'src/img/360/posicion01_2.jpg' );
+const panoramaLobbyA = new PANOLENS.ImagePanorama( 'src/img/360/posicion01_3.jpg' );
 panoramaLobbyA.addEventListener( 'enter-fade-start', function(){
     viewer.tweenControlCenter(  new THREE.Vector3(4083.8273, -450, -2635.9018), 0 );
   } );
-const panoramaLobbyB = new PANOLENS.ImagePanorama( 'src/img/360/posicion02_2.jpg' );
+const panoramaLobbyB = new PANOLENS.ImagePanorama( 'src/img/360/posicion02_3.jpg' );
 panoramaLobbyB.addEventListener( 'enter-fade-start', function(){
     viewer.tweenControlCenter(  new THREE.Vector3(4000.00, -465.23, 100), 0 );
   } );
@@ -326,3 +326,94 @@ function cambiarA(dir){
             window.location.href = direccionFinal;
     }
 }
+
+// const materialEsfera = new THREE.MeshBasicMaterial({color: 0xff0000})//side:THREE.DoubleSide
+// const esferaGeometry =new THREE.SphereGeometry( 500, 32, 32);
+
+// const esferaN2 = new THREE.Mesh( esferaGeometry,materialEsfera)
+// esferaN2.position.z = 1000;
+// esferaN2.position.set(1900,0,-1335)
+// // esferaN2.scale.multiplyScalar(15);
+// panoramaLobbyA.add(esferaN2);
+
+// const esferaN1 = new THREE.Mesh( esferaGeometry,materialEsfera)
+// esferaN1.position.z = 1000;
+// esferaN1.position.set(2132.9383,0,-34.7163)
+// // esferaN2.scale.multiplyScalar(15);
+// panoramaLobbyA.add(esferaN1);
+
+// const esferaN3 = new THREE.Mesh( esferaGeometry,materialEsfera)
+// esferaN3.position.z = 1000;
+// esferaN3.position.set(2132.9383,0,-2635.9018)
+// // esferaN2.scale.multiplyScalar(15);
+// panoramaLobbyA.add(esferaN3);
+
+// const sombraEsfera = new THREE.MeshBasicMaterial({color:0x000000})//side:THREE.DoubleSide
+// const sombraGeometry =new THREE.PlaneGeometry(1,1,2);
+
+// const sombraPlanoN1 = new THREE.Mesh(sombraGeometry,sombraEsfera)
+// sombraPlanoN1.position.set(1900,-500,-13.97)
+// sombraPlanoN1.scale.set(500,500,1);
+// sombraPlanoN1.rotation.x = -Math.PI/2;
+// panoramaLobbyA.add(sombraPlanoN1);
+
+// const sombraPlanoN2 = new THREE.Mesh(sombraGeometry,sombraEsfera)
+// sombraPlanoN2.position.set(1900,-500,-1335)
+// sombraPlanoN2.scale.set(500,500,1);
+// sombraPlanoN2.rotation.x = -Math.PI/2;
+// panoramaLobbyA.add(sombraPlanoN2);
+
+// const sombraPlanoN3 = new THREE.Mesh(sombraGeometry,sombraEsfera)
+// sombraPlanoN3.position.set(1900,-500,-2501.78)
+// sombraPlanoN3.scale.set(500,500,1);
+// sombraPlanoN3.rotation.x = -Math.PI/2;
+// panoramaLobbyA.add(sombraPlanoN3);
+
+
+// // const geometry = new THREE.SphereBufferGeometry( 5, 32, 32 );
+// // const material = new THREE.MeshBasicMaterial( {color: 0xffff000, wireframe:true} );
+// // const sphere = new THREE.Mesh( geometry, material );
+
+// // panoramaLobby.add(sphere);
+
+// // const directionalLight = new THREE.DirectionalLight(0xffffff, 0.3)
+// // panoramaLobby.add(directionalLight)
+
+// gui.add(esferaN1.position,"x").min(-5000).max(5000).step(0.0001).name("esferaN1X")
+// gui.add(esferaN1.position,"y").min(-5000).max(5000).step(0.0001).name("esferaN1Y")
+// gui.add(esferaN1.position,"z").min(-5000).max(5000).step(0.0001).name("esferaN1Z")
+// gui.add(esferaN2.position,"x").min(-5000).max(5000).step(0.0001).name("esferaN2X")
+// gui.add(esferaN2.position,"y").min(-5000).max(5000).step(0.0001).name("esferaN2Y")
+// gui.add(esferaN2.position,"z").min(-5000).max(5000).step(0.0001).name("esferaN2Z")
+// gui.add(esferaN3.position,"x").min(-5000).max(5000).step(0.0001).name("esferaN3X")
+// gui.add(esferaN3.position,"y").min(-5000).max(5000).step(0.0001).name("esferaN3Y")
+// gui.add(esferaN3.position,"z").min(-5000).max(5000).step(0.0001).name("esferaN3Z")
+// // gui.add(sombraPlanoN2.rotation,"x").min(-Math.PI).max(Math.PI).step(0.0001).name("planoRX")
+// // gui.add(sombraPlanoN2.rotation,"y").min(-Math.PI).max(Math.PI).step(0.0001).name("planoRY")
+// // gui.add(sombraPlanoN2.rotation,"z").min(-Math.PI).max(Math.PI).step(0.0001).name("planoRZ")
+// // gui.add(sombraPlanoN2.position,"x").min(-500).max(500).step(0.01).name("positionPX")
+// // gui.add(sombraPlanoN2.position,"y").min(-500).max(500).step(0.01).name("positionPY")
+// // gui.add(sombraPlanoN2.position,"z").min(-500).max(500).step(0.01).name("positionPZ")
+// // gui.add(sombraPlanoN2.scale,"x").min(-50).max(500).step(0.01).name("positionSX")
+// // gui.add(sombraPlanoN2.scale,"y").min(-50).max(500).step(0.01).name("positionSY")
+// // gui.add(sombraPlanoN2.scale,"z").min(-50).max(500).step(0.01).name("positionSZ")
+// gui.add(sombraPlanoN1.position,"x").min(-500).max(3000).step(0.01).name("planoN1_PX")
+// gui.add(sombraPlanoN1.position,"y").min(-500).max(3000).step(0.01).name("planoN1_PY")
+// gui.add(sombraPlanoN1.position,"z").min(-500).max(3000).step(0.01).name("planoN1_PZ")
+// gui.add(sombraPlanoN3.position,"x").min(-5000).max(3000).step(0.01).name("planoN3_PX")
+// gui.add(sombraPlanoN3.position,"y").min(-5000).max(3000).step(0.01).name("planoN3_PY")
+// gui.add(sombraPlanoN3.position,"z").min(-5000).max(3000).step(0.01).name("planoN3_PZ")
+
+
+
+
+// gsap.to(esferaN1.scale,{duration:2,y:0.9,x:0.9,z:0.9,repeat:-1,yoyo:true,ease:"ease.sin"})
+// gsap.to(sombraPlanoN1.scale,{duration:2,y:400,x:400,repeat:-1,yoyo:true})
+
+// // gsap.to(esferaN2.position,{duration:2,y:50,repeat:-1,yoyo:true,ease:"ease.sin"})
+// gsap.to(esferaN2.scale,{duration:2,y:0.9,x:0.9,z:0.9,repeat:-1,yoyo:true,ease:"ease.sin"})
+// gsap.to(sombraPlanoN2.scale,{duration:2,y:400,x:400,repeat:-1,yoyo:true})
+
+
+// gsap.to(esferaN3.scale,{duration:2,y:0.9,x:0.9,z:0.9,repeat:-1,yoyo:true,ease:"ease.sin"})
+// gsap.to(sombraPlanoN3.scale,{duration:2,y:400,x:400,repeat:-1,yoyo:true})

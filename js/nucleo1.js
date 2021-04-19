@@ -1,4 +1,4 @@
-const panoramaLobby = new PANOLENS.ImagePanorama( 'src/img/360/nucleo01_3.jpg' );
+const panoramaLobby = new PANOLENS.ImagePanorama( 'src/img/360/nucleo01_4.jpg' );
 panoramaLobby.addEventListener( 'enter-fade-start', function(){
     viewer.tweenControlCenter(  new THREE.Vector3(5500.00, 0, -4000 ), 0 );
   } );
