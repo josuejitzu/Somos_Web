@@ -98,7 +98,7 @@ infospotPosicionA.addEventListener('click',()=>{
 })
 panoramaLobbyB.add(infospotPosicionA);
 
-var infospotPosicionB = new PANOLENS.Infospot(infoSpotSize,"src/img/simbolos/FLECHA.png?v=123456783");
+var infospotPosicionB = new PANOLENS.Infospot(infoSpotSize,"src/img/simbolos/FLECHA_der.png?v=123456783");
 infospotPosicionB.position.set( 1265.8764, -565.23, -3828.1117 );
 // infospotPosicionB.addHoverText( 'Posicion B' );
 infospotPosicionB.addEventListener('click',()=>{
@@ -193,7 +193,8 @@ function setupPanolens () {
         {
              container: mainContainer,
              //  controlButtons: deteccionIphone() ? controlesIos:controles,
-             cameraFov:70
+             cameraFov:70,
+             autoHideInfospot:false
             //  initialLookAt:new THREE.Vector3(Math.PI/4,1,0.0)
         } 
     );
@@ -207,6 +208,7 @@ function setupPanolens () {
     viewer.OrbitControls.noZoom = true;
     viewer.autoHideInfospot = false;
 }
+// viewer.disableControl(0);
 // gui.add(camaraRot,"x").min(-Math.PI).max(Math.PI).step(0.001).name("nucleo3_z").onFinishChange(()=>{
 //     //  viewer.initialLookAt = new THREE.Vector3(camaraRot.x,0,0);
 //     //  viewer.camera.rotation.x = camaraRot.x;
@@ -300,7 +302,7 @@ function cambiarA(dir){
     }
     else if(dir =="nucleo2")
     {
-        return;
+        direccionFinal = "nucleo2.html"
     }
     else if(dir =="nucleo3")
     {

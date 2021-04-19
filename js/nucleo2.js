@@ -37,9 +37,13 @@ infospotSomos.addEventListener('click',()=>{
 })
 panoramaLobby.add(infospotSomos);
 
+gsap.to(infospotSomos.position,{delay:2,duration:1,y:10, repeat:-1}).eventCallback('onComplete',()=>{
+    infospotSomos.position.set( 1900, -1860, -5000)
+});
+
 
 //DEBUG infospots
-// const gui = new dat.GUI();
+ const gui = new dat.GUI();
 
 // gui.add(infospotSomos.position,"x").min(-5000).max(5000).step(0.0001).name("Somos_x")
 // gui.add(infospotSomos.position,"y").min(-5000).max(5000).step(0.0001).name("Somos_y")
@@ -60,7 +64,7 @@ function setupPanolens () {
         {
              container: mainContainer,
              //  controlButtons: deteccionIphone() ? controlesIos:controles,
-             cameraFov:70, 
+             cameraFov:70,
              autoHideInfospot:false
             //  initialLookAt:new THREE.Vector3(Math.PI*2,1,0.0)
 
@@ -158,3 +162,18 @@ function abrirVideos(abrir){
     }
 
 }
+const materialEsfera = new THREE.MeshBasicMaterial({color: 0xff0000})
+const esfera = new THREE.Mesh( new THREE.SphereGeometry( 500, 32, 32),materialEsfera)
+esfera.position.z = 1000;
+esfera.scale.multiplyScalar(15);
+panoramaLobby.add(esfera);
+const geometry = new THREE.SphereGeometry( 5, 32, 32 );
+const material = new THREE.MeshBasicMaterial( {color: 0xffff00,wireframe:true} );
+const sphere = new THREE.Mesh( geometry, material );
+
+panoramaLobby.add(sphere);
+
+const directionalLight = new THREE.DirectionalLight(0xffffff, 0.3)
+panoramaLobby.add(directionalLight)
+
+gui.add(esfera.position,"x").min(-5000).max(5000).step(0.0001).name("esfera")
