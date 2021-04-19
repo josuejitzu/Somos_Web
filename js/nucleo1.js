@@ -12,9 +12,9 @@ const botonCerrarTextoSomos = document.querySelector(".botonCerrarTextoSomos");
 const panelTextoSomos = document.querySelector(".panelSomos");
 panelTextoSomos.style.visibility = 'hidden';
 
-
+var infoSpotSize = 400;
 var infospotVideos;
-infospotVideos = new PANOLENS.Infospot(600,"src/img/simbolos/VER_MAS.png?v=123456781");
+infospotVideos = new PANOLENS.Infospot(infoSpotSize,"src/img/simbolos/VER_MAS.png?v=123456781");
 infospotVideos.position.set( 5000.00, -2000, -400 );
 // infospotVideos.addHoverText( 'VIDEOS' );
 infospotVideos.addEventListener('click',()=>{
@@ -25,7 +25,7 @@ infospotVideos.addEventListener('click',()=>{
 panoramaLobby.add(infospotVideos);
 
 var infospotSomos ;
-infospotSomos = new PANOLENS.Infospot(600,"src/img/simbolos/VER_MAS.png?v=123456782");
+infospotSomos = new PANOLENS.Infospot(infoSpotSize,"src/img/simbolos/VER_MAS.png?v=123456782");
 infospotSomos.position.set( 1900, -1660, -5000 );
 // infospotSomos.addHoverText( 'SOMOS' );
 infospotSomos.addEventListener('click',()=>{
