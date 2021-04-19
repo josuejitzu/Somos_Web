@@ -110,7 +110,7 @@ infospotPosicionB.addEventListener('click',()=>{
 panoramaLobbyA.add(infospotPosicionB);
 
 //DEBUG GUI
-const gui = new dat.GUI();
+// const gui = new dat.GUI();
 
 // gui.add(infospotSomos.position,"x").min(-5000).max(5000).step(0.0001).name("Somos_x")
 // gui.add(infospotSomos.position,"y").min(-5000).max(5000).step(0.0001).name("Somos_y")
@@ -128,17 +128,17 @@ const gui = new dat.GUI();
 // gui.add(infospotPosicionB.position,"y").min(-5000).max(5000).step(0.0001).name("PosB_y")
 // gui.add(infospotPosicionB.position,"z").min(-5000).max(5000).step(0.0001).name("PosB_z")
 
-gui.add(infospotNucleo1.position,"x").min(-5000).max(5000).step(0.0001).name("nucleo1_x")
-gui.add(infospotNucleo1.position,"y").min(-5000).max(5000).step(0.0001).name("nucleo1_y")
-gui.add(infospotNucleo1.position,"z").min(-5000).max(5000).step(0.0001).name("nucleo1_z")
+// gui.add(infospotNucleo1.position,"x").min(-5000).max(5000).step(0.0001).name("nucleo1_x")
+// gui.add(infospotNucleo1.position,"y").min(-5000).max(5000).step(0.0001).name("nucleo1_y")
+// gui.add(infospotNucleo1.position,"z").min(-5000).max(5000).step(0.0001).name("nucleo1_z")
 
-gui.add(infospotNucleo2.position,"x").min(-5000).max(5000).step(0.0001).name("nucleo2_x")
-gui.add(infospotNucleo2.position,"y").min(-5000).max(5000).step(0.0001).name("nucleo2_y")
-gui.add(infospotNucleo2.position,"z").min(-5000).max(5000).step(0.0001).name("nucleo2_z")
+// gui.add(infospotNucleo2.position,"x").min(-5000).max(5000).step(0.0001).name("nucleo2_x")
+// gui.add(infospotNucleo2.position,"y").min(-5000).max(5000).step(0.0001).name("nucleo2_y")
+// gui.add(infospotNucleo2.position,"z").min(-5000).max(5000).step(0.0001).name("nucleo2_z")
 
-gui.add(infospotNucleo3.position,"x").min(-5000).max(5000).step(0.0001).name("nucleo3_x")
-gui.add(infospotNucleo3.position,"y").min(-5000).max(5000).step(0.0001).name("nucleo3_y")
-gui.add(infospotNucleo3.position,"z").min(-5000).max(5000).step(0.0001).name("nucleo3_z")
+// gui.add(infospotNucleo3.position,"x").min(-5000).max(5000).step(0.0001).name("nucleo3_x")
+// gui.add(infospotNucleo3.position,"y").min(-5000).max(5000).step(0.0001).name("nucleo3_y")
+// gui.add(infospotNucleo3.position,"z").min(-5000).max(5000).step(0.0001).name("nucleo3_z")
 
 
 
@@ -207,16 +207,16 @@ function setupPanolens () {
     viewer.OrbitControls.noZoom = true;
     viewer.autoHideInfospot = false;
 }
-gui.add(camaraRot,"x").min(-Math.PI).max(Math.PI).step(0.001).name("nucleo3_z").onFinishChange(()=>{
-    //  viewer.initialLookAt = new THREE.Vector3(camaraRot.x,0,0);
-    //  viewer.camera.rotation.x = camaraRot.x;
-    viewer.tweenControlCenter(  new THREE.Vector3(camaraRot.x, -950, -2635.9018), 0 );
+// gui.add(camaraRot,"x").min(-Math.PI).max(Math.PI).step(0.001).name("nucleo3_z").onFinishChange(()=>{
+//     //  viewer.initialLookAt = new THREE.Vector3(camaraRot.x,0,0);
+//     //  viewer.camera.rotation.x = camaraRot.x;
+//     viewer.tweenControlCenter(  new THREE.Vector3(camaraRot.x, -950, -2635.9018), 0 );
 
-     viewer.update();
-    //  viewer.camera.updateProjectionMatrix();
-     // viewer.tweenControlCenter( new THREE.Vector3(camaraRot.x, 0, 0), 0 );
+//      viewer.update();
+//     //  viewer.camera.updateProjectionMatrix();
+//      // viewer.tweenControlCenter( new THREE.Vector3(camaraRot.x, 0, 0), 0 );
 
-})
+// })
 
 function createWidget(){
     //Giroscopio

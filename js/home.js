@@ -9,6 +9,8 @@ const loadingBarElement = document.querySelector('.loading-bar');
 const botonFlecha = document.querySelector('.botonFlecha');
 const botonIniciar = document.querySelector('.botonInicio');
 
+gsap.to(botonIniciar,{duration:20,y:20})
+
 var controlesHabilitados = false;
 // Scene
 const scene = new THREE.Scene()
@@ -122,7 +124,7 @@ const gltfLoader = new GLTFLoader(loadingManager)
 // const materialEdificio = new THREE.MeshStandardMaterial({color:'#ffffff'})
 let edificioModelo = null;
 gltfLoader.load(
-    './src/modelos3D/edificio_04.glb',
+    './src/modelos3D/edificio_05.glb',
     (gltf) =>
     {
         console.log('success')
