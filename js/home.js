@@ -9,8 +9,9 @@ const loadingBarElement = document.querySelector('.loading-bar');
 const botonFlecha = document.querySelector('.botonFlecha');
 const botonIniciar = document.querySelector('.botonInicio');
 
-gsap.to(botonIniciar,{duration:20,y:20})
 
+gsap.fromTo(botonFlecha, {autoAlpha: 0}, {autoAlpha: 1, duration: 2,repeat:-1});
+gsap.to(botonFlecha, {duration: 2,repeat:-1,y:100});
 var controlesHabilitados = false;
 // Scene
 const scene = new THREE.Scene()
