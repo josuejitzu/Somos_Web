@@ -144,9 +144,9 @@ gui.add(infospotNucleo2.position,"x").min(-5000).max(5000).step(0.0001).name("nu
 gui.add(infospotNucleo2.position,"y").min(-5000).max(5000).step(0.0001).name("nucleo2_y")
 gui.add(infospotNucleo2.position,"z").min(-5000).max(5000).step(0.0001).name("nucleo2_z")
 
-// gui.add(infospotNucleo3.position,"x").min(-5000).max(5000).step(0.0001).name("nucleo3_x")
-// gui.add(infospotNucleo3.position,"y").min(-5000).max(5000).step(0.0001).name("nucleo3_y")
-// gui.add(infospotNucleo3.position,"z").min(-5000).max(5000).step(0.0001).name("nucleo3_z")
+gui.add(infospotNucleo3.position,"x").min(-5000).max(5000).step(0.0001).name("nucleo3_x")
+gui.add(infospotNucleo3.position,"y").min(-5000).max(5000).step(0.0001).name("nucleo3_y")
+gui.add(infospotNucleo3.position,"z").min(-5000).max(5000).step(0.0001).name("nucleo3_z")
 
 
 
@@ -166,10 +166,25 @@ function cambioPosicion(pos)
         infospotNucleo2.position.set(  4083.8273, -950, -2527.5191);
         infospotNucleo3.position.set(  3867.0618, -793.3954, -4370.0254);
 
+        panoramaLobbyA.add(grupoEsferaN1)
+        panoramaLobbyA.add(grupoEsferaN2)
+        panoramaLobbyA.add(grupoEsferaN3)
 
-        viewer.autoHideInfospot = false;
+        grupoEsferaN1.position.set(940.7282,34.7163,1265.8764) 
+        grupoEsferaN2.position.set(940.7282,0,-359.8645) 
+        grupoEsferaN3.position.set(940.7282,0,-1859.8645) 
+
+
+        panoramaLobbyA.add(sombraPlanoN1);
+        panoramaLobbyA.add(sombraPlanoN2);
+        panoramaLobbyA.add(sombraPlanoN3);
         
 
+        sombraPlanoN1.position.set(1900,-500,-13.97)
+        sombraPlanoN2.position.set(2006.94,-500,-1200.48)
+        sombraPlanoN3.position.set(2093.65,-500,-2328.37)
+        
+        viewer.autoHideInfospot = false;
 
 
     }else if(pos == "posB")
@@ -182,11 +197,28 @@ function cambioPosicion(pos)
         panoramaLobbyB.add(infospotNucleo2); 
         panoramaLobbyB.add(infospotNucleo3); 
         infospotSomos.position.set( -3069.4332, -1118.5436, 2349.7036 );
-        infospotNucleo1.position.set( 50, -750, 5000 );
-        infospotNucleo2.position.set( 1100, -1010.1609, 4625.7409);
-        infospotNucleo3.position.set( 2024.5555, -1118.5441, 1807.79);
+        infospotNucleo1.position.set( 2024.5555, -900, 5000 );
+        infospotNucleo2.position.set( 0, -1000.1609, 4625.7409);
+        infospotNucleo3.position.set( 2349.7036, -901.7782, 1482.6418);
+
+        panoramaLobbyB.add(grupoEsferaN1)
+        panoramaLobbyB.add(grupoEsferaN2)
+        panoramaLobbyB.add(grupoEsferaN3)
+        grupoEsferaN1.position.set(-359,-34.7163,5000) 
+        grupoEsferaN2.position.set(-1887,0,4192) 
+        grupoEsferaN3.position.set(-359.8645,0,2349.7036) 
+
+
+        panoramaLobbyB.add(sombraPlanoN1) 
+        panoramaLobbyB.add(sombraPlanoN2)
+        panoramaLobbyB.add(sombraPlanoN3)      
+
+        sombraPlanoN1.position.set(1226.59,-594.24,3000) 
+        sombraPlanoN2.position.set(12.7,-420,1746.82) 
+        sombraPlanoN3.position.set(1313.29,-594.23,793.07) 
+
          viewer.autoHideInfospot = false;
-        // viewer.initialLookAt = new THREE.Vector3(Math.PI*4,2,1)
+
 
     }
 }
@@ -369,7 +401,7 @@ imageT1.src = 'src/img/Esferas_Texturas/LAS_VOCES_DETRAS_DE_LA_SERIE_2.png'
     
 // })
 
-const materialTextoN1 = new THREE.MeshStandardMaterial({
+const materialTextoN1 = new THREE.MeshBasicMaterial({
     color: 0xffffff,
     map:textureT1,
     alphaMap:textureT1,
@@ -447,7 +479,7 @@ imageT2.addEventListener('load', () =>
 })
 imageT2.src = 'src/img/Esferas_Texturas/DE_LA REALIDAD_A_LA_FICCION.png'
 
-const materialTextoN2 = new THREE.MeshStandardMaterial({
+const materialTextoN2 = new THREE.MeshBasicMaterial({
     color: 0xffffff,
     map:textureT2,
     alphaMap:textureT2,
@@ -596,26 +628,29 @@ panoramaLobbyA.add(sombraPlanoN3);
 gui.add(grupoEsferaN1.position,"x").min(-5000).max(5000).step(0.0001).name("esferaN1X")
 gui.add(grupoEsferaN1.position,"y").min(-5000).max(5000).step(0.0001).name("esferaN1Y")
 gui.add(grupoEsferaN1.position,"z").min(-5000).max(5000).step(0.0001).name("esferaN1Z")
-gui.add(textoPlanoN1.position,"x").min(-5000).max(5000).step(0.0001).name("textoPlanoN2X")
-gui.add(textoPlanoN1.position,"y").min(-5000).max(5000).step(0.0001).name("textoPlanoN2Y")
-gui.add(textoPlanoN1.position,"z").min(-5000).max(5000).step(0.0001).name("textoPlanoN2Z")
+// gui.add(textoPlanoN1.position,"x").min(-5000).max(5000).step(0.0001).name("textoPlanoN2X")
+// gui.add(textoPlanoN1.position,"y").min(-5000).max(5000).step(0.0001).name("textoPlanoN2Y")
+// gui.add(textoPlanoN1.position,"z").min(-5000).max(5000).step(0.0001).name("textoPlanoN2Z")
 
-gui.add(grupoEsferaN2.position,"x").min(-5000).max(5000).step(0.0001).name("esferaN2X")
-gui.add(grupoEsferaN2.position,"y").min(-5000).max(5000).step(0.0001).name("esferaN2Y")
-gui.add(grupoEsferaN2.position,"z").min(-5000).max(5000).step(0.0001).name("esferaN2Z")
-gui.add(textoPlanoN2.position,"x").min(-5000).max(5000).step(0.0001).name("textoPlanoN2X")
-gui.add(textoPlanoN2.position,"y").min(-5000).max(5000).step(0.0001).name("textoPlanoN2Y")
-gui.add(textoPlanoN2.position,"z").min(-5000).max(5000).step(0.0001).name("textoPlanoN2Z")
-gui.add(textoPlanoN2.rotation,"x").min(-Math.PI).max(Math.PI).step(0.0001).name("textoPlanoN2X_rot")
-gui.add(textoPlanoN2.rotation,"y").min(-Math.PI).max(Math.PI).step(0.0001).name("textoPlanoN2Y_rot")
-gui.add(textoPlanoN2.rotation,"z").min(-Math.PI).max(Math.PI).step(0.0001).name("textoPlanoN2Z_rot")
+// gui.add(grupoEsferaN2.position,"x").min(-5000).max(5000).step(0.0001).name("esferaN2X")
+// gui.add(grupoEsferaN2.position,"y").min(-5000).max(5000).step(0.0001).name("esferaN2Y")
+// gui.add(grupoEsferaN2.position,"z").min(-5000).max(5000).step(0.0001).name("esferaN2Z")
+// gui.add(textoPlanoN2.position,"x").min(-5000).max(5000).step(0.0001).name("textoPlanoN2X")
+// gui.add(textoPlanoN2.position,"y").min(-5000).max(5000).step(0.0001).name("textoPlanoN2Y")
+// gui.add(textoPlanoN2.position,"z").min(-5000).max(5000).step(0.0001).name("textoPlanoN2Z")
+// gui.add(textoPlanoN2.rotation,"x").min(-Math.PI).max(Math.PI).step(0.0001).name("textoPlanoN2X_rot")
+// gui.add(textoPlanoN2.rotation,"y").min(-Math.PI).max(Math.PI).step(0.0001).name("textoPlanoN2Y_rot")
+// gui.add(textoPlanoN2.rotation,"z").min(-Math.PI).max(Math.PI).step(0.0001).name("textoPlanoN2Z_rot")
 
-gui.add(textoPlanoN3.rotation,"x").min(-Math.PI).max(Math.PI).step(0.0001).name("textoPlanoN3X_rot")
-gui.add(textoPlanoN3.rotation,"y").min(-Math.PI).max(Math.PI).step(0.0001).name("textoPlanoN3Y_rot")
-gui.add(textoPlanoN3.rotation,"z").min(-Math.PI).max(Math.PI).step(0.0001).name("textoPlanoN3Z_rot")
-gui.add(textoPlanoN3.position,"x").min(-5000).max(5000).step(0.0001).name("textoPlanoN3X_pos")
-gui.add(textoPlanoN3.position,"y").min(-5000).max(5000).step(0.0001).name("textoPlanoN3Y_pos")
-gui.add(textoPlanoN3.position,"z").min(-5000).max(5000).step(0.0001).name("textoPlanoN3Z_pos")
+// gui.add(grupoEsferaN3.position,"x").min(-5000).max(5000).step(0.0001).name("esferaN3X")
+// gui.add(grupoEsferaN3.position,"y").min(-5000).max(5000).step(0.0001).name("esferaN3Y")
+// gui.add(grupoEsferaN3.position,"z").min(-5000).max(5000).step(0.0001).name("esferaN3Z")
+// gui.add(textoPlanoN3.rotation,"x").min(-Math.PI).max(Math.PI).step(0.0001).name("textoPlanoN3X_rot")
+// gui.add(textoPlanoN3.rotation,"y").min(-Math.PI).max(Math.PI).step(0.0001).name("textoPlanoN3Y_rot")
+// gui.add(textoPlanoN3.rotation,"z").min(-Math.PI).max(Math.PI).step(0.0001).name("textoPlanoN3Z_rot")
+// gui.add(textoPlanoN3.position,"x").min(-5000).max(5000).step(0.0001).name("textoPlanoN3X_pos")
+// gui.add(textoPlanoN3.position,"y").min(-5000).max(5000).step(0.0001).name("textoPlanoN3Y_pos")
+// gui.add(textoPlanoN3.position,"z").min(-5000).max(5000).step(0.0001).name("textoPlanoN3Z_pos")
 // gui.add(esferaN3.position,"x").min(-5000).max(5000).step(0.0001).name("esferaN3X")
 // gui.add(esferaN3.position,"y").min(-5000).max(5000).step(0.0001).name("esferaN3Y")
 // gui.add(esferaN3.position,"z").min(-5000).max(5000).step(0.0001).name("esferaN3Z")
@@ -631,12 +666,12 @@ gui.add(textoPlanoN3.position,"z").min(-5000).max(5000).step(0.0001).name("texto
 gui.add(sombraPlanoN1.position,"x").min(-5000).max(3000).step(0.01).name("planoN1_PX")
 gui.add(sombraPlanoN1.position,"y").min(-5000).max(3000).step(0.01).name("planoN1_PY")
 gui.add(sombraPlanoN1.position,"z").min(-5000).max(3000).step(0.01).name("planoN1_PZ")
-gui.add(sombraPlanoN2.position,"x").min(-5000).max(3000).step(0.01).name("planoN2_PX")
-gui.add(sombraPlanoN2.position,"y").min(-5000).max(3000).step(0.01).name("planoN2_PY")
-gui.add(sombraPlanoN2.position,"z").min(-5000).max(3000).step(0.01).name("planoN2_PZ")
-gui.add(sombraPlanoN3.position,"x").min(-5000).max(3000).step(0.01).name("planoN3_PX")
-gui.add(sombraPlanoN3.position,"y").min(-5000).max(3000).step(0.01).name("planoN3_PY")
-gui.add(sombraPlanoN3.position,"z").min(-5000).max(3000).step(0.01).name("planoN3_PZ")
+// gui.add(sombraPlanoN2.position,"x").min(-5000).max(3000).step(0.01).name("planoN2_PX")
+// gui.add(sombraPlanoN2.position,"y").min(-5000).max(3000).step(0.01).name("planoN2_PY")
+// gui.add(sombraPlanoN2.position,"z").min(-5000).max(3000).step(0.01).name("planoN2_PZ")
+// gui.add(sombraPlanoN3.position,"x").min(-5000).max(3000).step(0.01).name("planoN3_PX")
+// gui.add(sombraPlanoN3.position,"y").min(-5000).max(3000).step(0.01).name("planoN3_PY")
+// gui.add(sombraPlanoN3.position,"z").min(-5000).max(3000).step(0.01).name("planoN3_PZ")
 
 
 
