@@ -1,3 +1,6 @@
+
+
+import { GLTFLoader } from './three/examples/jsm/loaders/GLTFLoader.js'
 const panoramaLobby = new PANOLENS.ImagePanorama( 'src/img/360/nucleo02.jpg' );
 panoramaLobby.addEventListener( 'enter-fade-start', function(){
     viewer.tweenControlCenter(  new THREE.Vector3(5000.00, -300, -400), 0 );
@@ -162,3 +165,46 @@ function abrirVideos(abrir){
     }
 
 }
+
+
+const sombraEsfera = new THREE.MeshBasicMaterial({color:0x000000})//side:THREE.DoubleSide
+const sombraGeometry =new THREE.PlaneGeometry(1,1,2);
+
+const sombraPlanoN1 = new THREE.Mesh(sombraGeometry,sombraEsfera)
+sombraPlanoN1.position.set(1900,-500,-13.97)
+sombraPlanoN1.scale.set(500,500,1);
+sombraPlanoN1.rotation.x = -Math.PI/2;
+panoramaLobby.add(sombraPlanoN1);
+
+
+const raycaster = new THREE.Raycaster();
+
+const rayOrigin = new THREE.Vector3(1900,-500,-13.97)
+const rayDirection = new THREE.Vector3(10, 0, 0)
+rayDirection.normalize()
+
+raycaster.set(rayOrigin, rayDirection)
+
+const intersect = raycaster.intersectObject(sombraPlanoN1)
+console.log(intersect)
+
+
+const sizes = { width:window.innerWidth,height:window.innerHeight}
+const mouse = new THREE.Vector2()
+
+window.addEventListener('mousemove', (event) =>
+{
+    mouse.x = event.clientX / sizes.width * 2 - 1
+    mouse.y = - (event.clientY / sizes.height) * 2 + 1
+
+    console.log(mouse)
+})
+//update
+const tick = ()=>{
+
+    window.requestAnimationFrame(tick)
+}
+
+tick();
+
+var seleccion

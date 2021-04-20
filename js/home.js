@@ -118,7 +118,7 @@ const loadingManager = new THREE.LoadingManager(
         const progressRatio = itemsLoaded / itemsTotal
         console.log(progressRatio)
         // loadingBarElement.style.transform = `scaleX(${progressRatio})`
-        bar1.set(progressRatio * 100)
+        // bar1.set(progressRatio * 100)
     
     }
 )
