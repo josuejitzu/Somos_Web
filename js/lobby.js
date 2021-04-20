@@ -3,12 +3,12 @@
 
 // import { GLTFLoader } from './three/examples/jsm/loaders/GLTFLoader.js'
 
-const panoramaLobbyA = new PANOLENS.ImagePanorama( 'src/img/360/posicion01_3_vacia.png' );
+const panoramaLobbyA = new PANOLENS.ImagePanorama( 'src/img/360/posicion01_3_vacio.jpg' );
 panoramaLobbyA.addEventListener( 'enter-fade-start', function(){
     viewer.tweenControlCenter(  new THREE.Vector3(4083.8273, -450, -2635.9018), 0 );
 
   } );
-const panoramaLobbyB = new PANOLENS.ImagePanorama( 'src/img/360/posicion02_3_vacia.png' );
+const panoramaLobbyB = new PANOLENS.ImagePanorama( 'src/img/360/posicion02_3_vacio.jpg' );
 panoramaLobbyB.addEventListener( 'enter-fade-start', function(){
     viewer.tweenControlCenter(  new THREE.Vector3(4000.00, -465.23, 100), 0 );
   } );
@@ -136,17 +136,17 @@ const gui = new dat.GUI();
 // gui.add(infospotPosicionB.position,"y").min(-5000).max(5000).step(0.0001).name("PosB_y")
 // gui.add(infospotPosicionB.position,"z").min(-5000).max(5000).step(0.0001).name("PosB_z")
 
-gui.add(infospotNucleo1.position,"x").min(-5000).max(5000).step(0.0001).name("nucleo1_x")
-gui.add(infospotNucleo1.position,"y").min(-5000).max(5000).step(0.0001).name("nucleo1_y")
-gui.add(infospotNucleo1.position,"z").min(-5000).max(5000).step(0.0001).name("nucleo1_z")
+// gui.add(infospotNucleo1.position,"x").min(-5000).max(5000).step(0.0001).name("nucleo1_x")
+// gui.add(infospotNucleo1.position,"y").min(-5000).max(5000).step(0.0001).name("nucleo1_y")
+// gui.add(infospotNucleo1.position,"z").min(-5000).max(5000).step(0.0001).name("nucleo1_z")
 
-gui.add(infospotNucleo2.position,"x").min(-5000).max(5000).step(0.0001).name("nucleo2_x")
-gui.add(infospotNucleo2.position,"y").min(-5000).max(5000).step(0.0001).name("nucleo2_y")
-gui.add(infospotNucleo2.position,"z").min(-5000).max(5000).step(0.0001).name("nucleo2_z")
+// gui.add(infospotNucleo2.position,"x").min(-5000).max(5000).step(0.0001).name("nucleo2_x")
+// gui.add(infospotNucleo2.position,"y").min(-5000).max(5000).step(0.0001).name("nucleo2_y")
+// gui.add(infospotNucleo2.position,"z").min(-5000).max(5000).step(0.0001).name("nucleo2_z")
 
-gui.add(infospotNucleo3.position,"x").min(-5000).max(5000).step(0.0001).name("nucleo3_x")
-gui.add(infospotNucleo3.position,"y").min(-5000).max(5000).step(0.0001).name("nucleo3_y")
-gui.add(infospotNucleo3.position,"z").min(-5000).max(5000).step(0.0001).name("nucleo3_z")
+// gui.add(infospotNucleo3.position,"x").min(-5000).max(5000).step(0.0001).name("nucleo3_x")
+// gui.add(infospotNucleo3.position,"y").min(-5000).max(5000).step(0.0001).name("nucleo3_y")
+// gui.add(infospotNucleo3.position,"z").min(-5000).max(5000).step(0.0001).name("nucleo3_z")
 
 
 
@@ -183,6 +183,16 @@ function cambioPosicion(pos)
         sombraPlanoN1.position.set(1900,-500,-13.97)
         sombraPlanoN2.position.set(2006.94,-500,-1200.48)
         sombraPlanoN3.position.set(2093.65,-500,-2328.37)
+
+        textoPlanoN1.rotation.y = -Math.PI/2;
+        textoPlanoN2.rotation.y = -0.9752//-Math.PI/2;
+        textoPlanoN3.rotation.y = -0.7666;
+
+        
+        textoPlanoN1.position.set(1591.0246,-34.7163,-1300)
+        textoPlanoN2.position.set(1591.0246,-34.7163,-1100)
+        textoPlanoN3.position.set(1591.0246,-34.7163,-950)
+
         
         viewer.autoHideInfospot = false;
 
@@ -219,7 +229,13 @@ function cambioPosicion(pos)
 
          viewer.autoHideInfospot = false;
 
+        textoPlanoN1.rotation.y = -2.75;
+        textoPlanoN2.rotation.y = -Math.PI;
+        textoPlanoN3.rotation.y = -2.132;
 
+        textoPlanoN1.position.set(1807.79,-34.7163,-1552.0745);
+        textoPlanoN2.position.set(1857.7899,-34.7163,-1552.0745);
+        textoPlanoN3.position.set(1531.0248,-34.7163,-1552.0745);
     }
 }
 
@@ -410,7 +426,7 @@ const materialTextoN1 = new THREE.MeshBasicMaterial({
     
 })
 // materialTextoN1.blendDst = THREE.OneMinusSrcAlphaFactor
-// materialTextoN1.depthWrite = false;
+materialTextoN1.depthWrite = false;
 
 
 const textoPlanoN1 = new THREE.Mesh(textoGeometry,materialTextoN1)
@@ -489,7 +505,7 @@ const materialTextoN2 = new THREE.MeshBasicMaterial({
 })
 materialTextoN2.blending = THREE.CustomBlending;
 // materialTextoN2.blendDst = THREE.MultiplyBlending;
-// materialTextoN2.depthWrite = false;
+materialTextoN2.depthWrite = false;
 
 
 const textoPlanoN2 = new THREE.Mesh(textoGeometry,materialTextoN2)
@@ -554,7 +570,7 @@ const materialTextoN3 = new THREE.MeshBasicMaterial({
     
 })
 // materialTextoN3.blendDst = THREE.OneMinusSrcAlphaFactor
-// materialTextoN3.depthWrite = false;
+materialTextoN3.depthWrite = false;
 
 
 const textoPlanoN3 = new THREE.Mesh(textoGeometry,materialTextoN3)
@@ -625,32 +641,35 @@ panoramaLobbyA.add(sombraPlanoN3);
 // // const directionalLight = new THREE.DirectionalLight(0xffffff, 0.3)
 // // panoramaLobby.add(directionalLight)
 
-gui.add(grupoEsferaN1.position,"x").min(-5000).max(5000).step(0.0001).name("esferaN1X")
-gui.add(grupoEsferaN1.position,"y").min(-5000).max(5000).step(0.0001).name("esferaN1Y")
-gui.add(grupoEsferaN1.position,"z").min(-5000).max(5000).step(0.0001).name("esferaN1Z")
-// gui.add(textoPlanoN1.position,"x").min(-5000).max(5000).step(0.0001).name("textoPlanoN2X")
-// gui.add(textoPlanoN1.position,"y").min(-5000).max(5000).step(0.0001).name("textoPlanoN2Y")
-// gui.add(textoPlanoN1.position,"z").min(-5000).max(5000).step(0.0001).name("textoPlanoN2Z")
+// gui.add(grupoEsferaN1.position,"x").min(-5000).max(5000).step(0.0001).name("esferaN1X")
+// gui.add(grupoEsferaN1.position,"y").min(-5000).max(5000).step(0.0001).name("esferaN1Y")
+// gui.add(grupoEsferaN1.position,"z").min(-5000).max(5000).step(0.0001).name("esferaN1Z")
+gui.add(textoPlanoN1.rotation,"x").min(-Math.PI).max(Math.PI).step(0.0001).name("textoPlanoN1X_rot")
+gui.add(textoPlanoN1.rotation,"y").min(-Math.PI).max(Math.PI).step(0.0001).name("textoPlanoN1Y_rot")
+gui.add(textoPlanoN1.rotation,"z").min(-Math.PI).max(Math.PI).step(0.0001).name("textoPlanoN1Z_rot")
+gui.add(textoPlanoN1.position,"x").min(-5000).max(5000).step(0.0001).name("textoPlanoN2X")
+gui.add(textoPlanoN1.position,"y").min(-5000).max(5000).step(0.0001).name("textoPlanoN2Y")
+gui.add(textoPlanoN1.position,"z").min(-5000).max(5000).step(0.0001).name("textoPlanoN2Z")
 
 // gui.add(grupoEsferaN2.position,"x").min(-5000).max(5000).step(0.0001).name("esferaN2X")
 // gui.add(grupoEsferaN2.position,"y").min(-5000).max(5000).step(0.0001).name("esferaN2Y")
 // gui.add(grupoEsferaN2.position,"z").min(-5000).max(5000).step(0.0001).name("esferaN2Z")
-// gui.add(textoPlanoN2.position,"x").min(-5000).max(5000).step(0.0001).name("textoPlanoN2X")
-// gui.add(textoPlanoN2.position,"y").min(-5000).max(5000).step(0.0001).name("textoPlanoN2Y")
-// gui.add(textoPlanoN2.position,"z").min(-5000).max(5000).step(0.0001).name("textoPlanoN2Z")
-// gui.add(textoPlanoN2.rotation,"x").min(-Math.PI).max(Math.PI).step(0.0001).name("textoPlanoN2X_rot")
-// gui.add(textoPlanoN2.rotation,"y").min(-Math.PI).max(Math.PI).step(0.0001).name("textoPlanoN2Y_rot")
-// gui.add(textoPlanoN2.rotation,"z").min(-Math.PI).max(Math.PI).step(0.0001).name("textoPlanoN2Z_rot")
+gui.add(textoPlanoN2.position,"x").min(-5000).max(5000).step(0.0001).name("textoPlanoN2X")
+gui.add(textoPlanoN2.position,"y").min(-5000).max(5000).step(0.0001).name("textoPlanoN2Y")
+gui.add(textoPlanoN2.position,"z").min(-5000).max(5000).step(0.0001).name("textoPlanoN2Z")
+gui.add(textoPlanoN2.rotation,"x").min(-Math.PI).max(Math.PI).step(0.0001).name("textoPlanoN2X_rot")
+gui.add(textoPlanoN2.rotation,"y").min(-Math.PI).max(Math.PI).step(0.0001).name("textoPlanoN2Y_rot")
+gui.add(textoPlanoN2.rotation,"z").min(-Math.PI).max(Math.PI).step(0.0001).name("textoPlanoN2Z_rot")
 
 // gui.add(grupoEsferaN3.position,"x").min(-5000).max(5000).step(0.0001).name("esferaN3X")
 // gui.add(grupoEsferaN3.position,"y").min(-5000).max(5000).step(0.0001).name("esferaN3Y")
 // gui.add(grupoEsferaN3.position,"z").min(-5000).max(5000).step(0.0001).name("esferaN3Z")
-// gui.add(textoPlanoN3.rotation,"x").min(-Math.PI).max(Math.PI).step(0.0001).name("textoPlanoN3X_rot")
-// gui.add(textoPlanoN3.rotation,"y").min(-Math.PI).max(Math.PI).step(0.0001).name("textoPlanoN3Y_rot")
-// gui.add(textoPlanoN3.rotation,"z").min(-Math.PI).max(Math.PI).step(0.0001).name("textoPlanoN3Z_rot")
-// gui.add(textoPlanoN3.position,"x").min(-5000).max(5000).step(0.0001).name("textoPlanoN3X_pos")
-// gui.add(textoPlanoN3.position,"y").min(-5000).max(5000).step(0.0001).name("textoPlanoN3Y_pos")
-// gui.add(textoPlanoN3.position,"z").min(-5000).max(5000).step(0.0001).name("textoPlanoN3Z_pos")
+gui.add(textoPlanoN3.rotation,"x").min(-Math.PI).max(Math.PI).step(0.0001).name("textoPlanoN3X_rot")
+gui.add(textoPlanoN3.rotation,"y").min(-Math.PI).max(Math.PI).step(0.0001).name("textoPlanoN3Y_rot")
+gui.add(textoPlanoN3.rotation,"z").min(-Math.PI).max(Math.PI).step(0.0001).name("textoPlanoN3Z_rot")
+gui.add(textoPlanoN3.position,"x").min(-5000).max(5000).step(0.0001).name("textoPlanoN3X_pos")
+gui.add(textoPlanoN3.position,"y").min(-5000).max(5000).step(0.0001).name("textoPlanoN3Y_pos")
+gui.add(textoPlanoN3.position,"z").min(-5000).max(5000).step(0.0001).name("textoPlanoN3Z_pos")
 // gui.add(esferaN3.position,"x").min(-5000).max(5000).step(0.0001).name("esferaN3X")
 // gui.add(esferaN3.position,"y").min(-5000).max(5000).step(0.0001).name("esferaN3Y")
 // gui.add(esferaN3.position,"z").min(-5000).max(5000).step(0.0001).name("esferaN3Z")
@@ -663,9 +682,9 @@ gui.add(grupoEsferaN1.position,"z").min(-5000).max(5000).step(0.0001).name("esfe
 // // gui.add(sombraPlanoN2.scale,"x").min(-50).max(500).step(0.01).name("positionSX")
 // // gui.add(sombraPlanoN2.scale,"y").min(-50).max(500).step(0.01).name("positionSY")
 // // gui.add(sombraPlanoN2.scale,"z").min(-50).max(500).step(0.01).name("positionSZ")
-gui.add(sombraPlanoN1.position,"x").min(-5000).max(3000).step(0.01).name("planoN1_PX")
-gui.add(sombraPlanoN1.position,"y").min(-5000).max(3000).step(0.01).name("planoN1_PY")
-gui.add(sombraPlanoN1.position,"z").min(-5000).max(3000).step(0.01).name("planoN1_PZ")
+// gui.add(sombraPlanoN1.position,"x").min(-5000).max(3000).step(0.01).name("planoN1_PX")
+// gui.add(sombraPlanoN1.position,"y").min(-5000).max(3000).step(0.01).name("planoN1_PY")
+// gui.add(sombraPlanoN1.position,"z").min(-5000).max(3000).step(0.01).name("planoN1_PZ")
 // gui.add(sombraPlanoN2.position,"x").min(-5000).max(3000).step(0.01).name("planoN2_PX")
 // gui.add(sombraPlanoN2.position,"y").min(-5000).max(3000).step(0.01).name("planoN2_PY")
 // gui.add(sombraPlanoN2.position,"z").min(-5000).max(3000).step(0.01).name("planoN2_PZ")

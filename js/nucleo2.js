@@ -1,10 +1,17 @@
 
 
 import { GLTFLoader } from './three/examples/jsm/loaders/GLTFLoader.js'
-const panoramaLobby = new PANOLENS.ImagePanorama( 'src/img/360/nucleo02.jpg' );
-panoramaLobby.addEventListener( 'enter-fade-start', function(){
+const panoramaN2 = new PANOLENS.ImagePanorama( 'src/img/360/nucleo02.jpg' );
+panoramaN2.addEventListener( 'enter-fade-start', function(){
     viewer.tweenControlCenter(  new THREE.Vector3(5000.00, -300, -400), 0 );
   } );
+
+
+const panoramaN2_B = new PANOLENS.ImagePanorama( 'src/img/360/nucleo02_closeup.jpg' );
+panoramaN2.addEventListener( 'enter-fade-start', function(){
+    viewer.tweenControlCenter(  new THREE.Vector3(5000.00, -300, -400), 0 );
+  } );
+
 let viewer;
 const panoramaContainer = document.getElementById( 'panorama-container' );
 // const galleryContainer = document.getElementById( 'gallery-container' );
@@ -16,16 +23,17 @@ const panelTextoSomos = document.querySelector(".panelSomos");
 panelTextoSomos.style.visibility = 'hidden';
 
 var infoSpotSize = 400;
-var infospotVideos;
-infospotVideos = new PANOLENS.Infospot(infoSpotSize,"src/img/simbolos/VER_MAS.png?v=123456781");
-infospotVideos.position.set( 5000.00, -500, -400 );
-// infospotVideos.addHoverText( 'VIDEOS' );
-infospotVideos.addEventListener('click',()=>{
+var infospotFotos;
+infospotFotos = new PANOLENS.Infospot(infoSpotSize,"src/img/simbolos/VER_MAS.png?v=123456781");
+infospotFotos.position.set( 5000.00, -500, -400 );
+// infospotFotos.addHoverText( 'VIDEOS' );
+infospotFotos.addEventListener('click',()=>{
     console.log("spot Videos")
-    abrirVideos(true);
+    // abrirVideos(true);
+    cambioPosicion("posicionB")
     
 })
-panoramaLobby.add(infospotVideos);
+panoramaN2.add(infospotFotos);
 
 var infospotSomos ;
 infospotSomos = new PANOLENS.Infospot(infoSpotSize,"src/img/simbolos/VER_MAS.png?v=123456782");
@@ -38,7 +46,7 @@ infospotSomos.addEventListener('click',()=>{
     viewer.disableControl();
     
 })
-panoramaLobby.add(infospotSomos);
+panoramaN2.add(infospotSomos);
 
 // gsap.to(infospotSomos.position,{delay:2,duration:1,y:10, repeat:-1}).eventCallback('onComplete',()=>{
 //     infospotSomos.position.set( 1900, -1860, -5000)
@@ -52,9 +60,9 @@ panoramaLobby.add(infospotSomos);
 // gui.add(infospotSomos.position,"y").min(-5000).max(5000).step(0.0001).name("Somos_y")
 // gui.add(infospotSomos.position,"z").min(-5000).max(5000).step(0.0001).name("Somos_z")
 
-// gui.add(infospotVideos.position,"x").min(-5000).max(5000).step(0.0001).name("Videos_x")
-// gui.add(infospotVideos.position,"y").min(-5000).max(5000).step(0.0001).name("Videos_y")
-// gui.add(infospotVideos.position,"z").min(-5000).max(5000).step(0.0001).name("Videos_z")
+// gui.add(infospotFotos.position,"x").min(-5000).max(5000).step(0.0001).name("Videos_x")
+// gui.add(infospotFotos.position,"y").min(-5000).max(5000).step(0.0001).name("Videos_y")
+// gui.add(infospotFotos.position,"z").min(-5000).max(5000).step(0.0001).name("Videos_z")
 
 //Se construye viewer 360 FOV,panorama,etc
 
@@ -73,7 +81,9 @@ function setupPanolens () {
 
         } 
     );
-    viewer.add( panoramaLobby );
+    viewer.add( panoramaN2 );
+    viewer.add(panoramaN2_B);
+    viewer.setPanorama(panoramaN2);
     viewer.OrbitControls.noZoom = true;
     viewer.autoHideInfospot = false;
 }
@@ -167,6 +177,24 @@ function abrirVideos(abrir){
 }
 
 
+function cambioPosicion(pos){
+    console.log("cambiandoPosicion");
+    if(pos == "posicionA"){
+
+        viewer.setPanorama(panoramaN2);
+
+    }else if(pos =="posicionB")
+    {
+         viewer.setPanorama(panoramaN2_B);
+
+    }
+
+}
+
+
+
+
+
 const sombraEsfera = new THREE.MeshBasicMaterial({color:0x000000})//side:THREE.DoubleSide
 const sombraGeometry =new THREE.PlaneGeometry(1,1,2);
 
@@ -174,7 +202,7 @@ const sombraPlanoN1 = new THREE.Mesh(sombraGeometry,sombraEsfera)
 sombraPlanoN1.position.set(1900,-500,-13.97)
 sombraPlanoN1.scale.set(500,500,1);
 sombraPlanoN1.rotation.x = -Math.PI/2;
-panoramaLobby.add(sombraPlanoN1);
+panoramaN2.add(sombraPlanoN1);
 
 
 const raycaster = new THREE.Raycaster();
@@ -192,13 +220,13 @@ console.log(intersect)
 const sizes = { width:window.innerWidth,height:window.innerHeight}
 const mouse = new THREE.Vector2()
 
-window.addEventListener('mousemove', (event) =>
-{
-    mouse.x = event.clientX / sizes.width * 2 - 1
-    mouse.y = - (event.clientY / sizes.height) * 2 + 1
+// window.addEventListener('mousemove', (event) =>
+// {
+//     mouse.x = event.clientX / sizes.width * 2 - 1
+//     mouse.y = - (event.clientY / sizes.height) * 2 + 1
 
-    console.log(mouse)
-})
+//     console.log(mouse)
+// })
 //update
 const tick = ()=>{
 
