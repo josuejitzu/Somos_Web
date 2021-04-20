@@ -336,7 +336,7 @@ imagenN1.addEventListener('load', () =>
 {
     texturaN1.needsUpdate = true
 })
-imagenN1.src = '../src/img/Esferas_Texturas/nucleo01_low.jpg'
+imagenN1.src = 'src/img/Esferas_Texturas/nucleo01_low.jpg'
 
 const materialEsferaN1 = new THREE.MeshBasicMaterial({
     color: 0xffffff,
@@ -358,7 +358,7 @@ imageT1.addEventListener('load', () =>
 {
     textureT1.needsUpdate = true
 })
-imageT1.src = '../src/img/Esferas_Texturas/LAS_VOCES_DETRAS_DE_LA_SERIE_2.png'
+imageT1.src = 'src/img/Esferas_Texturas/LAS_VOCES_DETRAS_DE_LA_SERIE_2.png'
 
 // const materialTextoN1 = new THREE.MeshBasicMaterial({
 //     color: 0xffffff,
@@ -387,7 +387,7 @@ textoPlanoN1.scale.set(500,500,1);
 textoPlanoN1.rotation.y = -Math.PI/2;
 
 
-const map = new THREE.TextureLoader().load( '../src/img/Esferas_Texturas/LAS_VOCES_DETRAS_DE_LA_SERIE_2.png' );
+const map = new THREE.TextureLoader().load( 'src/img/Esferas_Texturas/LAS_VOCES_DETRAS_DE_LA_SERIE_2.png' );
 const material = new THREE.SpriteMaterial( { map: map, color: 0xffffff } );
 
 // const sprite = new THREE.Sprite( material );
@@ -423,7 +423,7 @@ imageN2.addEventListener('load', () =>
 {
     texturaN2.needsUpdate = true
 })
-imageN2.src = '../src/img/Esferas_Texturas/nucleo02_low.jpg'
+imageN2.src = 'src/img/Esferas_Texturas/nucleo02_low.jpg'
 
 const materialEsferaN2 = new THREE.MeshBasicMaterial({
     color: 0xffffff,
@@ -445,7 +445,7 @@ imageT2.addEventListener('load', () =>
 {
     textureT2.needsUpdate = true
 })
-imageT2.src = '../src/img/Esferas_Texturas/DE_LA REALIDAD_A_LA_FICCION.png'
+imageT2.src = 'src/img/Esferas_Texturas/DE_LA REALIDAD_A_LA_FICCION.png'
 
 const materialTextoN2 = new THREE.MeshStandardMaterial({
     color: 0xffffff,
@@ -489,7 +489,7 @@ imageN3.addEventListener('load', () =>
 {
     texturaN3.needsUpdate = true
 })
-imageN3.src = '../src/img/Esferas_Texturas/RETRATOS_low.jpg'
+imageN3.src = 'src/img/Esferas_Texturas/RETRATOS_low.jpg'
 
 const materialEsferaN3 = new THREE.MeshBasicMaterial({
     color: 0xffffff,
@@ -511,7 +511,7 @@ imageT3.addEventListener('load', () =>
 {
     textureT3.needsUpdate = true
 })
-imageT3.src = '../src/img/Esferas_Texturas/EL_MUNDO_SOMOS.png'
+imageT3.src = 'src/img/Esferas_Texturas/EL_MUNDO_SOMOS.png'
 
 const materialTextoN3 = new THREE.MeshBasicMaterial({
     color: 0xffffff,
@@ -545,16 +545,29 @@ grupoEsferaN3.position.set(940.7282,0,-1859.8645)
 panoramaLobbyA.add(grupoEsferaN3);
 
 
+//SOMBRA TEXTURA
+const imageSombra = new Image()
+const textureSombra = new THREE.Texture(imageSombra)
+imageSombra.addEventListener('load', () =>
+{
+    textureSombra.needsUpdate = true
+})
+imageSombra.src = 'src/img/Esferas_Texturas/sombra_esferas.png'
 
 
-const sombraEsfera = new THREE.MeshBasicMaterial({color:0x000000})//side:THREE.DoubleSide
+const sombraEsferaMAT = new THREE.MeshBasicMaterial({
+    color:0xfffffff,
+    map:textureSombra,
+    side: THREE.DoubleSide, 
+    transparent: true 
+    })//side:THREE.DoubleSide
 const sombraGeometry =new THREE.PlaneGeometry(1,1,2);
 
-// const sombraPlanoN1 = new THREE.Mesh(sombraGeometry,sombraEsfera)
-// sombraPlanoN1.position.set(1900,-500,-13.97)
-// sombraPlanoN1.scale.set(500,500,1);
-// sombraPlanoN1.rotation.x = -Math.PI/2;
-// panoramaLobbyA.add(sombraPlanoN1);
+const sombraPlanoN1 = new THREE.Mesh(sombraGeometry,sombraEsferaMAT)
+sombraPlanoN1.position.set(1900,-500,-13.97)
+sombraPlanoN1.scale.set(500,500,1);
+sombraPlanoN1.rotation.x = -Math.PI/2;
+panoramaLobbyA.add(sombraPlanoN1);
 
 
 
@@ -609,9 +622,9 @@ gui.add(textoPlanoN3.position,"z").min(-5000).max(5000).step(0.0001).name("texto
 // // gui.add(sombraPlanoN2.scale,"x").min(-50).max(500).step(0.01).name("positionSX")
 // // gui.add(sombraPlanoN2.scale,"y").min(-50).max(500).step(0.01).name("positionSY")
 // // gui.add(sombraPlanoN2.scale,"z").min(-50).max(500).step(0.01).name("positionSZ")
-// gui.add(sombraPlanoN1.position,"x").min(-500).max(3000).step(0.01).name("planoN1_PX")
-// gui.add(sombraPlanoN1.position,"y").min(-500).max(3000).step(0.01).name("planoN1_PY")
-// gui.add(sombraPlanoN1.position,"z").min(-500).max(3000).step(0.01).name("planoN1_PZ")
+gui.add(sombraPlanoN1.position,"x").min(-500).max(3000).step(0.01).name("planoN1_PX")
+gui.add(sombraPlanoN1.position,"y").min(-500).max(3000).step(0.01).name("planoN1_PY")
+gui.add(sombraPlanoN1.position,"z").min(-500).max(3000).step(0.01).name("planoN1_PZ")
 // gui.add(sombraPlanoN3.position,"x").min(-5000).max(3000).step(0.01).name("planoN3_PX")
 // gui.add(sombraPlanoN3.position,"y").min(-5000).max(3000).step(0.01).name("planoN3_PY")
 // gui.add(sombraPlanoN3.position,"z").min(-5000).max(3000).step(0.01).name("planoN3_PZ")
