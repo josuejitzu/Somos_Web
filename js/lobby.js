@@ -358,7 +358,7 @@ imageT1.addEventListener('load', () =>
 {
     textureT1.needsUpdate = true
 })
-imageT1.src = '../src/img/Esferas_Texturas/LAS_VOCES_DETRAS_DE_LA_SERIE.png'
+imageT1.src = '../src/img/Esferas_Texturas/LAS_VOCES_DETRAS_DE_LA_SERIE_2.png'
 
 // const materialTextoN1 = new THREE.MeshBasicMaterial({
 //     color: 0xffffff,
@@ -387,7 +387,7 @@ textoPlanoN1.scale.set(500,500,1);
 textoPlanoN1.rotation.y = -Math.PI/2;
 
 
-const map = new THREE.TextureLoader().load( '../src/img/Esferas_Texturas/LAS_VOCES_DETRAS_DE_LA_SERIE.png' );
+const map = new THREE.TextureLoader().load( '../src/img/Esferas_Texturas/LAS_VOCES_DETRAS_DE_LA_SERIE_2.png' );
 const material = new THREE.SpriteMaterial( { map: map, color: 0xffffff } );
 
 // const sprite = new THREE.Sprite( material );
@@ -462,7 +462,7 @@ materialTextoN2.blending = THREE.CustomBlending;
 
 const textoPlanoN2 = new THREE.Mesh(textoGeometry,materialTextoN2)
 textoPlanoN2.position.set(1591.0246,-34.7163,-1100)
-textoPlanoN2.scale.set(600,500,1);
+textoPlanoN2.scale.set(600,400,1);
 textoPlanoN2.rotation.y = -0.9752//-Math.PI/2;
 // panoramaLobbyA.add(textoPlanoN2);
 
@@ -623,9 +623,9 @@ gsap.to(esferaN1.scale,{duration:5,y:0.9,x:0.9,z:0.9,repeat:-1,yoyo:true,ease:"e
 // gsap.to(sombraPlanoN1.scale,{duration:2,y:400,x:400,repeat:-1,yoyo:true})
 
 // gsap.to(esferaN2.position,{duration:2,y:50,repeat:-1,yoyo:true,ease:"ease.sin"})
-// gsap.to(esferaN2.scale,{duration:2,y:0.9,x:0.9,z:0.9,repeat:-1,yoyo:true,ease:"ease.sin"})
+gsap.to(esferaN2.scale,{duration:4,y:0.9,x:0.9,z:0.9,repeat:-1,yoyo:true,ease:"ease.sin"})
 // gsap.to(sombraPlanoN2.scale,{duration:2,y:400,x:400,repeat:-1,yoyo:true})
 
 
-// gsap.to(esferaN3.scale,{duration:2,y:0.9,x:0.9,z:0.9,repeat:-1,yoyo:true,ease:"ease.sin"})
+gsap.to(esferaN3.scale,{duration:6,y:0.9,x:0.9,z:0.9,repeat:-1,yoyo:true,ease:"ease.sin"})
 // gsap.to(sombraPlanoN3.scale,{duration:2,y:400,x:400,repeat:-1,yoyo:true})
