@@ -619,10 +619,10 @@ gui.add(textoPlanoN3.position,"z").min(-5000).max(5000).step(0.0001).name("texto
 
 
 
-// gsap.to(esferaN1.scale,{duration:2,y:0.9,x:0.9,z:0.9,repeat:-1,yoyo:true,ease:"ease.sin"})
+gsap.to(esferaN1.scale,{duration:5,y:0.9,x:0.9,z:0.9,repeat:-1,yoyo:true,ease:"ease.sin"})
 // gsap.to(sombraPlanoN1.scale,{duration:2,y:400,x:400,repeat:-1,yoyo:true})
 
-// // gsap.to(esferaN2.position,{duration:2,y:50,repeat:-1,yoyo:true,ease:"ease.sin"})
+// gsap.to(esferaN2.position,{duration:2,y:50,repeat:-1,yoyo:true,ease:"ease.sin"})
 // gsap.to(esferaN2.scale,{duration:2,y:0.9,x:0.9,z:0.9,repeat:-1,yoyo:true,ease:"ease.sin"})
 // gsap.to(sombraPlanoN2.scale,{duration:2,y:400,x:400,repeat:-1,yoyo:true})
 
