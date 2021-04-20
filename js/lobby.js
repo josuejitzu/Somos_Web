@@ -118,7 +118,7 @@ panoramaLobbyA.add(infospotPosicionB);
 
 
 //DEBUG GUI
-const gui = new dat.GUI();
+// const gui = new dat.GUI();
 
 // gui.add(infospotSomos.position,"x").min(-5000).max(5000).step(0.0001).name("Somos_x")
 // gui.add(infospotSomos.position,"y").min(-5000).max(5000).step(0.0001).name("Somos_y")
@@ -369,9 +369,9 @@ function cambiarA(dir){
 const pointlight = new THREE.PointLight( 0xFFFFFF, 1000.8 );
 pointlight.position.set( 1900,0,-1300 );
 panoramaLobbyA.add( pointlight );
-gui.add(pointlight.position,"x").min(-5000).max(5000).step(0.001).name("luz x");
-gui.add(pointlight.position,"y").min(-5000).max(5000).step(0.001).name("luz y");
-gui.add(pointlight.position,"z").min(-5000).max(5000).step(0.001).name("luz z");
+// gui.add(pointlight.position,"x").min(-5000).max(5000).step(0.001).name("luz x");
+// gui.add(pointlight.position,"y").min(-5000).max(5000).step(0.001).name("luz y");
+// gui.add(pointlight.position,"z").min(-5000).max(5000).step(0.001).name("luz z");
         // const directionalLight = new THREE.DirectionalLight(0xffffff, 2.3)
         // panoramaLobbyA.add(directionalLight)
 const textoGeometry =new THREE.PlaneGeometry(1.3,1,2);
@@ -644,32 +644,32 @@ panoramaLobbyA.add(sombraPlanoN3);
 // gui.add(grupoEsferaN1.position,"x").min(-5000).max(5000).step(0.0001).name("esferaN1X")
 // gui.add(grupoEsferaN1.position,"y").min(-5000).max(5000).step(0.0001).name("esferaN1Y")
 // gui.add(grupoEsferaN1.position,"z").min(-5000).max(5000).step(0.0001).name("esferaN1Z")
-gui.add(textoPlanoN1.rotation,"x").min(-Math.PI).max(Math.PI).step(0.0001).name("textoPlanoN1X_rot")
-gui.add(textoPlanoN1.rotation,"y").min(-Math.PI).max(Math.PI).step(0.0001).name("textoPlanoN1Y_rot")
-gui.add(textoPlanoN1.rotation,"z").min(-Math.PI).max(Math.PI).step(0.0001).name("textoPlanoN1Z_rot")
-gui.add(textoPlanoN1.position,"x").min(-5000).max(5000).step(0.0001).name("textoPlanoN2X")
-gui.add(textoPlanoN1.position,"y").min(-5000).max(5000).step(0.0001).name("textoPlanoN2Y")
-gui.add(textoPlanoN1.position,"z").min(-5000).max(5000).step(0.0001).name("textoPlanoN2Z")
+// gui.add(textoPlanoN1.rotation,"x").min(-Math.PI).max(Math.PI).step(0.0001).name("textoPlanoN1X_rot")
+// gui.add(textoPlanoN1.rotation,"y").min(-Math.PI).max(Math.PI).step(0.0001).name("textoPlanoN1Y_rot")
+// gui.add(textoPlanoN1.rotation,"z").min(-Math.PI).max(Math.PI).step(0.0001).name("textoPlanoN1Z_rot")
+// gui.add(textoPlanoN1.position,"x").min(-5000).max(5000).step(0.0001).name("textoPlanoN2X")
+// gui.add(textoPlanoN1.position,"y").min(-5000).max(5000).step(0.0001).name("textoPlanoN2Y")
+// gui.add(textoPlanoN1.position,"z").min(-5000).max(5000).step(0.0001).name("textoPlanoN2Z")
 
 // gui.add(grupoEsferaN2.position,"x").min(-5000).max(5000).step(0.0001).name("esferaN2X")
 // gui.add(grupoEsferaN2.position,"y").min(-5000).max(5000).step(0.0001).name("esferaN2Y")
 // gui.add(grupoEsferaN2.position,"z").min(-5000).max(5000).step(0.0001).name("esferaN2Z")
-gui.add(textoPlanoN2.position,"x").min(-5000).max(5000).step(0.0001).name("textoPlanoN2X")
-gui.add(textoPlanoN2.position,"y").min(-5000).max(5000).step(0.0001).name("textoPlanoN2Y")
-gui.add(textoPlanoN2.position,"z").min(-5000).max(5000).step(0.0001).name("textoPlanoN2Z")
-gui.add(textoPlanoN2.rotation,"x").min(-Math.PI).max(Math.PI).step(0.0001).name("textoPlanoN2X_rot")
-gui.add(textoPlanoN2.rotation,"y").min(-Math.PI).max(Math.PI).step(0.0001).name("textoPlanoN2Y_rot")
-gui.add(textoPlanoN2.rotation,"z").min(-Math.PI).max(Math.PI).step(0.0001).name("textoPlanoN2Z_rot")
+// gui.add(textoPlanoN2.position,"x").min(-5000).max(5000).step(0.0001).name("textoPlanoN2X")
+// gui.add(textoPlanoN2.position,"y").min(-5000).max(5000).step(0.0001).name("textoPlanoN2Y")
+// gui.add(textoPlanoN2.position,"z").min(-5000).max(5000).step(0.0001).name("textoPlanoN2Z")
+// gui.add(textoPlanoN2.rotation,"x").min(-Math.PI).max(Math.PI).step(0.0001).name("textoPlanoN2X_rot")
+// gui.add(textoPlanoN2.rotation,"y").min(-Math.PI).max(Math.PI).step(0.0001).name("textoPlanoN2Y_rot")
+// gui.add(textoPlanoN2.rotation,"z").min(-Math.PI).max(Math.PI).step(0.0001).name("textoPlanoN2Z_rot")
 
 // gui.add(grupoEsferaN3.position,"x").min(-5000).max(5000).step(0.0001).name("esferaN3X")
 // gui.add(grupoEsferaN3.position,"y").min(-5000).max(5000).step(0.0001).name("esferaN3Y")
 // gui.add(grupoEsferaN3.position,"z").min(-5000).max(5000).step(0.0001).name("esferaN3Z")
-gui.add(textoPlanoN3.rotation,"x").min(-Math.PI).max(Math.PI).step(0.0001).name("textoPlanoN3X_rot")
-gui.add(textoPlanoN3.rotation,"y").min(-Math.PI).max(Math.PI).step(0.0001).name("textoPlanoN3Y_rot")
-gui.add(textoPlanoN3.rotation,"z").min(-Math.PI).max(Math.PI).step(0.0001).name("textoPlanoN3Z_rot")
-gui.add(textoPlanoN3.position,"x").min(-5000).max(5000).step(0.0001).name("textoPlanoN3X_pos")
-gui.add(textoPlanoN3.position,"y").min(-5000).max(5000).step(0.0001).name("textoPlanoN3Y_pos")
-gui.add(textoPlanoN3.position,"z").min(-5000).max(5000).step(0.0001).name("textoPlanoN3Z_pos")
+// gui.add(textoPlanoN3.rotation,"x").min(-Math.PI).max(Math.PI).step(0.0001).name("textoPlanoN3X_rot")
+// gui.add(textoPlanoN3.rotation,"y").min(-Math.PI).max(Math.PI).step(0.0001).name("textoPlanoN3Y_rot")
+// gui.add(textoPlanoN3.rotation,"z").min(-Math.PI).max(Math.PI).step(0.0001).name("textoPlanoN3Z_rot")
+// gui.add(textoPlanoN3.position,"x").min(-5000).max(5000).step(0.0001).name("textoPlanoN3X_pos")
+// gui.add(textoPlanoN3.position,"y").min(-5000).max(5000).step(0.0001).name("textoPlanoN3Y_pos")
+// gui.add(textoPlanoN3.position,"z").min(-5000).max(5000).step(0.0001).name("textoPlanoN3Z_pos")
 // gui.add(esferaN3.position,"x").min(-5000).max(5000).step(0.0001).name("esferaN3X")
 // gui.add(esferaN3.position,"y").min(-5000).max(5000).step(0.0001).name("esferaN3Y")
 // gui.add(esferaN3.position,"z").min(-5000).max(5000).step(0.0001).name("esferaN3Z")
