@@ -537,7 +537,7 @@ imageN3.addEventListener('load', () =>
 {
     texturaN3.needsUpdate = true
 })
-imageN3.src = 'src/img/Esferas_Texturas/RETRATOS_low.jpg'
+imageN3.src = 'src/img/Esferas_Texturas/caras_auditorio01_00000.png'
 
 const materialEsferaN3 = new THREE.MeshBasicMaterial({
     color: 0xffffff,
