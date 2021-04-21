@@ -390,30 +390,30 @@ const cuadroPlano_23 = new THREE.Mesh(cuadroGeometry,cuadro_23_MAT); const cuadr
 const cuadroPlano_25 = new THREE.Mesh(cuadroGeometry,cuadro_25_MAT);
 
 //panoramaN2_B.add(cuadroPlano_1); 
-//panoramaN2_B.add(cuadroPlano_2); 
+panoramaN2_B.add(cuadroPlano_2); 
 //panoramaN2_B.add(cuadroPlano_3);
 panoramaN2_B.add(cuadroPlano_4);
-// panoramaN2_B.add(cuadroPlano_5); 
+panoramaN2_B.add(cuadroPlano_5); 
 panoramaN2_B.add(cuadroPlano_6); 
 panoramaN2_B.add(cuadroPlano_7);
 // panoramaN2_B.add(cuadroPlano_8);
 panoramaN2_B.add(cuadroPlano_9); 
 panoramaN2_B.add(cuadroPlano_10); 
 panoramaN2_B.add(cuadroPlano_11);
-// panoramaN2_B.add(cuadroPlano_12);
+panoramaN2_B.add(cuadroPlano_12);
 panoramaN2_B.add(cuadroPlano_13);
-// panoramaN2_B.add(cuadroPlano_14); 
+panoramaN2_B.add(cuadroPlano_14); 
 panoramaN2_B.add(cuadroPlano_15);
-// panoramaN2_B.add(cuadroPlano_16);
+panoramaN2_B.add(cuadroPlano_16);
 panoramaN2_B.add(cuadroPlano_17);//CENTRO
-// panoramaN2_B.add(cuadroPlano_18); 
-// panoramaN2_B.add(cuadroPlano_19);
+panoramaN2_B.add(cuadroPlano_18); 
+panoramaN2_B.add(cuadroPlano_19);
 panoramaN2_B.add(cuadroPlano_20);
 panoramaN2_B.add(cuadroPlano_21);
-// panoramaN2_B.add(cuadroPlano_22); 
+panoramaN2_B.add(cuadroPlano_22); 
 panoramaN2_B.add(cuadroPlano_23);
 panoramaN2_B.add(cuadroPlano_24);
-// panoramaN2_B.add(cuadroPlano_25);
+panoramaN2_B.add(cuadroPlano_25);
 
 let rotacionY = -1.575;
 cuadroPlano_1.rotation.y = rotacionY; cuadroPlano_2.rotation.y = rotacionY; cuadroPlano_3.rotation.y = rotacionY; cuadroPlano_4.rotation.y = rotacionY; 
@@ -429,8 +429,14 @@ let posicionX = 182
 cuadroPlano_1.position.set(posicionX,0,-34.7163)
 cuadroPlano_1.scale.set(50,34.04,1);
 
+cuadroPlano_2.position.set(posicionX,120,-70)
+cuadroPlano_2.scale.set(40.92, 61.62,1);
+
 cuadroPlano_4.position.set(posicionX,-1,74)
 cuadroPlano_4.scale.set(50,34.04,1);
+
+cuadroPlano_5.position.set(posicionX,125,-19.6895)
+cuadroPlano_5.scale.set(50,61.62,1);
 
 cuadroPlano_6.position.set(posicionX,50,60);
 cuadroPlano_6.scale.set(22.8,17.63,1);
@@ -450,21 +456,39 @@ cuadroPlano_10.scale.set(22.8,40.92,1);
 cuadroPlano_11.position.set(posicionX,88.9868,73.4616);
 cuadroPlano_11.scale.set(38.34,51.27,1)
 
+cuadroPlano_12.position.set(posicionX,70,-110);
+cuadroPlano_12.scale.set(42,27.98,1)
+
 cuadroPlano_13.position.set(posicionX,109.6871,26.8861);
-cuadroPlano_13.scale.set(38.34,22.8,1)
+cuadroPlano_13.scale.set(46.09,22.8,1)
+
+cuadroPlano_14.position.set(posicionX,0,-80);
+cuadroPlano_14.scale.set(59.03,38.33,1)
 
 cuadroPlano_15.position.set(posicionX,72,103);
 cuadroPlano_15.scale.set(12.45, 17.63, 1);
 
+cuadroPlano_16.position.set(posicionX, 165, 25);
+cuadroPlano_16.scale.set(30, 20.01, 1);
+
 cuadroPlano_17.position.set(posicionX,40,0);
 cuadroPlano_17.scale.set(90.08,48,1);
+
+cuadroPlano_18.position.set(posicionX,70,-66.2651);
+cuadroPlano_18.scale.set(27.98,26,1);
+
+cuadroPlano_19.position.set(posicionX,135,26.8861);
+cuadroPlano_19.scale.set(38.34,22.8,1);
 
 cuadroPlano_20.position.set(posicionX,78.6367,21.711);
 cuadroPlano_20.scale.set(33.15,22.81,1);
 
 cuadroPlano_21.position.set(posicionX,40,94.1619);
 cuadroPlano_21.scale.set(40.92,27.98,1);
-// cuadroPlano_17.rotation.
+
+cuadroPlano_22.position.set(posicionX,37.2363,-71.4401);
+cuadroPlano_22.scale.set(41,27.98,1);
+
 cuadroPlano_23.position.set(posicionX,-8,-15);
 cuadroPlano_23.scale.set(61.63,40.92,1);
 
@@ -475,14 +499,14 @@ cuadroPlano_25.position.set(posicionX,30,0);
 cuadroPlano_25.scale.set(50,38.25,1);
 
 // gui.add(cuadroPlano_24.position,"x").min(-5000).max(5000).step(0.0001).name("planoPos_X");
-gui.add(cuadroPlano_13.position,"y").min(-500).max(500).step(0.0001).name("planoPos_Y");
-gui.add(cuadroPlano_13.position,"z").min(-500).max(500).step(0.0001).name("planoPos_Z");
-gui.add(cuadroPlano_13.scale,"x").min(0).max(500).step(0.01).name("planoScala_X");
-gui.add(cuadroPlano_13.scale,"y").min(0).max(500).step(0.01).name("planoScala_Y");
+gui.add(cuadroPlano_12.position,"y").min(-500).max(500).step(0.0001).name("planoPos_Y");
+gui.add(cuadroPlano_12.position,"z").min(-500).max(500).step(0.0001).name("planoPos_Z");
+gui.add(cuadroPlano_12.scale,"x").min(0).max(500).step(0.01).name("planoScala_X");
+gui.add(cuadroPlano_12.scale,"y").min(0).max(500).step(0.01).name("planoScala_Y");
 // gui.add(cuadroPlano_24.scale,"z").min(0).max(50).step(0.01).name("planoScala_Z");
 // gui.add(cuadroPlano_17.rotation,"x").min(-Math.PI).max(Math.PI).step(0.0001).name("planoRotacion_X");
 // gui.add(cuadroPlano_17.rotation,"y").min(-Math.PI).max(Math.PI).step(0.0001).name("planoRotacion_Y");
-gui.add(cuadroPlano_13.rotation,"z").min(-Math.PI).max(Math.PI).step(0.0001).name("planoRotacion_Z");
+// gui.add(cuadroPlano_5.rotation,"z").min(-Math.PI).max(Math.PI).step(0.0001).name("planoRotacion_Z");
 
 
 
