@@ -83,7 +83,7 @@ function setupPanolens () {
     );
     viewer.add( panoramaN2 );
     viewer.add(panoramaN2_B);
-    viewer.setPanorama(panoramaN2);
+    viewer.setPanorama(panoramaN2_B);
     viewer.OrbitControls.noZoom = true;
     viewer.autoHideInfospot = false;
 }
@@ -192,33 +192,25 @@ function cambioPosicion(pos){
 }
 
 
+const gui = new dat.GUI({width:500});
 
 
 
-const sombraEsfera = new THREE.MeshBasicMaterial({color:0x000000})//side:THREE.DoubleSide
-const sombraGeometry =new THREE.PlaneGeometry(1,1,2);
 
-const sombraPlanoN1 = new THREE.Mesh(sombraGeometry,sombraEsfera)
-sombraPlanoN1.position.set(1900,-500,-13.97)
-sombraPlanoN1.scale.set(500,500,1);
-sombraPlanoN1.rotation.x = -Math.PI/2;
-panoramaN2.add(sombraPlanoN1);
+// const raycaster = new THREE.Raycaster();
 
+// const rayOrigin = new THREE.Vector3(1900,-500,-13.97)
+// const rayDirection = new THREE.Vector3(10, 0, 0)
+// rayDirection.normalize()
 
-const raycaster = new THREE.Raycaster();
+// raycaster.set(rayOrigin, rayDirection)
 
-const rayOrigin = new THREE.Vector3(1900,-500,-13.97)
-const rayDirection = new THREE.Vector3(10, 0, 0)
-rayDirection.normalize()
-
-raycaster.set(rayOrigin, rayDirection)
-
-const intersect = raycaster.intersectObject(sombraPlanoN1)
-console.log(intersect)
+// const intersect = raycaster.intersectObject(cuadroPlano_1)
+// console.log(intersect)
 
 
-const sizes = { width:window.innerWidth,height:window.innerHeight}
-const mouse = new THREE.Vector2()
+// const sizes = { width:window.innerWidth,height:window.innerHeight}
+// const mouse = new THREE.Vector2()
 
 // window.addEventListener('mousemove', (event) =>
 // {
@@ -236,3 +228,364 @@ const tick = ()=>{
 tick();
 
 var seleccion
+
+
+//Fotografias
+
+const rutaImgen = "src/img/somos_nucleo-2/somos_nucleo-2_"
+const galeriaRutaImagenes = [
+    [ "txt_00.jpg", "txt_00-bn.jpg"],
+    [ "txt_01.jpg", "txt_01-bn.jpg"],
+    [ "txt_02.jpg", "txt_02-bn.jpg"],
+    [ "txt_03.jpg", "txt_03-bn.jpg"],
+    [ "txt_04.jpg", "txt_04-bn.jpg"],
+    [ "txt_05.jpg", "txt_05-bn.jpg"],
+    [ "txt_06.jpg", "txt_06-bn.jpg"],
+    [ "txt_07.jpg", "txt_07-bn.jpg"],
+    [ "txt_08.jpg", "txt_08-bn.jpg"],
+    [ "txt_09.jpg", "txt_09-bn.jpg"],
+    [ "txt_10.jpg", "txt_10-bn.jpg"],
+    [ "txt_11.jpg", "txt_11-bn.jpg"],
+    [ "txt_12.jpg", "txt_12-bn.jpg"],
+    [ "txt_13.jpg", "txt_13-bn.jpg"],
+    [ "txt_14.jpg", "txt_14-bn.jpg"],
+    [ "txt_15.jpg", "txt_15-bn.jpg"],
+    [ "txt_16.jpg", "txt_16-bn.jpg"],
+    [ "txt_17.jpeg", "txt_17-bn.jpg"],
+    [ "txt_18.jpeg", "txt_18-bn.jpg"],
+    [ "txt_19.jpg", "txt_19-bn.jpg"],
+    [ "txt_20.jpeg", "txt_20-bn.jpg"],
+    [ "txt_21.jpeg", "txt_21-bn.jpg"],
+    [ "txt_22.jpeg", "txt_22-bn.jpg"],
+    [ "txt_23.jpg", "txt_23-bn.jpg"],
+    [ "txt_24.jpg", "txt_24-bn.jpg"],
+]
+
+
+const imagenColor1 = new Image();
+const imagenColor2 = new Image(), imagenColor3= new Image(), imagenColor4= new Image(), imagenColor5= new Image(), imagenColor6= new Image(),imagenColor7= new Image(), imagenColor8= new Image(), imagenColor9= new Image(), 
+      imagenColor10 = new Image(), imagenColor11 = new Image(), imagenColor12 = new Image(), imagenColor13 = new Image(), imagenColor14 = new Image(), imagenColor15 = new Image(), imagenColor16 = new Image(), imagenColor17 = new Image(), 
+      imagenColor18 = new Image(), imagenColor19 = new Image(),  imagenColor20 = new Image(), imagenColor21 = new Image(), imagenColor22 = new Image(), imagenColor23 = new Image(), imagenColor24 = new Image(), imagenColor25 = new Image()
+
+const texturaColor1 = new THREE.Texture(imagenColor1), texturaColor2 = new THREE.Texture(imagenColor2), texturaColor3 = new THREE.Texture(imagenColor3);
+const texturaColor4 = new THREE.Texture(imagenColor4), texturaColor5 = new THREE.Texture(imagenColor5), texturaColor6 = new THREE.Texture(imagenColor6);
+const texturaColor7 = new THREE.Texture(imagenColor7), texturaColor8 = new THREE.Texture(imagenColor8), texturaColor9 = new THREE.Texture(imagenColor9);
+const texturaColor10 =new THREE.Texture(imagenColor10), texturaColor11 = new THREE.Texture(imagenColor11), texturaColor12 = new THREE.Texture(imagenColor12);
+const texturaColor13 = new THREE.Texture(imagenColor13), texturaColor14 = new THREE.Texture(imagenColor14), texturaColor15 = new THREE.Texture(imagenColor15);
+const texturaColor16 = new THREE.Texture(imagenColor16), texturaColor17 = new THREE.Texture(imagenColor17), texturaColor18 = new THREE.Texture(imagenColor18);
+const texturaColor19 = new THREE.Texture(imagenColor19), texturaColor20 = new THREE.Texture(imagenColor20), texturaColor21 = new THREE.Texture(imagenColor21);
+const texturaColor22 = new THREE.Texture(imagenColor22), texturaColor23 = new THREE.Texture(imagenColor23), texturaColor24 = new THREE.Texture(imagenColor24);
+const texturaColor25 = new THREE.Texture(imagenColor25);
+
+imagenColor1.addEventListener('load', () =>{texturaColor1.needsUpdate = true}); imagenColor2.addEventListener('load', () =>{texturaColor2.needsUpdate = true});
+imagenColor3.addEventListener('load', () =>{texturaColor3.needsUpdate = true}); imagenColor4.addEventListener('load', () =>{texturaColor4.needsUpdate = true});
+imagenColor5.addEventListener('load', () =>{texturaColor5.needsUpdate = true}); imagenColor6.addEventListener('load', () =>{texturaColor6.needsUpdate = true});
+imagenColor7.addEventListener('load', () =>{texturaColor7.needsUpdate = true}); imagenColor8.addEventListener('load', () =>{texturaColor8.needsUpdate = true});
+imagenColor9.addEventListener('load', () =>{texturaColor9.needsUpdate = true}); imagenColor10.addEventListener('load', () =>{texturaColor10.needsUpdate = true});
+imagenColor11.addEventListener('load', () =>{texturaColor11.needsUpdate = true}); imagenColor12.addEventListener('load', () =>{texturaColor12.needsUpdate = true});
+imagenColor13.addEventListener('load', () =>{texturaColor13.needsUpdate = true}); imagenColor14.addEventListener('load', () =>{texturaColor14.needsUpdate = true});
+imagenColor15.addEventListener('load', () =>{texturaColor15.needsUpdate = true}); imagenColor16.addEventListener('load', () =>{texturaColor16.needsUpdate = true});
+imagenColor17.addEventListener('load', () =>{texturaColor17.needsUpdate = true}); imagenColor18.addEventListener('load', () =>{texturaColor18.needsUpdate = true});
+imagenColor19.addEventListener('load', () =>{texturaColor19.needsUpdate = true}); imagenColor20.addEventListener('load', () =>{texturaColor20.needsUpdate = true});
+imagenColor21.addEventListener('load', () =>{texturaColor21.needsUpdate = true}); imagenColor22.addEventListener('load', () =>{texturaColor22.needsUpdate = true});
+imagenColor23.addEventListener('load', () =>{texturaColor23.needsUpdate = true}); imagenColor24.addEventListener('load', () =>{texturaColor24.needsUpdate = true});
+imagenColor25.addEventListener('load', () =>{texturaColor25.needsUpdate = true});
+
+
+imagenColor1.src = rutaImgen+galeriaRutaImagenes[0][0]; imagenColor2.src = rutaImgen+galeriaRutaImagenes[1][0]; imagenColor3.src = rutaImgen+galeriaRutaImagenes[2][0]
+imagenColor4.src = rutaImgen+galeriaRutaImagenes[3][0]; imagenColor5.src = rutaImgen+galeriaRutaImagenes[4][0]; imagenColor6.src = rutaImgen+galeriaRutaImagenes[5][0]
+imagenColor7.src = rutaImgen+galeriaRutaImagenes[6][0]; imagenColor8.src = rutaImgen+galeriaRutaImagenes[7][0]; imagenColor9.src = rutaImgen+galeriaRutaImagenes[8][0]
+imagenColor10.src = rutaImgen+galeriaRutaImagenes[9][0]; imagenColor11.src = rutaImgen+galeriaRutaImagenes[10][0]; imagenColor12.src = rutaImgen+galeriaRutaImagenes[11][0]
+imagenColor13.src = rutaImgen+galeriaRutaImagenes[12][0]; imagenColor14.src = rutaImgen+galeriaRutaImagenes[13][0]; imagenColor15.src = rutaImgen+galeriaRutaImagenes[14][0]
+imagenColor16.src = rutaImgen+galeriaRutaImagenes[15][0]; imagenColor17.src = rutaImgen+galeriaRutaImagenes[16][0]; imagenColor18.src = rutaImgen+galeriaRutaImagenes[17][0]
+imagenColor19.src = rutaImgen+galeriaRutaImagenes[18][0]; imagenColor20.src = rutaImgen+galeriaRutaImagenes[19][0]; imagenColor21.src = rutaImgen+galeriaRutaImagenes[20][0]
+imagenColor22.src = rutaImgen+galeriaRutaImagenes[21][0]; imagenColor23.src = rutaImgen+galeriaRutaImagenes[22][0]; imagenColor24.src = rutaImgen+galeriaRutaImagenes[23][0]
+imagenColor24.src = rutaImgen+galeriaRutaImagenes[24][0]
+
+//IMAGENES BLANCO Y NEGRO
+
+    
+const imagenBN_1 = new Image(),
+imagenBN_2 = new Image(), imagenBN_3= new Image(), imagenBN_4= new Image(), imagenBN_5= new Image(), imagenBN_6= new Image(),imagenBN_7= new Image(), imagenBN_8= new Image(), imagenBN_9= new Image(), 
+imagenBN_10 = new Image(), imagenBN_11 = new Image(), imagenBN_12 = new Image(), imagenBN_13 = new Image(), imagenBN_14 = new Image(), imagenBN_15 = new Image(), imagenBN_16 = new Image(), imagenBN_17 = new Image(), 
+imagenBN_18 = new Image(), imagenBN_19 = new Image(),  imagenBN_20 = new Image(), imagenBN_21 = new Image(), imagenBN_22 = new Image(), imagenBN_23 = new Image(), imagenBN_24 = new Image(),imagenBN_25 = new Image()
+
+const texturaBN_1 = new THREE.Texture(imagenBN_1), texturaBN_2 = new THREE.Texture(imagenBN_2), texturaBN_3 = new THREE.Texture(imagenBN_3);
+const texturaBN_4 = new THREE.Texture(imagenBN_4), texturaBN_5 = new THREE.Texture(imagenBN_5), texturaBN_6 = new THREE.Texture(imagenBN_6);
+const texturaBN_7 = new THREE.Texture(imagenBN_7), texturaBN_8 = new THREE.Texture(imagenBN_8), texturaBN_9 = new THREE.Texture(imagenBN_9);
+const texturaBN_10 =new THREE.Texture(imagenBN_10), texturaBN_11 = new THREE.Texture(imagenBN_11), texturaBN_12 = new THREE.Texture(imagenBN_12);
+const texturaBN_13 = new THREE.Texture(imagenBN_13), texturaBN_14 = new THREE.Texture(imagenBN_14), texturaBN_15 = new THREE.Texture(imagenBN_15);
+const texturaBN_16 = new THREE.Texture(imagenBN_16), texturaBN_17 = new THREE.Texture(imagenBN_17), texturaBN_18 = new THREE.Texture(imagenBN_18);
+const texturaBN_19 = new THREE.Texture(imagenBN_19), texturaBN_20 = new THREE.Texture(imagenBN_20), texturaBN_21 = new THREE.Texture(imagenBN_21);
+const texturaBN_22 = new THREE.Texture(imagenBN_22), texturaBN_23 = new THREE.Texture(imagenBN_23), texturaBN_24 = new THREE.Texture(imagenBN_24);
+const texturaBN_25 = new THREE.Texture(imagenBN_25);
+
+
+imagenBN_1.addEventListener('load', () =>{texturaBN_1.needsUpdate = true}); imagenBN_2.addEventListener('load', () =>{texturaBN_2.needsUpdate = true});
+imagenBN_3.addEventListener('load', () =>{texturaBN_3.needsUpdate = true}); imagenBN_4.addEventListener('load', () =>{texturaBN_4.needsUpdate = true});
+imagenBN_5.addEventListener('load', () =>{texturaBN_5.needsUpdate = true}); imagenBN_6.addEventListener('load', () =>{texturaBN_6.needsUpdate = true});
+imagenBN_7.addEventListener('load', () =>{texturaBN_7.needsUpdate = true}); imagenBN_8.addEventListener('load', () =>{texturaBN_8.needsUpdate = true});
+imagenBN_9.addEventListener('load', () =>{texturaBN_9.needsUpdate = true}); imagenBN_10.addEventListener('load', () =>{texturaBN_10.needsUpdate = true});
+imagenBN_11.addEventListener('load', () =>{texturaBN_11.needsUpdate = true}); imagenBN_12.addEventListener('load', () =>{texturaBN_12.needsUpdate = true});
+imagenBN_13.addEventListener('load', () =>{texturaBN_13.needsUpdate = true}); imagenBN_14.addEventListener('load', () =>{texturaBN_14.needsUpdate = true});
+imagenBN_15.addEventListener('load', () =>{texturaBN_15.needsUpdate = true}); imagenBN_16.addEventListener('load', () =>{texturaBN_16.needsUpdate = true});
+imagenBN_17.addEventListener('load', () =>{texturaBN_17.needsUpdate = true}); imagenBN_18.addEventListener('load', () =>{texturaBN_18.needsUpdate = true});
+imagenBN_19.addEventListener('load', () =>{texturaBN_19.needsUpdate = true}); imagenBN_20.addEventListener('load', () =>{texturaBN_20.needsUpdate = true});
+imagenBN_21.addEventListener('load', () =>{texturaBN_21.needsUpdate = true}); imagenBN_22.addEventListener('load', () =>{texturaBN_22.needsUpdate = true});
+imagenBN_23.addEventListener('load', () =>{texturaBN_23.needsUpdate = true}); imagenBN_24.addEventListener('load', () =>{texturaBN_24.needsUpdate = true});
+imagenBN_25.addEventListener('load', () =>{texturaBN_25.needsUpdate = true});
+
+imagenBN_1.src = rutaImgen+galeriaRutaImagenes[0][1]
+imagenBN_1.src = rutaImgen+galeriaRutaImagenes[0][1]; imagenBN_2.src = rutaImgen+galeriaRutaImagenes[1][1]; imagenBN_3.src = rutaImgen+galeriaRutaImagenes[2][1]
+imagenBN_4.src = rutaImgen+galeriaRutaImagenes[3][1]; imagenBN_5.src = rutaImgen+galeriaRutaImagenes[4][1]; imagenBN_6.src = rutaImgen+galeriaRutaImagenes[5][1]
+imagenBN_7.src = rutaImgen+galeriaRutaImagenes[6][1]; imagenBN_8.src = rutaImgen+galeriaRutaImagenes[7][1]; imagenBN_9.src = rutaImgen+galeriaRutaImagenes[8][1]
+imagenBN_10.src = rutaImgen+galeriaRutaImagenes[9][1]; imagenBN_11.src = rutaImgen+galeriaRutaImagenes[10][1]; imagenBN_12.src = rutaImgen+galeriaRutaImagenes[11][1]
+imagenBN_13.src = rutaImgen+galeriaRutaImagenes[12][1]; imagenBN_14.src = rutaImgen+galeriaRutaImagenes[13][1]; imagenBN_15.src = rutaImgen+galeriaRutaImagenes[14][1]
+imagenBN_16.src = rutaImgen+galeriaRutaImagenes[15][1]; imagenBN_17.src = rutaImgen+galeriaRutaImagenes[16][1]; imagenBN_18.src = rutaImgen+galeriaRutaImagenes[17][1]
+imagenBN_19.src = rutaImgen+galeriaRutaImagenes[18][1]; imagenBN_20.src = rutaImgen+galeriaRutaImagenes[19][1]; imagenBN_21.src = rutaImgen+galeriaRutaImagenes[20][1]
+imagenBN_22.src = rutaImgen+galeriaRutaImagenes[21][1]; imagenBN_23.src = rutaImgen+galeriaRutaImagenes[22][1]; imagenBN_24.src = rutaImgen+galeriaRutaImagenes[23][1]
+imagenBN_24.src = rutaImgen+galeriaRutaImagenes[24][1]
+//CREACION CUADROS y Su MATERIAL
+
+const cuadroGeometry =new THREE.PlaneGeometry(1,1,2);//GEOMETRIA IGUAL
+
+const cuadro_1_MAT = new THREE.MeshBasicMaterial({color:0xfffffff,map:texturaColor1,side: THREE.Front, transparent: true,})//side:THREE.DoubleSide
+const cuadro_2_MAT = new THREE.MeshBasicMaterial({color:0xfffffff,map:texturaColor2,side: THREE.Front, transparent: true,})//side:THREE.DoubleSide
+const cuadro_3_MAT = new THREE.MeshBasicMaterial({color:0xfffffff,map:texturaColor3,side: THREE.Front, transparent: true,})//side:THREE.DoubleSide
+const cuadro_4_MAT = new THREE.MeshBasicMaterial({color:0xfffffff,map:texturaColor4,side: THREE.Front, transparent: true,})//side:THREE.DoubleSide
+const cuadro_5_MAT = new THREE.MeshBasicMaterial({color:0xfffffff,map:texturaColor5,side: THREE.Front, transparent: true,})//side:THREE.DoubleSide
+const cuadro_6_MAT = new THREE.MeshBasicMaterial({color:0xfffffff,map:texturaColor6,side: THREE.Front, transparent: true,})//side:THREE.DoubleSide
+const cuadro_7_MAT = new THREE.MeshBasicMaterial({color:0xfffffff,map:texturaColor7,side: THREE.Front, transparent: true,})//side:THREE.DoubleSide
+const cuadro_8_MAT = new THREE.MeshBasicMaterial({color:0xfffffff,map:texturaColor8,side: THREE.Front, transparent: true,})//side:THREE.DoubleSide
+const cuadro_9_MAT = new THREE.MeshBasicMaterial({color:0xfffffff,map:texturaColor9,side: THREE.Front, transparent: true,})//side:THREE.DoubleSide
+const cuadro_10_MAT = new THREE.MeshBasicMaterial({color:0xfffffff,map:texturaColor10,side: THREE.Front, transparent: true,})//side:THREE.DoubleSide
+const cuadro_11_MAT = new THREE.MeshBasicMaterial({color:0xfffffff,map:texturaColor11,side: THREE.Front, transparent: true,})//side:THREE.DoubleSide
+const cuadro_12_MAT = new THREE.MeshBasicMaterial({color:0xfffffff,map:texturaColor12,side: THREE.Front, transparent: true,})//side:THREE.DoubleSide
+const cuadro_13_MAT = new THREE.MeshBasicMaterial({color:0xfffffff,map:texturaColor13,side: THREE.Front, transparent: true,})//side:THREE.DoubleSide
+const cuadro_14_MAT = new THREE.MeshBasicMaterial({color:0xfffffff,map:texturaColor14,side: THREE.Front, transparent: true,})//side:THREE.DoubleSide
+const cuadro_15_MAT = new THREE.MeshBasicMaterial({color:0xfffffff,map:texturaColor15,side: THREE.Front, transparent: true,})//side:THREE.DoubleSide
+const cuadro_16_MAT = new THREE.MeshBasicMaterial({color:0xfffffff,map:texturaColor16,side: THREE.Front, transparent: true,})//side:THREE.DoubleSide
+const cuadro_17_MAT = new THREE.MeshBasicMaterial({color:0xfffffff,map:texturaColor17,side: THREE.Front, transparent: true,})//side:THREE.DoubleSide
+const cuadro_18_MAT = new THREE.MeshBasicMaterial({color:0xfffffff,map:texturaColor18,side: THREE.Front, transparent: true,})//side:THREE.DoubleSide
+const cuadro_19_MAT = new THREE.MeshBasicMaterial({color:0xfffffff,map:texturaColor19,side: THREE.Front, transparent: true,})//side:THREE.DoubleSide
+const cuadro_20_MAT = new THREE.MeshBasicMaterial({color:0xfffffff,map:texturaColor20,side: THREE.Front, transparent: true,})//side:THREE.DoubleSide
+const cuadro_21_MAT = new THREE.MeshBasicMaterial({color:0xfffffff,map:texturaColor21,side: THREE.Front, transparent: true,})//side:THREE.DoubleSide
+const cuadro_22_MAT = new THREE.MeshBasicMaterial({color:0xfffffff,map:texturaColor22,side: THREE.Front, transparent: true,})//side:THREE.DoubleSide
+const cuadro_23_MAT = new THREE.MeshBasicMaterial({color:0xfffffff,map:texturaColor23,side: THREE.Front, transparent: true,})//side:THREE.DoubleSide
+const cuadro_24_MAT = new THREE.MeshBasicMaterial({color:0xfffffff,map:texturaColor24,side: THREE.Front, transparent: true,})//side:THREE.DoubleSide
+const cuadro_25_MAT = new THREE.MeshBasicMaterial({color:0xfffffff,map:texturaColor25,side: THREE.Front, transparent: true,})//side:THREE.DoubleSide
+
+const cuadroPlano_1 = new THREE.Mesh(cuadroGeometry,cuadro_1_MAT); const cuadroPlano_2 = new THREE.Mesh(cuadroGeometry,cuadro_2_MAT);
+const cuadroPlano_3 = new THREE.Mesh(cuadroGeometry,cuadro_3_MAT); const cuadroPlano_4 = new THREE.Mesh(cuadroGeometry,cuadro_4_MAT);
+const cuadroPlano_5 = new THREE.Mesh(cuadroGeometry,cuadro_5_MAT); const cuadroPlano_6 = new THREE.Mesh(cuadroGeometry,cuadro_6_MAT);
+const cuadroPlano_7 = new THREE.Mesh(cuadroGeometry,cuadro_7_MAT); const cuadroPlano_8 = new THREE.Mesh(cuadroGeometry,cuadro_8_MAT);
+const cuadroPlano_9 = new THREE.Mesh(cuadroGeometry,cuadro_9_MAT); const cuadroPlano_10 = new THREE.Mesh(cuadroGeometry,cuadro_10_MAT);
+const cuadroPlano_11 = new THREE.Mesh(cuadroGeometry,cuadro_11_MAT); const cuadroPlano_12 = new THREE.Mesh(cuadroGeometry,cuadro_12_MAT);
+const cuadroPlano_13 = new THREE.Mesh(cuadroGeometry,cuadro_13_MAT); const cuadroPlano_14 = new THREE.Mesh(cuadroGeometry,cuadro_14_MAT);
+const cuadroPlano_15 = new THREE.Mesh(cuadroGeometry,cuadro_15_MAT); const cuadroPlano_16 = new THREE.Mesh(cuadroGeometry,cuadro_16_MAT);
+const cuadroPlano_17 = new THREE.Mesh(cuadroGeometry,cuadro_17_MAT); const cuadroPlano_18 = new THREE.Mesh(cuadroGeometry,cuadro_18_MAT);
+const cuadroPlano_19 = new THREE.Mesh(cuadroGeometry,cuadro_19_MAT); const cuadroPlano_20 = new THREE.Mesh(cuadroGeometry,cuadro_20_MAT);
+const cuadroPlano_21= new THREE.Mesh(cuadroGeometry,cuadro_21_MAT); const cuadroPlano_22 = new THREE.Mesh(cuadroGeometry,cuadro_22_MAT);
+const cuadroPlano_23 = new THREE.Mesh(cuadroGeometry,cuadro_23_MAT); const cuadroPlano_24 = new THREE.Mesh(cuadroGeometry,cuadro_24_MAT);
+const cuadroPlano_25 = new THREE.Mesh(cuadroGeometry,cuadro_25_MAT);
+
+//panoramaN2_B.add(cuadroPlano_1); 
+//panoramaN2_B.add(cuadroPlano_2); 
+//panoramaN2_B.add(cuadroPlano_3);
+panoramaN2_B.add(cuadroPlano_4);
+// panoramaN2_B.add(cuadroPlano_5); 
+panoramaN2_B.add(cuadroPlano_6); 
+panoramaN2_B.add(cuadroPlano_7);
+// panoramaN2_B.add(cuadroPlano_8);
+panoramaN2_B.add(cuadroPlano_9); 
+panoramaN2_B.add(cuadroPlano_10); 
+panoramaN2_B.add(cuadroPlano_11);
+// panoramaN2_B.add(cuadroPlano_12);
+panoramaN2_B.add(cuadroPlano_13);
+// panoramaN2_B.add(cuadroPlano_14); 
+panoramaN2_B.add(cuadroPlano_15);
+// panoramaN2_B.add(cuadroPlano_16);
+panoramaN2_B.add(cuadroPlano_17);//CENTRO
+// panoramaN2_B.add(cuadroPlano_18); 
+// panoramaN2_B.add(cuadroPlano_19);
+panoramaN2_B.add(cuadroPlano_20);
+panoramaN2_B.add(cuadroPlano_21);
+// panoramaN2_B.add(cuadroPlano_22); 
+panoramaN2_B.add(cuadroPlano_23);
+panoramaN2_B.add(cuadroPlano_24);
+// panoramaN2_B.add(cuadroPlano_25);
+
+let rotacionY = -1.575;
+cuadroPlano_1.rotation.y = rotacionY; cuadroPlano_2.rotation.y = rotacionY; cuadroPlano_3.rotation.y = rotacionY; cuadroPlano_4.rotation.y = rotacionY; 
+cuadroPlano_5.rotation.y = rotacionY; cuadroPlano_6.rotation.y = rotacionY; cuadroPlano_7.rotation.y = rotacionY; cuadroPlano_8.rotation.y = rotacionY; 
+cuadroPlano_9.rotation.y = rotacionY; cuadroPlano_10.rotation.y = rotacionY; cuadroPlano_11.rotation.y = rotacionY; cuadroPlano_12.rotation.y = rotacionY; 
+cuadroPlano_13.rotation.y = rotacionY; cuadroPlano_14.rotation.y = rotacionY; cuadroPlano_15.rotation.y = rotacionY; cuadroPlano_16.rotation.y = rotacionY; 
+cuadroPlano_17.rotation.y = rotacionY; cuadroPlano_18.rotation.y = rotacionY; cuadroPlano_19.rotation.y = rotacionY; cuadroPlano_20.rotation.y = rotacionY; 
+cuadroPlano_21.rotation.y = rotacionY; cuadroPlano_22.rotation.y = rotacionY; cuadroPlano_23.rotation.y = rotacionY; cuadroPlano_24.rotation.y = rotacionY; 
+cuadroPlano_25.rotation.y = rotacionY; 
+
+let posicionX = 182
+
+cuadroPlano_1.position.set(posicionX,0,-34.7163)
+cuadroPlano_1.scale.set(50,34.04,1);
+
+cuadroPlano_4.position.set(posicionX,-1,74)
+cuadroPlano_4.scale.set(50,34.04,1);
+
+cuadroPlano_6.position.set(posicionX,50,60);
+cuadroPlano_6.scale.set(22.8,17.63,1);
+
+cuadroPlano_7.position.set(posicionX,99.3369,109);
+cuadroPlano_7.scale.set(22.8,17.63,1);
+
+cuadroPlano_8.position.set(posicionX,30,0);
+cuadroPlano_8.scale.set(50,38.25,1);
+
+cuadroPlano_9.position.set(posicionX,30,60);
+cuadroPlano_9.scale.set(22.8,17.63,1);
+
+cuadroPlano_10.position.set(posicionX,-8,33);
+cuadroPlano_10.scale.set(22.8,40.92,1);
+
+cuadroPlano_11.position.set(posicionX,88.9868,73.4616);
+cuadroPlano_11.scale.set(38.34,51.27,1)
+
+cuadroPlano_13.position.set(posicionX,109.6871,26.8861);
+cuadroPlano_13.scale.set(38.34,22.8,1)
+
+cuadroPlano_15.position.set(posicionX,72,103);
+cuadroPlano_15.scale.set(12.45, 17.63, 1);
+
+cuadroPlano_17.position.set(posicionX,40,0);
+cuadroPlano_17.scale.set(90.08,48,1);
+
+cuadroPlano_20.position.set(posicionX,78.6367,21.711);
+cuadroPlano_20.scale.set(33.15,22.81,1);
+
+cuadroPlano_21.position.set(posicionX,40,94.1619);
+cuadroPlano_21.scale.set(40.92,27.98,1);
+// cuadroPlano_17.rotation.
+cuadroPlano_23.position.set(posicionX,-8,-15);
+cuadroPlano_23.scale.set(61.63,40.92,1);
+
+cuadroPlano_24.position.set(posicionX,78.6367,-24.8646);
+cuadroPlano_24.scale.set(35.03, 25 ,1);
+
+cuadroPlano_25.position.set(posicionX,30,0);
+cuadroPlano_25.scale.set(50,38.25,1);
+
+// gui.add(cuadroPlano_24.position,"x").min(-5000).max(5000).step(0.0001).name("planoPos_X");
+gui.add(cuadroPlano_13.position,"y").min(-500).max(500).step(0.0001).name("planoPos_Y");
+gui.add(cuadroPlano_13.position,"z").min(-500).max(500).step(0.0001).name("planoPos_Z");
+gui.add(cuadroPlano_13.scale,"x").min(0).max(500).step(0.01).name("planoScala_X");
+gui.add(cuadroPlano_13.scale,"y").min(0).max(500).step(0.01).name("planoScala_Y");
+// gui.add(cuadroPlano_24.scale,"z").min(0).max(50).step(0.01).name("planoScala_Z");
+// gui.add(cuadroPlano_17.rotation,"x").min(-Math.PI).max(Math.PI).step(0.0001).name("planoRotacion_X");
+// gui.add(cuadroPlano_17.rotation,"y").min(-Math.PI).max(Math.PI).step(0.0001).name("planoRotacion_Y");
+gui.add(cuadroPlano_13.rotation,"z").min(-Math.PI).max(Math.PI).step(0.0001).name("planoRotacion_Z");
+
+
+
+//FUNCION TOQUE
+let intersectado
+panoramaN2_B.addEventListener('click',function(event)
+{
+    if(event.intersects.length > 0){
+        intersectado = event.intersects[0].object;
+        if(intersectado.material)
+        {
+            buscarObjeto(intersectado);
+
+            if(intersectado == cuadroPlano_1)
+            {
+            }
+        }
+    }
+})
+
+
+function buscarObjeto(objeto)
+{
+    // if(objeto == cuadroPlano_1)
+    // {
+    //     objeto.material.map = texturaBN_1
+    // }
+    switch(objeto)
+    {
+        case cuadroPlano_1: 
+            objeto.material.map = texturaBN_1
+        break;
+        case cuadroPlano_2: 
+            objeto.material.map = texturaBN_2
+        break;
+        case cuadroPlano_3: 
+            objeto.material.map = texturaBN_3
+        break;
+        case cuadroPlano_4: 
+            objeto.material.map = texturaBN_4
+        break;
+        case cuadroPlano_5: 
+            objeto.material.map = texturaBN_5
+        break;
+        case cuadroPlano_6: 
+            objeto.material.map = texturaBN_6
+        break;
+        case cuadroPlano_7: 
+            objeto.material.map = texturaBN_7
+        break;
+        case cuadroPlano_8: 
+            objeto.material.map = texturaBN_8
+        break;
+        case cuadroPlano_9: 
+            objeto.material.map = texturaBN_9
+        break;
+        case cuadroPlano_10: 
+            objeto.material.map = texturaBN_10
+        break;
+        case cuadroPlano_11: 
+            objeto.material.map = texturaBN_11
+        break;
+        case cuadroPlano_12: 
+            objeto.material.map = texturaBN_12
+        break;
+        case cuadroPlano_13: 
+            objeto.material.map = texturaBN_13
+        break;
+        case cuadroPlano_14: 
+            objeto.material.map = texturaBN_14
+        break;
+        case cuadroPlano_15: 
+            objeto.material.map = texturaBN_15
+        break;
+        case cuadroPlano_16: 
+            objeto.material.map = texturaBN_16
+        break;
+        case cuadroPlano_17: 
+            objeto.material.map = texturaBN_17
+        break;
+        case cuadroPlano_18: 
+            objeto.material.map = texturaBN_18
+        break;
+        case cuadroPlano_19: 
+            objeto.material.map = texturaBN_19
+        break;
+        case cuadroPlano_20: 
+            objeto.material.map = texturaBN_20
+        break;
+        case cuadroPlano_21: 
+            objeto.material.map = texturaBN_21
+        break;
+        case cuadroPlano_22: 
+            objeto.material.map = texturaBN_22
+        break;
+        case cuadroPlano_23: 
+            objeto.material.map = texturaBN_23
+        break;
+        case cuadroPlano_24: 
+            objeto.material.map = texturaBN_24
+        break;
+        default:
+            console.log("cuadro no encontrado");
+        break;
+    }
+}
