@@ -13,14 +13,18 @@ panoramaN2.addEventListener( 'enter-fade-start', function(){
   } );
 
 let viewer;
-const panoramaContainer = document.getElementById( 'panorama-container' );
-// const galleryContainer = document.getElementById( 'gallery-container' );
+
 const mainContainer = document.getElementById( 'main-container' );
-const progressBar = document.getElementById( 'progress-bar' );
-// const closeButton = panoramaContainer.querySelector( '.close' );
+
 const botonCerrarTextoSomos = document.querySelector(".botonCerrarTextoSomos");
 const panelTextoSomos = document.querySelector(".panelSomos");
 panelTextoSomos.style.visibility = 'hidden';
+
+const navegacionInferior = document.querySelector(".navegacionInferior");
+const navegacionInferiorN2 = document.querySelector(".navegacionInferiorN2")
+      navegacionInferiorN2.style.visibility = "hidden";
+const botonCambiarPosA = document.querySelector(".cambiarPos");
+botonCambiarPosA.addEventListener("click",()=>{cambioPosicion("posicionA")});
 
 var infoSpotSize = 400;
 var infospotFotos;
@@ -47,6 +51,8 @@ infospotSomos.addEventListener('click',()=>{
     
 })
 panoramaN2.add(infospotSomos);
+
+const panelGaleria = document.querySelector(".panelGaleria");
 
 // gsap.to(infospotSomos.position,{delay:2,duration:1,y:10, repeat:-1}).eventCallback('onComplete',()=>{
 //     infospotSomos.position.set( 1900, -1860, -5000)
@@ -83,7 +89,7 @@ function setupPanolens () {
     );
     viewer.add( panoramaN2 );
     viewer.add(panoramaN2_B);
-    viewer.setPanorama(panoramaN2_B);
+    viewer.setPanorama(panoramaN2);
     viewer.OrbitControls.noZoom = true;
     viewer.autoHideInfospot = false;
 }
@@ -141,10 +147,10 @@ botonCerrarTextoSomos.addEventListener('click',()=>{
 var videoPlayer = document.querySelector(".video-js");
 // videoPlayer.responsive(true);
 
-const botonCerrarVideo = document.querySelector(".botonCerrarVid");
-botonCerrarVideo.addEventListener("click",()=>{{
-    abrirVideos(false);
-}})
+// const botonCerrarVideo = document.querySelector(".botonCerrarVid");
+// botonCerrarVideo.addEventListener("click",()=>{{
+//     abrirVideos(false);
+// }})
 
 const panelVideos = document.querySelector(".panelVideos");
 function abrirVideos(abrir){
@@ -176,18 +182,61 @@ function abrirVideos(abrir){
 
 }
 
+const fadeNegro = document.querySelector(".panelFade");
 
 function cambioPosicion(pos){
     console.log("cambiandoPosicion");
-    if(pos == "posicionA"){
 
-        viewer.setPanorama(panoramaN2);
+    fadeNegro.style.visibility = 'visible';
 
-    }else if(pos =="posicionB")
+    gsap.to(fadeNegro,{duration:0.5,opacity:1.0}).eventCallback('onComplete',()=>
     {
-         viewer.setPanorama(panoramaN2_B);
+        if(pos == "posicionA"){
 
-    }
+            viewer.setPanorama(panoramaN2);
+            navegacionInferior.style.visibility ="visible";
+            navegacionInferiorN2.style.visibility ="hidden";
+    
+    
+        }else if(pos =="posicionB")
+        {
+             viewer.setPanorama(panoramaN2_B);
+             navegacionInferior.style.visibility ="hidden";
+             navegacionInferiorN2.style.visibility ="visible";
+    
+             // panoramaN2_B.add(cuadroPlano_1); 
+                panoramaN2_B.add(cuadroPlano_2); 
+                // panoramaN2_B.add(cuadroPlano_3);
+                panoramaN2_B.add(cuadroPlano_4);
+                panoramaN2_B.add(cuadroPlano_5); 
+                panoramaN2_B.add(cuadroPlano_6); 
+                panoramaN2_B.add(cuadroPlano_7);
+                //panoramaN2_B.add(cuadroPlano_8);
+                panoramaN2_B.add(cuadroPlano_9); 
+                panoramaN2_B.add(cuadroPlano_10); 
+                panoramaN2_B.add(cuadroPlano_11);
+                panoramaN2_B.add(cuadroPlano_12);
+                panoramaN2_B.add(cuadroPlano_13);
+                panoramaN2_B.add(cuadroPlano_14); 
+                // panoramaN2_B.add(cuadroPlano_15);
+                panoramaN2_B.add(cuadroPlano_16);
+                panoramaN2_B.add(cuadroPlano_17);//CENTRO
+                panoramaN2_B.add(cuadroPlano_18); 
+                panoramaN2_B.add(cuadroPlano_19);
+                panoramaN2_B.add(cuadroPlano_20);
+                panoramaN2_B.add(cuadroPlano_21);
+                panoramaN2_B.add(cuadroPlano_22); 
+                panoramaN2_B.add(cuadroPlano_23);
+                panoramaN2_B.add(cuadroPlano_24);
+                panoramaN2_B.add(cuadroPlano_25);
+    
+        }
+
+        gsap.to(fadeNegro,{delay:1.0,duration:0.5,opacity:0}).eventCallback('onComplete',()=>{
+            fadeNegro.style.visibility = 'hidden';
+        })
+    })
+   
 
 }
 
@@ -300,7 +349,7 @@ imagenColor13.src = rutaImgen+galeriaRutaImagenes[12][0]; imagenColor14.src = ru
 imagenColor16.src = rutaImgen+galeriaRutaImagenes[15][0]; imagenColor17.src = rutaImgen+galeriaRutaImagenes[16][0]; imagenColor18.src = rutaImgen+galeriaRutaImagenes[17][0]
 imagenColor19.src = rutaImgen+galeriaRutaImagenes[18][0]; imagenColor20.src = rutaImgen+galeriaRutaImagenes[19][0]; imagenColor21.src = rutaImgen+galeriaRutaImagenes[20][0]
 imagenColor22.src = rutaImgen+galeriaRutaImagenes[21][0]; imagenColor23.src = rutaImgen+galeriaRutaImagenes[22][0]; imagenColor24.src = rutaImgen+galeriaRutaImagenes[23][0]
-imagenColor24.src = rutaImgen+galeriaRutaImagenes[24][0]
+imagenColor25.src = rutaImgen+galeriaRutaImagenes[24][0]
 
 //IMAGENES BLANCO Y NEGRO
 
@@ -344,7 +393,7 @@ imagenBN_13.src = rutaImgen+galeriaRutaImagenes[12][1]; imagenBN_14.src = rutaIm
 imagenBN_16.src = rutaImgen+galeriaRutaImagenes[15][1]; imagenBN_17.src = rutaImgen+galeriaRutaImagenes[16][1]; imagenBN_18.src = rutaImgen+galeriaRutaImagenes[17][1]
 imagenBN_19.src = rutaImgen+galeriaRutaImagenes[18][1]; imagenBN_20.src = rutaImgen+galeriaRutaImagenes[19][1]; imagenBN_21.src = rutaImgen+galeriaRutaImagenes[20][1]
 imagenBN_22.src = rutaImgen+galeriaRutaImagenes[21][1]; imagenBN_23.src = rutaImgen+galeriaRutaImagenes[22][1]; imagenBN_24.src = rutaImgen+galeriaRutaImagenes[23][1]
-imagenBN_24.src = rutaImgen+galeriaRutaImagenes[24][1]
+imagenBN_25.src = rutaImgen+galeriaRutaImagenes[24][1]
 //CREACION CUADROS y Su MATERIAL
 
 const cuadroGeometry =new THREE.PlaneGeometry(1,1,2);//GEOMETRIA IGUAL
@@ -389,31 +438,7 @@ const cuadroPlano_21= new THREE.Mesh(cuadroGeometry,cuadro_21_MAT); const cuadro
 const cuadroPlano_23 = new THREE.Mesh(cuadroGeometry,cuadro_23_MAT); const cuadroPlano_24 = new THREE.Mesh(cuadroGeometry,cuadro_24_MAT);
 const cuadroPlano_25 = new THREE.Mesh(cuadroGeometry,cuadro_25_MAT);
 
-//panoramaN2_B.add(cuadroPlano_1); 
-panoramaN2_B.add(cuadroPlano_2); 
-//panoramaN2_B.add(cuadroPlano_3);
-panoramaN2_B.add(cuadroPlano_4);
-panoramaN2_B.add(cuadroPlano_5); 
-panoramaN2_B.add(cuadroPlano_6); 
-panoramaN2_B.add(cuadroPlano_7);
-// panoramaN2_B.add(cuadroPlano_8);
-panoramaN2_B.add(cuadroPlano_9); 
-panoramaN2_B.add(cuadroPlano_10); 
-panoramaN2_B.add(cuadroPlano_11);
-panoramaN2_B.add(cuadroPlano_12);
-panoramaN2_B.add(cuadroPlano_13);
-panoramaN2_B.add(cuadroPlano_14); 
-panoramaN2_B.add(cuadroPlano_15);
-panoramaN2_B.add(cuadroPlano_16);
-panoramaN2_B.add(cuadroPlano_17);//CENTRO
-panoramaN2_B.add(cuadroPlano_18); 
-panoramaN2_B.add(cuadroPlano_19);
-panoramaN2_B.add(cuadroPlano_20);
-panoramaN2_B.add(cuadroPlano_21);
-panoramaN2_B.add(cuadroPlano_22); 
-panoramaN2_B.add(cuadroPlano_23);
-panoramaN2_B.add(cuadroPlano_24);
-panoramaN2_B.add(cuadroPlano_25);
+
 
 let rotacionY = -1.575;
 cuadroPlano_1.rotation.y = rotacionY; cuadroPlano_2.rotation.y = rotacionY; cuadroPlano_3.rotation.y = rotacionY; cuadroPlano_4.rotation.y = rotacionY; 
@@ -460,7 +485,7 @@ cuadroPlano_12.position.set(posicionX,70,-110);
 cuadroPlano_12.scale.set(42,27.98,1)
 
 cuadroPlano_13.position.set(posicionX,109.6871,26.8861);
-cuadroPlano_13.scale.set(46.09,22.8,1)
+cuadroPlano_13.scale.set(36.09,22.8,1)
 
 cuadroPlano_14.position.set(posicionX,0,-80);
 cuadroPlano_14.scale.set(59.03,38.33,1)
@@ -492,20 +517,20 @@ cuadroPlano_22.scale.set(41,27.98,1);
 cuadroPlano_23.position.set(posicionX,-8,-15);
 cuadroPlano_23.scale.set(61.63,40.92,1);
 
-cuadroPlano_24.position.set(posicionX,78.6367,-24.8646);
-cuadroPlano_24.scale.set(35.03, 25 ,1);
+cuadroPlano_24.position.set(posicionX,140, 80);//78.6367,-24.8646
+cuadroPlano_24.scale.set(50,38.25,1);//35.03, 25 ,1
 
-cuadroPlano_25.position.set(posicionX,30,0);
-cuadroPlano_25.scale.set(50,38.25,1);
+cuadroPlano_25.position.set(posicionX, 78.6367,-24.8646);//151.0876, 26.8861
+cuadroPlano_25.scale.set(35.03, 25 ,1);//50,38.25,1
 
 // gui.add(cuadroPlano_24.position,"x").min(-5000).max(5000).step(0.0001).name("planoPos_X");
-gui.add(cuadroPlano_12.position,"y").min(-500).max(500).step(0.0001).name("planoPos_Y");
-gui.add(cuadroPlano_12.position,"z").min(-500).max(500).step(0.0001).name("planoPos_Z");
-gui.add(cuadroPlano_12.scale,"x").min(0).max(500).step(0.01).name("planoScala_X");
-gui.add(cuadroPlano_12.scale,"y").min(0).max(500).step(0.01).name("planoScala_Y");
+gui.add(cuadroPlano_24.position,"y").min(-500).max(500).step(0.0001).name("planoPos_Y");
+gui.add(cuadroPlano_24.position,"z").min(-500).max(500).step(0.0001).name("planoPos_Z");
+gui.add(cuadroPlano_24.scale,"x").min(0).max(500).step(0.01).name("planoScala_X");
+gui.add(cuadroPlano_24.scale,"y").min(0).max(500).step(0.01).name("planoScala_Y");
 // gui.add(cuadroPlano_24.scale,"z").min(0).max(50).step(0.01).name("planoScala_Z");
 // gui.add(cuadroPlano_17.rotation,"x").min(-Math.PI).max(Math.PI).step(0.0001).name("planoRotacion_X");
-// gui.add(cuadroPlano_17.rotation,"y").min(-Math.PI).max(Math.PI).step(0.0001).name("planoRotacion_Y");
+// gui.add(cuadroPlano_25.rotation,"y").min(-Math.PI).max(Math.PI).step(0.0001).name("planoRotacion_Y");
 // gui.add(cuadroPlano_5.rotation,"z").min(-Math.PI).max(Math.PI).step(0.0001).name("planoRotacion_Z");
 
 
@@ -526,90 +551,163 @@ panoramaN2_B.addEventListener('click',function(event)
         }
     }
 })
+panoramaN2_B.addEventListener('mouseover',function(e){
+    if(e.intersects.length > 0){
+        intersectado = e.intersects[0].object;
+        if(intersectado.material)
+        {
+            console.log("sobre cuadro")
+        }
+    }
+})
 
-
+const imagenGaleria = document.querySelector(".imagenGaleria");
 function buscarObjeto(objeto)
 {
-    // if(objeto == cuadroPlano_1)
-    // {
-    //     objeto.material.map = texturaBN_1
-    // }
+    return;
     switch(objeto)
     {
         case cuadroPlano_1: 
             objeto.material.map = texturaBN_1
+            imagenGaleria.src = rutaImgen+galeriaRutaImagenes[0][0]
+
         break;
         case cuadroPlano_2: 
             objeto.material.map = texturaBN_2
+            imagenGaleria.src = rutaImgen+galeriaRutaImagenes[1][0]
         break;
         case cuadroPlano_3: 
             objeto.material.map = texturaBN_3
+            imagenGaleria.src = rutaImgen+galeriaRutaImagenes[2][0]
         break;
         case cuadroPlano_4: 
             objeto.material.map = texturaBN_4
+            imagenGaleria.src = rutaImgen+galeriaRutaImagenes[3][0]
         break;
         case cuadroPlano_5: 
             objeto.material.map = texturaBN_5
+            imagenGaleria.src = rutaImgen+galeriaRutaImagenes[4][0]
+
         break;
         case cuadroPlano_6: 
             objeto.material.map = texturaBN_6
+            imagenGaleria.src = rutaImgen+galeriaRutaImagenes[5][0]
+
         break;
         case cuadroPlano_7: 
             objeto.material.map = texturaBN_7
+            imagenGaleria.src = rutaImgen+galeriaRutaImagenes[6][0]
+
         break;
         case cuadroPlano_8: 
             objeto.material.map = texturaBN_8
+            imagenGaleria.src = rutaImgen+galeriaRutaImagenes[7][0]
+
         break;
         case cuadroPlano_9: 
             objeto.material.map = texturaBN_9
+            imagenGaleria.src = rutaImgen+galeriaRutaImagenes[8][0]
+
         break;
         case cuadroPlano_10: 
             objeto.material.map = texturaBN_10
+            imagenGaleria.src = rutaImgen+galeriaRutaImagenes[9][0]
+
         break;
         case cuadroPlano_11: 
             objeto.material.map = texturaBN_11
+            imagenGaleria.src = rutaImgen+galeriaRutaImagenes[10][0]
+
         break;
         case cuadroPlano_12: 
             objeto.material.map = texturaBN_12
+            imagenGaleria.src = rutaImgen+galeriaRutaImagenes[11][0]
+
         break;
         case cuadroPlano_13: 
             objeto.material.map = texturaBN_13
+            imagenGaleria.src = rutaImgen+galeriaRutaImagenes[12][0]
+
         break;
         case cuadroPlano_14: 
             objeto.material.map = texturaBN_14
+            imagenGaleria.src = rutaImgen+galeriaRutaImagenes[13][0]
+
         break;
         case cuadroPlano_15: 
             objeto.material.map = texturaBN_15
+            imagenGaleria.src = rutaImgen+galeriaRutaImagenes[14][0]
+
         break;
         case cuadroPlano_16: 
             objeto.material.map = texturaBN_16
+            imagenGaleria.src = rutaImgen+galeriaRutaImagenes[15][0]
+
         break;
         case cuadroPlano_17: 
             objeto.material.map = texturaBN_17
+            imagenGaleria.src = rutaImgen+galeriaRutaImagenes[16][0]
+
         break;
         case cuadroPlano_18: 
             objeto.material.map = texturaBN_18
+            imagenGaleria.src = rutaImgen+galeriaRutaImagenes[17][0]
+
         break;
         case cuadroPlano_19: 
             objeto.material.map = texturaBN_19
+            imagenGaleria.src = rutaImgen+galeriaRutaImagenes[18][0]
+
         break;
         case cuadroPlano_20: 
             objeto.material.map = texturaBN_20
+            imagenGaleria.src = rutaImgen+galeriaRutaImagenes[19][0]
+
         break;
         case cuadroPlano_21: 
             objeto.material.map = texturaBN_21
+            imagenGaleria.src = rutaImgen+galeriaRutaImagenes[20][0]
+
         break;
         case cuadroPlano_22: 
             objeto.material.map = texturaBN_22
+            imagenGaleria.src = rutaImgen+galeriaRutaImagenes[21][0]
+
         break;
         case cuadroPlano_23: 
             objeto.material.map = texturaBN_23
+            imagenGaleria.src = rutaImgen+galeriaRutaImagenes[22][0]
+
         break;
         case cuadroPlano_24: 
             objeto.material.map = texturaBN_24
+            imagenGaleria.src = rutaImgen+galeriaRutaImagenes[23][0]
+
+        break;
+        case cuadroPlano_25: 
+            objeto.material.map = texturaBN_25
+            imagenGaleria.src = rutaImgen+galeriaRutaImagenes[24][0]
+
         break;
         default:
             console.log("cuadro no encontrado");
         break;
     }
+
+
+    panelGaleria.style.visibility ="visible"
+    gsap.to(panelGaleria,{duration:0.5,opacity:1.0});
+    // panelGaleria.style.opacity =1.0;
+}
+
+const botonCerrarGaleria = document.querySelector(".botonCerrarFoto");
+botonCerrarGaleria.addEventListener("click",cerrarGaleria);
+function cerrarGaleria() {
+    gsap.to(panelGaleria,{duration:0.5,opacity:0.0}).eventCallback('onComplete',()=>
+    {
+        panelGaleria.style.visibility ="hidden"
+
+    });
+
+
 }
