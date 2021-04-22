@@ -12,7 +12,7 @@
     /* wrap:nowrap; */
     width:30%;
     padding:10px;
-    background-color: rgba(158, 91, 91, 0.315);
+    background-color: rgba(158, 91, 91, 0);
     position: absolute;
     z-index:80;
     bottom:10px;
