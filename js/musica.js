@@ -15,8 +15,8 @@ const musciaPagina =
 [
     ["home.html",
         [
-            "SOMOS_101m04_AA_Meeting_STEREO.mp3",
-            "SOMOS_101m05_Flor_Maria_STEREO.mp3"
+            "SOMOS_101m02_SOMOS_STEREO.mp3",
+            "SOMOS_101m03_The_Arrival_STEREO.mp3"
         ]
     ], 
     ["lobby.html",
@@ -27,26 +27,26 @@ const musciaPagina =
     ],
     ["auditorio.html",
         [
-            "SOMOS_101m04_AA_Meeting_STEREO.mp3",
-            "SOMOS_101m05_Flor_Maria_STEREO.mp3"
+            "SOMOS_106m25_El_Despertar_STEREO",
+            
         ]
     ],
     ["nucleo1.html",
         [
-            "SOMOS_101m04_AA_Meeting_STEREO.mp3",
-            "SOMOS_101m05_Flor_Maria_STEREO.mp3"
+            "SOMOS_106m04_Hacienda_Somos_STEREO.mp3"
         ]
     ],
     ["nucleo2.html",
         [
-            "SOMOS_101m04_AA_Meeting_STEREO.mp3",
-            "SOMOS_101m05_Flor_Maria_STEREO.mp3"
+            "SOMOS_101m29_Allende_STEREO.mp3",
+            "SOMOS_102m33_Allende_Pueblo_STEREO.mp3"
         ]
     ],
     ["nucleo3.html",
         [
-            "SOMOS_101m04_AA_Meeting_STEREO.mp3",
-            "SOMOS_101m05_Flor_Maria_STEREO.mp3"
+            "SOMOS_101m08_Silverio_STEREO.mp3",
+            "SOMOS_101m13_Paquito_STEREO.mp3",
+            "SOMOS_101m27_Nancy_STEREO"
         ]
     ],
 ]
@@ -80,6 +80,7 @@ var reproductorA, reproductorB, reproductorC;
 function cargarPista()
 {
     if(nombrePagina() == "home.html"){
+
          pistaSeleccionadaA = musciaPagina[0][1][0]
          pistaSeleccionadaB = musciaPagina[0][1][1]
 
@@ -91,23 +92,24 @@ function cargarPista()
     }
     else if(nombrePagina() == "auditorio.html")
     {
-        pistaSeleccionadaA = musciaPagina[1][1][0]
-        pistaSeleccionadaB = musciaPagina[1][1][1]
+        pistaSeleccionadaA = musciaPagina[2][1][0]
+        pistaSeleccionadaB = musciaPagina[2][1][1]
     }
     else if(nombrePagina() == "nucleo1.html")
     {
-        pistaSeleccionadaA = musciaPagina[1][1][0]
-        pistaSeleccionadaB = musciaPagina[1][1][1]
+        pistaSeleccionadaA = musciaPagina[3][1][0]
+        pistaSeleccionadaB = musciaPagina[3][1][1]
     }
     else if(nombrePagina() == "nucleo2.html")
     {
-        pistaSeleccionadaA = musciaPagina[1][1][0]
-        pistaSeleccionadaB = musciaPagina[1][1][1]
+        pistaSeleccionadaA = musciaPagina[4][1][0]
+        pistaSeleccionadaB = musciaPagina[4][1][1]
     }
     else if(nombrePagina() == "nucleo3.html")
     {
-        pistaSeleccionadaA = musciaPagina[1][1][0]
-        pistaSeleccionadaB = musciaPagina[1][1][1]
+        pistaSeleccionadaA = musciaPagina[5][1][0]
+        pistaSeleccionadaB = musciaPagina[5][1][1]
+        pistaSeleccionadaC = musciaPagina[5][1][2]
     }
     
     console.log(pistaSeleccionadaA);
@@ -151,7 +153,11 @@ function cargarPista()
     });
     reproductorB.on('end', function(){
         console.log('Finished!');
-        reproductorC.play();
+        if(nombrePagina()=="nucleo3.html")
+        {
+
+            reproductorC.play();
+        }
     });
     reproductorC.on('end', function(){
         console.log('Finished!');
@@ -161,3 +167,13 @@ function cargarPista()
 }
 cargarPista();
  
+var botonCerrar = document.getElementById("botonCerrar");
+botonCerrar.addEventListener('click',()=>
+{
+    reproductorA.fade(1,0,1000);
+    reproductorB.fade(1,0,1000);
+    reproductorC.fade(1,0,1000);
+  
+    //directorio.cambiarA("lobby");
+
+})
