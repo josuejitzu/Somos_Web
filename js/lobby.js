@@ -26,7 +26,7 @@ panelTextoSomos.style.visibility = 'hidden';
 const infoSpotSize = 300;
 
 var infospotAuditorio;
-infospotAuditorio = new PANOLENS.Infospot(500,"src/img/simbolos/FLECHA_AUDITORIO.png?v=123456782");
+infospotAuditorio = new PANOLENS.Infospot(500,"src/img/simbolos/Flecha_AUDITORIO.png?v=123456782");
 infospotAuditorio.position.set( 4000.00, -165.23, -450 );
 // infospotAuditorio.addHoverText( 'AUDITORIO' );
 infospotAuditorio.addEventListener('click',()=>{
@@ -107,7 +107,7 @@ infospotPosicionA.addEventListener('click',()=>{
 })
 panoramaLobbyB.add(infospotPosicionA);
 
-var infospotPosicionB = new PANOLENS.Infospot(500,"src/img/simbolos/FLECHA_AUDITORIO.png?v=123456783");
+var infospotPosicionB = new PANOLENS.Infospot(500,"src/img/simbolos/Flecha_AUDITORIO.png?v=123456783");
 infospotPosicionB.position.set( 1265.8764, -165.23, -3828.1117 );
 // infospotPosicionB.addHoverText( 'Posicion B' );
 infospotPosicionB.addEventListener('click',()=>{
