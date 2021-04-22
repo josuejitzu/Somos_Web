@@ -2,6 +2,9 @@
 import * as THREE from "./three/build/three.module.js"
 import { OrbitControls } from './three/examples/jsm/controls/OrbitControls.js';
 import { GLTFLoader } from './three/examples/jsm/loaders/GLTFLoader.js'
+import { EffectComposer } from './three/examples/jsm/postprocessing/EffectComposer.js'
+import { RenderPass } from './three/examples/jsm/postprocessing/RenderPass.js'
+import { FilmPass } from './three/examples/jsm/postprocessing/FilmPass.js'
 
 let flechaPresionada = false;
 // console.log(THREE);
@@ -16,7 +19,7 @@ gsap.to(botonFlecha, {duration: 2,repeat:-1, repeatDelay:0.5,y:100});
 var controlesHabilitados = false;
 // Scene
 const scene = new THREE.Scene()
-// const gui = new dat.GUI();
+const gui = new dat.GUI();
 // gui.close ();
 
 // Object
@@ -156,6 +159,43 @@ gltfLoader.load(
 )
 
 const canvas = document.querySelector('canvas.webgl')
+
+//NOISE
+// var composer = new THREE.EffectComposer(renderer);
+// var renderPass = new THREE.RenderPass(scene, camera);
+// composer.addPass(renderPass);
+ var noiseMAT = new THREE.ShaderMaterial(
+     {
+         transparent: true,
+         vertexShader: `
+         varying vec2 vUv;
+         void main()
+         {
+            vUv = uv;
+            gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+         }
+        `,
+        fragmentShader: `
+            #include <common>
+
+            varying vec2 vUv;
+
+            void main() {
+                gl_FragColor.xyz = vec3( rand( vUv ) );
+                gl_FragColor.w = 1.0;
+            }
+        `
+     }
+ )
+
+ const postPlane = new THREE.PlaneGeometry( 2, 2 );
+ const postQuad = new THREE.Mesh( postPlane, noiseMAT );
+ scene.add(postQuad);
+
+
+
+
+
 //LUZ
 const luzFill = new THREE.AmbientLight( 0xffffff,1.5)
 scene.add(luzFill);
@@ -171,8 +211,22 @@ renderer.setPixelRatio(Math.min(window.devicePixelRatio,2))
 renderer.render(scene, camera)
 renderer.setClearColor('#D2CFCA')
 renderer.outputEncoding = THREE.sRGBEncoding
+// renderer.render(scene, camera)
 
 
+ const effectComposer = new EffectComposer(renderer)
+ effectComposer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
+ effectComposer.setSize(sizes.width, sizes.height)
+
+
+const renderPass = new RenderPass(scene,camera)
+effectComposer.addPass(renderPass)
+
+//noiseIntensity, scanlinesIntensity, scanlinesCount, grayscale 
+const filmPass = new FilmPass(0.1,0,1,false)
+effectComposer.addPass(filmPass);
+
+// gui.add(filmPass,"noiseIntensity").min(0).max(3.0).set(0.1).name("noise");
 
 // Cursor
 const cursor = {
@@ -212,7 +266,8 @@ const tick = () =>
     
   
      // Render
-    renderer.render(scene, camera)
+    // renderer.render(scene, camera)
+    effectComposer.render();
 
     window.requestAnimationFrame(tick)
 }
