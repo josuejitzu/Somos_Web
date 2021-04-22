@@ -1,8 +1,10 @@
 const botonSilencio = document.querySelector(".audioSilencio");
-let muteado = false;
-
+let botonSilencioB;
 const imgConAudio ="src/img/simbolos/AUDIO.png";
 const imgSinAudio ="src/img/simbolos/SIN_AUDIO.png";
+let muteado = false;
+
+
 
 
 function nombrePagina(){
@@ -29,7 +31,7 @@ const musciaPagina =
     ],
     ["auditorio.html",
         [
-            "SOMOS_106m25_El_Despertar_STEREO",
+            "SOMOS_106m25_El_Despertar_STEREO.mp3",
             
         ]
     ],
@@ -48,19 +50,21 @@ const musciaPagina =
         [
             "SOMOS_101m08_Silverio_STEREO.mp3",
             "SOMOS_101m13_Paquito_STEREO.mp3",
-            "SOMOS_101m27_Nancy_STEREO"
+            "SOMOS_101m27_Nancy_STEREO.mp3"
         ]
     ],
 ]
 
-var pistaSeleccionadaA, pistaseleccionadaB, pistaSeleccionadaC;
+var pistaSeleccionadaA="", pistaseleccionadaB ="", pistaSeleccionadaC="";
 
 botonSilencio.addEventListener("click",()=>{
     console.log("audio")
     if(muteado){
         botonSilencio.src = imgConAudio;
         reproductorA.mute(false);
+        if(nombrePagina() != "auditorio.html")
         reproductorB.mute(false);
+        if(nombrePagina()=="nucleo3.html")
         reproductorC.mute(false);
         muteado = false;
 
@@ -68,7 +72,11 @@ botonSilencio.addEventListener("click",()=>{
         botonSilencio.src = imgSinAudio;
 
         reproductorA.mute(true);
+        if(nombrePagina() != "auditorio.html")
+
         reproductorB.mute(true);
+        if(nombrePagina()=="nucleo3.html")
+
         reproductorC.mute(true);
         muteado = true;
 
@@ -76,6 +84,34 @@ botonSilencio.addEventListener("click",()=>{
  
 
 })
+
+if(nombrePagina() == "nucleo2.html")
+{
+    botonSilencioB = document.querySelector(".audioSilencioB");
+    botonSilencioB.addEventListener("click",()=>{
+        console.log("audio")
+        if(muteado){
+            botonSilencio.src = imgConAudio;
+            botonSilencioB.src = imgConAudio;
+            reproductorA.mute(false);
+            reproductorB.mute(false);
+            reproductorC.mute(false);
+            muteado = false;
+
+        }else{ 
+            botonSilencio.src = imgSinAudio;
+            botonSilencioB.src = imgSinAudio;
+
+            reproductorA.mute(true);
+            reproductorB.mute(true);
+            reproductorC.mute(true);
+            muteado = true;
+
+        }
+    
+
+    })
+}
 
 
 var reproductorA, reproductorB, reproductorC;
@@ -98,7 +134,8 @@ function cargarPista()
     else if(nombrePagina() == "auditorio.html")
     {
         pistaSeleccionadaA = musciaPagina[2][1][0]
-        pistaSeleccionadaB = musciaPagina[2][1][1]
+      
+      
     }
     else if(nombrePagina() == "nucleo1.html")
     {
@@ -121,20 +158,24 @@ function cargarPista()
     
     reproductorA = new Howl({ 
     src:["src/musica/"+pistaSeleccionadaA],
-    // autoplay:true,
+     autoplay:true,
     volume:0.5,
     // loop:true,
     html:true,
     // mute:true
     })
+    
+
     reproductorB = new Howl({ 
         src:["src/musica/"+pistaSeleccionadaB],
-        // autoplay:true,
+            // autoplay:true,
         volume:0.5,
-        // loop:true,
+            // loop:true,
         html:true,
-        // mute:true
+            // mute:true
     })
+    
+   
     reproductorC = new Howl({ 
         src:["src/musica/"+pistaSeleccionadaC],
         // autoplay:true,
@@ -143,6 +184,9 @@ function cargarPista()
         html:true,
         // mute:true
     })
+    
+
+  
   
 
     // muteado = reproductor.mute;
@@ -150,11 +194,18 @@ function cargarPista()
 
     reproductorA.once('load',()=>{
         console.log("audio Cargado");
-        // reproductorA.play();
+        reproductorA.play();
+        console.log("reproduciendoA");
+
     })
     reproductorA.on('end', function(){
         console.log('Finished!');
-        reproductorB.play();
+        if(nombrePagina()!="auditorio.html")
+        {
+            reproductorB.play();
+            console.log("reproduciendoB");
+
+        }
     });
     reproductorB.on('end', function(){
         console.log('Finished!');
@@ -162,6 +213,8 @@ function cargarPista()
         {
 
             reproductorC.play();
+            console.log("reproduciendoC");
+
         }
     });
     reproductorC.on('end', function(){
@@ -182,3 +235,4 @@ botonCerrar.addEventListener('click',()=>
     //directorio.cambiarA("lobby");
 
 })
+
