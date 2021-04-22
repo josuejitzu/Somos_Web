@@ -3,13 +3,13 @@
 import { GLTFLoader } from './three/examples/jsm/loaders/GLTFLoader.js'
 const panoramaN2 = new PANOLENS.ImagePanorama( 'src/img/360/nucleo02.jpg' );
 panoramaN2.addEventListener( 'enter-fade-start', function(){
-    viewer.tweenControlCenter(  new THREE.Vector3(5000.00, -300, -400), 0 );
+    viewer.tweenControlCenter(  new THREE.Vector3(5000.00, -500, 0), 0 );
   } );
 
 
 const panoramaN2_B = new PANOLENS.ImagePanorama( 'src/img/360/nucleo02_closeup.jpg' );
 panoramaN2.addEventListener( 'enter-fade-start', function(){
-    viewer.tweenControlCenter(  new THREE.Vector3(5000.00, -300, -400), 0 );
+    viewer.tweenControlCenter(  new THREE.Vector3(5000.00, 1000, 0), 0 );
   } );
 
 let viewer;
@@ -82,7 +82,9 @@ function setupPanolens () {
              container: mainContainer,
              //  controlButtons: deteccionIphone() ? controlesIos:controles,
              cameraFov:70,
-             autoHideInfospot:false
+             autoHideInfospot:false,
+            //  enableReticle: true,
+             renderer: new THREE.WebGLRenderer({antialias:true})
             //  initialLookAt:new THREE.Vector3(Math.PI*2,1,0.0)
 
         } 
@@ -92,7 +94,13 @@ function setupPanolens () {
     viewer.setPanorama(panoramaN2);
     viewer.OrbitControls.noZoom = true;
     viewer.autoHideInfospot = false;
+    
+  
+    viewer.registerEventListeners();
+    viewer.reticle.hide()
+    viewer.disableReticleControl()
 }
+
 // gui.add(camaraRot,"x").min(-1).max(1).step(0.001).name("nucleo3_z").onFinishChange(()=>{
 //      viewer.camera.rotation = new THREE.Vector3(camaraRot.x,0,0);
 //     //  viewer.tweenControlCenter( new THREE.Vector3(camaraRot.x, 0, 0), 0 );
@@ -269,12 +277,7 @@ const gui = new dat.GUI({width:500});
 //     console.log(mouse)
 // })
 //update
-const tick = ()=>{
 
-    window.requestAnimationFrame(tick)
-}
-
-tick();
 
 var seleccion
 
@@ -552,19 +555,24 @@ panoramaN2_B.addEventListener('click',function(event)
     }
 })
 panoramaN2_B.addEventListener('mouseover',function(e){
+    console.log("sobre cuadro")
     if(e.intersects.length > 0){
         intersectado = e.intersects[0].object;
         if(intersectado.material)
         {
-            console.log("sobre cuadro")
         }
     }
+})
+
+
+cuadroPlano_1.addEventListener("onmouseover",()=>{
+    console.log("hola");
 })
 
 const imagenGaleria = document.querySelector(".imagenGaleria");
 function buscarObjeto(objeto)
 {
-    return;
+    
     switch(objeto)
     {
         case cuadroPlano_1: 
@@ -711,3 +719,343 @@ function cerrarGaleria() {
 
 
 }
+const sizes ={
+    width:window.innerWidth,
+    height:window.innerHeight
+}
+
+const mouse = new THREE.Vector2()
+
+window.addEventListener('mousemove', (event) =>
+{
+    mouse.x = event.clientX / sizes.width * 2 - 1
+    mouse.y = - (event.clientY / sizes.height) * 2 + 1
+
+    // console.log(mouse)
+})
+
+const raycaster = new THREE.Raycaster()
+const intersects = raycaster.intersectObjects([cuadroPlano_25,cuadroPlano_17])
+console.log(intersects)
+
+// getRaycastViewCenter() → {THREE.Vector3}
+
+const tick=()=>{
+
+    // window.requestAnimationFrame(tick);
+
+    // const rayOrigin = new THREE.Vector3(- 3, 0, 0)
+    // const rayDirection = new THREE.Vector3(10, 0, 0)
+    // rayDirection.normalize()
+
+    // raycaster.set(mouse, viewer.getRaycastViewCenter())
+
+    // const objectsToTest = [cuadroPlano_25,cuadroPlano_17]
+    // // console.log(intersects);
+    // for(const intersect of intersects)
+    // {
+    //     // intersect.object.material.color.set('#0000ff')
+    //     console.log("hola 2")
+    // }
+}
+tick();
+
+// registerEventListeners()
+// registerMouseAndTouchEvents()
+// onMouseMove(event)
+
+// var escalaNormal = new THREE.Vector3();
+
+// cuadroPlano_17.addEventListener("hoverenter",()=>{
+//     // console.log("sobre mi");
+//     // escalaNormal = cuadroPlano_17.scale;
+//     // // console.log(escalaNormal);
+//     // cuadroPlano_17.scale.set(cuadroPlano_17.scale.x * 1.05,cuadroPlano_17.scale.y *1.05,1);
+//     crecerObjeto(cuadroPlano_17);
+// })
+// cuadroPlano_17.addEventListener("hoverleave",()=>{
+//     // cuadroPlano_17.scale.set(90.08,48,1);
+//     // cuadroPlano_17.scale.set(escalaNormal.x,escalaNormal.y,escalaNormal.z);
+//     regresarEscala(cuadroPlano_17);
+// })
+
+// function crecerObjeto(obj) {
+//     escalaNormal = obj.scale;
+//     // console.log(escalaNormal);
+//     obj.scale.set(cuadroPlano_17.scale.x * 1.05,cuadroPlano_17.scale.y *1.05,1);
+// }
+// function regresarEscala(obj)
+// {
+//     obj.scale.set(escalaNormal.x,escalaNormal.y,escalaNormal.z);
+
+// }
+cuadroPlano_1.addEventListener("hoverenter",()=>{
+    console.log("sobre mi");
+    // escalaNormal = cuadroPlano_17.scale;
+    cuadroPlano_1.scale.set(cuadroPlano_1.scale.x * 1.05,cuadroPlano_1.scale.y *1.05,1);
+})
+cuadroPlano_1.addEventListener("hoverleave",()=>{
+    cuadroPlano_1.scale.set(50,34.04,1);
+    // cuadroPlano_17.scale.set(escalaNormal);
+})
+
+
+cuadroPlano_2.addEventListener("hoverenter",()=>{
+    console.log("sobre mi");
+    // escalaNormal = cuadroPlano_17.scale;
+    cuadroPlano_2.scale.set(cuadroPlano_2.scale.x * 1.05,cuadroPlano_2.scale.y *1.05,1);
+})
+cuadroPlano_2.addEventListener("hoverleave",()=>{
+    cuadroPlano_2.scale.set(40.92, 61.62,1);
+    // cuadroPlano_17.scale.set(escalaNormal);
+})
+
+
+cuadroPlano_4.addEventListener("hoverenter",()=>{
+    console.log("sobre mi");
+    // escalaNormal = cuadroPlano_17.scale;
+    cuadroPlano_4.scale.set(cuadroPlano_4.scale.x * 1.05,cuadroPlano_4.scale.y *1.05,1);
+})
+cuadroPlano_4.addEventListener("hoverleave",()=>{
+    cuadroPlano_4.scale.set(50,34.04,1);
+    // cuadroPlano_17.scale.set(escalaNormal);
+})
+
+
+cuadroPlano_5.addEventListener("hoverenter",()=>{
+    console.log("sobre mi");
+    // escalaNormal = cuadroPlano_17.scale;
+    cuadroPlano_5.scale.set(cuadroPlano_5.scale.x * 1.05,cuadroPlano_5.scale.y *1.05,1);
+})
+cuadroPlano_5.addEventListener("hoverleave",()=>{
+    cuadroPlano_5.scale.set(50,61.62,1);
+    // cuadroPlano_17.scale.set(escalaNormal);
+})
+
+
+cuadroPlano_6.addEventListener("hoverenter",()=>{
+    console.log("sobre mi");
+    // escalaNormal = cuadroPlano_17.scale;
+    cuadroPlano_6.scale.set(cuadroPlano_6.scale.x * 1.05,cuadroPlano_6.scale.y *1.05,1);
+})
+cuadroPlano_6.addEventListener("hoverleave",()=>{
+    cuadroPlano_6.scale.set(22.8,17.63,1);
+    // cuadroPlano_17.scale.set(escalaNormal);
+})
+
+
+cuadroPlano_7.addEventListener("hoverenter",()=>{
+    console.log("sobre mi");
+    // escalaNormal = cuadroPlano_17.scale;
+    cuadroPlano_7.scale.set(cuadroPlano_7.scale.x * 1.05,cuadroPlano_7.scale.y *1.05,1);
+})
+cuadroPlano_7.addEventListener("hoverleave",()=>{
+    cuadroPlano_7.scale.set(22.8,17.63,1);
+    // cuadroPlano_17.scale.set(escalaNormal);
+})
+
+
+cuadroPlano_8.addEventListener("hoverenter",()=>{
+    console.log("sobre mi");
+    // escalaNormal = cuadroPlano_17.scale;
+    cuadroPlano_8.scale.set(cuadroPlano_8.scale.x * 1.05,cuadroPlano_8.scale.y *1.05,1);
+})
+cuadroPlano_8.addEventListener("hoverleave",()=>{
+    cuadroPlano_8.scale.set(50,38.25,1);
+    // cuadroPlano_17.scale.set(escalaNormal);
+})
+
+
+cuadroPlano_9.addEventListener("hoverenter",()=>{
+    console.log("sobre mi");
+    // escalaNormal = cuadroPlano_17.scale;
+    cuadroPlano_9.scale.set(cuadroPlano_9.scale.x * 1.05,cuadroPlano_9.scale.y *1.05,1);
+})
+cuadroPlano_9.addEventListener("hoverleave",()=>{
+    cuadroPlano_9.scale.set(22.8,17.63,1);
+    // cuadroPlano_17.scale.set(escalaNormal);
+})
+
+
+cuadroPlano_10.addEventListener("hoverenter",()=>{
+    console.log("sobre mi");
+    // escalaNormal = cuadroPlano_17.scale;
+    cuadroPlano_10.scale.set(cuadroPlano_10.scale.x * 1.05,cuadroPlano_10.scale.y *1.05,1);
+})
+cuadroPlano_10.addEventListener("hoverleave",()=>{
+    cuadroPlano_10.scale.set(22.8,40.92,1);
+    // cuadroPlano_17.scale.set(escalaNormal);
+})
+
+
+cuadroPlano_11.addEventListener("hoverenter",()=>{
+    console.log("sobre mi");
+    // escalaNormal = cuadroPlano_17.scale;
+    cuadroPlano_11.scale.set(cuadroPlano_11.scale.x * 1.05,cuadroPlano_11.scale.y *1.05,1);
+})
+cuadroPlano_11.addEventListener("hoverleave",()=>{
+    cuadroPlano_11.scale.set(38.34,51.27,1)
+    // cuadroPlano_17.scale.set(escalaNormal);
+})
+
+
+cuadroPlano_12.addEventListener("hoverenter",()=>{
+    console.log("sobre mi");
+    // escalaNormal = cuadroPlano_17.scale;
+    cuadroPlano_12.scale.set(cuadroPlano_12.scale.x * 1.05,cuadroPlano_12.scale.y *1.05,1);
+})
+cuadroPlano_12.addEventListener("hoverleave",()=>{
+    cuadroPlano_12.scale.set(42,27.98,1)
+    // cuadroPlano_17.scale.set(escalaNormal);
+})
+
+
+cuadroPlano_13.addEventListener("hoverenter",()=>{
+    console.log("sobre mi");
+    // escalaNormal = cuadroPlano_17.scale;
+    cuadroPlano_13.scale.set(cuadroPlano_13.scale.x * 1.05,cuadroPlano_13.scale.y *1.05,1);
+})
+cuadroPlano_13.addEventListener("hoverleave",()=>{
+    cuadroPlano_13.scale.set(36.09,22.8,1)
+    // cuadroPlano_17.scale.set(escalaNormal);
+})
+
+
+cuadroPlano_14.addEventListener("hoverenter",()=>{
+    console.log("sobre mi");
+    // escalaNormal = cuadroPlano_17.scale;
+    cuadroPlano_14.scale.set(cuadroPlano_14.scale.x * 1.05,cuadroPlano_14.scale.y *1.05,1);
+})
+cuadroPlano_14.addEventListener("hoverleave",()=>{
+    cuadroPlano_14.scale.set(59.03,38.33,1)
+    // cuadroPlano_17.scale.set(escalaNormal);
+})
+
+
+cuadroPlano_15.addEventListener("hoverenter",()=>{
+    console.log("sobre mi");
+    // escalaNormal = cuadroPlano_17.scale;
+    cuadroPlano_15.scale.set(cuadroPlano_15.scale.x * 1.05,cuadroPlano_15.scale.y *1.05,1);
+})
+cuadroPlano_15.addEventListener("hoverleave",()=>{
+    cuadroPlano_15.scale.set(12.45, 17.63, 1);
+    // cuadroPlano_17.scale.set(escalaNormal);
+})
+
+
+cuadroPlano_16.addEventListener("hoverenter",()=>{
+    console.log("sobre mi");
+    // escalaNormal = cuadroPlano_17.scale;
+    cuadroPlano_16.scale.set(cuadroPlano_16.scale.x * 1.05,cuadroPlano_16.scale.y *1.05,1);
+})
+cuadroPlano_16.addEventListener("hoverleave",()=>{
+    cuadroPlano_16.scale.set(30, 20.01, 1);
+    // cuadroPlano_17.scale.set(escalaNormal);
+})
+
+
+cuadroPlano_17.addEventListener("hoverenter",()=>{
+    console.log("sobre mi");
+    // escalaNormal = cuadroPlano_17.scale;
+    cuadroPlano_17.scale.set(cuadroPlano_17.scale.x * 1.05,cuadroPlano_17.scale.y *1.05,1);
+})
+cuadroPlano_17.addEventListener("hoverleave",()=>{
+    cuadroPlano_17.scale.set(90.08,48,1);
+    // cuadroPlano_17.scale.set(escalaNormal);
+})
+
+
+cuadroPlano_18.addEventListener("hoverenter",()=>{
+    console.log("sobre mi");
+    // escalaNormal = cuadroPlano_17.scale;
+    cuadroPlano_18.scale.set(cuadroPlano_18.scale.x * 1.05,cuadroPlano_18.scale.y *1.05,1);
+})
+cuadroPlano_18.addEventListener("hoverleave",()=>{
+    cuadroPlano_18.scale.set(27.98,26,1);
+    // cuadroPlano_17.scale.set(escalaNormal);
+})
+
+
+cuadroPlano_19.addEventListener("hoverenter",()=>{
+    console.log("sobre mi");
+    // escalaNormal = cuadroPlano_17.scale;
+    cuadroPlano_19.scale.set(cuadroPlano_19.scale.x * 1.05,cuadroPlano_19.scale.y *1.05,1);
+})
+cuadroPlano_19.addEventListener("hoverleave",()=>{
+    cuadroPlano_19.scale.set(38.34,22.8,1);
+    // cuadroPlano_17.scale.set(escalaNormal);
+})
+
+
+cuadroPlano_20.addEventListener("hoverenter",()=>{
+    console.log("sobre mi");
+    // escalaNormal = cuadroPlano_17.scale;
+    cuadroPlano_20.scale.set(cuadroPlano_20.scale.x * 1.05,cuadroPlano_20.scale.y *1.05,1);
+})
+cuadroPlano_20.addEventListener("hoverleave",()=>{
+    cuadroPlano_20.scale.set(33.15,22.81,1);
+    // cuadroPlano_17.scale.set(escalaNormal);
+})
+
+
+cuadroPlano_21.addEventListener("hoverenter",()=>{
+    console.log("sobre mi");
+    // escalaNormal = cuadroPlano_17.scale;
+    cuadroPlano_21.scale.set(cuadroPlano_21.scale.x * 1.05,cuadroPlano_21.scale.y *1.05,1);
+})
+cuadroPlano_21.addEventListener("hoverleave",()=>{
+    cuadroPlano_21.scale.set(40.92,27.98,1);
+    // cuadroPlano_17.scale.set(escalaNormal);
+})
+
+
+cuadroPlano_22.addEventListener("hoverenter",()=>{
+    console.log("sobre mi");
+    // escalaNormal = cuadroPlano_17.scale;
+    cuadroPlano_22.scale.set(cuadroPlano_22.scale.x * 1.05,cuadroPlano_22.scale.y *1.05,1);
+})
+cuadroPlano_22.addEventListener("hoverleave",()=>{
+    cuadroPlano_22.scale.set(41,27.98,1);
+    // cuadroPlano_17.scale.set(escalaNormal);
+})
+
+
+cuadroPlano_23.addEventListener("hoverenter",()=>{
+    console.log("sobre mi");
+    // escalaNormal = cuadroPlano_17.scale;
+    cuadroPlano_23.scale.set(cuadroPlano_23.scale.x * 1.05,cuadroPlano_23.scale.y *1.05,1);
+})
+cuadroPlano_23.addEventListener("hoverleave",()=>{
+    cuadroPlano_23.scale.set(61.63,40.92,1);
+    // cuadroPlano_17.scale.set(escalaNormal);
+})
+
+
+cuadroPlano_24.addEventListener("hoverenter",()=>{
+    console.log("sobre mi");
+    // escalaNormal = cuadroPlano_17.scale;
+    cuadroPlano_24.scale.set(cuadroPlano_24.scale.x * 1.05,cuadroPlano_24.scale.y *1.05,1);
+})
+cuadroPlano_24.addEventListener("hoverleave",()=>{
+    cuadroPlano_24.scale.set(50,38.25,1);//35.03, 25 ,1
+    // cuadroPlano_17.scale.set(escalaNormal);
+})
+
+
+cuadroPlano_25.addEventListener("hoverenter",()=>{
+    console.log("sobre mi");
+    // escalaNormal = cuadroPlano_17.scale;
+    cuadroPlano_25.scale.set(cuadroPlano_25.scale.x * 1.05,cuadroPlano_25.scale.y *1.05,1);
+})
+cuadroPlano_25.addEventListener("hoverleave",()=>{
+    cuadroPlano_25.scale.set(35.03, 25 ,1);//50,38.25,1
+    // cuadroPlano_17.scale.set(escalaNormal);
+})
+
+
+
+
+
+
+
+
