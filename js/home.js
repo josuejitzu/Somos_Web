@@ -180,13 +180,13 @@ const cursor = {
     y: 0
    
 }
-window.addEventListener('mousemove', (event) =>
-{
-    cursor.x = event.clientX / sizes.width - 0.5
+// window.addEventListener('mousemove', (event) =>
+// {
+//     cursor.x = event.clientX / sizes.width - 0.5
     
 
-    // console.log(cursor.x)
-})
+//     // console.log(cursor.x)
+// })
 // window.addEventListener('touchmove',(e)=>{
     
 //     cursor.x = e.clientX / sizes.width - 0.5
@@ -205,10 +205,10 @@ const tick = () =>
 
     
     // controls.enabled = controlesHabilitados;
-    if(controlesHabilitados)
-    {
-        camera.position.x = cursor.x * 5;
-    }
+    // if(controlesHabilitados)
+    // {
+    //     camera.position.x = cursor.x * 5;
+    // }
     
   
      // Render
