@@ -61,7 +61,9 @@ function setupPanolens () {
              container: mainContainer,
              //  controlButtons: deteccionIphone() ? controlesIos:controles,
              cameraFov:70, 
-             autoHideInfospot:false
+             autoHideInfospot:false,
+             renderer: new THREE.WebGLRenderer({antialias:true})
+
             //  initialLookAt:new THREE.Vector3(Math.PI*2,1,0.0)
 
         } 
