@@ -5,6 +5,7 @@ import { GLTFLoader } from './three/examples/jsm/loaders/GLTFLoader.js'
 import { EffectComposer } from './three/examples/jsm/postprocessing/EffectComposer.js'
 import { RenderPass } from './three/examples/jsm/postprocessing/RenderPass.js'
 import { FilmPass } from './three/examples/jsm/postprocessing/FilmPass.js'
+import { ShaderPass } from "./three/examples/jsm/postprocessing/ShaderPass.js";
 
 let flechaPresionada = false;
 // console.log(THREE);
@@ -167,6 +168,10 @@ const canvas = document.querySelector('canvas.webgl')
  var noiseMAT = new THREE.ShaderMaterial(
      {
          transparent: true,
+         uniforms:
+        {
+            tDiffuse: { value: null }
+        },
          vertexShader: `
          varying vec2 vUv;
          void main()
@@ -177,22 +182,25 @@ const canvas = document.querySelector('canvas.webgl')
         `,
         fragmentShader: `
             #include <common>
-
+            uniform sampler2D tDiffuse;
             varying vec2 vUv;
 
             void main() {
+
+                vec4 color = texture2D(tDiffuse, vUv);
                 gl_FragColor.xyz = vec3( rand( vUv ) );
                 gl_FragColor.w = 1.0;
+                gl_FragColor = color;                
             }
         `
      }
  )
 
- const postPlane = new THREE.PlaneGeometry( 2, 2 );
- const postQuad = new THREE.Mesh( postPlane, noiseMAT );
- scene.add(postQuad);
+//  const postPlane = new THREE.PlaneGeometry( 2, 2 );
+//  const postQuad = new THREE.Mesh( postPlane, noiseMAT );
+//  scene.add(postQuad);
 
-
+const noisePass = new ShaderPass(noiseMAT);
 
 
 
@@ -223,8 +231,9 @@ const renderPass = new RenderPass(scene,camera)
 effectComposer.addPass(renderPass)
 
 //noiseIntensity, scanlinesIntensity, scanlinesCount, grayscale 
-const filmPass = new FilmPass(0.1,0,1,false)
+const filmPass = new FilmPass(0.05,0,0,false)
 effectComposer.addPass(filmPass);
+// effectComposer.addPass(noisePass);
 
 // gui.add(filmPass,"noiseIntensity").min(0).max(3.0).set(0.1).name("noise");
 
