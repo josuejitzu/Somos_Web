@@ -23,10 +23,11 @@ const botonCerrarTextoSomos = document.querySelector(".botonCerrarTextoSomos");
 const panelTextoSomos = document.querySelector(".panelSomos");
 panelTextoSomos.style.visibility = 'hidden';
 
-const infoSpotSize = 250;
+const infoSpotSize = 300;
+
 var infospotAuditorio;
-infospotAuditorio = new PANOLENS.Infospot(infoSpotSize,"src/img/simbolos/FLECHA.png?v=123456782");
-infospotAuditorio.position.set( 4000.00, -665.23, 100 );
+infospotAuditorio = new PANOLENS.Infospot(500,"src/img/simbolos/FLECHA_AUDITORIO.png?v=123456782");
+infospotAuditorio.position.set( 4000.00, -165.23, -450 );
 // infospotAuditorio.addHoverText( 'AUDITORIO' );
 infospotAuditorio.addEventListener('click',()=>{
     console.log("spot Auditorio")
@@ -41,8 +42,9 @@ infospotAuditorio.addEventListener('click',()=>{
 })
 panoramaLobbyB.add(infospotAuditorio);
 panoramaLobbyB.rotation.y = Math.PI*2;
+
 var infospotSomos ;
-infospotSomos = new PANOLENS.Infospot(infoSpotSize,"src/img/simbolos/VER_MAS.png?v=123456782");
+infospotSomos = new PANOLENS.Infospot(400,"src/img/simbolos/FLECHA_Arriba.png?v=123456782");
 infospotSomos.position.set( -100, -1226.9262, -4478.4081 );
 
 // infospotSomos.addHoverText( 'SOMOS' );
@@ -59,7 +61,8 @@ panoramaLobbyA.add(infospotSomos);
 
 
 //nucleo2 pos 2800, -1200, -2500
-var infospotNucleo1 = new PANOLENS.Infospot(infoSpotSize,"src/img/simbolos/VER_MAS.png?v=123456783");
+// var infospotNucleo1 = new PANOLENS.Infospot(infoSpotSize,"src/img/simbolos/VER_MAS.png?v=123456783");
+var infospotNucleo1 = new PANOLENS.Infospot(infoSpotSize,"src/img/iconos/NUCLUO_I.png?v=123456783");
 infospotNucleo1.position.set( 3975.4445, -793, -50 );
 // infospotNucleo1.position.y = -850;
 // infospotNucleo1.addHoverText( 'Nucleo 1' );
@@ -71,7 +74,7 @@ infospotNucleo1.addEventListener('click',()=>{
 panoramaLobbyA.add(infospotNucleo1);
 
 
-var infospotNucleo2 = new PANOLENS.Infospot(infoSpotSize,"src/img/simbolos/VER_MAS.png?v=123456784");
+var infospotNucleo2 = new PANOLENS.Infospot(infoSpotSize,"src/img/iconos/NUCLUO_II.png?v=123456784");
 infospotNucleo2.position.set(  4083.8273, -833, -2440);
 infospotNucleo2.addEventListener('click',()=>{
     console.log("spot nucleo 2")
@@ -81,7 +84,7 @@ infospotNucleo2.addEventListener('click',()=>{
 panoramaLobbyA.add(infospotNucleo2);
 
 
-var infospotNucleo3 = new PANOLENS.Infospot(infoSpotSize,"src/img/simbolos/VER_MAS.png?v=123456785");
+var infospotNucleo3 = new PANOLENS.Infospot(infoSpotSize,"src/img/iconos/NUCLUO_III.png?v=123456785");
 infospotNucleo3.position.set(  3867.0618, -793.3954, -4370.0254);
 
 // infospotNucleo3.addHoverText( '' );
@@ -93,7 +96,7 @@ infospotNucleo3.addEventListener('click',()=>{
 panoramaLobbyA.add(infospotNucleo3);
 
 
-var infospotPosicionA = new PANOLENS.Infospot(infoSpotSize,"src/img/simbolos/FLECHA.png?v=123456781");
+var infospotPosicionA = new PANOLENS.Infospot(infoSpotSize,"src/img/simbolos/FLECHA_Arriba.png?v=123456781");
 infospotPosicionA.position.set( -1010.1609, -565.23, 3000 );
 // infospotPosicionA.addHoverText( 'Posicion A' );
 infospotPosicionA.addEventListener('click',()=>{
@@ -104,8 +107,8 @@ infospotPosicionA.addEventListener('click',()=>{
 })
 panoramaLobbyB.add(infospotPosicionA);
 
-var infospotPosicionB = new PANOLENS.Infospot(infoSpotSize,"src/img/simbolos/FLECHA_der.png?v=123456783");
-infospotPosicionB.position.set( 1265.8764, -565.23, -3828.1117 );
+var infospotPosicionB = new PANOLENS.Infospot(500,"src/img/simbolos/FLECHA_AUDITORIO.png?v=123456783");
+infospotPosicionB.position.set( 1265.8764, -165.23, -3828.1117 );
 // infospotPosicionB.addHoverText( 'Posicion B' );
 infospotPosicionB.addEventListener('click',()=>{
     console.log("posicionB")

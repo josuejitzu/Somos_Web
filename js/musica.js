@@ -1,6 +1,8 @@
 const botonSilencio = document.querySelector(".audioSilencio");
 let muteado = false;
 
+const imgConAudio ="src/img/simbolos/AUDIO.png";
+const imgSinAudio ="src/img/simbolos/SIN_AUDIO.png";
 
 
 function nombrePagina(){
@@ -56,12 +58,15 @@ var pistaSeleccionadaA, pistaseleccionadaB, pistaSeleccionadaC;
 botonSilencio.addEventListener("click",()=>{
     console.log("audio")
     if(muteado){
+        botonSilencio.src = imgConAudio;
         reproductorA.mute(false);
         reproductorB.mute(false);
         reproductorC.mute(false);
         muteado = false;
 
     }else{ 
+        botonSilencio.src = imgSinAudio;
+
         reproductorA.mute(true);
         reproductorB.mute(true);
         reproductorC.mute(true);
@@ -145,7 +150,7 @@ function cargarPista()
 
     reproductorA.once('load',()=>{
         console.log("audio Cargado");
-        reproductorA.play();
+        // reproductorA.play();
     })
     reproductorA.on('end', function(){
         console.log('Finished!');
