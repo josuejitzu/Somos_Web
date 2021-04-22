@@ -20,7 +20,7 @@ gsap.to(botonFlecha, {duration: 2,repeat:-1, repeatDelay:0.5,y:100});
 var controlesHabilitados = false;
 // Scene
 const scene = new THREE.Scene()
-const gui = new dat.GUI();
+// const gui = new dat.GUI();
 // gui.close ();
 
 // Object
