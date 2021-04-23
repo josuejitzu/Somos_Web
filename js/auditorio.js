@@ -8,8 +8,8 @@ panoramaLobby.addEventListener( 'enter-fade-start', function(){
 
 panoramaLobby.addEventListener( 'infospot-animation-complete', function(){
 
-    infospotDinamicoA.hide(0);     
-    infospotDinamicoB.hide(0);
+    // infospotDinamicoA.hide(0);     
+    // infospotDinamicoB.hide(0);
 
 })
 
@@ -34,16 +34,16 @@ infospotVideo.addEventListener('click',()=>{
 })
 panoramaLobby.add(infospotVideo);
 
-var infospotDinamicoA = new PANOLENS.Infospot(500,"src/img/simbolos/PLAY.png?v=123456781");
-infospotDinamicoA.position.set( 5000.00, 0,  -800);
+var infospotDinamicoA = new PANOLENS.Infospot(450,"src/img/iconos/iraNetflix.png?v=123456781");
+infospotDinamicoA.position.set( 5000.00, -2420,  -1660.4572);
 infospotDinamicoA.addEventListener('click',()=>{
     console.log("infospot dinamico A")
 })
  
 panoramaLobby.add(infospotDinamicoA)
 
-var infospotDinamicoB = new PANOLENS.Infospot(500,"src/img/simbolos/PLAY.png?v=123456782");
-infospotDinamicoB.position.set( 5000.00, 0,  600);
+var infospotDinamicoB = new PANOLENS.Infospot(450,"src/img/iconos/irA_SitioMuseo.png?v=123456782");
+infospotDinamicoB.position.set( 5000.00, -2420,  1699.4073);
 infospotDinamicoB.addEventListener('click',()=>{
     console.log("infospot dinamico B")
 })
@@ -55,11 +55,17 @@ panoramaLobby.add(infospotDinamicoB)
 
 //DEBUG UI
 
-// const gui = new dat.GUI();
+const gui = new dat.GUI();
 // gui.add(infospotVideo.position,"x").min(-5000).max(5000).step(0.0001).name("video_x")
 // gui.add(infospotVideo.position,"y").min(-5000).max(5000).step(0.0001).name("video_y")
 // gui.add(infospotVideo.position,"z").min(-5000).max(5000).step(0.0001).name("video_z")
+gui.add(infospotDinamicoA.position,"x").min(-5000).max(5000).step(0.0001).name("posA_x")
+gui.add(infospotDinamicoA.position,"y").min(-5000).max(5000).step(0.0001).name("posA_y")
+gui.add(infospotDinamicoA.position,"z").min(-5000).max(5000).step(0.0001).name("posA_z")
 
+gui.add(infospotDinamicoB.position,"x").min(-5000).max(5000).step(0.0001).name("posB_x")
+gui.add(infospotDinamicoB.position,"y").min(-5000).max(5000).step(0.0001).name("posB_y")
+gui.add(infospotDinamicoB.position,"z").min(-5000).max(5000).step(0.0001).name("posB_z")
 
 //Se construye viewer 360
 function setupPanolens () {

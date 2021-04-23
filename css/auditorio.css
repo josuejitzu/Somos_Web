@@ -26,8 +26,8 @@
     flex-wrap:nowrap;
     justify-content:flex-start;
     align-items:center;
-    /* visibility: hidden; */
-    opacity: 1;
+    visibility: hidden;
+    opacity: 0;
 }
 
 .panelVideosCentro
