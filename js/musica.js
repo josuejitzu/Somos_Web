@@ -25,29 +25,50 @@ const musciaPagina =
         [
             "SOMOS_101m02_SOMOS_STEREO.mp3",
             "SOMOS_101m03_The_Arrival_STEREO.mp3"
+        ],
+        [
+            "Somos.",
+            "The Arrival"
         ]
     ], 
     ["lobby.html",
         [
             "SOMOS_101m04_AA_Meeting_STEREO.mp3",
             "SOMOS_101m05_Flor_Maria_STEREO.mp3"
+        ],
+        
+        [
+            "Meeting",
+            "Flor Maria"
         ]
     ],
     ["auditorio.html",
         [
             "SOMOS_106m25_El_Despertar_STEREO.mp3",
             
+        ],
+        [
+            "El Despertar",
+            "The Arrival"
         ]
     ],
     ["nucleo1.html",
         [
             "SOMOS_106m04_Hacienda_Somos_STEREO.mp3"
+        ],
+        [
+            "Hacienda Somos.",
+            
         ]
     ],
     ["nucleo2.html",
         [
             "SOMOS_101m29_Allende_STEREO.mp3",
             "SOMOS_102m33_Allende_Pueblo_STEREO.mp3"
+        ],
+        [
+            "Allende",
+            "Allende Pueblo"
         ]
     ],
     ["nucleo3.html",
@@ -55,6 +76,11 @@ const musciaPagina =
             "SOMOS_101m08_Silverio_STEREO.mp3",
             "SOMOS_101m13_Paquito_STEREO.mp3",
             "SOMOS_101m27_Nancy_STEREO.mp3"
+        ],
+        [
+            "Silverio",
+            "Paquito",
+            "Nancy"
         ]
     ],
 ]
@@ -121,23 +147,31 @@ if(nombrePagina == "nucleo2.html")
 
 //[pagina][pistas][pista]
 //pistaSeleccionadaA = musciaPagina[1][1][0]
-
+var textoA,textoB,textoC;
 function cargarPista()
 {
     if(nombrePagina == "home.html"){
 
          pistaSeleccionadaA = musciaPagina[0][1][0]
          pistaSeleccionadaB = musciaPagina[0][1][1]
+         textoA = musciaPagina[0][2][0]
+         textoB = musciaPagina[0][2][1]
 
     }
     else if(nombrePagina == "lobby.html")
     {
         pistaSeleccionadaA = musciaPagina[1][1][0]
         pistaSeleccionadaB = musciaPagina[1][1][1]
+        textoA = musciaPagina[1][2][0]
+        textoB = musciaPagina[1][2][1]
+
     }
     else if(nombrePagina == "auditorio.html")
     {
         pistaSeleccionadaA = musciaPagina[2][1][0]
+        textoA = musciaPagina[2][2][0]
+        textoB = musciaPagina[2][2][1]
+
       
       
     }
@@ -145,21 +179,33 @@ function cargarPista()
     {
         pistaSeleccionadaA = musciaPagina[3][1][0]
         pistaSeleccionadaB = musciaPagina[3][1][1]
+        textoA = musciaPagina[3][2][0]
+        textoB = musciaPagina[3][2][1]
+
     }
     else if(nombrePagina == "nucleo2.html")
     {
         pistaSeleccionadaA = musciaPagina[4][1][0]
         pistaSeleccionadaB = musciaPagina[4][1][1]
+        textoA = musciaPagina[4][2][0]
+        textoB = musciaPagina[4][2][1]
+
     }
     else if(nombrePagina == "nucleo3.html")
     {
         pistaSeleccionadaA = musciaPagina[5][1][0]
         pistaSeleccionadaB = musciaPagina[5][1][1]
         pistaSeleccionadaC = musciaPagina[5][1][2]
+        textoA = musciaPagina[5][2][0]
+        textoB = musciaPagina[5][2][1]
+        textoC = musciaPagina[5][2][2]
+
     }
     
     console.log(pistaSeleccionadaA);
-    textoPiso.innerHTML = "Somos. - Victor Hernandez Stumphauser";
+    // textoPiso.innerHTML = "Somos. - Victor Hernandez Stumphauser";
+    cambiarNombrePista();
+
 
     
     reproductorA = new Howl({ 
@@ -171,19 +217,16 @@ function cargarPista()
     // mute:true
     })
     
-    if(pistaSelecccionB === null || pistaSelecccionB === undefined)
-    {
-        console.log("no hay pista B");
-    }
+ 
 
-        reproductorB = new Howl({ 
+      reproductorB = new Howl({ 
             src:["src/musica/"+pistaSeleccionadaB],
             // autoplay:true,
             volume:0.5,
             // loop:true,
             html:true,
             // mute:true
-        })
+        })  
     
     
    
@@ -207,6 +250,7 @@ function cargarPista()
         console.log("audio Cargado");
         reproductorA.play();
         console.log("reproduciendoA");
+        cambiarNombrePista(textoA);
 
     })
     reproductorA.on('end', function(){
@@ -215,6 +259,8 @@ function cargarPista()
         {
             reproductorB.play();
             console.log("reproduciendoB");
+            cambiarNombrePista(textoB);
+
 
         }else{
             // reproductorB.stop();
@@ -227,6 +273,8 @@ function cargarPista()
         {
 
             reproductorC.play();
+            cambiarNombrePista(textoC);
+
             console.log("reproduciendoC");
 
         }
@@ -251,9 +299,11 @@ botonCerrar.addEventListener('click',()=>
 
 })
 
-botonFlecha.addEventListener('click',()=>{
+// botonFlecha.addEventListener('click',()=>{
 
-})
+// })
+if(botonIniciar !== null)
+{
 botonIniciar.addEventListener('click',()=>{
     // reproductorA.stop();
     var id1 = reproductorA;
@@ -261,11 +311,17 @@ botonIniciar.addEventListener('click',()=>{
     reproductorB.play();
 
 })
+}
 
-function cambiarNombrePista()
+function cambiarNombrePista(pista)
 {
-    textoPiso.innerHTML = "pista";
+    
+    textoPiso.innerHTML = pista + " - Victor Hernandez Stumphauser";
+    if(pista == null||pista==" ")
+    {
+
+        textoPiso.innerHTML = "Somos." + "- Victor Hernandez Stumphauser";
+    }
 
     console.log("cambiando nombre");
 }
-// cambiarNombrePista();
