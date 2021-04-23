@@ -24,13 +24,13 @@ $(document).ready(function() {
     				if(data == 0){
     					// $("#divbt").removeClass("sbtn");
     					// $("#divbt").addClass("hbtn");
-                        console.log("desactivado")
+                        // console.log("desactivado")
                         desactivarBotones();
     				}
     				if(data == 1){
     					// $("#divbt").addClass("sbtn");
     					// $("#divbt").removeClass("hbtn");
-                        console.log("activado")
+                        // console.log("activado")
                         activarBotones();
 
     				}

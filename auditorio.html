@@ -38,7 +38,45 @@
         </div>
            
     </div>
-    
+    <div class="panelVideos">
+        <div class="panelVideosLateral" >
+            <img src="./src/img/simbolos/AUDIO.png" >
+             <img class="botonCerrarVid" src="./src/img/simbolos/CERRAR.png" >
+        </div>
+        <div class="panelVideosCentro">
+            <div class="marcoVideo" >
+                
+                <video id="player" class="player" playsinline controls poster="./src/img/netflix_video_poster.jpg">
+                    <source src="./src/vids/VIDEO_JAMES_BAJA.mp4" type="video/mp4" />
+                    <!-- <source src="/path/to/video.webm" type="video/webm" /> -->
+                  
+                    <!-- Captions are optional -->
+                    <!-- <track kind="captions" label="English captions" src="/path/to/captions.vtt" srclang="en" default /> -->
+                  </video>
+            </div>
+            <div class="panelVideosThumbs">
+                <div class="botonEntrevistaCompleta">
+                    <img src="./src/img/simbolos/PLAY.png" >
+                    <h3>Entrevista completa</h3>
+                </div>
+                <div>
+                    <img src="./src/img/thumbnails/netflix_thumb_01.png" >
+
+                </div>
+                <div>
+                     <img src="./src/img/thumbnails/netflix_thumb_02.png" >
+
+                </div>
+                <div>
+                     <img src="./src/img/thumbnails/netflix_thumb_03.png" >
+
+                </div>
+            </div>
+            
+        </div>
+      
+
+    </div>
 
     <div class="navegacionInferior">
         
@@ -66,6 +104,8 @@
     <script src="./js/directorio.js"></script>
     <script src="./js/loader.js"></script>
     <script src="./js/musica.js"></script>
+    <script src="https://cdn.plyr.io/3.6.5/plyr.polyfilled.js"></script>
+
     <script src="./js/auditorio.js"></script>
     <script src="./js/auditorioCall.js"></script>
     
