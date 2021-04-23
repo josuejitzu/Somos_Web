@@ -1,7 +1,16 @@
 const panoramaLobby = new PANOLENS.ImagePanorama( 'src/img/360/auditorio_6k.jpg' );
 panoramaLobby.addEventListener( 'enter-fade-start', function(){
     viewer.tweenControlCenter(  new THREE.Vector3(5000.00, -376, -300 ), 0 );
+  
   } );
+
+panoramaLobby.addEventListener( 'infospot-animation-complete', function(){
+
+    infospotDinamicoA.hide(0);     
+    infospotDinamicoB.hide(0);
+    
+})
+
 let viewer;
 
 const panoramaContainer = document.getElementById( 'panorama-container' );
@@ -11,25 +20,34 @@ const progressBar = document.getElementById( 'progress-bar' );
 // const closeButton = panoramaContainer.querySelector( '.close' );
 
 var infospotVideo;
-infospotVideo = new PANOLENS.Infospot(600,"src/img/simbolos/PLAY.png?v=123456781");
+infospotVideo = new PANOLENS.Infospot(600,"src/img/iconos/reproducir_auditorio.png?v=123456781");
 infospotVideo.position.set( 5000.00, -576, -300 );
 // infospotVideo.addHoverText( 'AUDITORIO' );
 infospotVideo.addEventListener('click',()=>{
     console.log("spot video")
    
-    
+    activarBotonesDinamicos();
 })
 panoramaLobby.add(infospotVideo);
 
-// var infospotSomos = new PANOLENS.Infospot(6000,"src/img/simbolos/VER_MAS.png");
-// infospotSomos.position.set( 5000.00, -565.23, 197.49 );
-// infospotSomos.addHoverText( 'SOMOS' );
-// infospotSomos.addEventListener('click',()=>{
-//     console.log("spot somos")
+var infospotDinamicoA = new PANOLENS.Infospot(500,"src/img/simbolos/PLAY.png?v=123456781");
+infospotDinamicoA.position.set( 5000.00, 0,  -800);
+infospotDinamicoA.addEventListener('click',()=>{
+    console.log("infospot dinamico A")
+})
  
-    
-// })
-// panoramaLobby.add(infospotSomos);
+panoramaLobby.add(infospotDinamicoA)
+
+var infospotDinamicoB = new PANOLENS.Infospot(500,"src/img/simbolos/PLAY.png?v=123456782");
+infospotDinamicoB.position.set( 5000.00, 0,  600);
+infospotDinamicoB.addEventListener('click',()=>{
+    console.log("infospot dinamico B")
+})
+
+panoramaLobby.add(infospotDinamicoB) 
+
+
+
 
 //DEBUG UI
 
@@ -54,6 +72,8 @@ function setupPanolens () {
         } 
     );
     viewer.add( panoramaLobby );
+    viewer.OrbitControls.noZoom = true;
+        
 }
 
 function createWidget(){
@@ -95,7 +115,22 @@ function init () {
     //     progressBar.style.opacity = 1;
     //     panoramaContainer.classList.remove( 'open' );
     // }, false );
+   
+
 }
+
 
 init();
 
+
+
+function activarBotonesDinamicos()
+{
+    // panoramaLobby.add(infospotDinamicoA)     
+    // panoramaLobby.add(infospotDinamicoB) 
+    // panoramaLobby.update();
+    infospotDinamicoA.show();     
+    infospotDinamicoB.show();     
+
+
+}
