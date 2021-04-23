@@ -28,7 +28,7 @@ botonCambiarPosA.addEventListener("click",()=>{cambioPosicion("posicionA")});
 
 var infoSpotSize = 400;
 var infospotFotos;
-infospotFotos = new PANOLENS.Infospot(infoSpotSize,"src/img/simbolos/VER_MAS.png?v=123456781");
+infospotFotos = new PANOLENS.Infospot(infoSpotSize,"src/img/iconos/mas_boton_white.png?v=123456781");
 infospotFotos.position.set( 5000.00, -500, -400 );
 // infospotFotos.addHoverText( 'VIDEOS' );
 infospotFotos.addEventListener('click',()=>{
@@ -40,7 +40,7 @@ infospotFotos.addEventListener('click',()=>{
 panoramaN2.add(infospotFotos);
 
 var infospotSomos ;
-infospotSomos = new PANOLENS.Infospot(infoSpotSize,"src/img/simbolos/VER_MAS.png?v=123456782");
+infospotSomos = new PANOLENS.Infospot(infoSpotSize,"src/img/iconos/mas_boton_white.png?v=123456782");
 infospotSomos.position.set( 4083.8273, -2202.3709, 3000 );
 // infospotSomos.addHoverText( 'SOMOS' );
 infospotSomos.addEventListener('click',()=>{
@@ -250,7 +250,7 @@ function cambioPosicion(pos){
 
 
 const gui = new dat.GUI({width:500});
-
+gui.close();
 
 
 
@@ -452,7 +452,7 @@ cuadroPlano_17.rotation.y = rotacionY; cuadroPlano_18.rotation.y = rotacionY; cu
 cuadroPlano_21.rotation.y = rotacionY; cuadroPlano_22.rotation.y = rotacionY; cuadroPlano_23.rotation.y = rotacionY; cuadroPlano_24.rotation.y = rotacionY; 
 cuadroPlano_25.rotation.y = rotacionY; 
 
-let posicionX = 182
+let posicionX = 182 //antes 182
 
 cuadroPlano_1.position.set(posicionX,0,-34.7163)
 cuadroPlano_1.scale.set(50,34.04,1);

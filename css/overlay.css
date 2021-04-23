@@ -28,6 +28,10 @@
   }
   .informacionAudio
   {
+    font-family: 'riccione-serialbold', Arial, sans-serif;
+    font-weight:normal;
+    font-style:normal;
+    
     display: flex;
     flex-direction: row;
     align-items:center;

@@ -1,15 +1,7 @@
-.botonesDinamicos
-{
-    position: aboslute;
-    z-index: 999;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    background: rgba(212, 23, 23, 0.863);
-}
+
 
 .panelVideos
-    {
+{
     font-family: 'riccione-serialbold', Arial, sans-serif;
     font-weight:normal;
     font-style:normal;
@@ -19,8 +11,8 @@
     height: 100%;
     /* height:100%; */
     /* overflow-y: scroll; */
-    background-color:rgba(0, 0, 0, 0.685); 
-    z-index:99;
+    background-color:rgba(0, 0, 0, 0.897); 
+    z-index:999;
     
     /* padding: 20px; */
     text-align: justify;
@@ -34,10 +26,11 @@
     flex-wrap:nowrap;
     justify-content:flex-start;
     align-items:center;
-    visibility: hidden;
-    opacity: 0;
-    }
-    .panelVideosCentro
+    /* visibility: hidden; */
+    opacity: 1;
+}
+
+.panelVideosCentro
     {
         width:80%; 
         height:80%;
@@ -66,21 +59,18 @@
     } 
 
     .panelVideosLateral img{
-        width: 30%;
+        width: 15%;
     }
 
-
-
-    .player{
-        --plyr-color-main:#ff0000;
-        --plyr-control-icon-size:1px;
-        --plyr-audio-control-color:#cc0000;
+.player{
+    --plyr-color-main:#ff0000;
+    --plyr-control-icon-size:1px;
+    --plyr-audio-control-color:#cc0000;
         /* min-width:40%;
         max-width:100%; */
-        width: 100%;
+    width: 100%;
         
-        
-    }
+}   
     /* @media (max-width: 500px) { 
         .player{
             --plyr-color-main:#ff0000;
@@ -101,42 +91,7 @@
         }
     } */
 
-    .panelVideosThumbs{
-        display:flex;
-        flex-direction: row;
-        justify-content:space-around;
-        align-items:center;
-        background-color:rgba(36, 90, 53, 0);
-        width:80%;
-        height: 20%;
-    }
-    .panelVideosThumbs div{
-        /* flex:1; */
-        background-color:rgba(36, 90, 53, 0);
-    } 
-    .panelVideosThumbs img
-    {
-        width:100%;
-        /* box-shadow: 2px 2px 5px rgba(26, 26, 26, 0.671); */
-    }
-    .botonEntrevistaCompleta
-    {
-        display:flex;
-        flex-direction: row;
-        align-items:center;
-        letter-spacing:2px;
-        /* flex:6; */
-        width:30%;
-    }
-    .botonEntrevistaCompleta img
-    {
-        width:20%;
-    }
-    .marcoVideo{
-        width: 80%;
-        /* align-self:center; */
-             
-    }
+  
 
 @media  (max-width:940px)
 {

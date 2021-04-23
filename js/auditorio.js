@@ -1,4 +1,6 @@
 const panoramaLobby = new PANOLENS.ImagePanorama( 'src/img/360/auditorio_6k.jpg' );
+const botonCerrarVideo = document.querySelector(".botonCerrarVid");
+const panelVideo = document.querySelector(".panelVideos");
 panoramaLobby.addEventListener( 'enter-fade-start', function(){
     viewer.tweenControlCenter(  new THREE.Vector3(5000.00, -376, -300 ), 0 );
   
@@ -20,13 +22,15 @@ const progressBar = document.getElementById( 'progress-bar' );
 // const closeButton = panoramaContainer.querySelector( '.close' );
 
 var infospotVideo;
-infospotVideo = new PANOLENS.Infospot(600,"src/img/iconos/reproducir_auditorio.png?v=123456781");
-infospotVideo.position.set( 5000.00, -576, -300 );
+infospotVideo = new PANOLENS.Infospot(500,"src/img/simbolos/PLAY.png?v=123456781");
+infospotVideo.position.set( 5000.00, -10, -200 );
 // infospotVideo.addHoverText( 'AUDITORIO' );
 infospotVideo.addEventListener('click',()=>{
     console.log("spot video")
-   
-    activarBotonesDinamicos();
+    panelVideo.style.visibility ="visible";
+    gsap.to(panelVideo,{duration:0.5,opacity:1.0});
+    
+    // activarBotonesDinamicos();
 })
 panoramaLobby.add(infospotVideo);
 
@@ -138,3 +142,12 @@ function desactivarBotonesDinamicos()
 {    infospotDinamicoA.hide();     
         infospotDinamicoB.hide();     
 }
+
+
+botonCerrarVideo.addEventListener("click",()=>{
+    gsap.to(panelVideo,{duration:0.5,opacity:0.0}).eventCallback('onComplete',()=>{
+        
+        panelVideo.style.visibility ="hidden";
+    });
+
+})

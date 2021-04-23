@@ -5,8 +5,11 @@ const imgSinAudio ="src/img/simbolos/SIN_AUDIO.png";
 let muteado = false;
 const botonFlecha = document.querySelector('.botonFlecha');
 const botonIniciar = document.querySelector('.botonInicio');
-
-
+const textoPiso = document.querySelector(".infoPista");
+let pistaSeleccionadaA; 
+let pistaseleccionadaB;
+let pistaSeleccionadaC;
+var reproductorA, reproductorB, reproductorC;
 
 function obtenerNombrePagina(){
     var path = window.location.pathname;
@@ -56,7 +59,7 @@ const musciaPagina =
     ],
 ]
 
-var pistaSeleccionadaA="", pistaseleccionadaB ="", pistaSeleccionadaC="";
+//BOTON SILENCIO
 
 botonSilencio.addEventListener("click",()=>{
     console.log("audio")
@@ -115,7 +118,7 @@ if(nombrePagina == "nucleo2.html")
 }
 
 
-var reproductorA, reproductorB, reproductorC;
+
 //[pagina][pistas][pista]
 //pistaSeleccionadaA = musciaPagina[1][1][0]
 
@@ -156,6 +159,8 @@ function cargarPista()
     }
     
     console.log(pistaSeleccionadaA);
+    textoPiso.innerHTML = "Somos. - Victor Hernandez Stumphauser";
+
     
     reproductorA = new Howl({ 
     src:["src/musica/"+pistaSeleccionadaA],
@@ -166,15 +171,20 @@ function cargarPista()
     // mute:true
     })
     
+    if(pistaSelecccionB === null || pistaSelecccionB === undefined)
+    {
+        console.log("no hay pista B");
+    }
 
-    reproductorB = new Howl({ 
-        src:["src/musica/"+pistaSeleccionadaB],
+        reproductorB = new Howl({ 
+            src:["src/musica/"+pistaSeleccionadaB],
             // autoplay:true,
-        volume:0.5,
+            volume:0.5,
             // loop:true,
-        html:true,
+            html:true,
             // mute:true
-    })
+        })
+    
     
    
     reproductorC = new Howl({ 
@@ -226,6 +236,7 @@ function cargarPista()
         // reproductorB.play();
     });
 
+
 }
 cargarPista();
  
@@ -250,3 +261,11 @@ botonIniciar.addEventListener('click',()=>{
     reproductorB.play();
 
 })
+
+function cambiarNombrePista()
+{
+    textoPiso.innerHTML = "pista";
+
+    console.log("cambiando nombre");
+}
+// cambiarNombrePista();
