@@ -8,7 +8,7 @@ panoramaLobby.addEventListener( 'infospot-animation-complete', function(){
 
     infospotDinamicoA.hide(0);     
     infospotDinamicoB.hide(0);
-    
+
 })
 
 let viewer;
@@ -133,4 +133,8 @@ function activarBotonesDinamicos()
     infospotDinamicoB.show();     
 
 
+}
+function desactivarBotonesDinamicos()
+{    infospotDinamicoA.hide();     
+        infospotDinamicoB.hide();     
 }

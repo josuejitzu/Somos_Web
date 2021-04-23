@@ -10,7 +10,9 @@ function activarBotones(){
     activarBotonesDinamicos();
     console.log("Se activaron externamente");
 }
-
+function desactivarBotones(){
+    desactivarBotonesDinamicos();
+}
 $(document).ready(function() {
   
 			
@@ -23,6 +25,7 @@ $(document).ready(function() {
     					// $("#divbt").removeClass("sbtn");
     					// $("#divbt").addClass("hbtn");
                         console.log("desactivado")
+                        desactivarBotones();
     				}
     				if(data == 1){
     					// $("#divbt").addClass("sbtn");
