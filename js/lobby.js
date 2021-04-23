@@ -26,8 +26,8 @@ panelTextoSomos.style.visibility = 'hidden';
 const infoSpotSize = 300;
 
 var infospotAuditorio;
-infospotAuditorio = new PANOLENS.Infospot(500,"src/img/simbolos/Flecha_AUDITORIO.png?v=123456782");
-infospotAuditorio.position.set( 4000.00, -165.23, -450 );
+infospotAuditorio = new PANOLENS.Infospot(500,"src/img/simbolos/Flecha_AUDITORIO.png?v=123456782");//
+infospotAuditorio.position.set( 5000.00, -165.23, -880 );
 // infospotAuditorio.addHoverText( 'AUDITORIO' );
 infospotAuditorio.addEventListener('click',()=>{
     console.log("spot Auditorio")
@@ -121,15 +121,15 @@ panoramaLobbyA.add(infospotPosicionB);
 
 
 //DEBUG GUI
-// const gui = new dat.GUI();
+const gui = new dat.GUI();
 
 // gui.add(infospotSomos.position,"x").min(-5000).max(5000).step(0.0001).name("Somos_x")
 // gui.add(infospotSomos.position,"y").min(-5000).max(5000).step(0.0001).name("Somos_y")
 // gui.add(infospotSomos.position,"z").min(-5000).max(5000).step(0.0001).name("Somos_z")
 
-// gui.add(infospotAuditorio.position,"x").min(-5000).max(5000).step(0.0001).name("Auditorio_x")
-// gui.add(infospotAuditorio.position,"y").min(-5000).max(5000).step(0.0001).name("Auditorio_y")
-// gui.add(infospotAuditorio.position,"z").min(-5000).max(5000).step(0.0001).name("Auditorio_z")
+gui.add(infospotAuditorio.position,"x").min(-5000).max(5000).step(0.0001).name("Auditorio_x")
+gui.add(infospotAuditorio.position,"y").min(-5000).max(5000).step(0.0001).name("Auditorio_y")
+gui.add(infospotAuditorio.position,"z").min(-5000).max(5000).step(0.0001).name("Auditorio_z")
 
 // gui.add(infospotPosicionA.position,"x").min(-5000).max(5000).step(0.0001).name("PosA_x")
 // gui.add(infospotPosicionA.position,"y").min(-5000).max(5000).step(0.0001).name("PosA_y")
@@ -165,9 +165,11 @@ function cambioPosicion(pos)
         panoramaLobbyA.add(infospotNucleo2); 
         panoramaLobbyA.add(infospotNucleo3); 
         infospotSomos.position.set( -100, -765.23, -3000 );
-        infospotNucleo1.position.set(  3975.4445, -1118.5436, -50 );
-        infospotNucleo2.position.set(  4083.8273, -950, -2527.5191);
+      
+        infospotNucleo1.position.set( 3975.4445, -793, -50 );
+        infospotNucleo2.position.set(  4083.8273, -833, -2440);
         infospotNucleo3.position.set(  3867.0618, -793.3954, -4370.0254);
+
 
         panoramaLobbyA.add(grupoEsferaN1)
         panoramaLobbyA.add(grupoEsferaN2)

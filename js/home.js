@@ -165,42 +165,13 @@ const canvas = document.querySelector('canvas.webgl')
 // var composer = new THREE.EffectComposer(renderer);
 // var renderPass = new THREE.RenderPass(scene, camera);
 // composer.addPass(renderPass);
- var noiseMAT = new THREE.ShaderMaterial(
-     {
-         transparent: true,
-         uniforms:
-        {
-            tDiffuse: { value: null }
-        },
-         vertexShader: `
-         varying vec2 vUv;
-         void main()
-         {
-            vUv = uv;
-            gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
-         }
-        `,
-        fragmentShader: `
-            #include <common>
-            uniform sampler2D tDiffuse;
-            varying vec2 vUv;
-
-            void main() {
-
-                vec4 color = texture2D(tDiffuse, vUv);
-                gl_FragColor.xyz = vec3( rand( vUv ) );
-                gl_FragColor.w = 1.0;
-                gl_FragColor = color;                
-            }
-        `
-     }
- )
+ 
 
 //  const postPlane = new THREE.PlaneGeometry( 2, 2 );
 //  const postQuad = new THREE.Mesh( postPlane, noiseMAT );
 //  scene.add(postQuad);
 
-const noisePass = new ShaderPass(noiseMAT);
+// const noisePass = new ShaderPass(noiseMAT);
 
 
 
@@ -227,12 +198,12 @@ renderer.outputEncoding = THREE.sRGBEncoding
  effectComposer.setSize(sizes.width, sizes.height)
 
 
-const renderPass = new RenderPass(scene,camera)
-effectComposer.addPass(renderPass)
+// const renderPass = new RenderPass(scene,camera)
+// effectComposer.addPass(renderPass)
 
 //noiseIntensity, scanlinesIntensity, scanlinesCount, grayscale 
-const filmPass = new FilmPass(0.05,0,0,false)
-effectComposer.addPass(filmPass);
+// const filmPass = new FilmPass(0.05,0,0,false)
+// effectComposer.addPass(filmPass);
 // effectComposer.addPass(noisePass);
 
 // gui.add(filmPass,"noiseIntensity").min(0).max(3.0).set(0.1).name("noise");
@@ -275,8 +246,8 @@ const tick = () =>
     
   
      // Render
-    // renderer.render(scene, camera)
-    effectComposer.render();
+    renderer.render(scene, camera)
+    // effectComposer.render();
 
     window.requestAnimationFrame(tick)
 }

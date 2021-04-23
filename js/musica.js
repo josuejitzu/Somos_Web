@@ -3,17 +3,18 @@ let botonSilencioB;
 const imgConAudio ="src/img/simbolos/AUDIO.png";
 const imgSinAudio ="src/img/simbolos/SIN_AUDIO.png";
 let muteado = false;
+const botonFlecha = document.querySelector('.botonFlecha');
+const botonIniciar = document.querySelector('.botonInicio');
 
 
 
-
-function nombrePagina(){
+function obtenerNombrePagina(){
     var path = window.location.pathname;
     var page = path.split("/").pop();
     console.log( page );
     return page;
 }
-
+const nombrePagina = obtenerNombrePagina()
 
 const musciaPagina =
 [
@@ -62,9 +63,9 @@ botonSilencio.addEventListener("click",()=>{
     if(muteado){
         botonSilencio.src = imgConAudio;
         reproductorA.mute(false);
-        if(nombrePagina() != "auditorio.html")
+        if(nombrePagina != "auditorio.html")
         reproductorB.mute(false);
-        if(nombrePagina()=="nucleo3.html")
+        if(nombrePagina =="nucleo3.html")
         reproductorC.mute(false);
         muteado = false;
 
@@ -72,10 +73,10 @@ botonSilencio.addEventListener("click",()=>{
         botonSilencio.src = imgSinAudio;
 
         reproductorA.mute(true);
-        if(nombrePagina() != "auditorio.html")
+        if(nombrePagina != "auditorio.html")
 
         reproductorB.mute(true);
-        if(nombrePagina()=="nucleo3.html")
+        if(nombrePagina =="nucleo3.html")
 
         reproductorC.mute(true);
         muteado = true;
@@ -85,7 +86,7 @@ botonSilencio.addEventListener("click",()=>{
 
 })
 
-if(nombrePagina() == "nucleo2.html")
+if(nombrePagina == "nucleo2.html")
 {
     botonSilencioB = document.querySelector(".audioSilencioB");
     botonSilencioB.addEventListener("click",()=>{
@@ -120,34 +121,34 @@ var reproductorA, reproductorB, reproductorC;
 
 function cargarPista()
 {
-    if(nombrePagina() == "home.html"){
+    if(nombrePagina == "home.html"){
 
          pistaSeleccionadaA = musciaPagina[0][1][0]
          pistaSeleccionadaB = musciaPagina[0][1][1]
 
     }
-    else if(nombrePagina() == "lobby.html")
+    else if(nombrePagina == "lobby.html")
     {
         pistaSeleccionadaA = musciaPagina[1][1][0]
         pistaSeleccionadaB = musciaPagina[1][1][1]
     }
-    else if(nombrePagina() == "auditorio.html")
+    else if(nombrePagina == "auditorio.html")
     {
         pistaSeleccionadaA = musciaPagina[2][1][0]
       
       
     }
-    else if(nombrePagina() == "nucleo1.html")
+    else if(nombrePagina == "nucleo1.html")
     {
         pistaSeleccionadaA = musciaPagina[3][1][0]
         pistaSeleccionadaB = musciaPagina[3][1][1]
     }
-    else if(nombrePagina() == "nucleo2.html")
+    else if(nombrePagina == "nucleo2.html")
     {
         pistaSeleccionadaA = musciaPagina[4][1][0]
         pistaSeleccionadaB = musciaPagina[4][1][1]
     }
-    else if(nombrePagina() == "nucleo3.html")
+    else if(nombrePagina == "nucleo3.html")
     {
         pistaSeleccionadaA = musciaPagina[5][1][0]
         pistaSeleccionadaB = musciaPagina[5][1][1]
@@ -199,17 +200,20 @@ function cargarPista()
 
     })
     reproductorA.on('end', function(){
-        console.log('Finished!');
-        if(nombrePagina()!="auditorio.html")
+        console.log('Finished A!');
+        if(nombrePagina !="auditorio.html" || nombrePagina !="home.html")
         {
             reproductorB.play();
             console.log("reproduciendoB");
 
+        }else{
+            // reproductorB.stop();
+            Howler.stop();
         }
     });
     reproductorB.on('end', function(){
-        console.log('Finished!');
-        if(nombrePagina()=="nucleo3.html")
+        console.log('Finished B!');
+        if(nombrePagina=="nucleo3.html")
         {
 
             reproductorC.play();
@@ -218,7 +222,7 @@ function cargarPista()
         }
     });
     reproductorC.on('end', function(){
-        console.log('Finished!');
+        console.log('Finished C!');
         // reproductorB.play();
     });
 
@@ -236,3 +240,13 @@ botonCerrar.addEventListener('click',()=>
 
 })
 
+botonFlecha.addEventListener('click',()=>{
+
+})
+botonIniciar.addEventListener('click',()=>{
+    // reproductorA.stop();
+    var id1 = reproductorA;
+    reproductorA.fade(1, 0, 1000, id1);
+    reproductorB.play();
+
+})
