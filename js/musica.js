@@ -115,6 +115,8 @@ botonSilencio.addEventListener("click",()=>{
 
 })
 
+
+
 if(nombrePagina == "nucleo2.html")
 {
     botonSilencioB = document.querySelector(".audioSilencioB");
@@ -324,4 +326,33 @@ function cambiarNombrePista(pista)
     }
 
     console.log("cambiando nombre");
+}
+
+function callarMusica(){
+
+
+    // console.log("audio")
+    // if(muteado){
+        // botonSilencio.src = imgConAudio;
+        // reproductorA.mute(false);
+        // if(nombrePagina != "auditorio.html")
+        // reproductorB.mute(false);
+        // if(nombrePagina =="nucleo3.html")
+        // reproductorC.mute(false);
+        // muteado = true;
+
+    // }else{ 
+        botonSilencio.src = imgSinAudio;
+
+        reproductorA.mute(true);
+        if(nombrePagina != "auditorio.html")
+
+        reproductorB.mute(true);
+        if(nombrePagina =="nucleo3.html")
+
+        reproductorC.mute(true);
+        muteado = true;
+
+    // }
+
 }

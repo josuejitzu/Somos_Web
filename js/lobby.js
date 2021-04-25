@@ -44,8 +44,8 @@ panoramaLobbyB.add(infospotAuditorio);
 panoramaLobbyB.rotation.y = Math.PI*2;
 
 var infospotSomos ;
-infospotSomos = new PANOLENS.Infospot(300,"src/img/iconos/mas_boton_white.png?v=123456782");
-infospotSomos.position.set( -100, -1226.9262, -4478.4081 );
+infospotSomos = new PANOLENS.Infospot(275,"src/img/iconos/mas_boton_white.png?v=123456782");
+infospotSomos.position.set( -300, -1226.9262, -4478.4081 );
 
 // infospotSomos.addHoverText( 'SOMOS' );
 infospotSomos.addEventListener('click',()=>{
@@ -107,8 +107,8 @@ infospotPosicionA.addEventListener('click',()=>{
 })
 panoramaLobbyB.add(infospotPosicionA);
 
-var infospotPosicionB = new PANOLENS.Infospot(500,"src/img/simbolos/Flecha_AUDITORIO.png?v=123456783");
-infospotPosicionB.position.set( 1265.8764, -165.23, -3828.1117 );
+var infospotPosicionB = new PANOLENS.Infospot(275,"src/img/iconos/mas_boton_white.png?v=123456785");
+infospotPosicionB.position.set( 1374.2591, -880, -4911.939 );
 // infospotPosicionB.addHoverText( 'Posicion B' );
 infospotPosicionB.addEventListener('click',()=>{
     console.log("posicionB")
@@ -121,15 +121,15 @@ panoramaLobbyA.add(infospotPosicionB);
 
 
 //DEBUG GUI
-const gui = new dat.GUI();
+// const gui = new dat.GUI();
 
 // gui.add(infospotSomos.position,"x").min(-5000).max(5000).step(0.0001).name("Somos_x")
 // gui.add(infospotSomos.position,"y").min(-5000).max(5000).step(0.0001).name("Somos_y")
 // gui.add(infospotSomos.position,"z").min(-5000).max(5000).step(0.0001).name("Somos_z")
 
-gui.add(infospotAuditorio.position,"x").min(-5000).max(5000).step(0.0001).name("Auditorio_x")
-gui.add(infospotAuditorio.position,"y").min(-5000).max(5000).step(0.0001).name("Auditorio_y")
-gui.add(infospotAuditorio.position,"z").min(-5000).max(5000).step(0.0001).name("Auditorio_z")
+// gui.add(infospotAuditorio.position,"x").min(-5000).max(5000).step(0.0001).name("Auditorio_x")
+// gui.add(infospotAuditorio.position,"y").min(-5000).max(5000).step(0.0001).name("Auditorio_y")
+// gui.add(infospotAuditorio.position,"z").min(-5000).max(5000).step(0.0001).name("Auditorio_z")
 
 // gui.add(infospotPosicionA.position,"x").min(-5000).max(5000).step(0.0001).name("PosA_x")
 // gui.add(infospotPosicionA.position,"y").min(-5000).max(5000).step(0.0001).name("PosA_y")

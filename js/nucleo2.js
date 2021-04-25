@@ -1,14 +1,14 @@
 
 
 import { GLTFLoader } from './three/examples/jsm/loaders/GLTFLoader.js'
-const panoramaN2 = new PANOLENS.ImagePanorama( 'src/img/360/nucleo02.jpg' );
+const panoramaN2 = new PANOLENS.ImagePanorama( 'src/img/360/nucleo02_5.jpg' );
 panoramaN2.addEventListener( 'enter-fade-start', function(){
-    viewer.tweenControlCenter(  new THREE.Vector3(5000.00, -700, 0), 0 );
+    viewer.tweenControlCenter(  new THREE.Vector3(5000.00, 1500, 0), 0 );
   } );
 
 
 const panoramaN2_B = new PANOLENS.ImagePanorama( 'src/img/360/nucleo02_closeup.jpg' );
-panoramaN2.addEventListener( 'enter-fade-start', function(){
+panoramaN2_B.addEventListener( 'enter-fade-start', function(){
     viewer.tweenControlCenter(  new THREE.Vector3(5000.00, 1500, 0), 0 );
   } );
 
@@ -249,8 +249,8 @@ function cambioPosicion(pos){
 }
 
 
-const gui = new dat.GUI({width:500});
-gui.close();
+// const gui = new dat.GUI({width:500});
+// gui.close();
 
 
 
@@ -527,10 +527,10 @@ cuadroPlano_25.position.set(posicionX, 78.6367,-24.8646);//151.0876, 26.8861
 cuadroPlano_25.scale.set(35.03, 25 ,1);//50,38.25,1
 
 // gui.add(cuadroPlano_24.position,"x").min(-5000).max(5000).step(0.0001).name("planoPos_X");
-gui.add(cuadroPlano_24.position,"y").min(-500).max(500).step(0.0001).name("planoPos_Y");
-gui.add(cuadroPlano_24.position,"z").min(-500).max(500).step(0.0001).name("planoPos_Z");
-gui.add(cuadroPlano_24.scale,"x").min(0).max(500).step(0.01).name("planoScala_X");
-gui.add(cuadroPlano_24.scale,"y").min(0).max(500).step(0.01).name("planoScala_Y");
+// gui.add(cuadroPlano_24.position,"y").min(-500).max(500).step(0.0001).name("planoPos_Y");
+// gui.add(cuadroPlano_24.position,"z").min(-500).max(500).step(0.0001).name("planoPos_Z");
+// gui.add(cuadroPlano_24.scale,"x").min(0).max(500).step(0.01).name("planoScala_X");
+// gui.add(cuadroPlano_24.scale,"y").min(0).max(500).step(0.01).name("planoScala_Y");
 // gui.add(cuadroPlano_24.scale,"z").min(0).max(50).step(0.01).name("planoScala_Z");
 // gui.add(cuadroPlano_17.rotation,"x").min(-Math.PI).max(Math.PI).step(0.0001).name("planoRotacion_X");
 // gui.add(cuadroPlano_25.rotation,"y").min(-Math.PI).max(Math.PI).step(0.0001).name("planoRotacion_Y");

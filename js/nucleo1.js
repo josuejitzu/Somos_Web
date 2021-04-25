@@ -12,7 +12,66 @@ const botonCerrarTextoSomos = document.querySelector(".botonCerrarTextoSomos");
 const panelTextoSomos = document.querySelector(".panelSomos");
 panelTextoSomos.style.visibility = 'hidden';
 
-var infoSpotSize = 400;
+// const player = new Plyr(document.querySelector('.js-player'));
+const player = new Plyr(document.querySelector('.player'));
+console.log(player);
+const botonThumb1 = document.querySelector(".thumb1");
+const botonThumb2 = document.querySelector(".thumb2");
+const botonThumb3 = document.querySelector(".thumb3");
+console.log(botonThumb1)
+const videoJames ={
+    type: 'video',
+    title: 'Example title',
+    sources: [
+      {
+        src: 'src/vids/JAMES_2.mp4',
+        type: 'video/mp4',
+        size: 1080,
+      }
+    ],
+    poster: 'src/img/netflix_video_poster.jpg',
+    previewThumbnails: {
+      src: '',
+    },
+  };
+
+
+
+  const videoMonika ={
+    type: 'video',
+    title: 'Example title',
+    sources: [
+      {
+        src: 'src/vids/Monika_2.mp4',
+        type: 'video/mp4',
+        size: 1080,
+      }
+    ],
+    poster: 'src/img/netflix_video_poster.jpg',
+    previewThumbnails: {
+      src: '',
+    },
+  };
+  
+
+const videoFernanda ={
+    type: 'video',
+    title: 'Example title',
+    sources: [
+      {
+        src: 'src/vids/Fernanda_2.mp4',
+        type: 'video/mp4',
+        size: 1080,
+      }
+    ],
+    poster: 'src/img/netflix_video_poster.jpg',
+    previewThumbnails: {
+      src: '',
+    },
+  };
+
+
+var infoSpotSize = 300;
 var infospotVideos;
 infospotVideos = new PANOLENS.Infospot(infoSpotSize,"src/img/iconos/mas_boton_white.png?v=123456781");
 infospotVideos.position.set( 5000.00, -2000, -400 );
@@ -20,6 +79,7 @@ infospotVideos.position.set( 5000.00, -2000, -400 );
 infospotVideos.addEventListener('click',()=>{
     console.log("spot Videos")
     abrirVideos(true);
+
     
 })
 panoramaLobby.add(infospotVideos);
@@ -130,6 +190,7 @@ console.log(videoPlayer);
 const botonCerrarVideo = document.querySelector(".botonCerrarVid");
 botonCerrarVideo.addEventListener("click",()=>{{
     abrirVideos(false);
+    player.pause();
 }})
 
 const panelVideos = document.querySelector(".panelVideos");
@@ -137,6 +198,9 @@ function abrirVideos(abrir){
     if(abrir)
     {
         panelVideos.style.visibility ="visible";
+        // player.source = videoMonika;
+
+        callarMusica();
         
         gsap.fromTo(panelVideos,{opacity:0},{duration:0.5,opacity:1}).eventCallback('onComplete',()=>{
 
@@ -160,4 +224,40 @@ function abrirVideos(abrir){
 
     }
 
+}
+
+player.on('play', function(){
+    console.log("reproduciendo")
+    // callarMusica();
+})
+
+botonThumb1.addEventListener('click',()=>{
+console.log("tumb1")
+
+    cambiarVideo(1);
+})
+    
+botonThumb2.addEventListener('click', ()=>{
+
+    cambiarVideo(2)
+});
+botonThumb3.addEventListener('click', ()=>{
+    cambiarVideo(3)
+});
+
+
+function cambiarVideo(num){
+    console.log("cambiando video");
+    if(num == 1){
+        player.source = videoJames;
+
+    }
+    else if(num == 2){
+        player.source = videoFernanda;
+    }
+    else if (num == 3)
+    {
+        player.source = videoMonika;
+
+    }
 }
