@@ -102,19 +102,20 @@
     .panelVideosThumbs{
         display:flex;
         flex-direction: row;
-        justify-content:space-around;
+        justify-content:flex-end;
         align-items:center;
         background-color:rgba(36, 90, 53, 0);
         width:80%;
         height: 20%;
     }
     .panelVideosThumbs div{
-        /* flex:1; */
-        background-color:rgba(36, 90, 53, 0);
+        flex:1;
+        background-color:rgba(150, 99, 40, 0);
+        /* justify-content:flex-end; */
     } 
     .panelVideosThumbs img
     {
-        width:100%;
+        width:70%;
         /* box-shadow: 2px 2px 5px rgba(26, 26, 26, 0.671); */
     }
     .botonEntrevistaCompleta
@@ -124,7 +125,7 @@
         align-items:center;
         letter-spacing:2px;
         /* flex:6; */
-        width:30%;
+        width:70%;
     }
     .botonEntrevistaCompleta img
     {
