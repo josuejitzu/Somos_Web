@@ -12,6 +12,7 @@ panoramaLobby.addEventListener( 'infospot-animation-complete', function(){
     // infospotDinamicoB.hide(0);
 
 })
+const videoPlayer = document.querySelector(".player");
 
 let viewer;
 
@@ -29,7 +30,7 @@ infospotVideo.addEventListener('click',()=>{
     console.log("spot video")
     panelVideo.style.visibility ="visible";
     gsap.to(panelVideo,{duration:0.5,opacity:1.0});
-    
+    callarMusica();
     // activarBotonesDinamicos();
 })
 panoramaLobby.add(infospotVideo);
@@ -55,17 +56,17 @@ panoramaLobby.add(infospotDinamicoB)
 
 //DEBUG UI
 
-const gui = new dat.GUI();
+// const gui = new dat.GUI();
 // gui.add(infospotVideo.position,"x").min(-5000).max(5000).step(0.0001).name("video_x")
 // gui.add(infospotVideo.position,"y").min(-5000).max(5000).step(0.0001).name("video_y")
 // gui.add(infospotVideo.position,"z").min(-5000).max(5000).step(0.0001).name("video_z")
-gui.add(infospotDinamicoA.position,"x").min(-5000).max(5000).step(0.0001).name("posA_x")
-gui.add(infospotDinamicoA.position,"y").min(-5000).max(5000).step(0.0001).name("posA_y")
-gui.add(infospotDinamicoA.position,"z").min(-5000).max(5000).step(0.0001).name("posA_z")
+// gui.add(infospotDinamicoA.position,"x").min(-5000).max(5000).step(0.0001).name("posA_x")
+// gui.add(infospotDinamicoA.position,"y").min(-5000).max(5000).step(0.0001).name("posA_y")
+// gui.add(infospotDinamicoA.position,"z").min(-5000).max(5000).step(0.0001).name("posA_z")
 
-gui.add(infospotDinamicoB.position,"x").min(-5000).max(5000).step(0.0001).name("posB_x")
-gui.add(infospotDinamicoB.position,"y").min(-5000).max(5000).step(0.0001).name("posB_y")
-gui.add(infospotDinamicoB.position,"z").min(-5000).max(5000).step(0.0001).name("posB_z")
+// gui.add(infospotDinamicoB.position,"x").min(-5000).max(5000).step(0.0001).name("posB_x")
+// gui.add(infospotDinamicoB.position,"y").min(-5000).max(5000).step(0.0001).name("posB_y")
+// gui.add(infospotDinamicoB.position,"z").min(-5000).max(5000).step(0.0001).name("posB_z")
 
 //Se construye viewer 360
 function setupPanolens () {
@@ -151,6 +152,8 @@ function desactivarBotonesDinamicos()
 
 
 botonCerrarVideo.addEventListener("click",()=>{
+    
+    videoPlayer.pause();
     gsap.to(panelVideo,{duration:0.5,opacity:0.0}).eventCallback('onComplete',()=>{
         
         panelVideo.style.visibility ="hidden";
