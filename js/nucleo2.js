@@ -3,13 +3,13 @@
 import { GLTFLoader } from './three/examples/jsm/loaders/GLTFLoader.js'
 const panoramaN2 = new PANOLENS.ImagePanorama( 'src/img/360/nucleo02.jpg' );
 panoramaN2.addEventListener( 'enter-fade-start', function(){
-    viewer.tweenControlCenter(  new THREE.Vector3(5000.00, -500, 0), 0 );
+    viewer.tweenControlCenter(  new THREE.Vector3(5000.00, -700, 0), 0 );
   } );
 
 
 const panoramaN2_B = new PANOLENS.ImagePanorama( 'src/img/360/nucleo02_closeup.jpg' );
 panoramaN2.addEventListener( 'enter-fade-start', function(){
-    viewer.tweenControlCenter(  new THREE.Vector3(5000.00, 1000, 0), 0 );
+    viewer.tweenControlCenter(  new THREE.Vector3(5000.00, 1500, 0), 0 );
   } );
 
 let viewer;
