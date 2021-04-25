@@ -1,4 +1,4 @@
-const panoramaLobby = new PANOLENS.ImagePanorama( 'src/img/360/nucleo01_4.jpg' );
+const panoramaLobby = new PANOLENS.ImagePanorama( 'src/img/360/nucleo01_5.jpg' );
 panoramaLobby.addEventListener( 'enter-fade-start', function(){
     viewer.tweenControlCenter(  new THREE.Vector3(5500.00, 0, -4000 ), 0 );
   } );
@@ -124,6 +124,7 @@ botonCerrarTextoSomos.addEventListener('click',()=>{
 })
 
 var videoPlayer = document.querySelector(".video-js");
+console.log(videoPlayer);
 // videoPlayer.responsive(true);
 
 const botonCerrarVideo = document.querySelector(".botonCerrarVid");
