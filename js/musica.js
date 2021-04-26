@@ -92,23 +92,26 @@ botonSilencio.addEventListener("click",()=>{
     console.log("audio")
     if(muteado){
         botonSilencio.src = imgConAudio;
-        reproductorA.mute(false);
-        if(nombrePagina != "auditorio.html")
-        reproductorB.mute(false);
-        if(nombrePagina =="nucleo3.html")
-        reproductorC.mute(false);
-        muteado = false;
+        sound.mute(true);
+
+        // reproductorA.mute(false);
+        // if(nombrePagina != "auditorio.html")
+        // reproductorB.mute(false);
+        // if(nombrePagina =="nucleo3.html")
+        // reproductorC.mute(false);
+        // muteado = false;
 
     }else{ 
         botonSilencio.src = imgSinAudio;
 
-        reproductorA.mute(true);
-        if(nombrePagina != "auditorio.html")
+        // reproductorA.mute(true);
+        // if(nombrePagina != "auditorio.html")
 
-        reproductorB.mute(true);
-        if(nombrePagina =="nucleo3.html")
+        // reproductorB.mute(true);
+        // if(nombrePagina =="nucleo3.html")
 
-        reproductorC.mute(true);
+        // reproductorC.mute(true);
+        sound.mute(true);
         muteado = true;
 
     }
@@ -126,18 +129,20 @@ if(nombrePagina == "nucleo2.html")
         if(muteado){
             botonSilencio.src = imgConAudio;
             botonSilencioB.src = imgConAudio;
-            reproductorA.mute(false);
-            reproductorB.mute(false);
-            reproductorC.mute(false);
+            // reproductorA.mute(false);
+            // reproductorB.mute(false);
+            // reproductorC.mute(false);
             muteado = false;
 
         }else{ 
             botonSilencio.src = imgSinAudio;
             botonSilencioB.src = imgSinAudio;
 
-            reproductorA.mute(true);
-            reproductorB.mute(true);
-            reproductorC.mute(true);
+            // reproductorA.mute(true);
+            // reproductorB.mute(true);
+            // reproductorC.mute(true);
+            sound.mute(true);
+
             muteado = true;
 
         }
@@ -398,13 +403,15 @@ function callarMusica(){
     // }else{ 
         botonSilencio.src = imgSinAudio;
 
-        reproductorA.mute(true);
-        if(nombrePagina != "auditorio.html")
+        // reproductorA.mute(true);
+        // if(nombrePagina != "auditorio.html")
 
-        reproductorB.mute(true);
-        if(nombrePagina =="nucleo3.html")
+        // reproductorB.mute(true);
+        // if(nombrePagina =="nucleo3.html")
 
-        reproductorC.mute(true);
+        // reproductorC.mute(true);
+        sound.mute(true);
+
         muteado = true;
 
     // }
