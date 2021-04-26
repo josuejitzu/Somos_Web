@@ -3,7 +3,7 @@
 import { GLTFLoader } from './three/examples/jsm/loaders/GLTFLoader.js'
 const panoramaN2 = new PANOLENS.ImagePanorama( 'src/img/360/nucleo02_6.jpg' );
 panoramaN2.addEventListener( 'enter-fade-start', function(){
-    viewer.tweenControlCenter(  new THREE.Vector3(5000.00, 1500, 0), 0 );
+    viewer.tweenControlCenter(  new THREE.Vector3(5000.00, 200, 0), 0 );
   } );
   panoramaN2.addEventListener('progress', function(e){
     // hide the loader
@@ -22,7 +22,7 @@ panoramaN2.addEventListener( 'enter-fade-start', function(){
 
 const panoramaN2_B = new PANOLENS.ImagePanorama( 'src/img/360/nucleo02_closeup2.jpg' );
 panoramaN2_B.addEventListener( 'enter-fade-start', function(){
-    viewer.tweenControlCenter(  new THREE.Vector3(5000.00, 1500, 0), 0 );
+    viewer.tweenControlCenter(  new THREE.Vector3(5000.00, 200, 0), 0 );
   } );
 
 let viewer;
@@ -39,10 +39,10 @@ const navegacionInferiorN2 = document.querySelector(".navegacionInferiorN2")
 const botonCambiarPosA = document.querySelector(".cambiarPos");
 botonCambiarPosA.addEventListener("click",()=>{cambioPosicion("posicionA")});
 
-var infoSpotSize = 400;
+var infoSpotSize = 300;
 var infospotFotos;
-infospotFotos = new PANOLENS.Infospot(infoSpotSize,"src/img/iconos/mas_boton_white.png?v=123456781");
-infospotFotos.position.set( 5000.00, -500, -400 );
+infospotFotos = new PANOLENS.Infospot(infoSpotSize,"src/img/iconos/mas_boton.png?v=123456781");
+infospotFotos.position.set( 5000.00, -1800, -400 );
 // infospotFotos.addHoverText( 'VIDEOS' );
 infospotFotos.addEventListener('click',()=>{
     console.log("spot Videos")
@@ -53,7 +53,7 @@ infospotFotos.addEventListener('click',()=>{
 panoramaN2.add(infospotFotos);
 
 var infospotSomos ;
-infospotSomos = new PANOLENS.Infospot(infoSpotSize,"src/img/iconos/mas_boton_white.png?v=123456782");
+infospotSomos = new PANOLENS.Infospot(infoSpotSize,"src/img/iconos/mas_boton.png?v=123456782");
 infospotSomos.position.set( 4083.8273, -2202.3709, 3000 );
 // infospotSomos.addHoverText( 'SOMOS' );
 infospotSomos.addEventListener('click',()=>{
@@ -466,78 +466,80 @@ cuadroPlano_17.rotation.y = rotacionY; cuadroPlano_18.rotation.y = rotacionY; cu
 cuadroPlano_21.rotation.y = rotacionY; cuadroPlano_22.rotation.y = rotacionY; cuadroPlano_23.rotation.y = rotacionY; cuadroPlano_24.rotation.y = rotacionY; 
 cuadroPlano_25.rotation.y = rotacionY; 
 
-let posicionX = 182 //antes 182
+let posicionX = 230 //antes 182
+let offsetY = -30;
+let offestZ = 10;
 
-cuadroPlano_1.position.set(posicionX,0,-34.7163)
+cuadroPlano_1.position.set(posicionX,0 + offsetY,-34.7163  + offestZ)
 cuadroPlano_1.scale.set(50,34.04,1);
 
-cuadroPlano_2.position.set(posicionX,120,-70)
+cuadroPlano_2.position.set(posicionX,120 + offsetY,-70 + offestZ )
 cuadroPlano_2.scale.set(40.92, 61.62,1);
 
-cuadroPlano_4.position.set(posicionX,-1,74)
+cuadroPlano_4.position.set(posicionX,-1 + offsetY,74 + offestZ)
 cuadroPlano_4.scale.set(50,34.04,1);
 
-cuadroPlano_5.position.set(posicionX,125,-19.6895)
+cuadroPlano_5.position.set(posicionX,125 + offsetY,-19.6895 + offestZ)
 cuadroPlano_5.scale.set(50,61.62,1);
 
-cuadroPlano_6.position.set(posicionX,50,60);
+cuadroPlano_6.position.set(posicionX,50 + offsetY,60 + offestZ);
 cuadroPlano_6.scale.set(22.8,17.63,1);
 
-cuadroPlano_7.position.set(posicionX,99.3369,109);
+cuadroPlano_7.position.set(posicionX,99.3369 + offsetY,109 + offestZ);
 cuadroPlano_7.scale.set(22.8,17.63,1);
 
-cuadroPlano_8.position.set(posicionX,30,0);
+cuadroPlano_8.position.set(posicionX,30 + offsetY,0 + offestZ);
 cuadroPlano_8.scale.set(50,38.25,1);
 
-cuadroPlano_9.position.set(posicionX,30,60);
+cuadroPlano_9.position.set(posicionX,30 + offsetY,60 + offestZ);
 cuadroPlano_9.scale.set(22.8,17.63,1);
 
-cuadroPlano_10.position.set(posicionX,-8,33);
+cuadroPlano_10.position.set(posicionX,-8 + offsetY,33 + offestZ);
 cuadroPlano_10.scale.set(22.8,40.92,1);
 
-cuadroPlano_11.position.set(posicionX,88.9868,73.4616);
+cuadroPlano_11.position.set(posicionX,88.9868 + offsetY,73.4616 + offestZ);
 cuadroPlano_11.scale.set(38.34,51.27,1)
 
-cuadroPlano_12.position.set(posicionX,70,-110);
+cuadroPlano_12.position.set(posicionX,70 + offsetY,-110 + offestZ);
 cuadroPlano_12.scale.set(42,27.98,1)
 
-cuadroPlano_13.position.set(posicionX,109.6871,26.8861);
+cuadroPlano_13.position.set(posicionX,109.6871 + offsetY,26.8861 + offestZ);
 cuadroPlano_13.scale.set(36.09,22.8,1)
 
-cuadroPlano_14.position.set(posicionX,0,-80);
+cuadroPlano_14.position.set(posicionX,0 + offsetY,-80 + offestZ);
 cuadroPlano_14.scale.set(59.03,38.33,1)
 
-cuadroPlano_15.position.set(posicionX,72,103);
+cuadroPlano_15.position.set(posicionX,72 + offsetY,103 + offestZ);
 cuadroPlano_15.scale.set(12.45, 17.63, 1);
 
-cuadroPlano_16.position.set(posicionX, 165, 25);
+cuadroPlano_16.position.set(posicionX, 165 + offsetY, 25 + offestZ);
 cuadroPlano_16.scale.set(30, 20.01, 1);
 
-cuadroPlano_17.position.set(posicionX,40,0);
+cuadroPlano_17.position.set(posicionX,40 + offsetY,0 + offestZ);
 cuadroPlano_17.scale.set(90.08,48,1);
 
-cuadroPlano_18.position.set(posicionX,70,-66.2651);
+cuadroPlano_18.position.set(posicionX,70 + offsetY,-66.2651 + offestZ);
 cuadroPlano_18.scale.set(27.98,26,1);
 
-cuadroPlano_19.position.set(posicionX,135,26.8861);
+cuadroPlano_19.position.set(posicionX,135 + offsetY,26.8861 + offestZ);
 cuadroPlano_19.scale.set(38.34,22.8,1);
 
-cuadroPlano_20.position.set(posicionX,78.6367,21.711);
+cuadroPlano_20.position.set(posicionX,78.6367 + offsetY,21.711 + offestZ);
 cuadroPlano_20.scale.set(33.15,22.81,1);
 
-cuadroPlano_21.position.set(posicionX,40,94.1619);
+cuadroPlano_21.position.set(posicionX,40 + offsetY,94.1619 + offestZ);
 cuadroPlano_21.scale.set(40.92,27.98,1);
 
-cuadroPlano_22.position.set(posicionX,37.2363,-71.4401);
+cuadroPlano_22.position.set(posicionX,37.2363 + offsetY,-71.4401 + offestZ);
 cuadroPlano_22.scale.set(41,27.98,1);
 
-cuadroPlano_23.position.set(posicionX,-8,-15);
+cuadroPlano_23.position.set(posicionX,-8 + offsetY,-15 + offestZ);
 cuadroPlano_23.scale.set(61.63,40.92,1);
 
-cuadroPlano_24.position.set(posicionX,140, 80);//78.6367,-24.8646
+cuadroPlano_24.position.set(posicionX,140 + offsetY, 80 + offestZ);//78.6367,-24.8646
 cuadroPlano_24.scale.set(50,38.25,1);//35.03, 25 ,1
 
-cuadroPlano_25.position.set(posicionX, 78.6367,-24.8646);//151.0876, 26.8861
+cuadroPlano_25.position.set(posicionX, 78.6367 + offsetY,-24.8646 + offestZ);//151.0876, 26.8861
 cuadroPlano_25.scale.set(35.03, 25 ,1);//50,38.25,1
 
 // gui.add(cuadroPlano_24.position,"x").min(-5000).max(5000).step(0.0001).name("planoPos_X");
@@ -740,39 +742,21 @@ const sizes ={
 
 const mouse = new THREE.Vector2()
 
-window.addEventListener('mousemove', (event) =>
-{
-    mouse.x = event.clientX / sizes.width * 2 - 1
-    mouse.y = - (event.clientY / sizes.height) * 2 + 1
+// window.addEventListener('mousemove', (event) =>
+// {
+//     mouse.x = event.clientX / sizes.width * 2 - 1
+//     mouse.y = - (event.clientY / sizes.height) * 2 + 1
 
-    // console.log(mouse)
-})
+//     // console.log(mouse)
+// })
 
-const raycaster = new THREE.Raycaster()
-const intersects = raycaster.intersectObjects([cuadroPlano_25,cuadroPlano_17])
-console.log(intersects)
+// const raycaster = new THREE.Raycaster()
+// const intersects = raycaster.intersectObjects([cuadroPlano_25,cuadroPlano_17])
+// console.log(intersects)
 
 // getRaycastViewCenter() → {THREE.Vector3}
 
-const tick=()=>{
 
-    // window.requestAnimationFrame(tick);
-
-    // const rayOrigin = new THREE.Vector3(- 3, 0, 0)
-    // const rayDirection = new THREE.Vector3(10, 0, 0)
-    // rayDirection.normalize()
-
-    // raycaster.set(mouse, viewer.getRaycastViewCenter())
-
-    // const objectsToTest = [cuadroPlano_25,cuadroPlano_17]
-    // // console.log(intersects);
-    // for(const intersect of intersects)
-    // {
-    //     // intersect.object.material.color.set('#0000ff')
-    //     console.log("hola 2")
-    // }
-}
-tick();
 
 // registerEventListeners()
 // registerMouseAndTouchEvents()
