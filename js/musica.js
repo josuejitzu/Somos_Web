@@ -1,7 +1,7 @@
 const botonSilencio = document.querySelector(".audioSilencio");
 let botonSilencioB;
-const imgConAudio ="src/img/simbolos/AUDIO.png";
-const imgSinAudio ="src/img/simbolos/SIN_AUDIO.png";
+const imgConAudio ="src/img/simbolos/AUDIO_negro.png";
+const imgSinAudio ="src/img/simbolos/SIN_AUDIO_negro.png";
 let muteado = false;
 const botonFlecha = document.querySelector('.botonFlecha');
 const botonIniciar = document.querySelector('.botonInicio');

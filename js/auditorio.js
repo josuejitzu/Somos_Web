@@ -28,6 +28,8 @@ panoramaLobby.addEventListener( 'infospot-animation-complete', function(){
 
 })
 const videoPlayer =  new Plyr(document.querySelector('.player'));
+const imgVidConAudio_blanco ="src/img/simbolos/AUDIO.png";
+const imgVidSinAudio_blanco ="src/img/simbolos/SIN_AUDIO.png";
 
 let viewer;
 
@@ -54,7 +56,7 @@ infospotVideo.addEventListener('click',()=>{
 panoramaLobby.add(infospotVideo);
 
 var infospotDinamicoA = new PANOLENS.Infospot(450,"src/img/iconos/iraNetflix_negro.png?v=123456781");
-infospotDinamicoA.position.set( 5000.00, -2420,  -1660.4572);
+infospotDinamicoA.position.set( 5000.00, -3220,  -1660.4572);
 infospotDinamicoA.addEventListener('click',()=>{
     console.log("infospot dinamico A")
 })
@@ -62,7 +64,7 @@ infospotDinamicoA.addEventListener('click',()=>{
 panoramaLobby.add(infospotDinamicoA)
 
 var infospotDinamicoB = new PANOLENS.Infospot(450,"src/img/iconos/irA_SitioMuseo_negro.png?v=123456782");
-infospotDinamicoB.position.set( 5000.00, -2420,  1699.4073);
+infospotDinamicoB.position.set( 5000.00, -3220,  1699.4073);
 infospotDinamicoB.addEventListener('click',()=>{
     console.log("infospot dinamico B")
 })
@@ -186,7 +188,7 @@ botonMuteVideo.addEventListener('click',()=>{
     videoPlayer.muted = !videoPlayer.muted;
     
     //ojo estamos usando las ruta de imagenes de musica.js
-    botonMuteVideo.src = videoPlayer.muted ? imgSinAudio:imgConAudio;
+    botonMuteVideo.src = videoPlayer.muted ? imgVidSinAudio_blanco:imgVidConAudio_blanco;
     
 
 })

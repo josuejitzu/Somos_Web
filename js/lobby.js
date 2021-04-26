@@ -27,7 +27,7 @@ panoramaLobbyA.addEventListener('progress', function(e){
 
  });
 
-const panoramaLobbyB = new PANOLENS.ImagePanorama( 'src/img/360/posicion02_5.jpg' );
+const panoramaLobbyB = new PANOLENS.ImagePanorama( 'src/img/360/posicion02_6.jpg' );
 panoramaLobbyB.addEventListener( 'enter-fade-start', function(){
     viewer.tweenControlCenter(  new THREE.Vector3(4000.00, -465.23, 100), 0 );
   } );
@@ -49,8 +49,8 @@ panelTextoSomos.style.visibility = 'hidden';
 const infoSpotSize = 300;
 
 var infospotAuditorio;
-infospotAuditorio = new PANOLENS.Infospot(500,"src/img/simbolos/Flecha_AUDITORIO.png?v=123456782");//
-infospotAuditorio.position.set( 5000.00, -165.23, -880 );
+infospotAuditorio = new PANOLENS.Infospot(410,"src/img/iconos/mas_boton.png?v=123456782");//
+infospotAuditorio.position.set( 5000.00, -1765.23, -880 );
 // infospotAuditorio.addHoverText( 'AUDITORIO' );
 infospotAuditorio.addEventListener('click',()=>{
     console.log("spot Auditorio")
@@ -67,7 +67,7 @@ panoramaLobbyB.add(infospotAuditorio);
 panoramaLobbyB.rotation.y = Math.PI*2;
 
 var infospotSomos ;
-infospotSomos = new PANOLENS.Infospot(275,"src/img/iconos/mas_boton_white.png?v=123456782");
+infospotSomos = new PANOLENS.Infospot(275,"src/img/iconos/mas_boton.png?v=123456783");
 infospotSomos.position.set( -300, -1226.9262, -4478.4081 );
 
 // infospotSomos.addHoverText( 'SOMOS' );
@@ -85,7 +85,7 @@ panoramaLobbyA.add(infospotSomos);
 
 //nucleo2 pos 2800, -1200, -2500
 // var infospotNucleo1 = new PANOLENS.Infospot(infoSpotSize,"src/img/simbolos/VER_MAS.png?v=123456783");
-var infospotNucleo1 = new PANOLENS.Infospot(infoSpotSize,"src/img/iconos/NUCLUO_I.png?v=123456783");
+var infospotNucleo1 = new PANOLENS.Infospot(infoSpotSize,"src/img/iconos/NUCLUO_I_n.png?v=123456783");
 infospotNucleo1.position.set( 3975.4445, -780, -50 );
 // infospotNucleo1.position.y = -850;
 // infospotNucleo1.addHoverText( 'Nucleo 1' );
@@ -119,7 +119,7 @@ infospotNucleo3.addEventListener('click',()=>{
 panoramaLobbyA.add(infospotNucleo3);
 
 
-var infospotPosicionA = new PANOLENS.Infospot(infoSpotSize,"src/img/simbolos/FLECHA_Arriba.png?v=123456781");
+var infospotPosicionA = new PANOLENS.Infospot(200,"src/img/simbolos/FLECHA_Arriba_negro.png?v=123456781");
 infospotPosicionA.position.set( -1010.1609, -565.23, 3000 );
 // infospotPosicionA.addHoverText( 'Posicion A' );
 infospotPosicionA.addEventListener('click',()=>{
@@ -130,7 +130,7 @@ infospotPosicionA.addEventListener('click',()=>{
 })
 panoramaLobbyB.add(infospotPosicionA);
 
-var infospotPosicionB = new PANOLENS.Infospot(275,"src/img/iconos/mas_boton_white.png?v=123456785");
+var infospotPosicionB = new PANOLENS.Infospot(200,"src/img/iconos/mas_boton.png?v=123456785");
 infospotPosicionB.position.set( 1374.2591, -880, -4911.939 );
 // infospotPosicionB.addHoverText( 'Posicion B' );
 infospotPosicionB.addEventListener('click',()=>{

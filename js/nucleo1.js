@@ -36,7 +36,9 @@ const botonThumb2 = document.querySelector(".thumb2");
 const botonThumb3 = document.querySelector(".thumb3");
 const botonMuteVideo = document.querySelector(".botonMuteVideo");
 const imgVidConAudio ="src/img/simbolos/AUDIO.png";
+const imgVidConAudio_negro ="src/img/simbolos/AUDIO_negro.png";
 const imgVidSinAudio ="src/img/simbolos/SIN_AUDIO.png";
+const imgVidSinAudio_negro ="src/img/simbolos/SIN_AUDIO_negro.png";
 
 console.log(botonThumb1)
 const videoJames ={
@@ -91,7 +93,7 @@ const videoFernanda ={
   };
 
 
-var infoSpotSize = 300;
+var infoSpotSize = 200;
 var infospotVideos;
 infospotVideos = new PANOLENS.Infospot(infoSpotSize,"src/img/iconos/mas_boton.png?v=123456781");
 infospotVideos.position.set( 5000.00, -2000, -400 );
@@ -105,7 +107,7 @@ infospotVideos.addEventListener('click',()=>{
 panoramaLobby.add(infospotVideos);
 
 var infospotSomos ;
-infospotSomos = new PANOLENS.Infospot(infoSpotSize,"src/img/iconos/mas_boton_white.png?v=123456782");
+infospotSomos = new PANOLENS.Infospot(infoSpotSize,"src/img/iconos/mas_boton.png?v=123456782");
 infospotSomos.position.set( 1900, -1660, -5000 );
 // infospotSomos.addHoverText( 'SOMOS' );
 infospotSomos.addEventListener('click',()=>{
@@ -289,7 +291,7 @@ botonMuteVideo.addEventListener('click',()=>{
     player.muted = !player.muted;
     
     //ojo estamos usando las ruta de imagenes de musica.js
-    botonMuteVideo.src = player.muted ? imgSinAudio:imgConAudio;
+    botonMuteVideo.src = player.muted ? imgVidSinAudio:imgVidConAudio;
     
 
 })

@@ -79,6 +79,8 @@ body
   display: flex;
   flex-direction: row;
   align-items:center;
+  color: #000000;
+
 }
 .navegacionInferior
   {
