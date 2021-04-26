@@ -93,7 +93,7 @@ const videoFernanda ={
 
 var infoSpotSize = 300;
 var infospotVideos;
-infospotVideos = new PANOLENS.Infospot(infoSpotSize,"src/img/iconos/mas_boton_white.png?v=123456781");
+infospotVideos = new PANOLENS.Infospot(infoSpotSize,"src/img/iconos/mas_boton.png?v=123456781");
 infospotVideos.position.set( 5000.00, -2000, -400 );
 // infospotVideos.addHoverText( 'VIDEOS' );
 infospotVideos.addEventListener('click',()=>{
