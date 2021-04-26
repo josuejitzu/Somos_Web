@@ -34,6 +34,10 @@ console.log(player);
 const botonThumb1 = document.querySelector(".thumb1");
 const botonThumb2 = document.querySelector(".thumb2");
 const botonThumb3 = document.querySelector(".thumb3");
+const botonMuteVideo = document.querySelector(".botonMuteVideo");
+const imgVidConAudio ="src/img/simbolos/AUDIO.png";
+const imgVidSinAudio ="src/img/simbolos/SIN_AUDIO.png";
+
 console.log(botonThumb1)
 const videoJames ={
     type: 'video',
@@ -277,3 +281,14 @@ function cambiarVideo(num){
 
     }
 }
+
+// var videoMuteado = false;
+botonMuteVideo.addEventListener('click',()=>{
+    console.log("mutear video");
+    player.muted = !player.muted;
+    
+    //ojo estamos usando las ruta de imagenes de musica.js
+    botonMuteVideo.src = player.muted ? imgSinAudio:imgConAudio;
+    
+
+})

@@ -92,14 +92,14 @@ botonSilencio.addEventListener("click",()=>{
     console.log("audio")
     if(muteado){
         botonSilencio.src = imgConAudio;
-        sound.mute(true);
+        sound.mute(false);
+        muteado = false;
 
         // reproductorA.mute(false);
         // if(nombrePagina != "auditorio.html")
         // reproductorB.mute(false);
         // if(nombrePagina =="nucleo3.html")
         // reproductorC.mute(false);
-        // muteado = false;
 
     }else{ 
         botonSilencio.src = imgSinAudio;
@@ -132,6 +132,8 @@ if(nombrePagina == "nucleo2.html")
             // reproductorA.mute(false);
             // reproductorB.mute(false);
             // reproductorC.mute(false);
+            sound.mute(false);
+
             muteado = false;
 
         }else{ 
@@ -419,10 +421,11 @@ function callarMusica(){
 }
 
 window.addEventListener('load',()=>{
-    reproductorA.play();
+    // reproductorA.play();
 })
 
 document.addEventListener("DOMContentLoaded", function(event) {
     // console.log("DOM fully loaded and parsed");
-    reproductorA.play();
+    // reproductorA.play();
+    sound.play();
   });
