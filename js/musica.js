@@ -17,7 +17,8 @@ function obtenerNombrePagina(){
     console.log( page );
     return page;
 }
-const nombrePagina = obtenerNombrePagina()
+var nombrePagina = obtenerNombrePagina()
+console.log(nombrePagina)
 
 const musciaPagina =
 [
@@ -38,7 +39,7 @@ const musciaPagina =
         ],
         
         [
-            "Meeting",
+            "AA Meeting",
             "Flor Maria"
         ]
     ],
@@ -152,12 +153,14 @@ if(nombrePagina == "nucleo2.html")
 var textoA,textoB,textoC;
 function cargarPista()
 {
-    if(nombrePagina == "home.html"){
 
-         pistaSeleccionadaA = musciaPagina[0][1][0]
-         pistaSeleccionadaB = musciaPagina[0][1][1]
-         textoA = musciaPagina[0][2][0]
-         textoB = musciaPagina[0][2][1]
+    if(nombrePagina == "home.html"){
+        
+        //  pistaSeleccionadaA = musciaPagina[0][1][0]
+        //  pistaSeleccionadaB = musciaPagina[0][1][1]
+        //  textoA = musciaPagina[0][2][0]
+        //  textoB = musciaPagina[0][2][1]
+        reproducir(0,0);
 
     }
     else if(nombrePagina == "lobby.html")
@@ -166,6 +169,8 @@ function cargarPista()
         pistaSeleccionadaB = musciaPagina[1][1][1]
         textoA = musciaPagina[1][2][0]
         textoB = musciaPagina[1][2][1]
+        reproducir(1,0);
+
 
     }
     else if(nombrePagina == "auditorio.html")
@@ -174,7 +179,8 @@ function cargarPista()
         textoA = musciaPagina[2][2][0]
         textoB = musciaPagina[2][2][1]
 
-      
+        reproducir(2,0);
+        
       
     }
     else if(nombrePagina == "nucleo1.html")
@@ -183,6 +189,7 @@ function cargarPista()
         pistaSeleccionadaB = musciaPagina[3][1][1]
         textoA = musciaPagina[3][2][0]
         textoB = musciaPagina[3][2][1]
+        reproducir(3,0);
 
     }
     else if(nombrePagina == "nucleo2.html")
@@ -191,6 +198,8 @@ function cargarPista()
         pistaSeleccionadaB = musciaPagina[4][1][1]
         textoA = musciaPagina[4][2][0]
         textoB = musciaPagina[4][2][1]
+        reproducir(4,0);
+
 
     }
     else if(nombrePagina == "nucleo3.html")
@@ -201,10 +210,13 @@ function cargarPista()
         textoA = musciaPagina[5][2][0]
         textoB = musciaPagina[5][2][1]
         textoC = musciaPagina[5][2][2]
+        reproducir(5,0);
+
 
     }
+    return;
     
-    console.log(pistaSeleccionadaA);
+    // console.log(pistaSeleccionadaA);
     // textoPiso.innerHTML = "Somos. - Victor Hernandez Stumphauser";
     cambiarNombrePista();
 
@@ -212,16 +224,16 @@ function cargarPista()
     
     reproductorA = new Howl({ 
     src:["src/musica/"+pistaSeleccionadaA],
-     autoplay:true,
+    // autoplay:true,
     volume:0.5,
     // loop:true,
     html:true,
     // mute:true
-    })
+    }
+    )
     
- 
 
-      reproductorB = new Howl({ 
+    reproductorB = new Howl({ 
             src:["src/musica/"+pistaSeleccionadaB],
             // autoplay:true,
             volume:0.5,
@@ -257,16 +269,17 @@ function cargarPista()
     })
     reproductorA.on('end', function(){
         console.log('Finished A!');
-        if(nombrePagina !="auditorio.html" || nombrePagina !="home.html")
-        {
+        if("auditorio.html" != nombrePagina  || "home.html" != nombrePagina  )
+        {   
+            console.log(nombrePagina)
             reproductorB.play();
             console.log("reproduciendoB");
             cambiarNombrePista(textoB);
 
 
         }else{
-            // reproductorB.stop();
-            Howler.stop();
+             reproductorB.stop();
+            //Howler.stop();
         }
     });
     reproductorB.on('end', function(){
@@ -289,6 +302,37 @@ function cargarPista()
 
 }
 cargarPista();
+
+
+///i=pagina,j=desde que pista
+function reproducir(i,j)
+{
+    var sound = new Howl({
+        src: ["src/musica/"+ musciaPagina[i][1][j]],
+        volume:0.5,
+        html:true,
+        onend: function(){
+            if(j + 1 == musciaPagina[0][0].length)
+            {
+                console.log("no mas pistas")
+            }else{
+                if(nombrePagina != "home.html")
+                {
+
+                    console.log("reproduciendo pista 2")
+                    reproducir(i,j+1)
+                }
+            }
+        }
+    
+    })
+    sound.play();
+
+
+    cambiarNombrePista( musciaPagina[i][2][j]);
+
+
+}
  
 var botonCerrar = document.getElementById("botonCerrar");
 botonCerrar.addEventListener('click',()=>
@@ -301,17 +345,20 @@ botonCerrar.addEventListener('click',()=>
 
 })
 
-// botonFlecha.addEventListener('click',()=>{
+botonFlecha.addEventListener('click',()=>{
+    reproducir(0,1);
+
+});
 
 // })
 if(botonIniciar !== null)
 {
 botonIniciar.addEventListener('click',()=>{
     // reproductorA.stop();
-    var id1 = reproductorA;
-    reproductorA.fade(1, 0, 1000, id1);
-    reproductorB.play();
-
+    // var id1 = reproductorA;
+    // reproductorA.fade(1, 0, 1000, id1);
+    // reproductorB.play();
+    reproducir(0,1);
 })
 }
 
@@ -356,3 +403,12 @@ function callarMusica(){
     // }
 
 }
+
+window.addEventListener('load',()=>{
+    reproductorA.play();
+})
+
+document.addEventListener("DOMContentLoaded", function(event) {
+    // console.log("DOM fully loaded and parsed");
+    reproductorA.play();
+  });
