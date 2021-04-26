@@ -49,8 +49,8 @@ panelTextoSomos.style.visibility = 'hidden';
 const infoSpotSize = 300;
 
 var infospotAuditorio;
-infospotAuditorio = new PANOLENS.Infospot(410,"src/img/iconos/mas_boton.png?v=123456782");//
-infospotAuditorio.position.set( 5000.00, -1765.23, -880 );
+infospotAuditorio = new PANOLENS.Infospot(300,"src/img/iconos/mas_boton.png?v=123456782");//
+infospotAuditorio.position.set( 5000.00, -1705.23, -880 );
 // infospotAuditorio.addHoverText( 'AUDITORIO' );
 infospotAuditorio.addEventListener('click',()=>{
     console.log("spot Auditorio")

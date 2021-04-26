@@ -6,6 +6,7 @@ let muteado = false;
 const botonFlecha = document.querySelector('.botonFlecha');
 const botonIniciar = document.querySelector('.botonInicio');
 const textoPiso = document.querySelector(".infoPista");
+const textoPisoB = document.querySelector(".infoPistaB");
 let pistaSeleccionadaA; 
 let pistaseleccionadaB;
 let pistaSeleccionadaC;
@@ -380,10 +381,13 @@ function cambiarNombrePista(pista)
 {
     
     textoPiso.innerHTML = pista ;//+ " - Victor Hernández Stumphauser";
+    if(textoPisoB)
+        textoPisoB.innerHTML = pista;
     if(pista == null||pista==" ")
     {
 
         textoPiso.innerHTML = "Somos." ;//+ "- Victor Hernández Stumphauser";
+
     }
 
     console.log("cambiando nombre");
