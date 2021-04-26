@@ -23,7 +23,7 @@ function move() {
     if(i>=100)
     {
         clearInterval(id);
-        ocularLoad();
+        // ocultarLoad();
     }else{ i++
         bar1.set(i);
     }
@@ -33,7 +33,7 @@ function move() {
 }
 move()
 
-function ocularLoad(){
+function ocultarLoad(){
   console.log("ocultar load")
   document.querySelector(".panelCarga").style.opacity = 0.0;
   //document.querySelector(".panelCarga").style.visibility = "hidden";

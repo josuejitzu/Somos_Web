@@ -8,6 +8,16 @@ panoramaLobbyA.addEventListener( 'enter-fade-start', function(){
     viewer.tweenControlCenter(  new THREE.Vector3(4083.8273, -450, -2635.9018), 0 );
 
   } );
+// panoramaLobbyA.addEventListener('progress', function(e){
+//     // show the loader
+//     console.log(e.loaded/e.total);
+//  });
+ panoramaLobbyA.addEventListener('load', function(e){
+    // hide the loader
+    ocultarLoad();
+
+ });
+
 const panoramaLobbyB = new PANOLENS.ImagePanorama( 'src/img/360/posicion02_4.jpg' );
 panoramaLobbyB.addEventListener( 'enter-fade-start', function(){
     viewer.tweenControlCenter(  new THREE.Vector3(4000.00, -465.23, 100), 0 );

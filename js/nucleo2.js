@@ -5,7 +5,11 @@ const panoramaN2 = new PANOLENS.ImagePanorama( 'src/img/360/nucleo02_6.jpg' );
 panoramaN2.addEventListener( 'enter-fade-start', function(){
     viewer.tweenControlCenter(  new THREE.Vector3(5000.00, 1500, 0), 0 );
   } );
+  panoramaN2.addEventListener('load', function(e){
+    // hide the loader
+    ocultarLoad();
 
+ });
 
 const panoramaN2_B = new PANOLENS.ImagePanorama( 'src/img/360/nucleo02_closeup2.jpg' );
 panoramaN2_B.addEventListener( 'enter-fade-start', function(){

@@ -2,6 +2,14 @@ const panoramaLobby = new PANOLENS.ImagePanorama( 'src/img/360/nucleo01_5.jpg' )
 panoramaLobby.addEventListener( 'enter-fade-start', function(){
     viewer.tweenControlCenter(  new THREE.Vector3(5500.00, 0, -4000 ), 0 );
   } );
+
+  panoramaLobby.addEventListener('load', function(e){
+    // hide the loader
+    console.log(e)
+
+    ocultarLoad();
+
+ });
 let viewer;
 const panoramaContainer = document.getElementById( 'panorama-container' );
 // const galleryContainer = document.getElementById( 'gallery-container' );

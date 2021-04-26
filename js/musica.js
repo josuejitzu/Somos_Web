@@ -312,6 +312,7 @@ function reproducir(i,j)
         volume:0.5,
         html:true,
         onend: function(){
+            // console.log("pista fin");
             if(j + 1 == musciaPagina[0][0].length)
             {
                 console.log("no mas pistas")
