@@ -16,7 +16,7 @@ const botonIniciar = document.querySelector('.botonInicio');
 
 gsap.fromTo(botonFlecha, {autoAlpha: 0}, {autoAlpha: 1, duration: 2,repeat:-1,repeatDelay:0.5})
 gsap.to(botonFlecha, {delay:2, duration: 0.5,repeat:-1, repeatDelay:2,autoAlpha:0});
-gsap.fromTo(botonFlecha,{y:-50}, {duration: 2,repeat:-1, repeatDelay:0.5,y:50});
+gsap.fromTo(botonFlecha,{y:-60}, {duration: 2,repeat:-1, repeatDelay:0.5,y:20});
 var controlesHabilitados = false;
 // Scene
 const scene = new THREE.Scene()
