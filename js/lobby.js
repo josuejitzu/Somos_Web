@@ -27,7 +27,7 @@ panoramaLobbyA.addEventListener('progress', function(e){
 
  });
 
-const panoramaLobbyB = new PANOLENS.ImagePanorama( 'src/img/360/posicion02_4.jpg' );
+const panoramaLobbyB = new PANOLENS.ImagePanorama( 'src/img/360/posicion02_5.jpg' );
 panoramaLobbyB.addEventListener( 'enter-fade-start', function(){
     viewer.tweenControlCenter(  new THREE.Vector3(4000.00, -465.23, 100), 0 );
   } );

@@ -427,5 +427,5 @@ window.addEventListener('load',()=>{
 document.addEventListener("DOMContentLoaded", function(event) {
     // console.log("DOM fully loaded and parsed");
     // reproductorA.play();
-    sound.play();
+    // sound.play();
   });
