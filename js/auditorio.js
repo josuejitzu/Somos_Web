@@ -35,6 +35,9 @@ const panoramaContainer = document.getElementById( 'panorama-container' );
 // const galleryContainer = document.getElementById( 'gallery-container' );
 const mainContainer = document.getElementById( 'main-container' );
 const progressBar = document.getElementById( 'progress-bar' );
+// const player = new Plyr(document.querySelector('.player'));
+
+const botonMuteVideo = document.querySelector( '.botonMuteVideo')
 // const closeButton = panoramaContainer.querySelector( '.close' );
 
 var infospotVideo;
@@ -173,5 +176,15 @@ botonCerrarVideo.addEventListener("click",()=>{
         
         panelVideo.style.visibility ="hidden";
     });
+
+})
+
+botonMuteVideo.addEventListener('click',()=>{
+    console.log("mutear video");
+    videoPlayer.muted = !videoPlayer.muted;
+    
+    //ojo estamos usando las ruta de imagenes de musica.js
+    botonMuteVideo.src = videoPlayer.muted ? imgSinAudio:imgConAudio;
+    
 
 })

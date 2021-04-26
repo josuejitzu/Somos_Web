@@ -71,6 +71,12 @@
     width: 100%;
         
 }   
+.plyr{
+    --plyr-color-main:#ff0000;
+    /* --plyr-control-icon-size:1px; */
+    /* --plyr-audio-control-color:#cc0000; */
+    /* --plyr-video-control-color:#cc0000; */
+}
     /* @media (max-width: 500px) { 
         .player{
             --plyr-color-main:#ff0000;
