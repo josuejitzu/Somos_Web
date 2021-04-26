@@ -2,7 +2,7 @@ const panoramaLobby = new PANOLENS.ImagePanorama( 'src/img/360/auditorio_04.jpg'
 const botonCerrarVideo = document.querySelector(".botonCerrarVid");
 const panelVideo = document.querySelector(".panelVideos");
 panoramaLobby.addEventListener( 'enter-fade-start', function(){
-    viewer.tweenControlCenter(  new THREE.Vector3(5000.00, -376, -300 ), 0 );
+    viewer.tweenControlCenter(  new THREE.Vector3(5000.00, -1776,  ), 0 );
   
   } );
   panoramaLobby.addEventListener('progress', function(e){
@@ -41,7 +41,7 @@ const botonMuteVideo = document.querySelector( '.botonMuteVideo')
 // const closeButton = panoramaContainer.querySelector( '.close' );
 
 var infospotVideo;
-infospotVideo = new PANOLENS.Infospot(500,"src/img/simbolos/PLAY.png?v=123456781");
+infospotVideo = new PANOLENS.Infospot(350,"src/img/simbolos/PLAY.png?v=123456781");
 infospotVideo.position.set( 5000.00, -10, -200 );
 // infospotVideo.addHoverText( 'AUDITORIO' );
 infospotVideo.addEventListener('click',()=>{
@@ -53,7 +53,7 @@ infospotVideo.addEventListener('click',()=>{
 })
 panoramaLobby.add(infospotVideo);
 
-var infospotDinamicoA = new PANOLENS.Infospot(450,"src/img/iconos/iraNetflix.png?v=123456781");
+var infospotDinamicoA = new PANOLENS.Infospot(450,"src/img/iconos/iraNetflix_negro.png?v=123456781");
 infospotDinamicoA.position.set( 5000.00, -2420,  -1660.4572);
 infospotDinamicoA.addEventListener('click',()=>{
     console.log("infospot dinamico A")
@@ -61,7 +61,7 @@ infospotDinamicoA.addEventListener('click',()=>{
  
 panoramaLobby.add(infospotDinamicoA)
 
-var infospotDinamicoB = new PANOLENS.Infospot(450,"src/img/iconos/irA_SitioMuseo.png?v=123456782");
+var infospotDinamicoB = new PANOLENS.Infospot(450,"src/img/iconos/irA_SitioMuseo_negro.png?v=123456782");
 infospotDinamicoB.position.set( 5000.00, -2420,  1699.4073);
 infospotDinamicoB.addEventListener('click',()=>{
     console.log("infospot dinamico B")

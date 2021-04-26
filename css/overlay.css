@@ -128,3 +128,8 @@
     font-size:30px;
   }
 }
+
+.barraPista{
+  display: flex;
+  flex-direction: column;
+}

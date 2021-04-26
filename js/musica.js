@@ -379,11 +379,11 @@ if(botonIniciar !== null)
 function cambiarNombrePista(pista)
 {
     
-    textoPiso.innerHTML = pista + " - Victor Hernandez Stumphauser";
+    textoPiso.innerHTML = pista ;//+ " - Victor Hernández Stumphauser";
     if(pista == null||pista==" ")
     {
 
-        textoPiso.innerHTML = "Somos." + "- Victor Hernandez Stumphauser";
+        textoPiso.innerHTML = "Somos." ;//+ "- Victor Hernández Stumphauser";
     }
 
     console.log("cambiando nombre");
