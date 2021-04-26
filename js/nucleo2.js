@@ -107,6 +107,7 @@ function setupPanolens () {
     viewer.setPanorama(panoramaN2);
     viewer.OrbitControls.noZoom = true;
     viewer.autoHideInfospot = false;
+    viewer.toggleControlBar();
     
   
     viewer.registerEventListeners();

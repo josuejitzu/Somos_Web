@@ -102,6 +102,8 @@ function setupPanolens () {
     );
     viewer.add( panoramaLobby );
     viewer.OrbitControls.noZoom = true;
+    viewer.toggleControlBar();
+
         
 }
 

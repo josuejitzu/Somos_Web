@@ -151,6 +151,7 @@ function setupPanolens () {
     viewer.add( panoramaLobby );
     viewer.OrbitControls.noZoom = true;
     viewer.autoHideInfospot = false;
+    viewer.toggleControlBar();
 }
 // gui.add(camaraRot,"x").min(-1).max(1).step(0.001).name("nucleo3_z").onFinishChange(()=>{
 //      viewer.camera.rotation = new THREE.Vector3(camaraRot.x,0,0);

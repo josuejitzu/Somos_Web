@@ -42,6 +42,10 @@ const botonCerrarTextoSomos = document.querySelector(".botonCerrarTextoSomos");
 const panelTextoSomos = document.querySelector(".panelSomos");
 panelTextoSomos.style.visibility = 'hidden';
 
+
+
+
+///INFOSPOTS
 const infoSpotSize = 300;
 
 var infospotAuditorio;
@@ -282,6 +286,8 @@ function setupPanolens () {
     );
     viewer.add( panoramaLobbyA );
     viewer.add(panoramaLobbyB);
+    viewer.toggleControlBar();
+
    // viewer.setPanorama(panoramaLobbyB);
     // viewer.tweenControlCenter( new THREE.Vector3(camaraRot.x, 0, 0), 0 );
     // viewer.initialLookAt(new THREE.Vector3(0,1,0));
