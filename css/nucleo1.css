@@ -31,7 +31,7 @@
     .panelVideosCentro
     {
         width:80%; 
-        height:80%;
+        height:90%;
         background-color:rgba(53, 53, 53, 0);
         overflow-y: scroll;
 
@@ -69,7 +69,7 @@
         --plyr-video-control-color:#cc0000;
         /* min-width:40%;
         max-width:100%; */
-        width: 100%;
+        width: 80%;
         
         
     }
@@ -99,14 +99,23 @@
         }
     } */
 
+    .barraInferiorVideo{
+        display: flex;
+        flex-direction: row;
+        width: 80%;
+        background-color:rgba(0,0,0,0.6);
+        padding:10px;
+
+    }
+
     .panelVideosThumbs{
         display:flex;
         flex-direction: row;
         justify-content:flex-end;
         align-items:center;
-        background-color:rgba(36, 90, 53, 0);
-        width:80%;
-        height: 20%;
+        background-color:rgba(20, 192, 74, 0);
+        width:100%;
+        height: 100%;
     }
     .panelVideosThumbs div{
         flex:1;
@@ -215,24 +224,34 @@
         max-width:100%;
     }
     
+    .barraInferiorVideo{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        background-color:rgba(0,0,0,0.6);
+        padding:10px;
+    }
 
     .panelVideosThumbs{
         display:flex;
         flex-direction: column;
         justify-content:flex-start;
-        align-items:left;
+        text-align:center;
+        align-items:center;
         background-color:rgba(184, 28, 137, 0);
         width:100%;
         height: 100%;
+        padding:10px;
+
     }
     .panelVideosThumbs div{
         /* flex:1; */
-        background-color:rgba(90, 42, 36, 0);
+        background-color:rgba(90, 42, 36, 0.603);
         width:100%;
     } 
     .panelVideosThumbs img
     {
-        width:100%;
+        width:80%;
         /* box-shadow: 2px 2px 5px rgba(26, 26, 26, 0.671); */
     }
     .botonEntrevistaCompleta
