@@ -10,7 +10,7 @@
     align-items: left;
     justify-content:space-around;
     /* wrap:nowrap; */
-    width:30%;
+    width:50%;
     padding:10px;
     background-color: rgba(158, 91, 91, 0);
     position: absolute;
@@ -24,14 +24,15 @@
   {
       /* min-width:20px;
       max-width:50px; */
-      max-width:10%
+      max-width:5%
   }
   .informacionAudio
   {
     font-family: 'riccione-serialbold', Arial, sans-serif;
     font-weight:normal;
     font-style:normal;
-    
+    font-size: 15px;
+
     display: flex;
     flex-direction: row;
     align-items:center;
@@ -114,6 +115,16 @@
   {
       /* min-width:20px;
       max-width:50px; */
-      max-width:15%
+      max-width:10%
+  }
+  .informacionAudio
+  {
+    font-size:10px;
+  }
+}
+@media (min-width:1920px){
+  .informacionAudio
+  {
+    font-size:30px;
   }
 }
