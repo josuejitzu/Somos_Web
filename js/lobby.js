@@ -569,7 +569,10 @@ imageN3.addEventListener('load', () =>
 {
     texturaN3.needsUpdate = true
 })
-imageN3.src = 'src/img/Esferas_Texturas/caras_auditorio01_00000.png'
+imageN3.src = 'src/img/Esferas_Texturas/CARTEL_MEDIO_FOTOS.jpg'
+texturaN3.wrapS = THREE.RepeatWrapping;
+texturaN3.wrapT = THREE.RepeatWrapping;
+texturaN3.repeat.set( 3, 1 );
 
 const materialEsferaN3 = new THREE.MeshBasicMaterial({
     color: 0xffffff,
