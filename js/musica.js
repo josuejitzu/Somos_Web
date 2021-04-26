@@ -303,11 +303,12 @@ function cargarPista()
 }
 cargarPista();
 
+var sound;
 
 ///i=pagina,j=desde que pista
 function reproducir(i,j)
 {
-    var sound = new Howl({
+     sound = new Howl({
         src: ["src/musica/"+ musciaPagina[i][1][j]],
         volume:0.5,
         html:true,
@@ -346,21 +347,26 @@ botonCerrar.addEventListener('click',()=>
 
 })
 
-botonFlecha.addEventListener('click',()=>{
-    reproducir(0,1);
+if(botonFlecha !== null){
 
-});
+    botonFlecha.addEventListener('click',()=>{
+        sound.stop();
+        reproducir(0,1);
+    
+    });
+}
 
 // })
 if(botonIniciar !== null)
 {
-botonIniciar.addEventListener('click',()=>{
-    // reproductorA.stop();
-    // var id1 = reproductorA;
-    // reproductorA.fade(1, 0, 1000, id1);
-    // reproductorB.play();
-    reproducir(0,1);
-})
+    botonIniciar.addEventListener('click',()=>{
+        // reproductorA.stop();
+        // var id1 = reproductorA;
+        // reproductorA.fade(1, 0, 1000, id1);
+        // reproductorB.play();
+        sound.stop();
+        reproducir(0,1);
+    })
 }
 
 function cambiarNombrePista(pista)
