@@ -1,4 +1,4 @@
-const panoramaLobby = new PANOLENS.ImagePanorama( 'src/img/360/auditorio_6k.jpg' );
+const panoramaLobby = new PANOLENS.ImagePanorama( 'src/img/360/auditorio_04.jpg' );
 const botonCerrarVideo = document.querySelector(".botonCerrarVid");
 const panelVideo = document.querySelector(".panelVideos");
 panoramaLobby.addEventListener( 'enter-fade-start', function(){
