@@ -67,7 +67,7 @@ panoramaLobbyB.add(infospotAuditorio);
 panoramaLobbyB.rotation.y = Math.PI*2;
 
 var infospotSomos ;
-infospotSomos = new PANOLENS.Infospot(275,"src/img/iconos/mas_boton.png?v=123456783");
+infospotSomos = new PANOLENS.Infospot(220,"src/img/iconos/mas_boton.png?v=123456783");
 infospotSomos.position.set( -300, -1226.9262, -4478.4081 );
 
 // infospotSomos.addHoverText( 'SOMOS' );
