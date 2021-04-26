@@ -12,6 +12,15 @@ panoramaLobbyA.addEventListener( 'enter-fade-start', function(){
 //     // show the loader
 //     console.log(e.loaded/e.total);
 //  });
+panoramaLobbyA.addEventListener('progress', function(e){
+    // hide the loader
+    var pro = e.progress.loaded / e.progress.total;
+    console.log(pro)
+    bar1.set(pro*100);
+
+    // ocultarLoad();
+
+ });
  panoramaLobbyA.addEventListener('load', function(e){
     // hide the loader
     ocultarLoad();

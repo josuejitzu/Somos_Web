@@ -31,7 +31,7 @@ function move() {
   }
 //    loadBar.set(2);
 }
-move()
+// move()
 
 function ocultarLoad(){
   console.log("ocultar load")

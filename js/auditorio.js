@@ -5,6 +5,15 @@ panoramaLobby.addEventListener( 'enter-fade-start', function(){
     viewer.tweenControlCenter(  new THREE.Vector3(5000.00, -376, -300 ), 0 );
   
   } );
+  panoramaLobby.addEventListener('progress', function(e){
+    // hide the loader
+    var pro = e.progress.loaded / e.progress.total;
+    console.log(pro)
+    bar1.set(pro*100);
+
+    // ocultarLoad();
+
+ });
   panoramaLobby.addEventListener('load', function(e){
     // hide the loader
     console.log(e)
