@@ -27,7 +27,7 @@ panoramaLobby.addEventListener( 'infospot-animation-complete', function(){
     // infospotDinamicoB.hide(0);
 
 })
-const videoPlayer = document.querySelector(".player");
+const videoPlayer =  new Plyr(document.querySelector('.player'));
 
 let viewer;
 
