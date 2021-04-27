@@ -438,7 +438,7 @@ imageT1.addEventListener('load', () =>
 {
     textureT1.needsUpdate = true
 })
-imageT1.src = 'src/img/Esferas_Texturas/LAS_VOCES_DETRAS_DE_LA_SERIE_2.png'
+imageT1.src = 'src/img/Esferas_Texturas/LAS_VOCES_DETRAS_DE_SOMOS.png'
 
 // const materialTextoN1 = new THREE.MeshBasicMaterial({
 //     color: 0xffffff,
@@ -463,7 +463,7 @@ materialTextoN1.depthWrite = false;
 
 const textoPlanoN1 = new THREE.Mesh(textoGeometry,materialTextoN1)
 textoPlanoN1.position.set(1591.0246,-34.7163,-1300)
-textoPlanoN1.scale.set(500,500,1);
+textoPlanoN1.scale.set(500,450,1);
 textoPlanoN1.rotation.y = -Math.PI/2;
 
 
