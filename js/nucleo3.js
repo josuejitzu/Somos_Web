@@ -67,6 +67,7 @@ const panelGaleria = document.querySelector(".panelGaleria");
 
 //DEBUG infospots
  const gui = new dat.GUI();
+ gui.close();
 
 gui.add(infospotSomos.position,"x").min(-5000).max(5000).step(0.0001).name("Somos_x")
 gui.add(infospotSomos.position,"y").min(-5000).max(5000).step(0.0001).name("Somos_y")
