@@ -2,6 +2,8 @@ const botonSilencio = document.querySelector(".audioSilencio");
 let botonSilencioB;
 const imgConAudio ="src/img/simbolos/AUDIO_negro.png";
 const imgSinAudio ="src/img/simbolos/SIN_AUDIO_negro.png";
+const imgConAudio_blanco ="src/img/simbolos/AUDIO.png";
+const imgSinAudio_blanco ="src/img/simbolos/SIN_AUDIO.png";
 let muteado = false;
 const botonFlecha = document.querySelector('.botonFlecha');
 const botonIniciar = document.querySelector('.botonInicio');
@@ -92,7 +94,11 @@ const musciaPagina =
 botonSilencio.addEventListener("click",()=>{
     console.log("audio")
     if(muteado){
+        if(nombrePagina == "auditorio.html")
+        botonSilencio.src = imgConAudio_blanco;
+    else
         botonSilencio.src = imgConAudio;
+        // botonSilencio.src = imgConAudio;
         sound.mute(false);
         muteado = false;
 
@@ -103,7 +109,12 @@ botonSilencio.addEventListener("click",()=>{
         // reproductorC.mute(false);
 
     }else{ 
-        botonSilencio.src = imgSinAudio;
+        // botonSilencio.src = imgSinAudio;
+        if(nombrePagina=="auditorio.html")
+                botonSilencio.src = imgSinAudio_blanco;
+
+            else
+                botonSilencio.src = imgSinAudio;
 
         // reproductorA.mute(true);
         // if(nombrePagina != "auditorio.html")
@@ -128,7 +139,10 @@ if(nombrePagina == "nucleo2.html")
     botonSilencioB.addEventListener("click",()=>{
         console.log("audio")
         if(muteado){
-            botonSilencio.src = imgConAudio;
+            if(nombrePagina == "auditorio.html")
+                botonSilencio.src = imgConAudio_blanco;
+            else
+                botonSilencio.src = imgConAudio;
             botonSilencioB.src = imgConAudio;
             // reproductorA.mute(false);
             // reproductorB.mute(false);
@@ -138,7 +152,11 @@ if(nombrePagina == "nucleo2.html")
             muteado = false;
 
         }else{ 
-            botonSilencio.src = imgSinAudio;
+            if(nombrePagina=="auditorio.html")
+                botonSilencio.src = imgSinAudio_blanco;
+
+            else
+                botonSilencio.src = imgSinAudio;
             botonSilencioB.src = imgSinAudio;
 
             // reproductorA.mute(true);
@@ -337,7 +355,8 @@ function reproducir(i,j)
     
     })
     sound.play();
-
+    if(muteado)
+        sound.mute(true);
 
     cambiarNombrePista( musciaPagina[i][2][j]);
 

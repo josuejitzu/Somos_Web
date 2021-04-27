@@ -20,6 +20,8 @@ $(document).ready(function() {
     	$.ajax({
     			url:"https://venteli.mx/botones/function/Change.php",
     			type:"POST",
+                crossDomain:true,
+                // headers: {'Access-Control-Allow-Origin':'https://venteli.mx/botones/function/Change.php'},
     			success:function(data){
     				if(data == 0){
     					// $("#divbt").removeClass("sbtn");

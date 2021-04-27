@@ -377,7 +377,7 @@ function cambiarA(dir){
     }
     else if(dir =="nucleo3")
     {
-        return;
+        direccionFinal = "nucleo3.html"
     }
     else if(dir =="auditorio")
     {
