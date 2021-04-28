@@ -19,7 +19,7 @@ panoramaN3.addEventListener( 'enter-fade-start', function(){
     ocultarLoad();
 
  });
- const panoramaN3_B = new PANOLENS.ImagePanorama( 'src/img/360/nucleo03_B_01.jpg' );
+ const panoramaN3_B = new PANOLENS.ImagePanorama( 'src/img/360/nucleo03_B_02.jpg' );
 panoramaN3.addEventListener('enter-fade-start',function(){
     viewer.tweenControlCenter(  new THREE.Vector3(5000.00, 0, 0), 0 );
 
