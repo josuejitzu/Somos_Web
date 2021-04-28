@@ -301,7 +301,7 @@ var seleccion
 const rutaImgen = "src/img/somos_nucleo-2/somos_nucleo-2_"
 const galeriaRutaImagenes = [
     [ "txt_00.jpg", "txt_00-bn.jpg"],
-    [ "txt_01.jpg", "txt_01-bn.jpg"],
+    [ "txt_01.jpg", "txt_01-bn.jpg"],//
     [ "txt_02.jpg", "txt_02-bn.jpg"],
     [ "txt_03.jpg", "txt_03-bn.jpg"],
     [ "txt_04.jpg", "txt_04-bn.jpg"],
@@ -586,6 +586,7 @@ cuadroPlano_1.addEventListener("onmouseover",()=>{
 })
 
 const imagenGaleria = document.querySelector(".imagenGaleria");
+const infoFoto = document.querySelector(".infoFoto");
 function buscarObjeto(objeto)
 {
     
@@ -594,124 +595,137 @@ function buscarObjeto(objeto)
         case cuadroPlano_1: 
             objeto.material.map = texturaBN_1
             imagenGaleria.src = rutaImgen+galeriaRutaImagenes[0][0]
-
+            infoFoto.innerHTML = ""
         break;
         case cuadroPlano_2: 
             objeto.material.map = texturaBN_2
             imagenGaleria.src = rutaImgen+galeriaRutaImagenes[1][0]
-        break;
+            infoFoto.innerHTML = "Peinado: Equipo de maquillaje y peinado acomodando la peluca de Natalia Solián (Cindy)"
+            break;
         case cuadroPlano_3: 
             objeto.material.map = texturaBN_3
             imagenGaleria.src = rutaImgen+galeriaRutaImagenes[2][0]
+            infoFoto.innerHTML = "Libros: Algunos de los libros que se usaron para hacer investigación y escribir el guion."
         break;
         case cuadroPlano_4: 
             objeto.material.map = texturaBN_4
             imagenGaleria.src = rutaImgen+galeriaRutaImagenes[3][0]
+            infoFoto.innerHTML = "Paisaje: Grabación de segunda unidad"
         break;
         case cuadroPlano_5: 
             objeto.material.map = texturaBN_5
             imagenGaleria.src = rutaImgen+galeriaRutaImagenes[4][0]
-
+            infoFoto.innerHTML = "Carcel: Último día de filmación de la serie. Set de la Cárcel."
         break;
         case cuadroPlano_6: 
             objeto.material.map = texturaBN_6
             imagenGaleria.src = rutaImgen+galeriaRutaImagenes[5][0]
-
+            infoFoto.innerHTML = "Sillones 2: Filmación en el set Casa de Wilbur"
         break;
         case cuadroPlano_7: 
             objeto.material.map = texturaBN_7
             imagenGaleria.src = rutaImgen+galeriaRutaImagenes[6][0]
-
+            infoFoto.innerHTML = "Cabras: Foto del corral en el set Casa de Silverio."
         break;
         case cuadroPlano_8: 
             objeto.material.map = texturaBN_8
             imagenGaleria.src = rutaImgen+galeriaRutaImagenes[7][0]
+            infoFoto.innerHTML = "Fiesta 2: Montando el set para la fiesta de XV años de Vanesa."
 
         break;
         case cuadroPlano_9: 
             objeto.material.map = texturaBN_9
             imagenGaleria.src = rutaImgen+galeriaRutaImagenes[8][0]
+            infoFoto.innerHTML = "Tejones: Grabación del juego de los Tejones"
 
         break;
         case cuadroPlano_10: 
             objeto.material.map = texturaBN_10
             imagenGaleria.src = rutaImgen+galeriaRutaImagenes[9][0]
-
+            infoFoto.innerHTML = "Hector: Sesión de fotos de Armando Silva (Héctor) para intro de la serie."
         break;
         case cuadroPlano_11: 
             objeto.material.map = texturaBN_11
             imagenGaleria.src = rutaImgen+galeriaRutaImagenes[10][0]
+            infoFoto.innerHTML = "Noche: Foto del coche de Benjamín durante un llamado nocturno."
 
         break;
         case cuadroPlano_12: 
             objeto.material.map = texturaBN_12
             imagenGaleria.src = rutaImgen+galeriaRutaImagenes[11][0]
+            infoFoto.innerHTML = "Mustang: Jero Medina (Benjamín) preparándose para grabar una escena."
 
         break;
         case cuadroPlano_13: 
             objeto.material.map = texturaBN_13
             imagenGaleria.src = rutaImgen+galeriaRutaImagenes[12][0]
-
+            infoFoto.innerHTML = "Fuego: Calles de Gómez Palacios durante la filmación de escenas del último capítulo."
         break;
         case cuadroPlano_14: 
             objeto.material.map = texturaBN_14
             imagenGaleria.src = rutaImgen+galeriaRutaImagenes[13][0]
-
+            infoFoto.innerHTML = "Allende letrero: Reproducción del letrero que se encuentra a las afueras de Allende."
         break;
         case cuadroPlano_15: 
             objeto.material.map = texturaBN_15
             imagenGaleria.src = rutaImgen+galeriaRutaImagenes[14][0]
-
+            infoFoto.innerHTML = ""
         break;
         case cuadroPlano_16: 
             objeto.material.map = texturaBN_16
             imagenGaleria.src = rutaImgen+galeriaRutaImagenes[15][0]
+            infoFoto.innerHTML = "Fiesta 3: Montando el set para la fiesta de XV años de Vanesa."
 
         break;
         case cuadroPlano_17: 
             objeto.material.map = texturaBN_17
             imagenGaleria.src = rutaImgen+galeriaRutaImagenes[16][0]
-
+            infoFoto.innerHTML = "En esta imagen está el crew de Somos. llegando al set: \"prisión\" en la mañana"
         break;
         case cuadroPlano_18: 
             objeto.material.map = texturaBN_18
             imagenGaleria.src = rutaImgen+galeriaRutaImagenes[17][0]
-
+            infoFoto.innerHTML = ""
         break;
         case cuadroPlano_19: 
             objeto.material.map = texturaBN_19
             imagenGaleria.src = rutaImgen+galeriaRutaImagenes[18][0]
-
+            infoFoto.innerHTML = ""
         break;
         case cuadroPlano_20: 
             objeto.material.map = texturaBN_20
             imagenGaleria.src = rutaImgen+galeriaRutaImagenes[19][0]
+            infoFoto.innerHTML = "Bomberos: Foto en el set de SOMOS. durante una escena con los bomberos."
 
         break;
         case cuadroPlano_21: 
             objeto.material.map = texturaBN_21
             imagenGaleria.src = rutaImgen+galeriaRutaImagenes[20][0]
+            infoFoto.innerHTML = ""
 
         break;
         case cuadroPlano_22: 
             objeto.material.map = texturaBN_22
             imagenGaleria.src = rutaImgen+galeriaRutaImagenes[21][0]
+            infoFoto.innerHTML = ""
 
         break;
         case cuadroPlano_23: 
             objeto.material.map = texturaBN_23
             imagenGaleria.src = rutaImgen+galeriaRutaImagenes[22][0]
+            infoFoto.innerHTML = ""
 
         break;
         case cuadroPlano_24: 
             objeto.material.map = texturaBN_24
             imagenGaleria.src = rutaImgen+galeriaRutaImagenes[23][0]
+            infoFoto.innerHTML = ""
 
         break;
         case cuadroPlano_25: 
             objeto.material.map = texturaBN_25
             imagenGaleria.src = rutaImgen+galeriaRutaImagenes[24][0]
-
+            infoFoto.innerHTML = ""
         break;
         default:
             console.log("cuadro no encontrado");
