@@ -181,3 +181,23 @@
     /* --plyr-audio-control-color:#cc0000; */
     /* --plyr-video-control-color:#cc0000; */
 }
+
+.panelFade
+{
+    position: absolute; 
+    width: 100%; 
+    height:100vh; 
+    background-color:black; 
+    z-index:99;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap:nowrap;
+    justify-content:center;
+    align-items:center;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    /* transition: opacity 1.0s; */
+    pointer-events:none;
+}

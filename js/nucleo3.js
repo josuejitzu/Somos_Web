@@ -19,7 +19,11 @@ panoramaN3.addEventListener( 'enter-fade-start', function(){
     ocultarLoad();
 
  });
+ const panoramaN3_B = new PANOLENS.ImagePanorama( 'src/img/360/nucleo03_B_01.jpg' );
+panoramaN3.addEventListener('enter-fade-start',function(){
+    viewer.tweenControlCenter(  new THREE.Vector3(5000.00, 0, 0), 0 );
 
+})
 
 
 let viewer;
@@ -42,11 +46,11 @@ const panelBanner = document.querySelector(".panelBanner");
 const botonCerrarPanelVideo = document.querySelector(".botonCerrarPanelVideo")
 const panelVideo = document.querySelector(".panelVideo");
 
-var infoSpotSize = 400;
+var infoSpotSize = 300;
 
 
 var infospotSomos ;
-infospotSomos = new PANOLENS.Infospot(infoSpotSize,"src/img/iconos/mas_boton_white.png?v=123456782");
+infospotSomos = new PANOLENS.Infospot(infoSpotSize,"src/img/iconos/mas_boton.png?v=123456782");
 infospotSomos.position.set( 4500, -1300, -3210 );
 // infospotSomos.addHoverText( 'SOMOS' );
 infospotSomos.addEventListener('click',()=>{
@@ -57,6 +61,28 @@ infospotSomos.addEventListener('click',()=>{
     
 })
 panoramaN3.add(infospotSomos);
+
+const infospotPosicionB  = new PANOLENS.Infospot(infoSpotSize,"src/img/iconos/mas_boton.png?v=123456783");
+infospotPosicionB.position.set( 5000, -1300, -900 );
+// infospotPosicionB.addHoverText( 'SOMOS' );
+infospotPosicionB.addEventListener('click',()=>{
+    console.log("spot posicion B")
+    cambiarPosicion("posB");
+    
+})
+panoramaN3.add(infospotPosicionB);
+
+
+const infospotPosicionA = new PANOLENS.Infospot(infoSpotSize,"src/img/iconos/mas_boton.png?v=123456784");
+infospotPosicionA.position.set( -296, -1300, 5000 );
+// infospotPosicionA.addHoverText( 'SOMOS' );
+infospotPosicionA.addEventListener('click',()=>{
+    console.log("spot posicion A")
+    cambiarPosicion("posA");
+    
+})
+panoramaN3_B.add(infospotPosicionA);
+
 
 const panelGaleria = document.querySelector(".panelGaleria");
 
@@ -73,9 +99,13 @@ gui.add(infospotSomos.position,"x").min(-5000).max(5000).step(0.0001).name("Somo
 gui.add(infospotSomos.position,"y").min(-5000).max(5000).step(0.0001).name("Somos_y")
 gui.add(infospotSomos.position,"z").min(-5000).max(5000).step(0.0001).name("Somos_z")
 
-// gui.add(infospotFotos.position,"x").min(-5000).max(5000).step(0.0001).name("Videos_x")
-// gui.add(infospotFotos.position,"y").min(-5000).max(5000).step(0.0001).name("Videos_y")
-// gui.add(infospotFotos.position,"z").min(-5000).max(5000).step(0.0001).name("Videos_z")
+gui.add(infospotPosicionB.position,"x").min(-5000).max(5000).step(0.0001).name("Somos_x")
+gui.add(infospotPosicionB.position,"y").min(-5000).max(5000).step(0.0001).name("Somos_y")
+gui.add(infospotPosicionB.position,"z").min(-5000).max(5000).step(0.0001).name("Somos_z")
+
+gui.add(infospotPosicionA.position,"x").min(-5000).max(5000).step(0.0001).name("posicionA_x")
+gui.add(infospotPosicionA.position,"y").min(-5000).max(5000).step(0.0001).name("posicionA_y")
+gui.add(infospotPosicionA.position,"z").min(-5000).max(5000).step(0.0001).name("posicionA_z")
 
 //Se construye viewer 360 FOV,panorama,etc
 
@@ -97,7 +127,7 @@ function setupPanolens () {
         } 
     );
     viewer.add( panoramaN3 );
-
+    viewer.add(panoramaN3_B);
     viewer.setPanorama(panoramaN3);
     viewer.OrbitControls.noZoom = true;
     viewer.autoHideInfospot = false;
@@ -162,7 +192,7 @@ botonCerrarTextoSomos.addEventListener('click',()=>{
 
 
 
-const fadeNegro = document.querySelector(".panelFade");
+
 
 
 
@@ -228,7 +258,7 @@ bannerGroup.add(banner_Grafica);
 bannerGroup.add(banner_Musica);
 bannerGroup.add(banner_Cultura);
 
-panoramaN3.add(bannerGroup);
+// panoramaN3_B.add(bannerGroup);
 bannerGroup.position.set(45,10,-3.47);
 bannerGroup.rotation.set(0,-1.72,0);
 
@@ -497,5 +527,30 @@ function bannerSeleccionado(banner)
 function abrirPanelBanner(){
     panelBanner.style.visibility ="visible";
     gsap.to(panelBanner,{duration:0.5,opacity:1});
+
+}
+
+const fadeNegro = document.querySelector(".panelFade");
+function cambiarPosicion(pos){
+
+    fadeNegro.style.visibility = 'visible';
+    gsap.to(fadeNegro,{duration:0.5,opacity:1.0}).eventCallback('onComplete',()=>
+    {
+
+        if(pos == "posA")
+        {
+            viewer.setPanorama(panoramaN3);
+
+        }else if(pos =="posB")
+        {
+            viewer.setPanorama(panoramaN3_B);
+            panoramaN3_B.add(bannerGroup);
+
+        }
+
+        gsap.to(fadeNegro,{delay:1.0,duration:0.5,opacity:0}).eventCallback('onComplete',()=>{
+            fadeNegro.style.visibility = 'hidden';
+        })
+    })
 
 }
