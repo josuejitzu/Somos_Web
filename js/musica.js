@@ -426,7 +426,14 @@ function callarMusica(){
         // muteado = true;
 
     // }else{ 
-        botonSilencio.src = imgSinAudio;
+        if(nombrePagina == "auditorio.html")
+        {
+            botonSilencio.src = imgSinAudio_blanco;
+
+        }else{
+
+            botonSilencio.src = imgSinAudio;
+        }
 
         // reproductorA.mute(true);
         // if(nombrePagina != "auditorio.html")
