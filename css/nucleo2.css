@@ -32,6 +32,9 @@
     background-color:rgba(155, 41, 41, 0);
     width:70%;
 }
+.panelFoto h2{
+    font-size:15px;
+}
 .panelFotoCentro
 {
     text-align:center;
