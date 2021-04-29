@@ -240,6 +240,9 @@ const texturaCultura = new THREE.Texture(banner_cultura_imagen);
 // })
 
 const banner_quince_MAT =   new THREE.MeshBasicMaterial({color: 0xffffff,side:THREE.Front})
+const hilo_MAT = new THREE.MeshBasicMaterial({color: 0x000000,side:THREE.DoubleSide});
+
+
 const banner_quince =       new THREE.Mesh(cuadroGeometry,banner_quince_MAT);
 const banner_Arquitectura = new THREE.Mesh(cuadroGeometry,banner_quince_MAT);
 const banner_Moda =         new THREE.Mesh(cuadroGeometry,banner_quince_MAT);
@@ -247,6 +250,14 @@ const banner_Bebidas = new THREE.Mesh(cuadroGeometry,banner_quince_MAT);
 const banner_Grafica = new THREE.Mesh(cuadroGeometry,banner_quince_MAT);
 const banner_Musica = new THREE.Mesh(cuadroGeometry,banner_quince_MAT);
 const banner_Cultura = new THREE.Mesh(cuadroGeometry,banner_quince_MAT);
+
+const hilo_Banner_Quince = new THREE.Mesh(cuadroGeometry,hilo_MAT);
+const hilo_Banner_Arquitectura = new THREE.Mesh(cuadroGeometry,hilo_MAT);
+const hilo_Banner_Moda = new THREE.Mesh(cuadroGeometry,hilo_MAT);
+const hilo_Banner_Bebidas = new THREE.Mesh(cuadroGeometry,hilo_MAT);
+const hilo_Banner_Grafica = new THREE.Mesh(cuadroGeometry,hilo_MAT);
+const hilo_Banner_Musica = new THREE.Mesh(cuadroGeometry,hilo_MAT);
+const hilo_Banner_Cultura = new THREE.Mesh(cuadroGeometry,hilo_MAT);
 // panoramaN3.add(banner_quince)
 
 const bannerGroup = new THREE.Group();
@@ -257,40 +268,71 @@ bannerGroup.add(banner_Bebidas);
 bannerGroup.add(banner_Grafica);
 bannerGroup.add(banner_Musica);
 bannerGroup.add(banner_Cultura);
+bannerGroup.add(hilo_Banner_Quince);
+bannerGroup.add(hilo_Banner_Arquitectura);
+bannerGroup.add(hilo_Banner_Moda);
+bannerGroup.add(hilo_Banner_Bebidas);
+bannerGroup.add(hilo_Banner_Grafica);
+bannerGroup.add(hilo_Banner_Musica);
+bannerGroup.add(hilo_Banner_Cultura);
 
 // panoramaN3_B.add(bannerGroup);
 bannerGroup.position.set(45,10,-3.47);
 bannerGroup.rotation.set(0,-1.72,0);
 
 const sizeBanner={ x:7,y:25}
+const sizeHilo={x:0.2,y:15}
+const posY=19
 
 banner_quince.position.set(-12,0,15)
 banner_quince.scale.set(sizeBanner.x,sizeBanner.y,1)
 banner_quince.rotation.set(0,-0.23,0);
+hilo_Banner_Quince.position.set(-12,posY,14.5);
+hilo_Banner_Quince.scale.set(sizeHilo.x,sizeHilo.y,1);
+hilo_Banner_Quince.rotation.set(0,-0.23,0);
 
 banner_Arquitectura.position.set(-14,0,-1)
 banner_Arquitectura.scale.set(sizeBanner.x,sizeBanner.y,1)
 banner_Arquitectura.rotation.set(0,0.66,0);
+hilo_Banner_Arquitectura.position.set(-14,posY,-1.5);
+hilo_Banner_Arquitectura.scale.set(sizeHilo.x,sizeHilo.y,1);
+hilo_Banner_Arquitectura.rotation.set(0,0.66,0);
 
 banner_Moda.position.set(-10,0,-10)
 banner_Moda.scale.set(sizeBanner.x,sizeBanner.y,1)
 banner_Moda.rotation.set(0,0.32,0);
+hilo_Banner_Moda.position.set(-10.3,posY,-10.5);
+hilo_Banner_Moda.scale.set(sizeHilo.x,sizeHilo.y,1);
+hilo_Banner_Moda.rotation.set(0,-0.23,0);
 
 banner_Bebidas.position.set(5,0,12)
 banner_Bebidas.scale.set(sizeBanner.x,sizeBanner.y,1)
 banner_Bebidas.rotation.set(0,0,0);
+hilo_Banner_Bebidas.position.set(5,posY,11.5);
+hilo_Banner_Bebidas.scale.set(0.2,15,1);
+hilo_Banner_Bebidas.rotation.set(0,0,0);
+
 
 banner_Grafica.position.set(10,0,-5)
 banner_Grafica.scale.set(sizeBanner.x,sizeBanner.y,1)
 banner_Grafica.rotation.set(0,0.25,0);
+hilo_Banner_Grafica.position.set(10,posY,-5.5);
+hilo_Banner_Grafica.scale.set(0.2,15,1);
+hilo_Banner_Grafica.rotation.set(0,0.25,0);
 
 banner_Musica.position.set(15,0,-10)
 banner_Musica.scale.set(sizeBanner.x,sizeBanner.y,1)
 banner_Musica.rotation.set(0,0.18,0);
+hilo_Banner_Musica.position.set(15,posY,-10.5);
+hilo_Banner_Musica.scale.set(0.2,15,1);
+hilo_Banner_Musica.rotation.set(0,0.25,0);
 
 banner_Cultura.position.set(20,0,3)
 banner_Cultura.scale.set(sizeBanner.x,sizeBanner.y,1)
 banner_Cultura.rotation.set(0,-0.36,0);
+hilo_Banner_Cultura.position.set(20,posY,2.5);
+hilo_Banner_Cultura.scale.set(0.2,15,1);
+hilo_Banner_Cultura.rotation.set(0,-0.36,0);
 
 
 gui.add(bannerGroup.position,"x").min(-500).max(500).step(0.01).name("positionGroupX")
@@ -352,6 +394,13 @@ gui.add(bannerGroup.rotation,"y").min(-Math.PI).max(Math.PI).step(0.01).name("ro
 // gui.add(banner_Cultura.scale,"x").min(-50).max(50).step(0.01).name("7Cultura_scalaX")
 // gui.add(banner_Cultura.scale,"y").min(-50).max(50).step(0.01).name("7Cultura_scalaY")
 // gui.add(banner_Cultura.rotation,"y").min(-Math.PI).max(Math.PI).step(0.01).name("7Cultura_rotacionY")
+
+gui.add(hilo_Banner_Bebidas.position,"x").min(-500).max(500).step(0.01).name("7Cultura_positionX")
+gui.add(hilo_Banner_Bebidas.position,"y").min(-500).max(500).step(0.01).name("7Cultura_positionY")
+gui.add(hilo_Banner_Bebidas.position,"z").min(-500).max(500).step(0.01).name("7Cultura_positionZ")
+gui.add(hilo_Banner_Bebidas.scale,"x").min(-50).max(50).step(0.01).name("7Cultura_scalaX")
+gui.add(hilo_Banner_Bebidas.scale,"y").min(-50).max(50).step(0.01).name("7Cultura_scalaY")
+gui.add(hilo_Banner_Bebidas.rotation,"y").min(-Math.PI).max(Math.PI).step(0.01).name("7Cultura_rotacionY")
 
 //Animacion Banners
 const multiplicadorSize = 1.10;
