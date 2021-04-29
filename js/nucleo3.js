@@ -95,17 +95,17 @@ const panelGaleria = document.querySelector(".panelGaleria");
  const gui = new dat.GUI();
  gui.close();
 
-gui.add(infospotSomos.position,"x").min(-5000).max(5000).step(0.0001).name("Somos_x")
-gui.add(infospotSomos.position,"y").min(-5000).max(5000).step(0.0001).name("Somos_y")
-gui.add(infospotSomos.position,"z").min(-5000).max(5000).step(0.0001).name("Somos_z")
+// gui.add(infospotSomos.position,"x").min(-5000).max(5000).step(0.0001).name("Somos_x")
+// gui.add(infospotSomos.position,"y").min(-5000).max(5000).step(0.0001).name("Somos_y")
+// gui.add(infospotSomos.position,"z").min(-5000).max(5000).step(0.0001).name("Somos_z")
 
-gui.add(infospotPosicionB.position,"x").min(-5000).max(5000).step(0.0001).name("Somos_x")
-gui.add(infospotPosicionB.position,"y").min(-5000).max(5000).step(0.0001).name("Somos_y")
-gui.add(infospotPosicionB.position,"z").min(-5000).max(5000).step(0.0001).name("Somos_z")
+// gui.add(infospotPosicionB.position,"x").min(-5000).max(5000).step(0.0001).name("Somos_x")
+// gui.add(infospotPosicionB.position,"y").min(-5000).max(5000).step(0.0001).name("Somos_y")
+// gui.add(infospotPosicionB.position,"z").min(-5000).max(5000).step(0.0001).name("Somos_z")
 
-gui.add(infospotPosicionA.position,"x").min(-5000).max(5000).step(0.0001).name("posicionA_x")
-gui.add(infospotPosicionA.position,"y").min(-5000).max(5000).step(0.0001).name("posicionA_y")
-gui.add(infospotPosicionA.position,"z").min(-5000).max(5000).step(0.0001).name("posicionA_z")
+// gui.add(infospotPosicionA.position,"x").min(-5000).max(5000).step(0.0001).name("posicionA_x")
+// gui.add(infospotPosicionA.position,"y").min(-5000).max(5000).step(0.0001).name("posicionA_y")
+// gui.add(infospotPosicionA.position,"z").min(-5000).max(5000).step(0.0001).name("posicionA_z")
 
 //Se construye viewer 360 FOV,panorama,etc
 
@@ -264,33 +264,33 @@ bannerGroup.rotation.set(0,-1.72,0);
 
 const sizeBanner={ x:7,y:25}
 
-banner_quince.position.set(-20,0,0)
+banner_quince.position.set(-12,0,15)
 banner_quince.scale.set(sizeBanner.x,sizeBanner.y,1)
-banner_quince.rotation.set(0,0.8,0);
+banner_quince.rotation.set(0,-0.23,0);
 
-banner_Arquitectura.position.set(-10,0,0)
+banner_Arquitectura.position.set(-14,0,-1)
 banner_Arquitectura.scale.set(sizeBanner.x,sizeBanner.y,1)
-banner_Arquitectura.rotation.set(0,0.8,0);
+banner_Arquitectura.rotation.set(0,0.66,0);
 
-banner_Moda.position.set(0,0,0)
+banner_Moda.position.set(-10,0,-10)
 banner_Moda.scale.set(sizeBanner.x,sizeBanner.y,1)
-banner_Moda.rotation.set(0,0.8,0);
+banner_Moda.rotation.set(0,0.32,0);
 
-banner_Bebidas.position.set(10,0,0)
+banner_Bebidas.position.set(5,0,12)
 banner_Bebidas.scale.set(sizeBanner.x,sizeBanner.y,1)
-banner_Bebidas.rotation.set(0,0.2,0);
+banner_Bebidas.rotation.set(0,0,0);
 
-banner_Grafica.position.set(20,0,0)
+banner_Grafica.position.set(10,0,-5)
 banner_Grafica.scale.set(sizeBanner.x,sizeBanner.y,1)
-banner_Grafica.rotation.set(0,-0.4,0);
+banner_Grafica.rotation.set(0,0.25,0);
 
-banner_Musica.position.set(30,0,0)
+banner_Musica.position.set(15,0,-10)
 banner_Musica.scale.set(sizeBanner.x,sizeBanner.y,1)
-banner_Musica.rotation.set(0,-0.8,0);
+banner_Musica.rotation.set(0,0.18,0);
 
-banner_Cultura.position.set(40,0,0)
+banner_Cultura.position.set(20,0,3)
 banner_Cultura.scale.set(sizeBanner.x,sizeBanner.y,1)
-banner_Cultura.rotation.set(0,-0.8,0);
+banner_Cultura.rotation.set(0,-0.36,0);
 
 
 gui.add(bannerGroup.position,"x").min(-500).max(500).step(0.01).name("positionGroupX")
@@ -298,39 +298,60 @@ gui.add(bannerGroup.position,"y").min(-500).max(500).step(0.01).name("positionGr
 gui.add(bannerGroup.position,"z").min(-500).max(500).step(0.01).name("positionGroupZ")
 gui.add(bannerGroup.rotation,"y").min(-Math.PI).max(Math.PI).step(0.01).name("rotationGroupY")
 
-gui.add(banner_quince.position,"x").min(-500).max(500).step(0.01).name("positionX")
-gui.add(banner_quince.position,"y").min(-500).max(500).step(0.01).name("positionY")
-gui.add(banner_quince.position,"z").min(-500).max(500).step(0.01).name("positionZ")
-gui.add(banner_quince.scale,"x").min(-50).max(50).step(0.01).name("scalaX")
-gui.add(banner_quince.scale,"y").min(-50).max(50).step(0.01).name("scalaY")
+gui.add(banner_quince.position,"x").min(-500).max(500).step(0.01).name("1Quince_positionX")
+gui.add(banner_quince.position,"y").min(-500).max(500).step(0.01).name("1Quince_positionY")
+gui.add(banner_quince.position,"z").min(-500).max(500).step(0.01).name("1Quince_positionZ")
+gui.add(banner_quince.scale,"x").min(-50).max(50).step(0.01).name("1Quince_scalaX")
+gui.add(banner_quince.scale,"y").min(-50).max(50).step(0.01).name("1Quince_scalaY")
 // gui.add(banner_quince.scale,"z").min(-50).max(50).step(0.01).name("positionZ")
 // gui.add(banner_quince.rotation,"x").min(-Math.PI).max(Math.PI).step(0.01).name("rotacionX")
-gui.add(banner_quince.rotation,"y").min(-Math.PI).max(Math.PI).step(0.01).name("rotacionY")
+gui.add(banner_quince.rotation,"y").min(-Math.PI).max(Math.PI).step(0.01).name("1Quince_rotacionY")
 // gui.add(banner_quince.rotation,"z").min(-Math.PI).max(Math.PI).step(0.01).name("rotacionZ")
 
-// gui.add(banner_Arquitectura.rotation,"x").min(-Math.PI).max(Math.PI).step(0.01).name("rotacionX")
-gui.add(banner_Arquitectura.rotation,"y").min(-Math.PI).max(Math.PI).step(0.01).name("rotacionY")
-// gui.add(banner_Arquitectura.rotation,"z").min(-Math.PI).max(Math.PI).step(0.01).name("rotacionZ")
 
-// gui.add(banner_Moda.rotation,"x").min(-Math.PI).max(Math.PI).step(0.01).name("rotacionX")
-gui.add(banner_Moda.rotation,"y").min(-Math.PI).max(Math.PI).step(0.01).name("rotacionY")
-// gui.add(banner_Moda.rotation,"z").min(-Math.PI).max(Math.PI).step(0.01).name("rotacionZ")
 
-// gui.add(banner_Bebidas.rotation,"x").min(-Math.PI).max(Math.PI).step(0.01).name("rotacionX")
-gui.add(banner_Bebidas.rotation,"y").min(-Math.PI).max(Math.PI).step(0.01).name("rotacionY")
-// gui.add(banner_Bebidas.rotation,"z").min(-Math.PI).max(Math.PI).step(0.01).name("rotacionZ")
+gui.add(banner_Arquitectura.position,"x").min(-500).max(500).step(0.01).name("2Arquitectura_positionX")
+gui.add(banner_Arquitectura.position,"y").min(-500).max(500).step(0.01).name("2Arquitectura_positionY")
+gui.add(banner_Arquitectura.position,"z").min(-500).max(500).step(0.01).name("2Arquitectura_positionZ")
+gui.add(banner_Arquitectura.scale,"x").min(-50).max(50).step(0.01).name("2Arquitectura_scalaX")
+gui.add(banner_Arquitectura.scale,"y").min(-50).max(50).step(0.01).name("2Arquitectura_scalaY")
+gui.add(banner_Arquitectura.rotation,"y").min(-Math.PI).max(Math.PI).step(0.01).name("2Arquitectura_rotacionY")
 
-// gui.add(banner_Grafica.rotation,"x").min(-Math.PI).max(Math.PI).step(0.01).name("rotacionX")
-gui.add(banner_Grafica.rotation,"y").min(-Math.PI).max(Math.PI).step(0.01).name("rotacionY")
-// gui.add(banner_Grafica.rotation,"z").min(-Math.PI).max(Math.PI).step(0.01).name("rotacionZ")
+gui.add(banner_Moda.position,"x").min(-500).max(500).step(0.01).name("3Moda_positionX")
+gui.add(banner_Moda.position,"y").min(-500).max(500).step(0.01).name("3Moda_positionY")
+gui.add(banner_Moda.position,"z").min(-500).max(500).step(0.01).name("3Moda_positionZ")
+gui.add(banner_Moda.scale,"x").min(-50).max(50).step(0.01).name("3Moda_scalaX")
+gui.add(banner_Moda.scale,"y").min(-50).max(50).step(0.01).name("3Moda_scalaY")
+gui.add(banner_Moda.rotation,"y").min(-Math.PI).max(Math.PI).step(0.01).name("3Moda_rotacionY")
 
-// gui.add(banner_Musica.rotation,"x").min(-Math.PI).max(Math.PI).step(0.01).name("rotacionX")
-gui.add(banner_Musica.rotation,"y").min(-Math.PI).max(Math.PI).step(0.01).name("rotacionY")
-// gui.add(banner_Musica.rotation,"z").min(-Math.PI).max(Math.PI).step(0.01).name("rotacionZ")
 
-// gui.add(banner_Cultura.rotation,"x").min(-Math.PI).max(Math.PI).step(0.01).name("rotacionX")
-gui.add(banner_Cultura.rotation,"y").min(-Math.PI).max(Math.PI).step(0.01).name("rotacionY")
-// gui.add(banner_Cultura.rotation,"z").min(-Math.PI).max(Math.PI).step(0.01).name("rotacionZ")
+gui.add(banner_Bebidas.position,"x").min(-500).max(500).step(0.01).name("4Bebidas_positionX")
+gui.add(banner_Bebidas.position,"y").min(-500).max(500).step(0.01).name("4Bebidas_positionY")
+gui.add(banner_Bebidas.position,"z").min(-500).max(500).step(0.01).name("4Bebidas_positionZ")
+gui.add(banner_Bebidas.scale,"x").min(-50).max(50).step(0.01).name("4Bebidas_scalaX")
+gui.add(banner_Bebidas.scale,"y").min(-50).max(50).step(0.01).name("4Bebidas_scalaY")
+gui.add(banner_Bebidas.rotation,"y").min(-Math.PI).max(Math.PI).step(0.01).name("4Bebidas_rotacionY")
+
+gui.add(banner_Grafica.position,"x").min(-500).max(500).step(0.01).name("5Grafica_positionX")
+gui.add(banner_Grafica.position,"y").min(-500).max(500).step(0.01).name("5Grafica_positionY")
+gui.add(banner_Grafica.position,"z").min(-500).max(500).step(0.01).name("5Grafica_positionZ")
+gui.add(banner_Grafica.scale,"x").min(-50).max(50).step(0.01).name("5Grafica_scalaX")
+gui.add(banner_Grafica.scale,"y").min(-50).max(50).step(0.01).name("5Grafica_scalaY")
+gui.add(banner_Grafica.rotation,"y").min(-Math.PI).max(Math.PI).step(0.01).name("5Grafica_rotacionY")
+
+gui.add(banner_Musica.position,"x").min(-500).max(500).step(0.01).name("6Musica_positionX")
+gui.add(banner_Musica.position,"y").min(-500).max(500).step(0.01).name("6Musica_positionY")
+gui.add(banner_Musica.position,"z").min(-500).max(500).step(0.01).name("6Musica_positionZ")
+gui.add(banner_Musica.scale,"x").min(-50).max(50).step(0.01).name("6Musica_scalaX")
+gui.add(banner_Musica.scale,"y").min(-50).max(50).step(0.01).name("6Musica_scalaY")
+gui.add(banner_Musica.rotation,"y").min(-Math.PI).max(Math.PI).step(0.01).name("6Musica_rotacionY")
+
+gui.add(banner_Cultura.position,"x").min(-500).max(500).step(0.01).name("7Cultura_positionX")
+gui.add(banner_Cultura.position,"y").min(-500).max(500).step(0.01).name("7Cultura_positionY")
+gui.add(banner_Cultura.position,"z").min(-500).max(500).step(0.01).name("7Cultura_positionZ")
+gui.add(banner_Cultura.scale,"x").min(-50).max(50).step(0.01).name("7Cultura_scalaX")
+gui.add(banner_Cultura.scale,"y").min(-50).max(50).step(0.01).name("7Cultura_scalaY")
+gui.add(banner_Cultura.rotation,"y").min(-Math.PI).max(Math.PI).step(0.01).name("7Cultura_rotacionY")
 
 //Animacion Banners
 const multiplicadorSize = 1.10;
