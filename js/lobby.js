@@ -85,7 +85,7 @@ panoramaLobbyA.add(infospotSomos);
 
 //nucleo2 pos 2800, -1200, -2500
 // var infospotNucleo1 = new PANOLENS.Infospot(infoSpotSize,"src/img/simbolos/VER_MAS.png?v=123456783");
-var infospotNucleo1 = new PANOLENS.Infospot(infoSpotSize,"src/img/iconos/NUCLUO_I_n.png?v=123456783");
+var infospotNucleo1 = new PANOLENS.Infospot(infoSpotSize,"src/img/iconos/NUCLUO_1_n.png?v=123456783");
 infospotNucleo1.position.set( 3975.4445, -780, -50 );
 // infospotNucleo1.position.y = -850;
 // infospotNucleo1.addHoverText( 'Nucleo 1' );
@@ -97,7 +97,7 @@ infospotNucleo1.addEventListener('click',()=>{
 panoramaLobbyA.add(infospotNucleo1);
 
 
-var infospotNucleo2 = new PANOLENS.Infospot(infoSpotSize,"src/img/iconos/NUCLUO_II_b.png?v=123456784");
+var infospotNucleo2 = new PANOLENS.Infospot(infoSpotSize,"src/img/iconos/NUCLUO_2_n.png?v=123456784");
 infospotNucleo2.position.set(  4083.8273, -870, -2440);
 infospotNucleo2.addEventListener('click',()=>{
     console.log("spot nucleo 2")
@@ -107,7 +107,7 @@ infospotNucleo2.addEventListener('click',()=>{
 panoramaLobbyA.add(infospotNucleo2);
 
 
-var infospotNucleo3 = new PANOLENS.Infospot(infoSpotSize,"src/img/iconos/NUCLUO_III_n.png?v=123456785");
+var infospotNucleo3 = new PANOLENS.Infospot(infoSpotSize,"src/img/iconos/NUCLUO_3_n.png?v=123456785");
 infospotNucleo3.position.set(  3867.0618, -820, -4370.0254);
 
 // infospotNucleo3.addHoverText( '' );
@@ -144,7 +144,7 @@ panoramaLobbyA.add(infospotPosicionB);
 
 
 //DEBUG GUI
-// const gui = new dat.GUI();
+const gui = new dat.GUI();
 
 // gui.add(infospotSomos.position,"x").min(-5000).max(5000).step(0.0001).name("Somos_x")
 // gui.add(infospotSomos.position,"y").min(-5000).max(5000).step(0.0001).name("Somos_y")
@@ -217,9 +217,13 @@ function cambioPosicion(pos)
         textoPlanoN3.rotation.y = -0.7666;
 
         
-        textoPlanoN1.position.set(1591.0246,-34.7163,-1300)
-        textoPlanoN2.position.set(1591.0246,-34.7163,-1100)
-        textoPlanoN3.position.set(1591.0246,-34.7163,-950)
+        // textoPlanoN1.position.set(1591.0246,-34.7163,-1300)
+        // textoPlanoN2.position.set(1591.0246,-34.7163,-1100)
+        // textoPlanoN3.position.set(1591.0246,-34.7163,-950)
+       
+        textoPlanoN1.position.set(400,0,-1300)
+        textoPlanoN2.position.set(500,0,-468)//1591.0246,-34.7163,-1100
+        textoPlanoN3.position.set(500,0,182)//1591.0246,-34.7163,-950
 
         
         viewer.autoHideInfospot = false;
@@ -261,9 +265,13 @@ function cambioPosicion(pos)
         textoPlanoN2.rotation.y = -Math.PI;
         textoPlanoN3.rotation.y = -2.132;
 
-        textoPlanoN1.position.set(1807.79,-34.7163,-1552.0745);
-        textoPlanoN2.position.set(1857.7899,-34.7163,-1552.0745);
-        textoPlanoN3.position.set(1531.0248,-34.7163,-1552.0745);
+        // textoPlanoN1.position.set(1807.79,-34.7163,-1552.0745);
+        // textoPlanoN2.position.set(1857.7899,-34.7163,-1552.0745);
+        // textoPlanoN3.position.set(1531.0248,-34.7163,-1552.0745);
+
+        textoPlanoN1.position.set(1070,10,-3286);
+        textoPlanoN2.position.set(1920,0,-2635);
+        textoPlanoN3.position.set(1157, 5,-1768);
     }
 }
 
@@ -462,7 +470,7 @@ materialTextoN1.depthWrite = false;
 
 
 const textoPlanoN1 = new THREE.Mesh(textoGeometry,materialTextoN1)
-textoPlanoN1.position.set(1591.0246,-34.7163,-1300)
+textoPlanoN1.position.set(400,0,-1300)
 textoPlanoN1.scale.set(500,450,1);
 textoPlanoN1.rotation.y = -Math.PI/2;
 
@@ -541,7 +549,7 @@ materialTextoN2.depthWrite = false;
 
 
 const textoPlanoN2 = new THREE.Mesh(textoGeometry,materialTextoN2)
-textoPlanoN2.position.set(1591.0246,-34.7163,-1100)
+textoPlanoN2.position.set(500,0,-468)//1591.0246,-34.7163,-1100
 textoPlanoN2.scale.set(600,400,1);
 textoPlanoN2.rotation.y = -0.9752//-Math.PI/2;
 // panoramaLobbyA.add(textoPlanoN2);
@@ -609,7 +617,7 @@ materialTextoN3.depthWrite = false;
 
 
 const textoPlanoN3 = new THREE.Mesh(textoGeometry,materialTextoN3)
-textoPlanoN3.position.set(1591.0246,-34.7163,-950)
+textoPlanoN3.position.set(500,0,182)//1591.0246,-34.7163,-950
 textoPlanoN3.scale.set(700,500,1);
 textoPlanoN3.rotation.y = -0.7666;
 // panoramaLobbyA.add(textoPlanoN3);
@@ -682,16 +690,16 @@ panoramaLobbyA.add(sombraPlanoN3);
 // gui.add(textoPlanoN1.rotation,"x").min(-Math.PI).max(Math.PI).step(0.0001).name("textoPlanoN1X_rot")
 // gui.add(textoPlanoN1.rotation,"y").min(-Math.PI).max(Math.PI).step(0.0001).name("textoPlanoN1Y_rot")
 // gui.add(textoPlanoN1.rotation,"z").min(-Math.PI).max(Math.PI).step(0.0001).name("textoPlanoN1Z_rot")
-// gui.add(textoPlanoN1.position,"x").min(-5000).max(5000).step(0.0001).name("textoPlanoN2X")
-// gui.add(textoPlanoN1.position,"y").min(-5000).max(5000).step(0.0001).name("textoPlanoN2Y")
-// gui.add(textoPlanoN1.position,"z").min(-5000).max(5000).step(0.0001).name("textoPlanoN2Z")
+gui.add(textoPlanoN1.position,"x").min(-5000).max(5000).step(0.0001).name("textoPlanoN1X")
+gui.add(textoPlanoN1.position,"y").min(-5000).max(5000).step(0.0001).name("textoPlanoN1Y")
+gui.add(textoPlanoN1.position,"z").min(-5000).max(5000).step(0.0001).name("textoPlanoN1Z")
 
 // gui.add(grupoEsferaN2.position,"x").min(-5000).max(5000).step(0.0001).name("esferaN2X")
 // gui.add(grupoEsferaN2.position,"y").min(-5000).max(5000).step(0.0001).name("esferaN2Y")
 // gui.add(grupoEsferaN2.position,"z").min(-5000).max(5000).step(0.0001).name("esferaN2Z")
-// gui.add(textoPlanoN2.position,"x").min(-5000).max(5000).step(0.0001).name("textoPlanoN2X")
-// gui.add(textoPlanoN2.position,"y").min(-5000).max(5000).step(0.0001).name("textoPlanoN2Y")
-// gui.add(textoPlanoN2.position,"z").min(-5000).max(5000).step(0.0001).name("textoPlanoN2Z")
+gui.add(textoPlanoN2.position,"x").min(-5000).max(5000).step(0.0001).name("textoPlanoN2X")
+gui.add(textoPlanoN2.position,"y").min(-5000).max(5000).step(0.0001).name("textoPlanoN2Y")
+gui.add(textoPlanoN2.position,"z").min(-5000).max(5000).step(0.0001).name("textoPlanoN2Z")
 // gui.add(textoPlanoN2.rotation,"x").min(-Math.PI).max(Math.PI).step(0.0001).name("textoPlanoN2X_rot")
 // gui.add(textoPlanoN2.rotation,"y").min(-Math.PI).max(Math.PI).step(0.0001).name("textoPlanoN2Y_rot")
 // gui.add(textoPlanoN2.rotation,"z").min(-Math.PI).max(Math.PI).step(0.0001).name("textoPlanoN2Z_rot")
@@ -702,9 +710,9 @@ panoramaLobbyA.add(sombraPlanoN3);
 // gui.add(textoPlanoN3.rotation,"x").min(-Math.PI).max(Math.PI).step(0.0001).name("textoPlanoN3X_rot")
 // gui.add(textoPlanoN3.rotation,"y").min(-Math.PI).max(Math.PI).step(0.0001).name("textoPlanoN3Y_rot")
 // gui.add(textoPlanoN3.rotation,"z").min(-Math.PI).max(Math.PI).step(0.0001).name("textoPlanoN3Z_rot")
-// gui.add(textoPlanoN3.position,"x").min(-5000).max(5000).step(0.0001).name("textoPlanoN3X_pos")
-// gui.add(textoPlanoN3.position,"y").min(-5000).max(5000).step(0.0001).name("textoPlanoN3Y_pos")
-// gui.add(textoPlanoN3.position,"z").min(-5000).max(5000).step(0.0001).name("textoPlanoN3Z_pos")
+gui.add(textoPlanoN3.position,"x").min(-5000).max(5000).step(0.0001).name("textoPlanoN3X_pos")
+gui.add(textoPlanoN3.position,"y").min(-5000).max(5000).step(0.0001).name("textoPlanoN3Y_pos")
+gui.add(textoPlanoN3.position,"z").min(-5000).max(5000).step(0.0001).name("textoPlanoN3Z_pos")
 // gui.add(esferaN3.position,"x").min(-5000).max(5000).step(0.0001).name("esferaN3X")
 // gui.add(esferaN3.position,"y").min(-5000).max(5000).step(0.0001).name("esferaN3Y")
 // gui.add(esferaN3.position,"z").min(-5000).max(5000).step(0.0001).name("esferaN3Z")
