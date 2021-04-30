@@ -56,7 +56,7 @@ infospotVideo.addEventListener('click',()=>{
 panoramaLobby.add(infospotVideo);
 
 var infospotDinamicoA = new PANOLENS.Infospot(450,"src/img/iconos/iraNetflix_negro.png?v=123456781");
-infospotDinamicoA.position.set( 5000.00, -3220,  -1660.4572);
+infospotDinamicoA.position.set( 5000.00, -1200,  -1400);//y:-3220
 infospotDinamicoA.addEventListener('click',()=>{
     console.log("infospot dinamico A")
 })
@@ -64,7 +64,7 @@ infospotDinamicoA.addEventListener('click',()=>{
 panoramaLobby.add(infospotDinamicoA)
 
 var infospotDinamicoB = new PANOLENS.Infospot(450,"src/img/iconos/irA_SitioMuseo_negro.png?v=123456782");
-infospotDinamicoB.position.set( 5000.00, -3220,  1699.4073);
+infospotDinamicoB.position.set( 5000.00, -1200,  1310);
 infospotDinamicoB.addEventListener('click',()=>{
     console.log("infospot dinamico B")
 })
