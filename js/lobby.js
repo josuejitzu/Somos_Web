@@ -85,7 +85,7 @@ panoramaLobbyA.add(infospotSomos);
 
 //nucleo2 pos 2800, -1200, -2500
 // var infospotNucleo1 = new PANOLENS.Infospot(infoSpotSize,"src/img/simbolos/VER_MAS.png?v=123456783");
-var infospotNucleo1 = new PANOLENS.Infospot(infoSpotSize,"src/img/iconos/1.png?v=123456783");
+var infospotNucleo1 = new PANOLENS.Infospot(infoSpotSize,"src/img/iconos/NUCLUO_1_n.png?v=123456783");
 infospotNucleo1.position.set( 3975.4445, -1280, -50 );
 // infospotNucleo1.position.y = -850;
 // infospotNucleo1.addHoverText( 'Nucleo 1' );
@@ -97,7 +97,7 @@ infospotNucleo1.addEventListener('click',()=>{
 panoramaLobbyA.add(infospotNucleo1);
 
 
-var infospotNucleo2 = new PANOLENS.Infospot(infoSpotSize,"src/img/iconos/2.png?v=123456784");
+var infospotNucleo2 = new PANOLENS.Infospot(infoSpotSize,"src/img/iconos/NUCLUO_2_n.png?v=123456784");
 infospotNucleo2.position.set(  4083.8273, -1310, -2440);
 infospotNucleo2.addEventListener('click',()=>{
     console.log("spot nucleo 2")
@@ -107,7 +107,7 @@ infospotNucleo2.addEventListener('click',()=>{
 panoramaLobbyA.add(infospotNucleo2);
 
 
-var infospotNucleo3 = new PANOLENS.Infospot(infoSpotSize,"src/img/iconos/3.png?v=123456785");
+var infospotNucleo3 = new PANOLENS.Infospot(infoSpotSize,"src/img/iconos/NUCLUO_3_n.png?v=123456785");
 infospotNucleo3.position.set(  3867.0618, -1220, -4370.0254);
 
 // infospotNucleo3.addHoverText( '' );
@@ -189,9 +189,14 @@ function cambioPosicion(pos)
         panoramaLobbyA.add(infospotNucleo3); 
         infospotSomos.position.set( -100, -765.23, -3000 );
       
-        infospotNucleo1.position.set( 3975.4445, -793, -50 );
-        infospotNucleo2.position.set(  4083.8273, -833, -2440);
-        infospotNucleo3.position.set(  3867.0618, -793.3954, -4370.0254);
+        // infospotNucleo1.position.set( 3975.4445, -793, -50 );
+        // infospotNucleo2.position.set(  4083.8273, -833, -2440);
+        // infospotNucleo3.position.set(  3867.0618, -793.3954, -4370.0254);
+
+        infospotNucleo1.position.set( 3975.4445, -1280, -50 );
+        infospotNucleo2.position.set(  4083.8273, -1310, -2440);
+        infospotNucleo3.position.set(  3867.0618, -1220, -4370.0254);
+
 
 
         panoramaLobbyA.add(grupoEsferaN1)
@@ -213,17 +218,23 @@ function cambioPosicion(pos)
         sombraPlanoN3.position.set(2093.65,-500,-2328.37)
 
         textoPlanoN1.rotation.y = -Math.PI/2;
-        textoPlanoN2.rotation.y = -0.9752//-Math.PI/2;
-        textoPlanoN3.rotation.y = -0.7666;
+        // textoPlanoN2.rotation.y = -0.9752//-Math.PI/2;
+        // textoPlanoN3.rotation.y = -0.7666;
+        textoPlanoN2.rotation.y = -1.1//-Math.PI/2;
+        textoPlanoN3.rotation.y = -0.9;
+
 
         
         // textoPlanoN1.position.set(1591.0246,-34.7163,-1300)
         // textoPlanoN2.position.set(1591.0246,-34.7163,-1100)
         // textoPlanoN3.position.set(1591.0246,-34.7163,-950)
        
-        textoPlanoN1.position.set(400,0,-1300)
-        textoPlanoN2.position.set(500,0,-468)//1591.0246,-34.7163,-1100
-        textoPlanoN3.position.set(500,0,182)//1591.0246,-34.7163,-950
+        
+
+        textoPlanoN1.position.set(400,-330,-1300)//400,0,-1300
+        textoPlanoN2.position.set(500,-330,-468)//1591.0246,-34.7163,-1100
+        textoPlanoN3.position.set(550,-330,182)//1591.0246,-34.7163,-950
+
 
         
         viewer.autoHideInfospot = false;
@@ -266,7 +277,7 @@ function cambioPosicion(pos)
 
         textoPlanoN1.rotation.y = -2.75;
         textoPlanoN2.rotation.y = -Math.PI;
-        textoPlanoN3.rotation.y = -2.132;
+        textoPlanoN3.rotation.y = -2;
 
         // textoPlanoN1.position.set(1807.79,-34.7163,-1552.0745);
         // textoPlanoN2.position.set(1857.7899,-34.7163,-1552.0745);
@@ -276,9 +287,9 @@ function cambioPosicion(pos)
         // textoPlanoN2.position.set(1920,0,-2635);
         // textoPlanoN3.position.set(1157, 5,-1768);
 
-        textoPlanoN1.position.set(1374,-468,-2527);
-        textoPlanoN2.position.set(1900,-450,-2093);
-        textoPlanoN3.position.set(500, -330,182);
+        textoPlanoN1.position.set(970,-251,-3500);
+        textoPlanoN2.position.set(1900,-321,-2744);
+        textoPlanoN3.position.set(1265, -363,-1768);
     }
 }
 
@@ -467,7 +478,7 @@ imageT1.src = 'src/img/Esferas_Texturas/TITULO_01.png'
 const materialTextoN1 = new THREE.MeshBasicMaterial({
     color: 0xffffff,
     map:textureT1,
-    alphaMap:textureT1,
+    // alphaMap:textureT1,
     side: THREE.Front,
     transparent: true
     
@@ -478,7 +489,7 @@ materialTextoN1.depthWrite = false;
 
 const textoPlanoN1 = new THREE.Mesh(textoGeometry,materialTextoN1)
 textoPlanoN1.position.set(400,-330,-1300)//400,0,-1300
-textoPlanoN1.scale.set(300,150,1);//500,350,1
+textoPlanoN1.scale.set(200,100,1);//500,350,1
 textoPlanoN1.rotation.y = -Math.PI/2;
 
 
@@ -545,7 +556,7 @@ imageT2.src = 'src/img/Esferas_Texturas/TITULO_02.png'
 const materialTextoN2 = new THREE.MeshBasicMaterial({
     color: 0xffffff,
     map:textureT2,
-    alphaMap:textureT2,
+    // alphaMap:textureT2,
     side: THREE.Front,
     transparent: true
     
@@ -557,8 +568,8 @@ materialTextoN2.depthWrite = false;
 
 const textoPlanoN2 = new THREE.Mesh(textoGeometry,materialTextoN2)
 textoPlanoN2.position.set(500,-330,-468)//1591.0246,-34.7163,-1100
-textoPlanoN2.scale.set(300,200,1);
-textoPlanoN2.rotation.y = -0.9752//-Math.PI/2;
+textoPlanoN2.scale.set(230,110,1);
+textoPlanoN2.rotation.y = -1.1//-Math.PI/2;
 // panoramaLobbyA.add(textoPlanoN2);
 
 // const sombraPlanoN2 = new THREE.Mesh(sombraGeometry,sombraEsfera)
@@ -614,7 +625,7 @@ imageT3.src = 'src/img/Esferas_Texturas/TITULO_03.png'
 const materialTextoN3 = new THREE.MeshBasicMaterial({
     color: 0xffffff,
     map:textureT3,
-    alphaMap:textureT3,
+    // alphaMap:textureT3,
     side: THREE.Front,
     transparent: true
     
@@ -624,9 +635,9 @@ materialTextoN3.depthWrite = false;
 
 
 const textoPlanoN3 = new THREE.Mesh(textoGeometry,materialTextoN3)
-textoPlanoN3.position.set(500,-330,182)//1591.0246,-34.7163,-950
-textoPlanoN3.scale.set(300,150,1);
-textoPlanoN3.rotation.y = -0.7666;
+textoPlanoN3.position.set(550,-330,182)//1591.0246,-34.7163,-950
+textoPlanoN3.scale.set(200,120,1);
+textoPlanoN3.rotation.y = -0.9;
 // panoramaLobbyA.add(textoPlanoN3);
 
 // const sombraPlanoN3 = new THREE.Mesh(sombraGeometry,sombraEsfera)
