@@ -223,3 +223,9 @@
     }
 }
 
+.fb-video {
+   
+    /* visibility: hidden; */
+    pointer-events: none;
+
+  }

@@ -269,9 +269,13 @@ function cambioPosicion(pos)
         // textoPlanoN2.position.set(1857.7899,-34.7163,-1552.0745);
         // textoPlanoN3.position.set(1531.0248,-34.7163,-1552.0745);
 
-        textoPlanoN1.position.set(1070,10,-3286);
-        textoPlanoN2.position.set(1920,0,-2635);
-        textoPlanoN3.position.set(1157, 5,-1768);
+        // textoPlanoN1.position.set(1070,10,-3286);
+        // textoPlanoN2.position.set(1920,0,-2635);
+        // textoPlanoN3.position.set(1157, 5,-1768);
+
+        textoPlanoN1.position.set(1374,-468,-2527);
+        textoPlanoN2.position.set(1900,-450,-2093);
+        textoPlanoN3.position.set(500, -330,182);
     }
 }
 
@@ -446,7 +450,7 @@ imageT1.addEventListener('load', () =>
 {
     textureT1.needsUpdate = true
 })
-imageT1.src = 'src/img/Esferas_Texturas/LAS_VOCES_DETRAS_DE_SOMOS.png'
+imageT1.src = 'src/img/Esferas_Texturas/TITULO_01.png'
 
 // const materialTextoN1 = new THREE.MeshBasicMaterial({
 //     color: 0xffffff,
@@ -470,8 +474,8 @@ materialTextoN1.depthWrite = false;
 
 
 const textoPlanoN1 = new THREE.Mesh(textoGeometry,materialTextoN1)
-textoPlanoN1.position.set(400,0,-1300)
-textoPlanoN1.scale.set(500,450,1);
+textoPlanoN1.position.set(400,-330,-1300)//400,0,-1300
+textoPlanoN1.scale.set(300,150,1);//500,350,1
 textoPlanoN1.rotation.y = -Math.PI/2;
 
 
@@ -533,7 +537,7 @@ imageT2.addEventListener('load', () =>
 {
     textureT2.needsUpdate = true
 })
-imageT2.src = 'src/img/Esferas_Texturas/DE_LA REALIDAD_A_LA_FICCION.png'
+imageT2.src = 'src/img/Esferas_Texturas/TITULO_02.png'
 
 const materialTextoN2 = new THREE.MeshBasicMaterial({
     color: 0xffffff,
@@ -549,8 +553,8 @@ materialTextoN2.depthWrite = false;
 
 
 const textoPlanoN2 = new THREE.Mesh(textoGeometry,materialTextoN2)
-textoPlanoN2.position.set(500,0,-468)//1591.0246,-34.7163,-1100
-textoPlanoN2.scale.set(600,400,1);
+textoPlanoN2.position.set(500,-330,-468)//1591.0246,-34.7163,-1100
+textoPlanoN2.scale.set(300,200,1);
 textoPlanoN2.rotation.y = -0.9752//-Math.PI/2;
 // panoramaLobbyA.add(textoPlanoN2);
 
@@ -602,7 +606,7 @@ imageT3.addEventListener('load', () =>
 {
     textureT3.needsUpdate = true
 })
-imageT3.src = 'src/img/Esferas_Texturas/EL_MUNDO_SOMOS.png'
+imageT3.src = 'src/img/Esferas_Texturas/TITULO_03.png'
 
 const materialTextoN3 = new THREE.MeshBasicMaterial({
     color: 0xffffff,
@@ -617,8 +621,8 @@ materialTextoN3.depthWrite = false;
 
 
 const textoPlanoN3 = new THREE.Mesh(textoGeometry,materialTextoN3)
-textoPlanoN3.position.set(500,0,182)//1591.0246,-34.7163,-950
-textoPlanoN3.scale.set(700,500,1);
+textoPlanoN3.position.set(500,-330,182)//1591.0246,-34.7163,-950
+textoPlanoN3.scale.set(300,150,1);
 textoPlanoN3.rotation.y = -0.7666;
 // panoramaLobbyA.add(textoPlanoN3);
 
@@ -693,6 +697,8 @@ panoramaLobbyA.add(sombraPlanoN3);
 gui.add(textoPlanoN1.position,"x").min(-5000).max(5000).step(0.0001).name("textoPlanoN1X")
 gui.add(textoPlanoN1.position,"y").min(-5000).max(5000).step(0.0001).name("textoPlanoN1Y")
 gui.add(textoPlanoN1.position,"z").min(-5000).max(5000).step(0.0001).name("textoPlanoN1Z")
+gui.add(textoPlanoN1.scale,"x").min(-500).max(500).step(0.01).name("textoPlanoN1Z")
+gui.add(textoPlanoN1.scale,"y").min(-500).max(500).step(0.01).name("textoPlanoN1Z")
 
 // gui.add(grupoEsferaN2.position,"x").min(-5000).max(5000).step(0.0001).name("esferaN2X")
 // gui.add(grupoEsferaN2.position,"y").min(-5000).max(5000).step(0.0001).name("esferaN2Y")

@@ -30,6 +30,7 @@ panoramaLobby.addEventListener( 'infospot-animation-complete', function(){
 const videoPlayer =  new Plyr(document.querySelector('.player'));
 const imgVidConAudio_blanco ="src/img/simbolos/AUDIO.png";
 const imgVidSinAudio_blanco ="src/img/simbolos/SIN_AUDIO.png";
+const fbPlayer = document.querySelector(".fb-video ");
 
 let viewer;
 
@@ -50,6 +51,8 @@ infospotVideo.addEventListener('click',()=>{
     console.log("spot video")
     panelVideo.style.visibility ="visible";
     gsap.to(panelVideo,{duration:0.5,opacity:1.0});
+    fbPlayer.style.pointerEvents = "all";
+
     callarMusica();
     // activarBotonesDinamicos();
 })
@@ -194,7 +197,7 @@ botonMuteVideo.addEventListener('click',()=>{
 })
 
 document.addEventListener('DOMContentLoaded', () => {
-	const source = 'https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8';
+	const source ='https://www.facebook.com/100065115183986/videos/128256386021534/' //'https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8';
 	// const video = document.querySelector('video');
 	
 	// For more options see: https://github.com/sampotts/plyr/#options
@@ -220,3 +223,5 @@ document.addEventListener('DOMContentLoaded', () => {
 	// Expose player so it can be used from the console
 	window.player = videoPlayer;
 });
+
+
