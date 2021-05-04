@@ -3,7 +3,7 @@
 
 // import { GLTFLoader } from './three/examples/jsm/loaders/GLTFLoader.js'
 
-const panoramaLobbyA = new PANOLENS.ImagePanorama( 'src/img/360/posicion01_5.jpg' );
+const panoramaLobbyA = new PANOLENS.ImagePanorama( 'src/img/360_amarillo/posicion01_6.jpg' );
 panoramaLobbyA.addEventListener( 'enter-fade-start', function(){
     viewer.tweenControlCenter(  new THREE.Vector3(4083.8273, -450, -2635.9018), 0 );
 
@@ -27,7 +27,7 @@ panoramaLobbyA.addEventListener('progress', function(e){
 
  });
 
-const panoramaLobbyB = new PANOLENS.ImagePanorama( 'src/img/360/posicion02_6.jpg' );
+const panoramaLobbyB = new PANOLENS.ImagePanorama( 'src/img/360_amarillo/posicion02_7.jpg' );
 panoramaLobbyB.addEventListener( 'enter-fade-start', function(){
     viewer.tweenControlCenter(  new THREE.Vector3(4000.00, -465.23, 100), 0 );
   } );
@@ -85,8 +85,8 @@ panoramaLobbyA.add(infospotSomos);
 
 //nucleo2 pos 2800, -1200, -2500
 // var infospotNucleo1 = new PANOLENS.Infospot(infoSpotSize,"src/img/simbolos/VER_MAS.png?v=123456783");
-var infospotNucleo1 = new PANOLENS.Infospot(infoSpotSize,"src/img/iconos/NUCLUO_1_n.png?v=123456783");
-infospotNucleo1.position.set( 3975.4445, -780, -50 );
+var infospotNucleo1 = new PANOLENS.Infospot(infoSpotSize,"src/img/iconos/1.png?v=123456783");
+infospotNucleo1.position.set( 3975.4445, -1280, -50 );
 // infospotNucleo1.position.y = -850;
 // infospotNucleo1.addHoverText( 'Nucleo 1' );
 infospotNucleo1.addEventListener('click',()=>{
@@ -97,8 +97,8 @@ infospotNucleo1.addEventListener('click',()=>{
 panoramaLobbyA.add(infospotNucleo1);
 
 
-var infospotNucleo2 = new PANOLENS.Infospot(infoSpotSize,"src/img/iconos/NUCLUO_2_n.png?v=123456784");
-infospotNucleo2.position.set(  4083.8273, -870, -2440);
+var infospotNucleo2 = new PANOLENS.Infospot(infoSpotSize,"src/img/iconos/2.png?v=123456784");
+infospotNucleo2.position.set(  4083.8273, -1310, -2440);
 infospotNucleo2.addEventListener('click',()=>{
     console.log("spot nucleo 2")
     cambiarA("nucleo2");
@@ -107,8 +107,8 @@ infospotNucleo2.addEventListener('click',()=>{
 panoramaLobbyA.add(infospotNucleo2);
 
 
-var infospotNucleo3 = new PANOLENS.Infospot(infoSpotSize,"src/img/iconos/NUCLUO_3_n.png?v=123456785");
-infospotNucleo3.position.set(  3867.0618, -820, -4370.0254);
+var infospotNucleo3 = new PANOLENS.Infospot(infoSpotSize,"src/img/iconos/3.png?v=123456785");
+infospotNucleo3.position.set(  3867.0618, -1220, -4370.0254);
 
 // infospotNucleo3.addHoverText( '' );
 infospotNucleo3.addEventListener('click',()=>{
@@ -239,9 +239,12 @@ function cambioPosicion(pos)
         panoramaLobbyB.add(infospotNucleo2); 
         panoramaLobbyB.add(infospotNucleo3); 
         infospotSomos.position.set( -3069.4332, -1118.5436, 2349.7036 );
-        infospotNucleo1.position.set( 2024.5555, -900, 5000 );
-        infospotNucleo2.position.set( 0, -1000.1609, 4625.7409);
-        infospotNucleo3.position.set( 2349.7036, -901.7782, 1482.6418);
+        // infospotNucleo1.position.set( 2024.5555, -900, 5000 );
+        // infospotNucleo2.position.set( 0, -1000.1609, 4625.7409);
+        // infospotNucleo3.position.set( 2349.7036, -901.7782, 1482.6418);
+        infospotNucleo1.position.set( 2024.5555, -1300, 5000 );
+        infospotNucleo2.position.set( 0, -1400, 4625.7409);
+        infospotNucleo3.position.set( 2349.7036, -1200, 1482.6418);
 
         panoramaLobbyB.add(grupoEsferaN1)
         panoramaLobbyB.add(grupoEsferaN2)

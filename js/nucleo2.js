@@ -1,7 +1,7 @@
 
 
 import { GLTFLoader } from './three/examples/jsm/loaders/GLTFLoader.js'
-const panoramaN2 = new PANOLENS.ImagePanorama( 'src/img/360/nucleo02_6.jpg' );
+const panoramaN2 = new PANOLENS.ImagePanorama( 'src/img/360_amarillo/nucleo02_7.jpg' );
 panoramaN2.addEventListener( 'enter-fade-start', function(){
     viewer.tweenControlCenter(  new THREE.Vector3(5000.00, 200, 0), 0 );
   } );
@@ -20,7 +20,7 @@ panoramaN2.addEventListener( 'enter-fade-start', function(){
 
  });
 
-const panoramaN2_B = new PANOLENS.ImagePanorama( 'src/img/360/nucleo02_closeup2.jpg' );
+const panoramaN2_B = new PANOLENS.ImagePanorama( 'src/img/360_amarillo/nucleo02_closeup3.jpg' );
 panoramaN2_B.addEventListener( 'enter-fade-start', function(){
     viewer.tweenControlCenter(  new THREE.Vector3(5000.00, 200, 0), 0 );
   } );
