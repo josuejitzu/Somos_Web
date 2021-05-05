@@ -226,7 +226,7 @@ function cambioPosicion(pos){
              navegacionInferior.style.visibility ="hidden";
              navegacionInferiorN2.style.visibility ="visible";
     
-             // panoramaN2_B.add(cuadroPlano_1); 
+             panoramaN2_B.add(cuadroPlano_1); 
                 panoramaN2_B.add(cuadroPlano_2); 
                 // panoramaN2_B.add(cuadroPlano_3);
                 panoramaN2_B.add(cuadroPlano_4);
@@ -240,7 +240,7 @@ function cambioPosicion(pos){
                 panoramaN2_B.add(cuadroPlano_12);
                 panoramaN2_B.add(cuadroPlano_13);
                 panoramaN2_B.add(cuadroPlano_14); 
-                // panoramaN2_B.add(cuadroPlano_15);
+                panoramaN2_B.add(cuadroPlano_15);
                 panoramaN2_B.add(cuadroPlano_16);
                 panoramaN2_B.add(cuadroPlano_17);//CENTRO
                 panoramaN2_B.add(cuadroPlano_18); 
@@ -470,7 +470,7 @@ let posicionX = 230 //antes 182
 let offsetY = -30;
 let offestZ = 10;
 
-cuadroPlano_1.position.set(posicionX,0 + offsetY,-34.7163  + offestZ)
+cuadroPlano_1.position.set(posicionX,110 + offsetY,-120 + offestZ)
 cuadroPlano_1.scale.set(50,34.04,1);
 
 cuadroPlano_2.position.set(posicionX,120 + offsetY,-70 + offestZ )
@@ -509,8 +509,8 @@ cuadroPlano_13.scale.set(36.09,22.8,1)
 cuadroPlano_14.position.set(posicionX,0 + offsetY,-80 + offestZ);
 cuadroPlano_14.scale.set(59.03,38.33,1)
 
-cuadroPlano_15.position.set(posicionX,72 + offsetY,103 + offestZ);
-cuadroPlano_15.scale.set(12.45, 17.63, 1);
+cuadroPlano_15.position.set(posicionX,72 + offsetY,110 + offestZ);
+cuadroPlano_15.scale.set(22, 28, 1);
 
 cuadroPlano_16.position.set(posicionX, 165 + offsetY, 25 + offestZ);
 cuadroPlano_16.scale.set(30, 20.01, 1);
@@ -542,12 +542,12 @@ cuadroPlano_24.scale.set(50,38.25,1);//35.03, 25 ,1
 cuadroPlano_25.position.set(posicionX, 78.6367 + offsetY,-24.8646 + offestZ);//151.0876, 26.8861
 cuadroPlano_25.scale.set(35.03, 25 ,1);//50,38.25,1
 
-// gui.add(cuadroPlano_24.position,"x").min(-5000).max(5000).step(0.0001).name("planoPos_X");
-// gui.add(cuadroPlano_24.position,"y").min(-500).max(500).step(0.0001).name("planoPos_Y");
-// gui.add(cuadroPlano_24.position,"z").min(-500).max(500).step(0.0001).name("planoPos_Z");
-// gui.add(cuadroPlano_24.scale,"x").min(0).max(500).step(0.01).name("planoScala_X");
-// gui.add(cuadroPlano_24.scale,"y").min(0).max(500).step(0.01).name("planoScala_Y");
-// gui.add(cuadroPlano_24.scale,"z").min(0).max(50).step(0.01).name("planoScala_Z");
+// gui.add(cuadroPlano_1.position,"x").min(-5000).max(5000).step(0.0001).name("planoPos_X");
+// gui.add(cuadroPlano_1.position,"y").min(-500).max(500).step(0.0001).name("planoPos_Y");
+// gui.add(cuadroPlano_1.position,"z").min(-500).max(500).step(0.0001).name("planoPos_Z");
+// gui.add(cuadroPlano_1.scale,"x").min(0).max(500).step(0.01).name("planoScala_X");
+// gui.add(cuadroPlano_1.scale,"y").min(0).max(500).step(0.01).name("planoScala_Y");
+// gui.add(cuadroPlano_1.scale,"z").min(0).max(50).step(0.01).name("planoScala_Z");
 // gui.add(cuadroPlano_17.rotation,"x").min(-Math.PI).max(Math.PI).step(0.0001).name("planoRotacion_X");
 // gui.add(cuadroPlano_25.rotation,"y").min(-Math.PI).max(Math.PI).step(0.0001).name("planoRotacion_Y");
 // gui.add(cuadroPlano_5.rotation,"z").min(-Math.PI).max(Math.PI).step(0.0001).name("planoRotacion_Z");
@@ -589,18 +589,20 @@ const imagenGaleria = document.querySelector(".imagenGaleria");
 const infoFoto = document.querySelector(".infoFoto");
 function buscarObjeto(objeto)
 {
-    
     switch(objeto)
     {
         case cuadroPlano_1: 
             objeto.material.map = texturaBN_1
             imagenGaleria.src = rutaImgen+galeriaRutaImagenes[0][0]
-            infoFoto.innerHTML = ""
-        break;
+            infoFoto.innerHTML = "En la locación de la carcel, fajina de bienvenida a Paquito"
+            console.log(imagenGaleria.src);
+            break;
         case cuadroPlano_2: 
             objeto.material.map = texturaBN_2
             imagenGaleria.src = rutaImgen+galeriaRutaImagenes[1][0]
             infoFoto.innerHTML = "Peinado: Equipo de maquillaje y peinado acomodando la peluca de Natalia Solián (Cindy)"
+            console.log(imagenGaleria.src);
+
             break;
         case cuadroPlano_3: 
             objeto.material.map = texturaBN_3
@@ -669,7 +671,7 @@ function buscarObjeto(objeto)
         case cuadroPlano_15: 
             objeto.material.map = texturaBN_15
             imagenGaleria.src = rutaImgen+galeriaRutaImagenes[14][0]
-            infoFoto.innerHTML = ""
+            infoFoto.innerHTML = "NAYELI foto de secuencia accesorios en el burdel"
         break;
         case cuadroPlano_16: 
             objeto.material.map = texturaBN_16
@@ -707,7 +709,7 @@ function buscarObjeto(objeto)
         case cuadroPlano_22: 
             objeto.material.map = texturaBN_22
             imagenGaleria.src = rutaImgen+galeriaRutaImagenes[21][0]
-            infoFoto.innerHTML = ""
+            infoFoto.innerHTML = "";
 
         break;
         case cuadroPlano_23: 
@@ -719,19 +721,20 @@ function buscarObjeto(objeto)
         case cuadroPlano_24: 
             objeto.material.map = texturaBN_24
             imagenGaleria.src = rutaImgen+galeriaRutaImagenes[23][0]
-            infoFoto.innerHTML = ""
+            infoFoto.innerHTML = "Descanso después de varios ensayos fiesta XV años de Vanesa"
 
         break;
         case cuadroPlano_25: 
             objeto.material.map = texturaBN_25
             imagenGaleria.src = rutaImgen+galeriaRutaImagenes[24][0]
-            infoFoto.innerHTML = ""
+            infoFoto.innerHTML = "8 marzo marcha todas ahí presentes, por Daniela"
         break;
         default:
             console.log("cuadro no encontrado");
         break;
     }
 
+    console.log(imagenGaleria.src);
 
     panelGaleria.style.visibility ="visible"
     gsap.to(panelGaleria,{duration:0.5,opacity:1.0});

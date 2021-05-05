@@ -31,6 +31,7 @@
     /* top:10%; */
     background-color:rgba(155, 41, 41, 0);
     width:70%;
+    /* padding:100px; */
 }
 .panelFoto h2{
     font-size:15px;
@@ -44,8 +45,11 @@
     max-height:70vh
 }
 .panelFotoPie {
-    text-align:center;
+    /* align-self: center; */
+    text-align:left;
     padding: 30px;
+    width:50%;
+    font-size: 10px;
 }
 /* .botonCerrarFoto{
     width:5%;
@@ -126,5 +130,12 @@
         width: 10%;
         
     
+    }
+    .panelFotoPie {
+        /* align-self: center; */
+        text-align:left;
+        /* padding: 30px; */
+        width:50%;
+        font-size: 10px;
     }
 }
