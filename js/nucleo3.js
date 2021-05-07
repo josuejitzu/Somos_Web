@@ -1,6 +1,6 @@
 
 
-import { GLTFLoader } from './three/examples/jsm/loaders/GLTFLoader.js'
+
 const panoramaN3 = new PANOLENS.ImagePanorama( 'src/img/360_amarillo/Nucleo03_1.jpg' );
 panoramaN3.addEventListener( 'enter-fade-start', function(){
     viewer.tweenControlCenter(  new THREE.Vector3(5000.00, 0, 0), 0 );
@@ -45,6 +45,23 @@ const botonCerrarPanelInformacion = document.querySelector(".botonCerrarPanelBan
 const panelBanner = document.querySelector(".panelBanner");
 const botonCerrarPanelVideo = document.querySelector(".botonCerrarPanelVideo")
 const panelVideo = document.querySelector(".panelVideo");
+
+const player = new Plyr(document.querySelector('.player'));
+
+const boton_video_1 = document.querySelector(".boton_video1");
+const boton_video_2 = document.querySelector(".boton_video2");
+const boton_video_3 = document.querySelector(".boton_video3");
+const boton_video_4 = document.querySelector(".boton_video4");
+const boton_video_5 = document.querySelector(".boton_video5");
+const boton_fotografias_1 = document.querySelector(".botonFotografias");
+
+//cultura, arquitectura, moda, bebida, quince, musica,ganadera,popular
+let temaSeleccionado = "cultura";
+
+
+
+
+///VIDEOS en videosN3.js
 
 var infoSpotSize = 300;
 
@@ -479,7 +496,7 @@ banner_Cultura.addEventListener("hoverleave",()=>{
 })
 
 let intersectado
-panoramaN3.addEventListener('click',function(event)
+panoramaN3_B.addEventListener('click',function(event)
 {
     if(event.intersects.length > 0){
         intersectado = event.intersects[0].object;
@@ -498,11 +515,24 @@ var enBanner;
 
 function bannerSeleccionado(banner)
 {
+    // console.log("bannerSeleccionado")
+
+    boton_video_1.style.visibility ="hidden";
+    boton_video_2.style.visibility ="hidden";
+    boton_video_3.style.visibility ="hidden";
+    boton_video_4.style.visibility ="hidden";
+    boton_video_5.style.visibility ="hidden";
+
+
     switch(banner)
     {
         case banner_quince:
             console.log("banner_quince")
+            temaSeleccionado = "quince";
 
+            boton_video_1.style.visibility ="visible";
+            boton_video_2.style.visibility ="visible";
+            
             abrirPanelBanner();
 
             textoTitulo.innerHTML ="Titulo Quinceañera";
@@ -532,6 +562,9 @@ function bannerSeleccionado(banner)
             break;
         case banner_Arquitectura: 
         console.log("banner_arq")   
+        console.log("arquitectura")
+        boton_video_1.style.visibility ="visible";
+        boton_video_2.style.visibility ="visible";
         abrirPanelBanner();
         
 
@@ -561,30 +594,56 @@ function bannerSeleccionado(banner)
             break;
         case banner_Moda: 
         console.log("banner_moda")
+        console.log("moda")
+        boton_video_1.style.visibility ="visible";
+        boton_video_2.style.visibility ="visible";
+        boton_video_3.style.visibility ="visible";
+        boton_video_4.style.visibility ="visible";
+        boton_video_5.style.visibility ="visible";
         textoTitulo.innerHTML ="Titulo Moda";
         abrirPanelBanner();
 
             break;
         case banner_Bebidas: 
         console.log("banner_bebida")
+        boton_video_1.style.visibility ="visible";
+        boton_video_2.style.visibility ="visible";
+        boton_video_3.style.visibility ="visible";
+        boton_video_4.style.visibility ="visible";
+
         textoTitulo.innerHTML ="Titulo Bebida";
         abrirPanelBanner();
 
             break;
-        case banner_Grafica: 
+        case banner_Grafica: //POPULAR=????
         console.log("banner_grafica")
+        console.log("grafica")
+        boton_video_1.style.visibility ="visible";
+       
         textoTitulo.innerHTML ="Titulo Grafica";
         abrirPanelBanner();
 
             break;
         case banner_Musica: 
         console.log("banner_musica")
+        console.log("musica")
+        boton_video_1.style.visibility ="visible";
+        boton_video_2.style.visibility ="visible";
+        boton_video_3.style.visibility ="visible";
+        boton_video_4.style.visibility ="visible";
         textoTitulo.innerHTML ="Titulo Musica";
+
         abrirPanelBanner();
 
             break;
         case banner_Cultura: 
         console.log("banner_cultura")
+        // console.log("cultura")
+        boton_video_1.style.visibility ="visible";
+        boton_video_2.style.visibility ="visible";
+        boton_video_3.style.visibility ="visible";
+        boton_video_4.style.visibility ="visible";
+
         textoTitulo.innerHTML ="Titulo Cultura";
         abrirPanelBanner();
 
@@ -623,4 +682,163 @@ function cambiarPosicion(pos){
         })
     })
 
+}
+
+boton_video_1.addEventListener('click',()=>{cambiarVideo(temaSeleccionado,1)} );
+boton_video_2.addEventListener('click',()=>{cambiarVideo(temaSeleccionado,2)} );
+boton_video_3.addEventListener('click',()=>{cambiarVideo(temaSeleccionado,3)} );
+boton_video_4.addEventListener('click',()=>{cambiarVideo(temaSeleccionado,4)} );
+boton_video_5.addEventListener('click',()=>{cambiarVideo(temaSeleccionado,5)} );
+
+function cambiarVideo(tema,num){
+    console.log("cambiando video");
+    if(tema =="arquitectura")
+    {
+
+        if(num == 1){
+            player.source = video_arquitectura_01;
+            
+        }
+        else if(num == 2){
+            player.source =  video_arquitectura_02;
+        }else{
+            console.log("el tema no tiene mas de videos")
+            return;
+        }
+        
+    }
+    else if(tema == "bebidas")
+    {
+        if(num == 1){
+            player.source =  video_bebidas_01;
+            
+        }
+        else if(num == 2){
+            player.source = video_bebidas_02;
+        }
+        else if(num == 3){
+            player.source = video_bebidas_03;
+        }
+        else if(num == 4){
+            player.source = video_bebidas_04;
+        }
+        else{
+            console.log("el tema no tiene mas de videos")
+            return;
+        }
+    }
+    else if(tema =="cultura")
+    {
+        if(num == 1){
+            player.source = video_cultura_01;
+            
+        }
+        else if(num == 2){
+            player.source = video_cultura_02;
+        }
+        else if(num == 3){
+            player.source = video_cultura_03;
+        }
+        else if(num == 4){
+            player.source = video_cultura_04;
+        }
+        else{
+            console.log("el tema no tiene mas de videos")
+            return;
+        }
+    }
+    else if(tema =="ganadera")
+    {
+        if(num == 1){
+            player.source = video_ganadera_01;
+            
+        }
+        else if(num == 2){
+            player.source = video_ganadera_02;
+        }
+        else if(num == 3){
+            player.source = video_ganadera_03;
+        }
+        else if(num == 4){
+            player.source = video_ganadera_04;
+        }
+        else{
+            console.log("el tema no tiene mas de videos")
+            return;
+        }
+    }
+    else if(tema == "moda")
+    {
+        if(num == 1){
+            player.source = video_moda_01;
+            
+        }
+        else if(num == 2){
+            player.source = video_moda_02;
+        }
+        else if(num == 3){
+            player.source = video_moda_03;
+        }
+        else if(num == 4){
+            player.source = video_moda_04;
+        }
+        else if(num == 5){
+            player.source = video_moda_05;
+        }
+        else{
+            console.log("el tema no tiene mas de videos")
+            return;
+        }
+    }
+    else if(tema =="musica")
+    {
+        if(num == 1){
+            player.source = video_musica_01;
+            
+        }
+        else if(num == 2){
+            player.source = video_musica_02;
+        }
+        else if(num == 3){
+            player.source = video_musica_03;
+        }
+        else if(num == 4){
+            player.source = video_musica_04;
+        }
+        else{
+            console.log("el tema no tiene mas de videos")
+            return;
+        }
+    }
+    else if(tema=="popular")
+    {
+        if(num == 1){
+            player.source = video_popular_01;
+            
+        }
+        else{
+            console.log("el tema no tiene mas de videos")
+            return;
+        }
+    }
+    else if(tema =="quince")
+    {
+        if(num == 1){
+            player.source = video_quince_01;
+            
+        }
+        else if(num == 2){
+            player.source = video_quince_02;
+        }
+        else{
+            console.log("el tema no tiene mas de videos")
+            return;
+        }
+
+    }else 
+    {
+        console.log("tema no encontrado")
+        return ;
+    }
+    panelVideo.style.visibility = "visible";
 }
