@@ -267,6 +267,7 @@ const banner_Bebidas = new THREE.Mesh(cuadroGeometry,banner_quince_MAT);
 const banner_Grafica = new THREE.Mesh(cuadroGeometry,banner_quince_MAT);
 const banner_Musica = new THREE.Mesh(cuadroGeometry,banner_quince_MAT);
 const banner_Cultura = new THREE.Mesh(cuadroGeometry,banner_quince_MAT);
+const banner_Ganadero = new THREE.Mesh(cuadroGeometry,banner_quince_MAT);
 
 const hilo_Banner_Quince = new THREE.Mesh(cuadroGeometry,hilo_MAT);
 const hilo_Banner_Arquitectura = new THREE.Mesh(cuadroGeometry,hilo_MAT);
@@ -275,6 +276,7 @@ const hilo_Banner_Bebidas = new THREE.Mesh(cuadroGeometry,hilo_MAT);
 const hilo_Banner_Grafica = new THREE.Mesh(cuadroGeometry,hilo_MAT);
 const hilo_Banner_Musica = new THREE.Mesh(cuadroGeometry,hilo_MAT);
 const hilo_Banner_Cultura = new THREE.Mesh(cuadroGeometry,hilo_MAT);
+const hilo_Banner_Ganadero = new THREE.Mesh(cuadroGeometry,hilo_MAT);
 // panoramaN3.add(banner_quince)
 
 const bannerGroup = new THREE.Group();
@@ -285,6 +287,8 @@ bannerGroup.add(banner_Bebidas);
 bannerGroup.add(banner_Grafica);
 bannerGroup.add(banner_Musica);
 bannerGroup.add(banner_Cultura);
+bannerGroup.add(banner_Ganadero);
+
 bannerGroup.add(hilo_Banner_Quince);
 bannerGroup.add(hilo_Banner_Arquitectura);
 bannerGroup.add(hilo_Banner_Moda);
@@ -292,6 +296,8 @@ bannerGroup.add(hilo_Banner_Bebidas);
 bannerGroup.add(hilo_Banner_Grafica);
 bannerGroup.add(hilo_Banner_Musica);
 bannerGroup.add(hilo_Banner_Cultura);
+bannerGroup.add(hilo_Banner_Ganadero);
+
 
 // panoramaN3_B.add(bannerGroup);
 bannerGroup.position.set(45,10,-3.47);
@@ -351,6 +357,9 @@ hilo_Banner_Cultura.position.set(20,posY,2.5);
 hilo_Banner_Cultura.scale.set(0.2,15,1);
 hilo_Banner_Cultura.rotation.set(0,-0.36,0);
 
+banner_Ganadero.position.set(29,0,-3.47)
+banner_Ganadero.scale.set(sizeBanner.x,sizeBanner.y,1)
+banner_Ganadero.rotation.set(0,0.39,0);
 
 gui.add(bannerGroup.position,"x").min(-500).max(500).step(0.01).name("positionGroupX")
 gui.add(bannerGroup.position,"y").min(-500).max(500).step(0.01).name("positionGroupY")
@@ -412,12 +421,20 @@ gui.add(bannerGroup.rotation,"y").min(-Math.PI).max(Math.PI).step(0.01).name("ro
 // gui.add(banner_Cultura.scale,"y").min(-50).max(50).step(0.01).name("7Cultura_scalaY")
 // gui.add(banner_Cultura.rotation,"y").min(-Math.PI).max(Math.PI).step(0.01).name("7Cultura_rotacionY")
 
-gui.add(hilo_Banner_Bebidas.position,"x").min(-500).max(500).step(0.01).name("7Cultura_positionX")
-gui.add(hilo_Banner_Bebidas.position,"y").min(-500).max(500).step(0.01).name("7Cultura_positionY")
-gui.add(hilo_Banner_Bebidas.position,"z").min(-500).max(500).step(0.01).name("7Cultura_positionZ")
-gui.add(hilo_Banner_Bebidas.scale,"x").min(-50).max(50).step(0.01).name("7Cultura_scalaX")
-gui.add(hilo_Banner_Bebidas.scale,"y").min(-50).max(50).step(0.01).name("7Cultura_scalaY")
-gui.add(hilo_Banner_Bebidas.rotation,"y").min(-Math.PI).max(Math.PI).step(0.01).name("7Cultura_rotacionY")
+gui.add(banner_Ganadero.position,"x").min(-500).max(500).step(0.01).name("8Ganadero_positionX")
+gui.add(banner_Ganadero.position,"y").min(-500).max(500).step(0.01).name("8Ganadero_positionY")
+gui.add(banner_Ganadero.position,"z").min(-500).max(500).step(0.01).name("8Ganadero_positionZ")
+gui.add(banner_Ganadero.scale,"x").min(-50).max(50).step(0.01).name("8Ganadero_scalaX")
+gui.add(banner_Ganadero.scale,"y").min(-50).max(50).step(0.01).name("8Ganadero_scalaY")
+gui.add(banner_Ganadero.rotation,"y").min(-Math.PI).max(Math.PI).step(0.01).name("8Ganad_rotacionY")
+
+
+// gui.add(hilo_Banner_Bebidas.position,"x").min(-500).max(500).step(0.01).name("7Cultura_positionX")
+// gui.add(hilo_Banner_Bebidas.position,"y").min(-500).max(500).step(0.01).name("7Cultura_positionY")
+// gui.add(hilo_Banner_Bebidas.position,"z").min(-500).max(500).step(0.01).name("7Cultura_positionZ")
+// gui.add(hilo_Banner_Bebidas.scale,"x").min(-50).max(50).step(0.01).name("7Cultura_scalaX")
+// gui.add(hilo_Banner_Bebidas.scale,"y").min(-50).max(50).step(0.01).name("7Cultura_scalaY")
+// gui.add(hilo_Banner_Bebidas.rotation,"y").min(-Math.PI).max(Math.PI).step(0.01).name("7Cultura_rotacionY")
 
 //Animacion Banners
 const multiplicadorSize = 1.10;
@@ -495,6 +512,18 @@ banner_Cultura.addEventListener("hoverleave",()=>{
     
 })
 
+
+banner_Ganadero.addEventListener("hoverenter",()=>{
+    gsap.to(banner_Ganadero.scale,{duration:duracionAnimacionZoom,x:sizeBanner.x*multiplicadorSize,y:sizeBanner.y*multiplicadorSize});
+  
+})
+banner_Ganadero.addEventListener("hoverleave",()=>{
+    gsap.to(banner_Ganadero.scale,{duration:duracionAnimacionZoom,x:sizeBanner.x,y:sizeBanner.y});
+
+    
+})
+
+
 let intersectado
 panoramaN3_B.addEventListener('click',function(event)
 {
@@ -555,7 +584,8 @@ function bannerSeleccionado(banner)
             boton_video_1.style.visibility ="visible";
             boton_video_2.style.visibility ="visible";
             abrirPanelBanner();
-        
+            temaSeleccionado = "arquitectura";
+
 
             textoTitulo.innerHTML ="La arquitectura del noreste";
             textoPrincipal.innerHTML =
@@ -570,6 +600,8 @@ function bannerSeleccionado(banner)
         case banner_Moda: 
             console.log("banner_moda")
             console.log("moda")
+            temaSeleccionado = "moda";
+
             boton_video_1.style.visibility ="visible";
             boton_video_2.style.visibility ="visible";
             boton_video_3.style.visibility ="visible";
@@ -590,6 +622,8 @@ function bannerSeleccionado(banner)
 
         case banner_Bebidas: 
             console.log("banner_bebida")
+            temaSeleccionado = "bebida";
+
             boton_video_1.style.visibility ="visible";
             boton_video_2.style.visibility ="visible";
             boton_video_3.style.visibility ="visible";
@@ -610,6 +644,8 @@ function bannerSeleccionado(banner)
         case banner_Grafica: //POPULAR=????
             console.log("banner_grafica")
             console.log("grafica")
+            temaSeleccionado = "popular";
+
             boton_video_1.style.visibility ="visible";
             textoTitulo.innerHTML ="Los rótulos y la gráfica popular ";
             textoPrincipal.innerHTML =
@@ -625,6 +661,8 @@ function bannerSeleccionado(banner)
         case banner_Musica: 
             console.log("banner_musica")
             console.log("musica")
+            temaSeleccionado = "musica";
+
             boton_video_1.style.visibility ="visible";
             boton_video_2.style.visibility ="visible";
             boton_video_3.style.visibility ="visible";
@@ -649,6 +687,7 @@ function bannerSeleccionado(banner)
             boton_video_2.style.visibility ="visible";
             boton_video_3.style.visibility ="visible";
             boton_video_4.style.visibility ="visible";
+            temaSeleccionado = "cultura";
 
             textoTitulo.innerHTML ="La cultura y el territorio ";
             textoPrincipal.innerHTML =
@@ -663,6 +702,27 @@ function bannerSeleccionado(banner)
             abrirPanelBanner();
 
         break;
+        case banner_Ganadero: 
+        console.log("banner_cultura")
+        // console.log("cultura")
+        boton_video_1.style.visibility ="visible";
+        boton_video_2.style.visibility ="visible";
+        boton_video_3.style.visibility ="visible";
+        boton_video_4.style.visibility ="visible";
+        temaSeleccionado = "ganadera";
+
+        textoTitulo.innerHTML ="La cultura ganadera ";
+        textoPrincipal.innerHTML =
+        "La ganadería es una de las principales actividades económicas del noreste de México, "+
+        "su producto vital no se reduce a la producción de carne, comprende también la de leche de bovino."+"<br/>"+
+        "La cultura que se ha generado en torno a la crianza de ganado y la alimentación regida por la carne de "+
+        "res es parte del imaginario y de los relatos cotidianos. "+"<br/>"+
+        "Los establos y las reses conforman el paisaje y la carne asada, más allá de un platillo regional es una "+
+        "actividad obligada para cerrar tratos y convivir en familia"
+
+        abrirPanelBanner();
+
+    break;
     }
     console.log(banner);
 
