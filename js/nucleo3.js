@@ -535,119 +535,134 @@ function bannerSeleccionado(banner)
             
             abrirPanelBanner();
 
-            textoTitulo.innerHTML ="Titulo Quinceañera";
+            textoTitulo.innerHTML ="Quinceañeras";
             textoPrincipal.innerHTML =
-            "Este último núcleo busca explorar y desentrañar el mundo de Somos. Para construirlo echamos "+
-            "mano del recurso de la “Doble pantalla” o Second Screen, que es una nueva manera de consumir "+
-            "y disfrutar los productos audiovisuales que ofrecen las plataformas digitales. A través de "+
-            "una segunda pantalla -que bien puede ser un dispositivo móvil-, el espectador es capaz de "+
-            "buscar en la red, información complementaria sobre temas y sucesos representados en la "+
-            "serie, y así informarse y documentarse sobre la historia y los personajes." + "<br/>"+
-            "Delineamos entonces, ocho temas o casos de estudio, que dibujan el mundo de Somos., y nos permiten"+
-            "revisar a los personajes, adentrarnos en su cotidianidad y su cultura, así como profundizar en la"+
-            "complejidad de la región. Los temas seleccionados son: cultura y territorio, arquitectura del"+
-            "noreste, cultura ganadera con la costumbre de la carne asada incluida; bebidas propias del norte "+
-            "de México, la tradición de los rótulos y la gráfica popular que adorna calles y negocios; "+
-            "la música norteña, las quinceañeras y sus celebraciones y por último, la moda tan particular "+
-            "asociada a la zona fronteriza. Con breves clips extraídos de la producción, y múltiples recursos"+
-            "existentes en Internet que complementan la experiencia y generan nuevas vetas de información, "+
-            "estos temas tratados en la serie, nos permiten humanizar a los personajes, conocer su contexto "+
-            "y repasar su cotidianidad. Al mismo tiempo, nos permiten acercarnos a la particular cultura de"+
-            "un territorio como es el de Coahuila, con problemáticas sociales determinadas como son el "+
-            "narcotráfico y la cercanía con Estados Unidos."+
-            "Al explorar cada uno de estos temas, no sólo reconocemos a los personajes y su forma de vida "+
-            "y convivencia, sino que también, accedemos a su colectividad y a su forma de encontrarse y "+
-            "reconocerse, lo mismo en la intimidad que en el espacio público."
-            
+            "De manera tradicional, la fiesta de quince años es un hito importante en la vida de una mujer" +
+            "como el momento en que oficialmente deja de ser niña para abrazar la vida adulta. "+"<br/>" +
+            "En tierras mexicanas es también cuando se \"presenta\" a una mujer en sociedad, es un rito de "+
+            "iniciación dentro de una sociedad patriarcal. Si la festejada es católica, la celebración se "+
+            "acompaña con una misa o una ceremonia religiosa, a la que sigue un baile pleno de simbolismos. "+"<br/>"+
+            "El vestido de la protagonista suele ser vaporoso y con estilo de princesa. El padre acompaña a la " + "<br/>"+
+            "festejada en el primer baile para luego \"entregarla\" a los \"chambelanes\” (hombres jóvenes) que bailan "+
+            "con ella distintas piezas, como representación del camino que recorrerá y los obstáculos que enfrentará "+
+            "para encontrar el amor y vivir en pareja. Un gran pastel coronado con una muñeca, vestida de forma idéntica "+
+            "a la quinceañera –la última muñeca que tendrá–, marca el inicio de la nueva vida."
             break;
+
         case banner_Arquitectura: 
-        console.log("banner_arq")   
-        console.log("arquitectura")
-        boton_video_1.style.visibility ="visible";
-        boton_video_2.style.visibility ="visible";
-        abrirPanelBanner();
+            console.log("banner_arq")   
+            console.log("arquitectura")
+            boton_video_1.style.visibility ="visible";
+            boton_video_2.style.visibility ="visible";
+            abrirPanelBanner();
         
 
-        textoTitulo.innerHTML ="Titulo Arquitectura";
+            textoTitulo.innerHTML ="La arquitectura del noreste";
             textoPrincipal.innerHTML =
-            "Este último núcleo busca explorar y desentrañar el mundo de Somos. Para construirlo echamos "+
-            "mano del recurso de la “Doble pantalla” o Second Screen, que es una nueva manera de consumir "+
-            "y disfrutar los productos audiovisuales que ofrecen las plataformas digitales. A través de "+
-            "una segunda pantalla -que bien puede ser un dispositivo móvil-, el espectador es capaz de "+
-            "buscar en la red, información complementaria sobre temas y sucesos representados en la "+
-            "serie, y así informarse y documentarse sobre la historia y los personajes."+"<br/>"+
-            "Delineamos entonces, ocho temas o casos de estudio, que dibujan el mundo de Somos., y nos permiten"+
-            "revisar a los personajes, adentrarnos en su cotidianidad y su cultura, así como profundizar en la"+
-            "complejidad de la región. Los temas seleccionados son: cultura y territorio, arquitectura del"+
-            "noreste, cultura ganadera con la costumbre de la carne asada incluida; bebidas propias del norte "+
-            "de México, la tradición de los rótulos y la gráfica popular que adorna calles y negocios; "+
-            "la música norteña, las quinceañeras y sus celebraciones y por último, la moda tan particular "+
-            "asociada a la zona fronteriza. Con breves clips extraídos de la producción, y múltiples recursos"+
-            "existentes en Internet que complementan la experiencia y generan nuevas vetas de información, "+
-            "estos temas tratados en la serie, nos permiten humanizar a los personajes, conocer su contexto "+
-            "y repasar su cotidianidad. Al mismo tiempo, nos permiten acercarnos a la particular cultura de"+
-            "un territorio como es el de Coahuila, con problemáticas sociales determinadas como son el "+
-            "narcotráfico y la cercanía con Estados Unidos."+
-            "Al explorar cada uno de estos temas, no sólo reconocemos a los personajes y su forma de vida "+
-            "y convivencia, sino que también, accedemos a su colectividad y a su forma de encontrarse y "+
-            "reconocerse, lo mismo en la intimidad que en el espacio público." 
+            "La arquitectura del noreste tiene una gran diversidad de tipologías arquitectónicas, "+
+            "técnicas constructivas y modos de habitar. Esta pluralidad se debe a las distintas influencias "+
+            "visuales y estilísticas que han inundado la región, así como a los procesos productivos, migratorios"+
+            "y sociales que se han dado en el territorio. En el Allende representado en la serie, la arquitectura "+
+            "vernácula es una fuerte presencia que franquea la vida diaria de una población en constante transformación. "+
+            "La arquitectura en la serie marca las diferencias sociales y también las ideológicas"
             break;
+
         case banner_Moda: 
-        console.log("banner_moda")
-        console.log("moda")
-        boton_video_1.style.visibility ="visible";
-        boton_video_2.style.visibility ="visible";
-        boton_video_3.style.visibility ="visible";
-        boton_video_4.style.visibility ="visible";
-        boton_video_5.style.visibility ="visible";
-        textoTitulo.innerHTML ="Titulo Moda";
-        abrirPanelBanner();
+            console.log("banner_moda")
+            console.log("moda")
+            boton_video_1.style.visibility ="visible";
+            boton_video_2.style.visibility ="visible";
+            boton_video_3.style.visibility ="visible";
+            boton_video_4.style.visibility ="visible";
+            boton_video_5.style.visibility ="visible";
+            textoTitulo.innerHTML ="La moda";
+            textoPrincipal.innerHTML =
+            "La moda norteña tiene un carácter singular e híbrido que responde a la cercanía con Estados Unidos, "+
+            "al culto a la indumentaria del cowboy así como a la cultura visual generada por el cine. El apego al "+
+            "caballo, el rodeo y el campo se refleja en las botas, los sombreros y las camisas vaqueras utilizadas "+
+            "por gran parte de la población. Aunada a la cultura vaquera, la construcción visual asociada al narcotráfico, "+
+            "descrita por muchos como “buchona”, se ha filtrado poco a poco en la cotidianeidad y en los guardarropas. "+
+            "Por ello, la vestimenta de varios personajes de Somos. refleja este complejo fenómeno fronterizo, una mezcla de "+
+            "culturas, de deseos y apariencias"
+            abrirPanelBanner();
 
             break;
-        case banner_Bebidas: 
-        console.log("banner_bebida")
-        boton_video_1.style.visibility ="visible";
-        boton_video_2.style.visibility ="visible";
-        boton_video_3.style.visibility ="visible";
-        boton_video_4.style.visibility ="visible";
 
-        textoTitulo.innerHTML ="Titulo Bebida";
-        abrirPanelBanner();
+        case banner_Bebidas: 
+            console.log("banner_bebida")
+            boton_video_1.style.visibility ="visible";
+            boton_video_2.style.visibility ="visible";
+            boton_video_3.style.visibility ="visible";
+            boton_video_4.style.visibility ="visible";
+            textoTitulo.innerHTML ="Las bebidas ";
+            textoPrincipal.innerHTML =
+            "La cerveza y el sotol son dos bebidas tradicionales del norte de México, parte de la vida y el imaginario social de la zona. "+
+            "A finales del siglo xix una gran productora cervecera se estableció en Nuevo León y detonó la producción industrial sostenida que "+
+            "dio como resultado una cultura asociada con esta bebida fermentada, tanto que es costumbre acompañar las reuniones sociales y familiares"+
+            "con ella. El clima extremo de la región ha propiciado también el consumo de ese líquido que refresca y revitaliza. "+"<br/>"+
+            "El sotol, por su parte, es un aguardiente que se extrae de manera artesanal de la piña de una cactácea originaria de la zona "+
+            "desértica del norte de México. Es muy socorrido por las clases populares, especialmente en áreas rurales. "+"<br/>"+
+            "En Somos. los personajes acompañan sus reuniones sociales, laborales y momentos cruciales con dichos brebajes."
+
+            abrirPanelBanner();
 
             break;
         case banner_Grafica: //POPULAR=????
-        console.log("banner_grafica")
-        console.log("grafica")
-        boton_video_1.style.visibility ="visible";
-       
-        textoTitulo.innerHTML ="Titulo Grafica";
-        abrirPanelBanner();
+            console.log("banner_grafica")
+            console.log("grafica")
+            boton_video_1.style.visibility ="visible";
+            textoTitulo.innerHTML ="Los rótulos y la gráfica popular ";
+            textoPrincipal.innerHTML =
+            "Los rótulos, en su mayoría pintados a mano, siguen siendo un distintivo para negocios y locales comerciales "+
+            "en zonas rurales de México. A pesar de la estandarización de los medios gráficos impulsados por la tecnología, "+
+            "en muchas poblaciones se apuesta por los señalamientos trazados artesanalmente para generar una identidad original. "+"<br/>"+
+            "En Somos. los gráficos comerciales acompañan la imagen del pueblo y fortalecen la cultura visual de la región. "+"<br/>"+
+            "Estos rótulos vitalizan los exteriores de los poblados alejados de las urbes."
+            
+            abrirPanelBanner();
 
             break;
         case banner_Musica: 
-        console.log("banner_musica")
-        console.log("musica")
-        boton_video_1.style.visibility ="visible";
-        boton_video_2.style.visibility ="visible";
-        boton_video_3.style.visibility ="visible";
-        boton_video_4.style.visibility ="visible";
-        textoTitulo.innerHTML ="Titulo Musica";
-
-        abrirPanelBanner();
+            console.log("banner_musica")
+            console.log("musica")
+            boton_video_1.style.visibility ="visible";
+            boton_video_2.style.visibility ="visible";
+            boton_video_3.style.visibility ="visible";
+            boton_video_4.style.visibility ="visible";
+            textoTitulo.innerHTML ="La música norteña";
+            textoPrincipal.innerHTML =
+            "La música norteña es un género regional que ha viajado más allá de la frontera, su popularidad "+
+            "ha crecido de manera amplia. También conocida como música de banda, se caracteriza por el uso del "+
+            "acordeón y el bajo extremo y por las letras asociadas con la narración de las \"hazañas\" de los narcos, "+
+            "por ello uno de sus subgéneros ha recibido el mote de 'narcocorrido'; otra de sus características es "+
+            "romantizar la pobreza y anhelar el amor imposible. "+"<br/>"+
+            "La fusión de la música norteña y la música texana ha dado como resultado el género Tex mex, muy divulgado en ambos lados de la frontera. "+"<br/>"+
+            "La música norteña es parte de la identidad y la cultura de estos municipios fronterizos y en Somos. su presencia es tenue, pero continua."
+            
+            abrirPanelBanner();
 
             break;
         case banner_Cultura: 
-        console.log("banner_cultura")
-        // console.log("cultura")
-        boton_video_1.style.visibility ="visible";
-        boton_video_2.style.visibility ="visible";
-        boton_video_3.style.visibility ="visible";
-        boton_video_4.style.visibility ="visible";
+            console.log("banner_cultura")
+            // console.log("cultura")
+            boton_video_1.style.visibility ="visible";
+            boton_video_2.style.visibility ="visible";
+            boton_video_3.style.visibility ="visible";
+            boton_video_4.style.visibility ="visible";
 
-        textoTitulo.innerHTML ="Titulo Cultura";
-        abrirPanelBanner();
+            textoTitulo.innerHTML ="La cultura y el territorio ";
+            textoPrincipal.innerHTML =
+            "Coahuila se ubica en el noreste de México, es un estado fronterizo con Estados Unidos, que colinda con Texas. "+
+            "Su imponente paisaje es en su mayoría desértico, aunque también cuenta con ciénegas, montañas, lagunas, bosques y oasis. "+"<br/>"+
+            "Allende se ubica en la zona conocida como “Los cinco manantiales”, conformada por los municipios de Guerrero, Morelos,"+
+            "Nava, Piedras Negras, Sabinas y Zaragoza, los cuales tienen una serie de riachuelos que alimentan el río Escondido."+"<br/>"+
+            "Su territorio es amplio y diverso, la economía depende de la ganadería, la agricultura y la minería; la cultura es "+
+            "híbrida, con una gran influencia de lo que sucede en el país vecino. En Somos. el paisaje es una referencia real y "+
+            "poética que acompaña a los personajes y en la tragedia."
 
-            break;
+            abrirPanelBanner();
+
+        break;
     }
     console.log(banner);
 

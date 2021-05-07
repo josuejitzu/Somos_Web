@@ -44,6 +44,9 @@
 
 
 }
+.panelSomosTexto li{
+  list-style-type: none;
+}
 .panelSomosTexto h2{
   font-family: 'riccione-serial-heavyregular';
   font-size: 32px;
