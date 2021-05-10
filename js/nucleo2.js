@@ -585,16 +585,22 @@ cuadroPlano_1.addEventListener("onmouseover",()=>{
     console.log("hola");
 })
 
+const sandra = "Sandra Solares";
+const ignacio = "Ignacio Prieto";
+const gilda = "Gilda Navarro";
 const imagenGaleria = document.querySelector(".imagenGaleria");
 const infoFoto = document.querySelector(".infoFoto");
+const autorFoto = document.querySelector(".autorFoto")
 function buscarObjeto(objeto)
 {
+    autorFoto.innerHTML = sandra;
     switch(objeto)
     {
         case cuadroPlano_1: 
             objeto.material.map = texturaBN_1
             imagenGaleria.src = rutaImgen+galeriaRutaImagenes[0][0]
             infoFoto.innerHTML = "En la locación de la carcel, fajina de bienvenida a Paquito"
+            
             console.log(imagenGaleria.src);
             break;
         case cuadroPlano_2: 
@@ -687,12 +693,14 @@ function buscarObjeto(objeto)
         case cuadroPlano_18: 
             objeto.material.map = texturaBN_18
             imagenGaleria.src = rutaImgen+galeriaRutaImagenes[17][0]
-            infoFoto.innerHTML = ""
+            infoFoto.innerHTML = "Regreso saludable"
+            autorFoto.innerHTML = ignacio;
         break;
         case cuadroPlano_19: 
             objeto.material.map = texturaBN_19
             imagenGaleria.src = rutaImgen+galeriaRutaImagenes[18][0]
-            infoFoto.innerHTML = ""
+            infoFoto.innerHTML = "Noches de silueta en el rancho"
+            autorFoto.innerHTML = gilda;
         break;
         case cuadroPlano_20: 
             objeto.material.map = texturaBN_20
@@ -703,19 +711,22 @@ function buscarObjeto(objeto)
         case cuadroPlano_21: 
             objeto.material.map = texturaBN_21
             imagenGaleria.src = rutaImgen+galeriaRutaImagenes[20][0]
-            infoFoto.innerHTML = ""
+            infoFoto.innerHTML = "Esperando la noche"
+            autorFoto.innerHTML = ignacio;
 
         break;
         case cuadroPlano_22: 
             objeto.material.map = texturaBN_22
             imagenGaleria.src = rutaImgen+galeriaRutaImagenes[21][0]
-            infoFoto.innerHTML = "";
+            infoFoto.innerHTML = "Caos en Canatlan";
+            autorFoto.innerHTML = ignacio;
 
         break;
         case cuadroPlano_23: 
             objeto.material.map = texturaBN_23
             imagenGaleria.src = rutaImgen+galeriaRutaImagenes[22][0]
-            infoFoto.innerHTML = ""
+            infoFoto.innerHTML = "Final de la segunda unidad o splinter"
+            autorFoto.innerHTML = ignacio;
 
         break;
         case cuadroPlano_24: 

@@ -31,6 +31,10 @@
     /* top:10%; */
     background-color:rgba(155, 41, 41, 0);
     width:70%;
+    word-spacing:3px;
+    letter-spacing:2px;
+    
+    line-height:20px;
     /* padding:100px; */
 }
 .panelFoto h2{
