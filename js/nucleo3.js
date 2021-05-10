@@ -1,7 +1,7 @@
 
 
 
-const panoramaN3 = new PANOLENS.ImagePanorama( 'src/img/360_amarillo/Nucleo03_1.jpg' );
+const panoramaN3 = new PANOLENS.ImagePanorama( 'src/img/360/nucleo03_02.jpg' );
 panoramaN3.addEventListener( 'enter-fade-start', function(){
     viewer.tweenControlCenter(  new THREE.Vector3(5000.00, 0, 0), 0 );
   } );
@@ -19,7 +19,7 @@ panoramaN3.addEventListener( 'enter-fade-start', function(){
     ocultarLoad();
 
  });
- const panoramaN3_B = new PANOLENS.ImagePanorama( 'src/img/360_amarillo/nucleo03_B_03.jpg' );
+ const panoramaN3_B = new PANOLENS.ImagePanorama( 'src/img/360/nucleo03_B_03.jpg' );
 panoramaN3.addEventListener('enter-fade-start',function(){
     viewer.tweenControlCenter(  new THREE.Vector3(5000.00, 0, 0), 0 );
 
@@ -309,18 +309,18 @@ bannerGroup.add(banner_Musica);
 bannerGroup.add(banner_Cultura);
 bannerGroup.add(banner_Ganadero);
 
-bannerGroup.add(hilo_Banner_Quince);
-bannerGroup.add(hilo_Banner_Arquitectura);
-bannerGroup.add(hilo_Banner_Moda);
-bannerGroup.add(hilo_Banner_Bebidas);
-bannerGroup.add(hilo_Banner_Grafica);
-bannerGroup.add(hilo_Banner_Musica);
-bannerGroup.add(hilo_Banner_Cultura);
-bannerGroup.add(hilo_Banner_Ganadero);
+// bannerGroup.add(hilo_Banner_Quince);
+// bannerGroup.add(hilo_Banner_Arquitectura);
+// bannerGroup.add(hilo_Banner_Moda);
+// bannerGroup.add(hilo_Banner_Bebidas);
+// bannerGroup.add(hilo_Banner_Grafica);
+// bannerGroup.add(hilo_Banner_Musica);
+// bannerGroup.add(hilo_Banner_Cultura);
+// bannerGroup.add(hilo_Banner_Ganadero);
 
 
 // panoramaN3_B.add(bannerGroup);
-bannerGroup.position.set(45,10,-3.47);
+bannerGroup.position.set(45,20,-3.47);
 bannerGroup.rotation.set(0,-1.72,0);
 
 const sizeBanner={ x:7,y:25}
