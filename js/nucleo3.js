@@ -242,32 +242,52 @@ function abrirPanelVideo(){
 
 
 //BANNERS
-
+const rutaBanners = "src/img/nucleo_03/";
 const cuadroGeometry =new THREE.PlaneGeometry(1,1,2);
 
 const banner_quince_imagen = new Image(), banner_arquitectura_imagen = new Image(), banner_moda_imagen = new Image(),
      banner_bebidas_imagen = new Image(), banner_grafica_imagen = new Image(), banner_musica_imagen = new Image(),
-     banner_cultura_imagen = new Image();
+     banner_cultura_imagen = new Image(),banner_ganadera_imagen = new Image();
 const texturaQuince = new THREE.Texture(banner_quince_imagen), textura_Arquitectura = new THREE.Texture(banner_arquitectura_imagen);
 const texturaModa = new THREE.Texture(banner_moda_imagen), textura_Bebidas = new THREE.Texture(banner_bebidas_imagen);
 const texturaGrafica = new THREE.Texture(banner_grafica_imagen), textura_Musica = new THREE.Texture(banner_musica_imagen);
-const texturaCultura = new THREE.Texture(banner_cultura_imagen);
+const texturaCultura = new THREE.Texture(banner_cultura_imagen), textura_Ganadera = new THREE.Texture(banner_ganadera_imagen);
 // banner_1_imagen.addEventListener('load',()=>{
 //     texturaQuince.needsUpdate = true;
 // })
+banner_arquitectura_imagen.addEventListener('load',()=>{textura_Arquitectura.needsUpdate = true;})
+banner_musica_imagen.addEventListener('load',()=>{ textura_Musica.needsUpdate = true})
+banner_cultura_imagen.addEventListener('load',()=>{ texturaCultura.needsUpdate = true})
+banner_ganadera_imagen.addEventListener('load',()=>{ textura_Ganadera.needsUpdate = true})
+banner_moda_imagen.addEventListener('load',()=>{ texturaModa.needsUpdate = true})
+
+banner_arquitectura_imagen.src = rutaBanners + "banner_arquitectura.jpg";
+banner_musica_imagen.src = rutaBanners + "banner_musica.jpg";
+banner_cultura_imagen.src = rutaBanners + "banner_cultura.jpg";
+banner_ganadera_imagen.src = rutaBanners + "banner_ganadera.jpg";
+banner_moda_imagen.src = rutaBanners + "banner_moda.jpg";
 
 const banner_quince_MAT =   new THREE.MeshBasicMaterial({color: 0xffffff,side:THREE.Front})
+const banner_Arquitectura_MAT =   new THREE.MeshBasicMaterial({color: 0xffffff,map:textura_Arquitectura,side:THREE.Front})
+const banner_Musica_MAT =   new THREE.MeshBasicMaterial({color: 0xffffff,map:textura_Musica,side:THREE.Front})
+const banner_Cultura_MAT =   new THREE.MeshBasicMaterial({color: 0xffffff,map:texturaCultura,side:THREE.Front})
+const banner_Ganadera_MAT =   new THREE.MeshBasicMaterial({color: 0xffffff,map:textura_Ganadera,side:THREE.Front})
+const banner_Moda_MAT =   new THREE.MeshBasicMaterial({color: 0xffffff,map:texturaModa,side:THREE.Front})
+
+
+
+
 const hilo_MAT = new THREE.MeshBasicMaterial({color: 0x000000,side:THREE.DoubleSide});
 
 
-const banner_quince =       new THREE.Mesh(cuadroGeometry,banner_quince_MAT);
-const banner_Arquitectura = new THREE.Mesh(cuadroGeometry,banner_quince_MAT);
-const banner_Moda =         new THREE.Mesh(cuadroGeometry,banner_quince_MAT);
-const banner_Bebidas = new THREE.Mesh(cuadroGeometry,banner_quince_MAT);
-const banner_Grafica = new THREE.Mesh(cuadroGeometry,banner_quince_MAT);
-const banner_Musica = new THREE.Mesh(cuadroGeometry,banner_quince_MAT);
-const banner_Cultura = new THREE.Mesh(cuadroGeometry,banner_quince_MAT);
-const banner_Ganadero = new THREE.Mesh(cuadroGeometry,banner_quince_MAT);
+const banner_quince =       new THREE.Mesh(cuadroGeometry,banner_Arquitectura_MAT);
+const banner_Arquitectura = new THREE.Mesh(cuadroGeometry,banner_Arquitectura_MAT);
+const banner_Moda =         new THREE.Mesh(cuadroGeometry,banner_Moda_MAT);
+const banner_Bebidas = new THREE.Mesh(cuadroGeometry,banner_Arquitectura_MAT);
+const banner_Grafica = new THREE.Mesh(cuadroGeometry,banner_Arquitectura_MAT);
+const banner_Musica = new THREE.Mesh(cuadroGeometry,banner_Musica_MAT);
+const banner_Cultura = new THREE.Mesh(cuadroGeometry,banner_Cultura_MAT);
+const banner_Ganadero = new THREE.Mesh(cuadroGeometry,banner_Ganadera_MAT);
 
 const hilo_Banner_Quince = new THREE.Mesh(cuadroGeometry,hilo_MAT);
 const hilo_Banner_Arquitectura = new THREE.Mesh(cuadroGeometry,hilo_MAT);
