@@ -271,8 +271,8 @@ const banner_quince_MAT =   new THREE.MeshBasicMaterial({color: 0x0000ff,side:TH
 const banner_Arquitectura_MAT =   new THREE.MeshBasicMaterial({color: 0xffffff,map:textura_Arquitectura,side:THREE.Front})
 const banner_Moda_MAT =   new THREE.MeshBasicMaterial({color: 0xffffff,map:texturaModa,side:THREE.Front})
 const banner_Bebidas_MAT =   new THREE.MeshBasicMaterial({color: 0xff0000,side:THREE.Front})
-const banner_Grafica_MAT =   new THREE.MeshBasicMaterial({color: 0x00ff00,side:THREE.Front})
-const banner_Musica_MAT =   new THREE.MeshBasicMaterial({color: 0xffffff,map:textura_Musica,side:THREE.Front})
+const banner_Grafica_MAT =   new THREE.MeshBasicMaterial({color: 0x00ff00,side:THREE.Front})///verde
+const banner_Musica_MAT =    new THREE.MeshBasicMaterial({color: 0xffffff,map:textura_Musica,side:THREE.Front})
 const banner_Cultura_MAT =   new THREE.MeshBasicMaterial({color: 0xffffff,map:texturaCultura,side:THREE.Front})
 const banner_Ganadera_MAT =   new THREE.MeshBasicMaterial({color: 0xffffff,map:textura_Ganadera,side:THREE.Front})
 
@@ -588,7 +588,7 @@ function bannerSeleccionado(banner)
 
             textoTitulo.innerHTML ="Quinceañeras";
             textoPrincipal.innerHTML =
-            "De manera tradicional, la fiesta de quince años es un hito importante en la vida de una mujer" +
+            "De manera tradicional, la fiesta de quince años es un hito importante en la vida de una mujer " +
             "como el momento en que oficialmente deja de ser niña para abrazar la vida adulta. "+"<br/>" +
             "En tierras mexicanas es también cuando se \"presenta\" a una mujer en sociedad, es un rito de "+
             "iniciación dentro de una sociedad patriarcal. Si la festejada es católica, la celebración se "+
@@ -614,9 +614,9 @@ function bannerSeleccionado(banner)
             "La arquitectura del noreste tiene una gran diversidad de tipologías arquitectónicas, "+
             "técnicas constructivas y modos de habitar. Esta pluralidad se debe a las distintas influencias "+
             "visuales y estilísticas que han inundado la región, así como a los procesos productivos, migratorios"+
-            "y sociales que se han dado en el territorio. En el Allende representado en la serie, la arquitectura "+
+            " y sociales que se han dado en el territorio. En el Allende representado en la serie, la arquitectura "+
             "vernácula es una fuerte presencia que franquea la vida diaria de una población en constante transformación. "+
-            "La arquitectura en la serie marca las diferencias sociales y también las ideológicas"
+            "La arquitectura en la serie marca las diferencias sociales y también las ideológicas."
             break;
 
         case banner_Moda: 
@@ -637,14 +637,14 @@ function bannerSeleccionado(banner)
             "por gran parte de la población. Aunada a la cultura vaquera, la construcción visual asociada al narcotráfico, "+
             "descrita por muchos como “buchona”, se ha filtrado poco a poco en la cotidianeidad y en los guardarropas. "+
             "Por ello, la vestimenta de varios personajes de Somos. refleja este complejo fenómeno fronterizo, una mezcla de "+
-            "culturas, de deseos y apariencias"
+            "culturas, de deseos y apariencias."
             abrirPanelBanner();
 
             break;
 
         case banner_Bebidas: 
             console.log("banner_bebida")
-            temaSeleccionado = "bebida";
+            temaSeleccionado = "bebidas";
 
             boton_video_1.style.visibility ="visible";
             boton_video_2.style.visibility ="visible";
@@ -725,7 +725,7 @@ function bannerSeleccionado(banner)
 
         break;
         case banner_Ganadero: 
-        console.log("banner_cultura")
+        console.log("banner_ganadero")
         // console.log("cultura")
         boton_video_1.style.visibility ="visible";
         boton_video_2.style.visibility ="visible";
@@ -740,7 +740,7 @@ function bannerSeleccionado(banner)
         "La cultura que se ha generado en torno a la crianza de ganado y la alimentación regida por la carne de "+
         "res es parte del imaginario y de los relatos cotidianos. "+"<br/>"+
         "Los establos y las reses conforman el paisaje y la carne asada, más allá de un platillo regional es una "+
-        "actividad obligada para cerrar tratos y convivir en familia"
+        "actividad obligada para cerrar tratos y convivir en familia."
 
         abrirPanelBanner();
 
@@ -907,7 +907,7 @@ function cambiarVideo(tema,num){
             return;
         }
     }
-    else if(tema=="popular")
+    else if(tema =="popular")
     {
         if(num == 1){
             player.source = video_popular_01;
@@ -937,5 +937,9 @@ function cambiarVideo(tema,num){
         console.log("tema no encontrado")
         return ;
     }
-    panelVideo.style.visibility = "visible";
+    if(panelBanner.style.visibility == "visible")
+    {
+
+        panelVideo.style.visibility = "visible";
+    }
 }
