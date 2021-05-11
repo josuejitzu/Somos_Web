@@ -267,12 +267,14 @@ banner_cultura_imagen.src = rutaBanners + "banner_cultura.jpg";
 banner_ganadera_imagen.src = rutaBanners + "banner_ganadera.jpg";
 banner_moda_imagen.src = rutaBanners + "banner_moda.jpg";
 
-const banner_quince_MAT =   new THREE.MeshBasicMaterial({color: 0xffffff,side:THREE.Front})
+const banner_quince_MAT =   new THREE.MeshBasicMaterial({color: 0x0000ff,side:THREE.Front})
 const banner_Arquitectura_MAT =   new THREE.MeshBasicMaterial({color: 0xffffff,map:textura_Arquitectura,side:THREE.Front})
+const banner_Moda_MAT =   new THREE.MeshBasicMaterial({color: 0xffffff,map:texturaModa,side:THREE.Front})
+const banner_Bebidas_MAT =   new THREE.MeshBasicMaterial({color: 0xff0000,side:THREE.Front})
+const banner_Grafica_MAT =   new THREE.MeshBasicMaterial({color: 0x00ff00,side:THREE.Front})
 const banner_Musica_MAT =   new THREE.MeshBasicMaterial({color: 0xffffff,map:textura_Musica,side:THREE.Front})
 const banner_Cultura_MAT =   new THREE.MeshBasicMaterial({color: 0xffffff,map:texturaCultura,side:THREE.Front})
 const banner_Ganadera_MAT =   new THREE.MeshBasicMaterial({color: 0xffffff,map:textura_Ganadera,side:THREE.Front})
-const banner_Moda_MAT =   new THREE.MeshBasicMaterial({color: 0xffffff,map:texturaModa,side:THREE.Front})
 
 
 
@@ -280,11 +282,11 @@ const banner_Moda_MAT =   new THREE.MeshBasicMaterial({color: 0xffffff,map:textu
 const hilo_MAT = new THREE.MeshBasicMaterial({color: 0x000000,side:THREE.DoubleSide});
 
 
-const banner_quince =       new THREE.Mesh(cuadroGeometry,banner_Arquitectura_MAT);
+const banner_quince =       new THREE.Mesh(cuadroGeometry,banner_quince_MAT);
 const banner_Arquitectura = new THREE.Mesh(cuadroGeometry,banner_Arquitectura_MAT);
 const banner_Moda =         new THREE.Mesh(cuadroGeometry,banner_Moda_MAT);
-const banner_Bebidas = new THREE.Mesh(cuadroGeometry,banner_Arquitectura_MAT);
-const banner_Grafica = new THREE.Mesh(cuadroGeometry,banner_Arquitectura_MAT);
+const banner_Bebidas = new THREE.Mesh(cuadroGeometry,banner_Bebidas_MAT);
+const banner_Grafica = new THREE.Mesh(cuadroGeometry,banner_Grafica_MAT);
 const banner_Musica = new THREE.Mesh(cuadroGeometry,banner_Musica_MAT);
 const banner_Cultura = new THREE.Mesh(cuadroGeometry,banner_Cultura_MAT);
 const banner_Ganadero = new THREE.Mesh(cuadroGeometry,banner_Ganadera_MAT);
@@ -320,35 +322,35 @@ bannerGroup.add(banner_Ganadero);
 
 
 // panoramaN3_B.add(bannerGroup);
-bannerGroup.position.set(45,20,-3.47);
+bannerGroup.position.set(30,22.5,0)//(45,20,-3.47);
 bannerGroup.rotation.set(0,-1.72,0);
 
 const sizeBanner={ x:7,y:25}
 const sizeHilo={x:0.2,y:15}
 const posY=19
 
-banner_quince.position.set(-12,0,15)
+banner_quince.position.set(4,0,-17)
 banner_quince.scale.set(sizeBanner.x,sizeBanner.y,1)
 banner_quince.rotation.set(0,-0.23,0);
 hilo_Banner_Quince.position.set(-12,posY,14.5);
 hilo_Banner_Quince.scale.set(sizeHilo.x,sizeHilo.y,1);
 hilo_Banner_Quince.rotation.set(0,-0.23,0);
 
-banner_Arquitectura.position.set(-14,0,-1)
+banner_Arquitectura.position.set(-8,0,-17)
 banner_Arquitectura.scale.set(sizeBanner.x,sizeBanner.y,1)
 banner_Arquitectura.rotation.set(0,0.66,0);
 hilo_Banner_Arquitectura.position.set(-14,posY,-1.5);
 hilo_Banner_Arquitectura.scale.set(sizeHilo.x,sizeHilo.y,1);
 hilo_Banner_Arquitectura.rotation.set(0,0.66,0);
 
-banner_Moda.position.set(-10,0,-10)
+banner_Moda.position.set(-13,0,-1)
 banner_Moda.scale.set(sizeBanner.x,sizeBanner.y,1)
 banner_Moda.rotation.set(0,0.32,0);
 hilo_Banner_Moda.position.set(-10.3,posY,-10.5);
 hilo_Banner_Moda.scale.set(sizeHilo.x,sizeHilo.y,1);
 hilo_Banner_Moda.rotation.set(0,-0.23,0);
 
-banner_Bebidas.position.set(5,0,12)
+banner_Bebidas.position.set(22,0,-6.5)
 banner_Bebidas.scale.set(sizeBanner.x,sizeBanner.y,1)
 banner_Bebidas.rotation.set(0,0,0);
 hilo_Banner_Bebidas.position.set(5,posY,11.5);
@@ -356,28 +358,28 @@ hilo_Banner_Bebidas.scale.set(0.2,15,1);
 hilo_Banner_Bebidas.rotation.set(0,0,0);
 
 
-banner_Grafica.position.set(10,0,-5)
+banner_Grafica.position.set(18,0,-22)
 banner_Grafica.scale.set(sizeBanner.x,sizeBanner.y,1)
 banner_Grafica.rotation.set(0,0.25,0);
 hilo_Banner_Grafica.position.set(10,posY,-5.5);
 hilo_Banner_Grafica.scale.set(0.2,15,1);
 hilo_Banner_Grafica.rotation.set(0,0.25,0);
 
-banner_Musica.position.set(15,0,-10)
+banner_Musica.position.set(-10,0,14.5)
 banner_Musica.scale.set(sizeBanner.x,sizeBanner.y,1)
 banner_Musica.rotation.set(0,0.18,0);
 hilo_Banner_Musica.position.set(15,posY,-10.5);
 hilo_Banner_Musica.scale.set(0.2,15,1);
 hilo_Banner_Musica.rotation.set(0,0.25,0);
 
-banner_Cultura.position.set(20,0,3)
+banner_Cultura.position.set(20,0,9)
 banner_Cultura.scale.set(sizeBanner.x,sizeBanner.y,1)
 banner_Cultura.rotation.set(0,-0.36,0);
 hilo_Banner_Cultura.position.set(20,posY,2.5);
 hilo_Banner_Cultura.scale.set(0.2,15,1);
 hilo_Banner_Cultura.rotation.set(0,-0.36,0);
 
-banner_Ganadero.position.set(29,0,-3.47)
+banner_Ganadero.position.set(4,0,12)
 banner_Ganadero.scale.set(sizeBanner.x,sizeBanner.y,1)
 banner_Ganadero.rotation.set(0,0.39,0);
 
@@ -386,59 +388,59 @@ gui.add(bannerGroup.position,"y").min(-500).max(500).step(0.01).name("positionGr
 gui.add(bannerGroup.position,"z").min(-500).max(500).step(0.01).name("positionGroupZ")
 gui.add(bannerGroup.rotation,"y").min(-Math.PI).max(Math.PI).step(0.01).name("rotationGroupY")
 
-// gui.add(banner_quince.position,"x").min(-500).max(500).step(0.01).name("1Quince_positionX")
-// gui.add(banner_quince.position,"y").min(-500).max(500).step(0.01).name("1Quince_positionY")
-// gui.add(banner_quince.position,"z").min(-500).max(500).step(0.01).name("1Quince_positionZ")
+gui.add(banner_quince.position,"x").min(-500).max(500).step(0.01).name("1Quince_positionX")
+gui.add(banner_quince.position,"y").min(-500).max(500).step(0.01).name("1Quince_positionY")
+gui.add(banner_quince.position,"z").min(-500).max(500).step(0.01).name("1Quince_positionZ")
 // gui.add(banner_quince.scale,"x").min(-50).max(50).step(0.01).name("1Quince_scalaX")
 // gui.add(banner_quince.scale,"y").min(-50).max(50).step(0.01).name("1Quince_scalaY")
 // // gui.add(banner_quince.scale,"z").min(-50).max(50).step(0.01).name("positionZ")
 // // gui.add(banner_quince.rotation,"x").min(-Math.PI).max(Math.PI).step(0.01).name("rotacionX")
-// gui.add(banner_quince.rotation,"y").min(-Math.PI).max(Math.PI).step(0.01).name("1Quince_rotacionY")
+gui.add(banner_quince.rotation,"y").min(-Math.PI).max(Math.PI).step(0.01).name("1Quince_rotacionY")
 // // gui.add(banner_quince.rotation,"z").min(-Math.PI).max(Math.PI).step(0.01).name("rotacionZ")
 
 
 
-// gui.add(banner_Arquitectura.position,"x").min(-500).max(500).step(0.01).name("2Arquitectura_positionX")
-// gui.add(banner_Arquitectura.position,"y").min(-500).max(500).step(0.01).name("2Arquitectura_positionY")
-// gui.add(banner_Arquitectura.position,"z").min(-500).max(500).step(0.01).name("2Arquitectura_positionZ")
+gui.add(banner_Arquitectura.position,"x").min(-500).max(500).step(0.01).name("2Arquitectura_positionX")
+gui.add(banner_Arquitectura.position,"y").min(-500).max(500).step(0.01).name("2Arquitectura_positionY")
+gui.add(banner_Arquitectura.position,"z").min(-500).max(500).step(0.01).name("2Arquitectura_positionZ")
 // gui.add(banner_Arquitectura.scale,"x").min(-50).max(50).step(0.01).name("2Arquitectura_scalaX")
-// gui.add(banner_Arquitectura.scale,"y").min(-50).max(50).step(0.01).name("2Arquitectura_scalaY")
+gui.add(banner_Arquitectura.scale,"y").min(-50).max(50).step(0.01).name("2Arquitectura_scalaY")
 // gui.add(banner_Arquitectura.rotation,"y").min(-Math.PI).max(Math.PI).step(0.01).name("2Arquitectura_rotacionY")
 
-// gui.add(banner_Moda.position,"x").min(-500).max(500).step(0.01).name("3Moda_positionX")
-// gui.add(banner_Moda.position,"y").min(-500).max(500).step(0.01).name("3Moda_positionY")
-// gui.add(banner_Moda.position,"z").min(-500).max(500).step(0.01).name("3Moda_positionZ")
+gui.add(banner_Moda.position,"x").min(-500).max(500).step(0.01).name("3Moda_positionX")
+gui.add(banner_Moda.position,"y").min(-500).max(500).step(0.01).name("3Moda_positionY")
+gui.add(banner_Moda.position,"z").min(-500).max(500).step(0.01).name("3Moda_positionZ")
 // gui.add(banner_Moda.scale,"x").min(-50).max(50).step(0.01).name("3Moda_scalaX")
-// gui.add(banner_Moda.scale,"y").min(-50).max(50).step(0.01).name("3Moda_scalaY")
+gui.add(banner_Moda.scale,"y").min(-50).max(50).step(0.01).name("3Moda_scalaY")
 // gui.add(banner_Moda.rotation,"y").min(-Math.PI).max(Math.PI).step(0.01).name("3Moda_rotacionY")
 
 
-// gui.add(banner_Bebidas.position,"x").min(-500).max(500).step(0.01).name("4Bebidas_positionX")
-// gui.add(banner_Bebidas.position,"y").min(-500).max(500).step(0.01).name("4Bebidas_positionY")
-// gui.add(banner_Bebidas.position,"z").min(-500).max(500).step(0.01).name("4Bebidas_positionZ")
+gui.add(banner_Bebidas.position,"x").min(-500).max(500).step(0.01).name("4Bebidas_positionX")
+gui.add(banner_Bebidas.position,"y").min(-500).max(500).step(0.01).name("4Bebidas_positionY")
+gui.add(banner_Bebidas.position,"z").min(-500).max(500).step(0.01).name("4Bebidas_positionZ")
 // gui.add(banner_Bebidas.scale,"x").min(-50).max(50).step(0.01).name("4Bebidas_scalaX")
-// gui.add(banner_Bebidas.scale,"y").min(-50).max(50).step(0.01).name("4Bebidas_scalaY")
+gui.add(banner_Bebidas.scale,"y").min(-50).max(50).step(0.01).name("4Bebidas_scalaY")
 // gui.add(banner_Bebidas.rotation,"y").min(-Math.PI).max(Math.PI).step(0.01).name("4Bebidas_rotacionY")
 
-// gui.add(banner_Grafica.position,"x").min(-500).max(500).step(0.01).name("5Grafica_positionX")
-// gui.add(banner_Grafica.position,"y").min(-500).max(500).step(0.01).name("5Grafica_positionY")
-// gui.add(banner_Grafica.position,"z").min(-500).max(500).step(0.01).name("5Grafica_positionZ")
+gui.add(banner_Grafica.position,"x").min(-500).max(500).step(0.01).name("5Grafica_positionX")
+gui.add(banner_Grafica.position,"y").min(-500).max(500).step(0.01).name("5Grafica_positionY")
+gui.add(banner_Grafica.position,"z").min(-500).max(500).step(0.01).name("5Grafica_positionZ")
 // gui.add(banner_Grafica.scale,"x").min(-50).max(50).step(0.01).name("5Grafica_scalaX")
-// gui.add(banner_Grafica.scale,"y").min(-50).max(50).step(0.01).name("5Grafica_scalaY")
+gui.add(banner_Grafica.scale,"y").min(-50).max(50).step(0.01).name("5Grafica_scalaY")
 // gui.add(banner_Grafica.rotation,"y").min(-Math.PI).max(Math.PI).step(0.01).name("5Grafica_rotacionY")
 
-// gui.add(banner_Musica.position,"x").min(-500).max(500).step(0.01).name("6Musica_positionX")
-// gui.add(banner_Musica.position,"y").min(-500).max(500).step(0.01).name("6Musica_positionY")
-// gui.add(banner_Musica.position,"z").min(-500).max(500).step(0.01).name("6Musica_positionZ")
+gui.add(banner_Musica.position,"x").min(-500).max(500).step(0.01).name("6Musica_positionX")
+gui.add(banner_Musica.position,"y").min(-500).max(500).step(0.01).name("6Musica_positionY")
+gui.add(banner_Musica.position,"z").min(-500).max(500).step(0.01).name("6Musica_positionZ")
 // gui.add(banner_Musica.scale,"x").min(-50).max(50).step(0.01).name("6Musica_scalaX")
-// gui.add(banner_Musica.scale,"y").min(-50).max(50).step(0.01).name("6Musica_scalaY")
+gui.add(banner_Musica.scale,"y").min(-50).max(50).step(0.01).name("6Musica_scalaY")
 // gui.add(banner_Musica.rotation,"y").min(-Math.PI).max(Math.PI).step(0.01).name("6Musica_rotacionY")
 
-// gui.add(banner_Cultura.position,"x").min(-500).max(500).step(0.01).name("7Cultura_positionX")
-// gui.add(banner_Cultura.position,"y").min(-500).max(500).step(0.01).name("7Cultura_positionY")
-// gui.add(banner_Cultura.position,"z").min(-500).max(500).step(0.01).name("7Cultura_positionZ")
+gui.add(banner_Cultura.position,"x").min(-500).max(500).step(0.01).name("7Cultura_positionX")
+gui.add(banner_Cultura.position,"y").min(-500).max(500).step(0.01).name("7Cultura_positionY")
+gui.add(banner_Cultura.position,"z").min(-500).max(500).step(0.01).name("7Cultura_positionZ")
 // gui.add(banner_Cultura.scale,"x").min(-50).max(50).step(0.01).name("7Cultura_scalaX")
-// gui.add(banner_Cultura.scale,"y").min(-50).max(50).step(0.01).name("7Cultura_scalaY")
+gui.add(banner_Cultura.scale,"y").min(-50).max(50).step(0.01).name("7Cultura_scalaY")
 // gui.add(banner_Cultura.rotation,"y").min(-Math.PI).max(Math.PI).step(0.01).name("7Cultura_rotacionY")
 
 gui.add(banner_Ganadero.position,"x").min(-500).max(500).step(0.01).name("8Ganadero_positionX")
