@@ -586,6 +586,7 @@ cuadroPlano_1.addEventListener("onmouseover",()=>{
 })
 
 const sandra = "Sandra Solares";
+const maynne = "Maynné Cortés"
 const ignacio = "Ignacio Prieto";
 const gilda = "Gilda Navarro";
 const imagenGaleria = document.querySelector(".imagenGaleria");
@@ -600,7 +601,7 @@ function buscarObjeto(objeto)
             objeto.material.map = texturaBN_1
             imagenGaleria.src = rutaImgen+galeriaRutaImagenes[0][0]
             infoFoto.innerHTML = "En la locación de la carcel, fajina de bienvenida a Paquito"
-            
+            autorFoto.innerHTML = maynne;
             console.log(imagenGaleria.src);
             break;
         case cuadroPlano_2: 
@@ -608,72 +609,96 @@ function buscarObjeto(objeto)
             imagenGaleria.src = rutaImgen+galeriaRutaImagenes[1][0]
             infoFoto.innerHTML = "Peinado: Equipo de maquillaje y peinado acomodando la peluca de Natalia Solián (Cindy)"
             console.log(imagenGaleria.src);
+            autorFoto.innerHTML = maynne;
 
             break;
         case cuadroPlano_3: 
             objeto.material.map = texturaBN_3
             imagenGaleria.src = rutaImgen+galeriaRutaImagenes[2][0]
             infoFoto.innerHTML = "Libros: Algunos de los libros que se usaron para hacer investigación y escribir el guion."
-        break;
+            autorFoto.innerHTML = maynne;
+            
+            break;
         case cuadroPlano_4: 
             objeto.material.map = texturaBN_4
             imagenGaleria.src = rutaImgen+galeriaRutaImagenes[3][0]
+            autorFoto.innerHTML = maynne;
+        
             infoFoto.innerHTML = "Paisaje: Grabación de segunda unidad"
         break;
         case cuadroPlano_5: 
             objeto.material.map = texturaBN_5
             imagenGaleria.src = rutaImgen+galeriaRutaImagenes[4][0]
             infoFoto.innerHTML = "Carcel: Último día de filmación de la serie. Set de la Cárcel."
+            autorFoto.innerHTML = maynne;
+
         break;
         case cuadroPlano_6: 
             objeto.material.map = texturaBN_6
             imagenGaleria.src = rutaImgen+galeriaRutaImagenes[5][0]
             infoFoto.innerHTML = "Sillones 2: Filmación en el set Casa de Wilbur"
+            autorFoto.innerHTML = maynne;
+
         break;
         case cuadroPlano_7: 
             objeto.material.map = texturaBN_7
             imagenGaleria.src = rutaImgen+galeriaRutaImagenes[6][0]
             infoFoto.innerHTML = "Cabras: Foto del corral en el set Casa de Silverio."
+            autorFoto.innerHTML = maynne;
+
         break;
         case cuadroPlano_8: 
             objeto.material.map = texturaBN_8
             imagenGaleria.src = rutaImgen+galeriaRutaImagenes[7][0]
             infoFoto.innerHTML = "Fiesta 2: Montando el set para la fiesta de XV años de Vanesa."
+            autorFoto.innerHTML = maynne;
+
 
         break;
         case cuadroPlano_9: 
             objeto.material.map = texturaBN_9
             imagenGaleria.src = rutaImgen+galeriaRutaImagenes[8][0]
             infoFoto.innerHTML = "Tejones: Grabación del juego de los Tejones"
+            autorFoto.innerHTML = maynne;
+
 
         break;
         case cuadroPlano_10: 
             objeto.material.map = texturaBN_10
             imagenGaleria.src = rutaImgen+galeriaRutaImagenes[9][0]
             infoFoto.innerHTML = "Hector: Sesión de fotos de Armando Silva (Héctor) para intro de la serie."
+            autorFoto.innerHTML = maynne;
+
         break;
         case cuadroPlano_11: 
             objeto.material.map = texturaBN_11
             imagenGaleria.src = rutaImgen+galeriaRutaImagenes[10][0]
             infoFoto.innerHTML = "Noche: Foto del coche de Benjamín durante un llamado nocturno."
+            autorFoto.innerHTML = maynne;
+
 
         break;
         case cuadroPlano_12: 
             objeto.material.map = texturaBN_12
             imagenGaleria.src = rutaImgen+galeriaRutaImagenes[11][0]
             infoFoto.innerHTML = "Mustang: Jero Medina (Benjamín) preparándose para grabar una escena."
+            autorFoto.innerHTML = maynne;
 
         break;
         case cuadroPlano_13: 
             objeto.material.map = texturaBN_13
             imagenGaleria.src = rutaImgen+galeriaRutaImagenes[12][0]
             infoFoto.innerHTML = "Fuego: Calles de Gómez Palacios durante la filmación de escenas del último capítulo."
-        break;
+            autorFoto.innerHTML = maynne;
+
+            break;
         case cuadroPlano_14: 
             objeto.material.map = texturaBN_14
             imagenGaleria.src = rutaImgen+galeriaRutaImagenes[13][0]
             infoFoto.innerHTML = "Allende letrero: Reproducción del letrero que se encuentra a las afueras de Allende."
-        break;
+            autorFoto.innerHTML = maynne;
+            
+            break;
         case cuadroPlano_15: 
             objeto.material.map = texturaBN_15
             imagenGaleria.src = rutaImgen+galeriaRutaImagenes[14][0]
@@ -683,6 +708,8 @@ function buscarObjeto(objeto)
             objeto.material.map = texturaBN_16
             imagenGaleria.src = rutaImgen+galeriaRutaImagenes[15][0]
             infoFoto.innerHTML = "Fiesta 3: Montando el set para la fiesta de XV años de Vanesa."
+            autorFoto.innerHTML = maynne;
+
 
         break;
         case cuadroPlano_17: 
@@ -706,6 +733,7 @@ function buscarObjeto(objeto)
             objeto.material.map = texturaBN_20
             imagenGaleria.src = rutaImgen+galeriaRutaImagenes[19][0]
             infoFoto.innerHTML = "Bomberos: Foto en el set de SOMOS. durante una escena con los bomberos."
+            autorFoto.innerHTML = maynne;
 
         break;
         case cuadroPlano_21: 

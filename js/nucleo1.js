@@ -27,7 +27,7 @@ const progressBar = document.getElementById( 'progress-bar' );
 const botonCerrarTextoSomos = document.querySelector(".botonCerrarTextoSomos");
 const panelTextoSomos = document.querySelector(".panelSomos");
 panelTextoSomos.style.visibility = 'hidden';
-
+const botonEntrevistaCompleta = document.querySelector(".botonEntrevistaCompleta");
 // const player = new Plyr(document.querySelector('.js-player'));
 const player = new Plyr(document.querySelector('.player'));
 console.log(player);
@@ -56,15 +56,44 @@ const videoJames ={
       src: '',
     },
   };
+  const videoJames_Completo ={
+    type: 'video',
+    title: 'Example title',
+    sources: [
+      {
+        src: 'src/vids/entrevistas_completas/James_completo.mp4',
+        type: 'video/mp4',
+        size: 1080,
+      }
+    ],
+    poster: 'src/img/netflix_video_poster.jpg',
+    previewThumbnails: {
+      src: '',
+    },
+  };
 
 
-
-  const videoMonika ={
+  const videoMonica ={
     type: 'video',
     title: 'Example title',
     sources: [
       {
         src: 'src/vids/Monika_2.mp4',
+        type: 'video/mp4',
+        size: 1080,
+      }
+    ],
+    poster: 'src/img/netflix_video_poster.jpg',
+    previewThumbnails: {
+      src: '',
+    },
+  };
+  const videoMonica_Completo ={
+    type: 'video',
+    title: 'Example title',
+    sources: [
+      {
+        src: 'src/vids/entrevistas_completas/Monika_completo.mp4',
         type: 'video/mp4',
         size: 1080,
       }
@@ -82,6 +111,21 @@ const videoFernanda ={
     sources: [
       {
         src: 'src/vids/Fernanda_2.mp4',
+        type: 'video/mp4',
+        size: 1080,
+      }
+    ],
+    poster: 'src/img/netflix_video_poster.jpg',
+    previewThumbnails: {
+      src: '',
+    },
+  };
+  const videoFernanda_Completo ={
+    type: 'video',
+    title: 'Example title',
+    sources: [
+      {
+        src: 'src/vids/entrevistas_completas/Fernanada_completo.mp4',
         type: 'video/mp4',
         size: 1080,
       }
@@ -221,7 +265,7 @@ function abrirVideos(abrir){
     if(abrir)
     {
         panelVideos.style.visibility ="visible";
-        // player.source = videoMonika;
+        // player.source = videoMonica;
 
         callarMusica();
         
@@ -249,6 +293,7 @@ function abrirVideos(abrir){
 
 }
 
+let enVideo = 1;
 player.on('play', function(){
     console.log("reproduciendo")
     // callarMusica();
@@ -268,22 +313,48 @@ botonThumb3.addEventListener('click', ()=>{
     cambiarVideo(3)
 });
 
+botonEntrevistaCompleta.addEventListener('click',()=>{
+    cambiarVideoCompleto();
+})
 
 function cambiarVideo(num){
     console.log("cambiando video");
     if(num == 1){
         player.source = videoJames;
-
+        enVideo = 1;
     }
     else if(num == 2){
         player.source = videoFernanda;
+        enVideo = 2;
+
     }
     else if (num == 3)
     {
-        player.source = videoMonika;
+        player.source = videoMonica;
+        enVideo = 3;
 
     }
 }
+
+function cambiarVideoCompleto()
+{
+        if(enVideo == 1){
+            player.source = videoJames_Completo;
+        }
+        else if (enVideo == 2)
+        {
+            player.source = videoFernanda_Completo;
+
+        }else if (enVideo == 3)
+        {
+            player.source = videoMonica_Completo;
+
+        }
+
+}
+    
+
+
 
 // var videoMuteado = false;
 botonMuteVideo.addEventListener('click',()=>{
