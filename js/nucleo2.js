@@ -1,7 +1,7 @@
 
 
 import { GLTFLoader } from './three/examples/jsm/loaders/GLTFLoader.js'
-const panoramaN2 = new PANOLENS.ImagePanorama( 'src/img/360_amarillo/nucleo02_7.jpg' );
+const panoramaN2 = new PANOLENS.ImagePanorama( 'src/img/360/nucleo02_7.jpg' );
 panoramaN2.addEventListener( 'enter-fade-start', function(){
     viewer.tweenControlCenter(  new THREE.Vector3(5000.00, 200, 0), 0 );
   } );
