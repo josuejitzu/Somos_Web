@@ -464,7 +464,7 @@ imageT1.addEventListener('load', () =>
 {
     textureT1.needsUpdate = true
 })
-imageT1.src = 'src/img/Esferas_Texturas/TITULO_01.png'
+imageT1.src = 'src/img/Esferas_Texturas/TITULO_01_B.png'
 
 // const materialTextoN1 = new THREE.MeshBasicMaterial({
 //     color: 0xffffff,
@@ -489,7 +489,7 @@ materialTextoN1.depthWrite = false;
 
 const textoPlanoN1 = new THREE.Mesh(textoGeometry,materialTextoN1)
 textoPlanoN1.position.set(400,-330,-1300)//400,0,-1300
-textoPlanoN1.scale.set(200,100,1);//500,350,1
+textoPlanoN1.scale.set(230,100,1);//500,350,1
 textoPlanoN1.rotation.y = -Math.PI/2;
 
 
