@@ -232,6 +232,7 @@ botonCerrarPanelInformacion.addEventListener('click',()=>{
 
 botonCerrarPanelVideo.addEventListener('click',()=>{
     panelVideo.style.visibility ="hidden";
+    player.stop();
 })
 
 function abrirPanelVideo(){

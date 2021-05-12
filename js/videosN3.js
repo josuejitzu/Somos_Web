@@ -7,7 +7,7 @@ const video_arquitectura_01 ={
       {
         src: 'src/vids/nucleo3/arquitectura/Somos_Season_1_Somos_81024123_00005200_00010718_es_2.mp4',
         type: 'video/mp4',
-        size: 1080,
+        size: 720,//1080
       }
     ],
     poster: 'src/img/netflix_video_poster.jpg',
@@ -25,7 +25,7 @@ const video_arquitectura_01 ={
       {
         src: 'src/vids/nucleo3/arquitectura/Somos_Season_1_The_Night_Belongs_to_Us_81024122_00505922_00513303_es_2.mp4',
         type: 'video/mp4',
-        size: 1080,
+        size: 720,
       }
     ],
     poster: 'src/img/netflix_video_poster.jpg',
