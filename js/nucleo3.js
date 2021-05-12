@@ -789,6 +789,7 @@ boton_video_5.addEventListener('click',()=>{cambiarVideo(temaSeleccionado,5)} );
 
 function cambiarVideo(tema,num){
     console.log("cambiando video");
+    callarMusica();
     if(tema =="arquitectura")
     {
 
