@@ -20,8 +20,8 @@ panoramaN3.addEventListener( 'enter-fade-start', function(){
 
  });
  const panoramaN3_B = new PANOLENS.ImagePanorama( 'src/img/360/nucleo03_B_03.jpg' );
-panoramaN3.addEventListener('enter-fade-start',function(){
-    viewer.tweenControlCenter(  new THREE.Vector3(5000.00, 0, 0), 0 );
+panoramaN3_B.addEventListener('enter-fade-start',function(){
+    viewer.tweenControlCenter(  new THREE.Vector3(5000.00, 3000, 0), 0 );
 
 })
 

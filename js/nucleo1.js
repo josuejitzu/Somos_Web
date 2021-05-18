@@ -40,7 +40,10 @@ const imgVidConAudio_negro ="src/img/simbolos/AUDIO_negro.png";
 const imgVidSinAudio ="src/img/simbolos/SIN_AUDIO.png";
 const imgVidSinAudio_negro ="src/img/simbolos/SIN_AUDIO_negro.png";
 
-console.log(botonThumb1)
+const entrevistaCompleta1 = document.getElementsByClassName("completaText1") 
+const botonEntrevistaCompletaTitulo =  document.querySelector(".botonEntrevistaCompletaTitulo");
+
+console.log(entrevistaCompleta1)
 const videoJames ={
     type: 'video',
     title: 'Example title',
@@ -293,6 +296,7 @@ function abrirVideos(abrir){
 
 }
 
+let enEntrevistasCompletas = false;
 let enVideo = 1;
 player.on('play', function(){
     console.log("reproduciendo")
@@ -301,20 +305,49 @@ player.on('play', function(){
 
 botonThumb1.addEventListener('click',()=>{
 console.log("tumb1")
-
-    cambiarVideo(1);
+    enVideo = 1;
+    if(enEntrevistasCompletas)
+    {
+      cambiarVideoCompleto();
+    }else
+      cambiarVideo(1);
 })
     
 botonThumb2.addEventListener('click', ()=>{
-
+    enVideo = 2;
     cambiarVideo(2)
+    if(enEntrevistasCompletas)
+    {
+      cambiarVideoCompleto();
+    }else
+      cambiarVideo(2);
 });
 botonThumb3.addEventListener('click', ()=>{
-    cambiarVideo(3)
+    enVideo = 3;
+    if(enEntrevistasCompletas)
+    {
+      cambiarVideoCompleto();
+    }else
+      cambiarVideo(3);
 });
 
 botonEntrevistaCompleta.addEventListener('click',()=>{
     cambiarVideoCompleto();
+    if(enEntrevistasCompletas)
+    {
+      enEntrevistasCompletas = false;
+      botonEntrevistaCompletaTitulo.innerHTML = "Entrevista completa";
+      for (let i = 0; i < entrevistaCompleta1.length; i++) {
+        var element = entrevistaCompleta1[i];
+        element.style.visibility="hidden";
+      }
+      cambiarVideo(1);
+    }else if(!enEntrevistasCompletas)
+    {
+
+      enEntrevistasCompletas = true;
+      botonEntrevistaCompletaTitulo.innerHTML = "Entrevista corta";
+    }
 })
 
 function cambiarVideo(num){
@@ -350,6 +383,11 @@ function cambiarVideoCompleto()
             player.source = videoMonica_Completo;
 
         }
+      
+       for (let i = 0; i < entrevistaCompleta1.length; i++) {
+         var element = entrevistaCompleta1[i];
+         element.style.visibility="visible";
+       }
 
 }
     
