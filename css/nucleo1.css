@@ -283,3 +283,15 @@
     }
 }
 
+.completaText1{
+    visibility: hidden;
+    font-size: 8px;
+}
+.completaText2{
+    visibility: hidden;
+    font-size: 8px;
+}
+.completaText3{
+    visibility: hidden;
+    font-size: 8px;
+}
