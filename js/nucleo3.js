@@ -55,6 +55,13 @@ const boton_video_4 = document.querySelector(".boton_video4");
 const boton_video_5 = document.querySelector(".boton_video5");
 const boton_fotografias_1 = document.querySelector(".botonFotografias");
 
+
+const imagenDesplegada = document.querySelector(".imagenDesplegada");
+const botonAneteriorImagen = document.querySelector(".flechaControl.atras");
+const botonSiguienteImagen = document.querySelector(".flechaControl.adelante");
+let enImagenDesplegada = 0;
+
+console.log(botonSiguienteImagen);
 //cultura, arquitectura, moda, bebida, quince, musica,ganadera,popular
 let temaSeleccionado = "cultura";
 
@@ -561,6 +568,18 @@ panoramaN3_B.addEventListener('click',function(event)
     }
 })
 
+
+
+boton_fotografias_1.addEventListener('click',()=>{
+  panelFotos.style.visibility = "visible";  
+})
+botonSiguienteImagen.addEventListener('click',()=>{
+    siguienteImagen();
+})
+botonAneteriorImagen.addEventListener('click',()=>{
+    anteriorImagen();
+})
+
 const textoPrincipal = document.querySelector(".textoPrincipal");
 const textoTitulo = document.querySelector(".tituloTexto");
 var enBanner;
@@ -575,7 +594,7 @@ function bannerSeleccionado(banner)
     boton_video_4.style.visibility ="hidden";
     boton_video_5.style.visibility ="hidden";
 
-
+   
     switch(banner)
     {
         case banner_quince:
@@ -637,7 +656,7 @@ function bannerSeleccionado(banner)
             "caballo, el rodeo y el campo se refleja en las botas, los sombreros y las camisas vaqueras utilizadas "+
             "por gran parte de la población. Aunada a la cultura vaquera, la construcción visual asociada al narcotráfico, "+
             "descrita por muchos como “buchona”, se ha filtrado poco a poco en la cotidianeidad y en los guardarropas. "+
-            "Por ello, la vestimenta de varios personajes de Somos. refleja este complejo fenómeno fronterizo, una mezcla de "+
+            "Por ello, la vestimenta de varios personajes de "+"<i>"+"Somos."+"</i>"+"  refleja este complejo fenómeno fronterizo, una mezcla de "+
             "culturas, de deseos y apariencias."
             abrirPanelBanner();
 
@@ -659,7 +678,7 @@ function bannerSeleccionado(banner)
             "con ella. El clima extremo de la región ha propiciado también el consumo de ese líquido que refresca y revitaliza. "+"<br/>"+
             "El sotol, por su parte, es un aguardiente que se extrae de manera artesanal de la piña de una cactácea originaria de la zona "+
             "desértica del norte de México. Es muy socorrido por las clases populares, especialmente en áreas rurales. "+"<br/>"+
-            "En Somos. los personajes acompañan sus reuniones sociales, laborales y momentos cruciales con dichos brebajes."
+            "En "+"<i>"+"Somos."+"</i>"+" los personajes acompañan sus reuniones sociales, laborales y momentos cruciales con dichos brebajes."
 
             abrirPanelBanner();
 
@@ -675,7 +694,7 @@ function bannerSeleccionado(banner)
             "Los rótulos, en su mayoría pintados a mano, siguen siendo un distintivo para negocios y locales comerciales "+
             "en zonas rurales de México. A pesar de la estandarización de los medios gráficos impulsados por la tecnología, "+
             "en muchas poblaciones se apuesta por los señalamientos trazados artesanalmente para generar una identidad original. "+"<br/>"+
-            "En Somos. los gráficos comerciales acompañan la imagen del pueblo y fortalecen la cultura visual de la región. "+"<br/>"+
+            "En "+"<i>"+"Somos."+"</i>"+" los gráficos comerciales acompañan la imagen del pueblo y fortalecen la cultura visual de la región. "+"<br/>"+
             "Estos rótulos vitalizan los exteriores de los poblados alejados de las urbes."
             
             abrirPanelBanner();
@@ -719,7 +738,7 @@ function bannerSeleccionado(banner)
             "Allende se ubica en la zona conocida como “Los cinco manantiales”, conformada por los municipios de Guerrero, Morelos,"+
             "Nava, Piedras Negras, Sabinas y Zaragoza, los cuales tienen una serie de riachuelos que alimentan el río Escondido."+"<br/>"+
             "Su territorio es amplio y diverso, la economía depende de la ganadería, la agricultura y la minería; la cultura es "+
-            "híbrida, con una gran influencia de lo que sucede en el país vecino. En Somos. el paisaje es una referencia real y "+
+            "híbrida, con una gran influencia de lo que sucede en el país vecino. En "+"<i>"+"Somos"+"</i>"+". el paisaje es una referencia real y "+
             "poética que acompaña a los personajes y en la tragedia."
 
             abrirPanelBanner();
@@ -744,6 +763,8 @@ function bannerSeleccionado(banner)
         "actividad obligada para cerrar tratos y convivir en familia."
 
         abrirPanelBanner();
+        enImagenDesplegada = 0;
+        cambiarImagen();
 
     break;
     }
@@ -944,4 +965,110 @@ function cambiarVideo(tema,num){
 
         panelVideo.style.visibility = "visible";
     }
+}
+
+function cambiarImagen()
+{
+    if(temaSeleccionado =="arquitectura")
+    {
+        if(enImagenDesplegada >= imagenesArquitectura.length )
+             enImagenDesplegada = 0;
+        else if(enImagenDesplegada < 0)
+        {
+            enImagenDesplegada = imagenesArquitectura.length-1;
+        }
+       imagenDesplegada.src = folderArquitectura+imagenesArquitectura[enImagenDesplegada];
+    }
+    else if(temaSeleccionado == "bebidas")
+    {
+
+         if(enImagenDesplegada >= imagenesBebidas.length )
+             enImagenDesplegada = 0;
+        else if(enImagenDesplegada < 0)
+        {
+            enImagenDesplegada = imagenesBebidas.length-1;
+        }
+       imagenDesplegada.src = folderBebidas+imagenesBebidas[enImagenDesplegada];
+
+    }
+    else if(temaSeleccionado =="cultura")
+    {
+         if(enImagenDesplegada >= imagenesCultura.length )
+             enImagenDesplegada = 0;
+        else if(enImagenDesplegada < 0)
+        {
+            enImagenDesplegada = imagenesCultura.length-1;
+        }
+       imagenDesplegada.src = folderCultura+imagenesCultura[enImagenDesplegada];
+        
+    }
+    else if(temaSeleccionado =="ganadera")
+    {
+         if(enImagenDesplegada >= imagenesGanaderia.length )
+             enImagenDesplegada = 0;
+        else if(enImagenDesplegada < 0)
+        {
+            enImagenDesplegada = imagenesGanaderia.length-1;
+        }   
+        imagenDesplegada.src = folderGanadera+imagenesGanaderia[enImagenDesplegada];
+       
+    }
+    else if(temaSeleccionado == "moda")
+    {
+         if(enImagenDesplegada >= imagenesModa.length )
+             enImagenDesplegada = 0;
+        else if(enImagenDesplegada < 0)
+        {
+            enImagenDesplegada = imagenesModa.length-1;
+        }
+        imagenDesplegada.src = folderModa+imagenesModa[enImagenDesplegada];
+      
+    }
+    else if(temaSeleccionado =="musica")
+    {
+         if(enImagenDesplegada >= imagenesMusica.length )
+             enImagenDesplegada = 0;
+        else if(enImagenDesplegada < 0)
+        {
+            enImagenDesplegada = imagenesMusica.length-1;
+        }
+        imagenDesplegada.src = folderMusica+imagenesMusica[enImagenDesplegada];
+       
+    }
+    else if(temaSeleccionado =="popular")
+    {
+         if(enImagenDesplegada >= imagenesGrafica.length )
+             enImagenDesplegada = 0;
+        else if(enImagenDesplegada < 0)
+        {
+            enImagenDesplegada = imagenesGrafica.length-1;
+        }
+        imagenDesplegada.src = folderGraficaPopular+imagenesGrafica[enImagenDesplegada];
+       
+    }
+    else if(temaSeleccionado =="quince")
+    {
+         if(enImagenDesplegada >= imagenesQuince.length )
+             enImagenDesplegada = 0;
+        else if(enImagenDesplegada < 0)
+        {
+            enImagenDesplegada = imagenesQuince.length-1;
+        }
+       imagenDesplegada.src = folderQuinces+imagenesQuince[enImagenDesplegada];
+
+    }else 
+    {
+        console.log("tema no encontrado")
+        return ;
+    }
+}
+function siguienteImagen()
+{
+    enImagenDesplegada++;
+    cambiarImagen();
+}
+function anteriorImagen()
+{
+    enImagenDesplegada--;
+    cambiarImagen();
 }
