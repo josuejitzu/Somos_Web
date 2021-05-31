@@ -94,7 +94,7 @@ const musciaPagina =
 botonSilencio.addEventListener("click",()=>{
     console.log("audio")
     if(muteado){
-        if(nombrePagina == "auditorio.html")
+        if(nombrePagina == "auditorio.html" || nombrePagina == "auditorio_en.html")
         botonSilencio.src = imgConAudio_blanco;
     else
         botonSilencio.src = imgConAudio;
@@ -110,7 +110,7 @@ botonSilencio.addEventListener("click",()=>{
 
     }else{ 
         // botonSilencio.src = imgSinAudio;
-        if(nombrePagina=="auditorio.html")
+        if(nombrePagina=="auditorio.html" || nombrePagina == "auditorio_en.html")
                 botonSilencio.src = imgSinAudio_blanco;
 
             else
@@ -133,13 +133,13 @@ botonSilencio.addEventListener("click",()=>{
 
 
 
-if(nombrePagina == "nucleo2.html")
+if(nombrePagina == "nucleo2.html" || nombrePagina =="nucleo2.html")
 {
     botonSilencioB = document.querySelector(".audioSilencioB");
     botonSilencioB.addEventListener("click",()=>{
         console.log("audio")
         if(muteado){
-            if(nombrePagina == "auditorio.html")
+            if(nombrePagina == "auditorio.html"  || nombrePagina == "auditorio_en.html")
                 botonSilencio.src = imgConAudio_blanco;
             else
                 botonSilencio.src = imgConAudio;
@@ -152,7 +152,7 @@ if(nombrePagina == "nucleo2.html")
             muteado = false;
 
         }else{ 
-            if(nombrePagina=="auditorio.html")
+            if(nombrePagina=="auditorio.html"  || nombrePagina == "auditorio_en.html")
                 botonSilencio.src = imgSinAudio_blanco;
 
             else
@@ -180,7 +180,7 @@ var textoA,textoB,textoC;
 function cargarPista()
 {
 
-    if(nombrePagina == "home.html"){
+    if(nombrePagina == "home.html" || nombrePagina == "home_en.html"){
         
         //  pistaSeleccionadaA = musciaPagina[0][1][0]
         //  pistaSeleccionadaB = musciaPagina[0][1][1]
@@ -189,7 +189,7 @@ function cargarPista()
         reproducir(0,0);
 
     }
-    else if(nombrePagina == "lobby.html")
+    else if(nombrePagina == "lobby.html" || nombrePagina == "lobby_en.html")
     {
         pistaSeleccionadaA = musciaPagina[1][1][0]
         pistaSeleccionadaB = musciaPagina[1][1][1]
@@ -199,7 +199,7 @@ function cargarPista()
 
 
     }
-    else if(nombrePagina == "auditorio.html")
+    else if(nombrePagina == "auditorio.html" || nombrePagina == "auditorio_en.html")
     {
         pistaSeleccionadaA = musciaPagina[2][1][0]
         textoA = musciaPagina[2][2][0]
@@ -209,7 +209,7 @@ function cargarPista()
         
       
     }
-    else if(nombrePagina == "nucleo1.html")
+    else if(nombrePagina == "nucleo1.html" || nombrePagina == "nucleo1_en.html")
     {
         pistaSeleccionadaA = musciaPagina[3][1][0]
         pistaSeleccionadaB = musciaPagina[3][1][1]
@@ -218,7 +218,7 @@ function cargarPista()
         reproducir(3,0);
 
     }
-    else if(nombrePagina == "nucleo2.html")
+    else if(nombrePagina == "nucleo2.html" || nombrePagina == "nucleo2_en.html")
     {
         pistaSeleccionadaA = musciaPagina[4][1][0]
         pistaSeleccionadaB = musciaPagina[4][1][1]
@@ -228,7 +228,7 @@ function cargarPista()
 
 
     }
-    else if(nombrePagina == "nucleo3.html")
+    else if(nombrePagina == "nucleo3.html" || nombrePagina == "nucleo3_en.html")
     {
         pistaSeleccionadaA = musciaPagina[5][1][0]
         pistaSeleccionadaB = musciaPagina[5][1][1]
@@ -344,7 +344,7 @@ function reproducir(i,j)
             {
                 console.log("no mas pistas")
             }else{
-                if(nombrePagina != "home.html")
+                if(nombrePagina != "home.html" && nombrePagina != "home_en.html")
                 {
 
                     console.log("reproduciendo pista 2")
@@ -426,7 +426,7 @@ function callarMusica(){
         // muteado = true;
 
     // }else{ 
-        if(nombrePagina == "auditorio.html")
+        if(nombrePagina == "auditorio.html" || nombrePagina == "auditorio_en.html")
         {
             botonSilencio.src = imgSinAudio_blanco;
 

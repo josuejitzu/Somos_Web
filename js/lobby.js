@@ -388,31 +388,37 @@ function cambiarA(dir){
 
   
     let direccionFinal;
+
+
+
     if(dir == "home")
     {
-        direccionFinal = "home.html"
+        direccionFinal = obtenerNombrePagina() == "lobby_en.html" ? "home_en.html" : "home.html"
     }
     if(dir == "nucleo1"){
-        direccionFinal = "nucleo1.html"
-
-
+        direccionFinal = obtenerNombrePagina() == "lobby_en.html" ? "nucleo1_en.html" : "nucleo1.html"
+      
     }
     else if(dir =="nucleo2")
     {
-        direccionFinal = "nucleo2.html"
+        direccionFinal =  obtenerNombrePagina() == "lobby_en.html" ? "nucleo2_en.html" : "nucleo2.html"
     }
     else if(dir =="nucleo3")
     {
-        direccionFinal = "nucleo3.html"
+        direccionFinal =  obtenerNombrePagina() == "lobby_en.html" ? "nucleo3_en.html" :"nucleo3.html"
     }
     else if(dir =="auditorio")
     {
-        direccionFinal = "auditorio.html"
+        direccionFinal =  obtenerNombrePagina() == "lobby_en.html" ? "auditorio_en.html" :"auditorio.html"
 
     }else{
         console.log("no se encontro la ruta") 
         return;
     }
+
+
+
+
 
     let barraCarga = document.getElementById("barraCarga");
     barraCarga.parentNode.removeChild(barraCarga);

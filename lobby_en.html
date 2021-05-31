@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lobby</title>
+    <!-- <link rel="stylesheet" href="./css/lobby.css"> -->
+    <link rel="stylesheet" href="./css/textoMamparas.css">
+
+    <link rel="stylesheet" href="./css/panorama.css">
+    <link rel="stylesheet" href="./css/overlay.css">
+    <link rel="stylesheet" href="./css/loader.css">
+    <link rel="stylesheet" href="./src/fonts/fonts.css">
+    <script type="text/javascript" src="./js/dat.gui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+    <script type="module" src="./js/three/examples/jsm/loaders/GLTFLoader.js"></script>  
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.1/howler.js"></script>   
+    <link rel="stylesheet" type="text/css" href="css/loadingio/loading-bar.css"/>
+    <script type="text/javascript" src="js/loadingio/loading-bar.js"></script>   
+</head>
+<body> 
+    <div class="panelCarga">
+         <img class="panelLoadLogo">
+         <div id="barraCarga"></div>
+    </div>
+
+    <div class="logosSuperior" >
+        <div style="background-color: rgba(0, 128, 0, 0); ">
+
+            <img src="./src/img/iconos/logo-mmyt-black.png" style="width:50%">
+        </div>
+        <div style="background-color: rgba(0, 128, 0, 0); width:80%"></div>
+        <div style="background-color: rgba(0, 128, 0, 0);  ">
+
+            <img src="./src/img/iconos/Netflix-Logo_baja.png" >
+        </div>
+           
+    </div>
+    <div class="panelSomos">
+        <div style="background-color:rgba(0, 128, 0, 0); width:100%; text-align:right; top:10px;">
+            <img class="botonCerrarTextoSomos" src="./src/img/simbolos/CERRAR.png" style="width:30px">
+        </div>
+        <div class ="panelSomosTexto">
+
+            <br>
+            <div style="background-color: rgba(0, 128, 0, 0); width:100%">
+                <h2>
+                   <i> Somos.</i>, An Exhibition
+                </h2>
+            </div>
+            <br>
+            <div>
+                <p>
+                    In recent years, the growth of digital platforms and streaming content have changed not
+                    only the way of viewing but also making audiovisual productions. This has also modified
+                    the way of telling stories, the interaction with different audiences and the way in which
+                    these audiences approach and understand both fiction and non-fiction, including historical
+                    facts. Without replacing books, digital platforms have become a way to complement how
+                    people learn about contemporary history, nurturing narratives by telling and exposing
+                    social realities and complex situations at the civic and political levels.
+
+                </p>
+                <br>
+                <p>
+                    From this premise came the idea of producing and making <i>Somos.</i>, a fiction series based
+                    on the shocking report "Anatomy of a Massacre", which was written by renowned
+                    journalist Ginger Thompson about an event that took place in Allende, Coahuila in 2011.
+                </p>
+                <br>
+
+                
+                <p>
+                    
+                    Somos. was created and produced by James Schamus, producer of films such as <i> Brokeback Mountain</i> and <i>Crounching Tiger, Hidden Dragon,</i> 
+                    . He wrote the series along with Mexican nationals Monika Revilla and Fernanda Melchor, and it is the result of a
+                    multidisciplinary and creative process. The plot centers around a true story but does so
+                    through fiction. In it, a horrible tragedy is told through the voices of its victims, but not in
+                    a detached or "impartial" way as it might be done in journalism. Rather, it is humanized
+                    by illustrating the habits and customs of a population whose daily life is shown through
+                    the complexity of living in a territory in which a hybrid culture is disrupted by the dynamics
+                    of the border area between Mexico and the United States.
+
+                </p>
+                <br>
+
+                <p>
+
+                    This digital exhibition was created to accompany the launch of this project and seeks to
+                    show the principles and creation processes of the series. Three thematic units reveal the
+                    process of working as a team, their way of interpreting and considering the facts to then
+                    transform them into fiction and create characters capable of telling this terrifying story
+                    from a decidedly human perspective.
+                </p>
+                <br>
+
+                <p>
+
+                    We decided to embark on the challenge of putting on this exhibition knowing that the
+                    Covid-19 pandemic would cause it to be presented remotely. Therefore it is an exclusively
+                    digital exhibition that takes place within the platform of the Museum of Memory and
+                    Tolerance. The virtual experience that we chose does not simulate cultural resources or
+                    physical elements, but instead uses language and tools typical of a digital medium.
+                    Foremost, in the three sections visitors will find the voices of the creators and promoters
+                    of the series with regard to the creative process. In the second unit, photographs coming
+                    from the eyes of the production team show how this heartbreaking story was transformed
+                    into spaces, environments and images to construct a fictional universe always parallel to
+                    real events. The last unit highlights the rich and diverse culture of northeastern Mexico,
+                    which is an essential part of the creation of the series and the world of <i> Somos.</i> With short
+                    clips and still images, we facilitate a journey through eight themes from the series,
+                    bringing the characters to life and fitting them into the story with consistency, while
+                    zooming in on the culture of a unique place like Coahuila, just a few miles from the border
+                    of Mexico and the United States.
+                </p> 
+                <br>
+
+                <p>
+                    We trust that this exhibition will enrich imaginations, broaden the audiovisual experience
+                    and help viewers to understand the creative process involved in these new formats that
+                    enable us to enhance culture while generating critical awareness.
+
+                </p>
+
+            
+             </div>
+           
+        </div> 
+        <div class="panelSomosLogos">
+            <div style="background-color: rgba(0, 128, 0, 0);">
+                <img src="./src/img/iconos/logo-mmyt-white.png" >
+            </div>
+            <div style="background-color: rgba(0, 128, 0, 0); width:80%"></div>
+
+            <div style="background-color: rgba(128, 83, 0, 0);  text-align:right;">
+                <img src="./src/img/iconos/Netflix-Logo_baja.png " style="width:70%;">
+            </div>
+    </div>
+    </div>
+    <div id="main-container" style="background-color: rgb(0, 0, 0);">
+        
+    </div>
+   
+    <div class="navegacionInferior">
+        <div>
+            <img id="botonCerrar" src="./src/img/simbolos/CERRAR_negro.png">
+            <img class="audioSilencio" src="./src/img/simbolos/AUDIO_negro.png" >
+            
+        </div>
+        <div class="informacionAudio">
+            <img src="./src/img/iconos/MUSICA_negro.png">
+            <div class="barraPista">
+                <h3 class="infoPista">Somos </h3>
+            
+                <h3>   Victor Hernandez Stumphauser</h3>
+            </div>
+           
+        </div>
+    </div>
+
+   
+
+
+    <!-- No se usando este div -->
+    <div id="panorama-container">
+
+        <!-- Progress bar -->
+        <div id="progress-bar"></div>
+  
+        <!-- Close button -->
+        <!-- <div class="close">
+          <i class="material-icons">close</i>
+        </div> -->
+  
+        <!-- Main container -->
+        
+    </div>
+   
+    
+    <script src="./js/three.min.js"></script>
+    <script src="./js/panolens.min.js"></script>
+    <script src="./js/loader.js"></script>
+    <script src="./js/musica.js"></script>
+    <!-- <script src="./js/directorio.js"></script> -->
+    <script type="module" src="./js/lobby.js"></script>
+</body>
+</html>

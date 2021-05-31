@@ -606,18 +606,37 @@ function bannerSeleccionado(banner)
             
             abrirPanelBanner();
 
-            textoTitulo.innerHTML ="Quinceañeras";
-            textoPrincipal.innerHTML =
-            "De manera tradicional, la fiesta de quince años es un hito importante en la vida de una mujer " +
-            "como el momento en que oficialmente deja de ser niña para abrazar la vida adulta. "+"<br/>" +
-            "En tierras mexicanas es también cuando se \"presenta\" a una mujer en sociedad, es un rito de "+
-            "iniciación dentro de una sociedad patriarcal. Si la festejada es católica, la celebración se "+
-            "acompaña con una misa o una ceremonia religiosa, a la que sigue un baile pleno de simbolismos. "+"<br/>"+
-            "El vestido de la protagonista suele ser vaporoso y con estilo de princesa. El padre acompaña a la " + "<br/>"+
-            "festejada en el primer baile para luego \"entregarla\" a los \"chambelanes\” (hombres jóvenes) que bailan "+
-            "con ella distintas piezas, como representación del camino que recorrerá y los obstáculos que enfrentará "+
-            "para encontrar el amor y vivir en pareja. Un gran pastel coronado con una muñeca, vestida de forma idéntica "+
-            "a la quinceañera –la última muñeca que tendrá–, marca el inicio de la nueva vida."
+            textoTitulo.innerHTML =  document.documentElement.lang == "en" ? "Quinceañeras": "Quinceañeras";
+            
+            
+            if( document.documentElement.lang == "en")
+            {
+                textoPrincipal.innerHTML =    
+                "Traditionally, the quinceañera is an important milestone in the life of a woman, as it is the"+
+                "moment of officially transitioning from a girl to embracing adult life."+"<br/>" +
+                "In Mexico, it is also when a woman is \"presented\" in society, an initiation rite within a"+
+                "patriarchal society. If the celebration is Catholic, then the event is accompanied by a mass"+
+                "or a religious ceremony, which is followed by a dance full of symbolism. The quinceañera"+
+                "dress is usually elaborate and has a princess style. The father accompanies his 15-yearold daughter in the first dance and then \"delivers\" her to the \"chambelanes\" (young men)"+
+                "who dance to different songs with her, as a representation of the path she will travel and"+
+                "the obstacles she will face to find love. A large cake is topped with a doll dressed"+
+                "identically to the young woman, the last doll she will ever have, marking the beginning of"+
+                "her new life."
+            }
+            else{
+                textoPrincipal.innerHTML =    
+                "De manera tradicional, la fiesta de quince años es un hito importante en la vida de una mujer " +
+                "como el momento en que oficialmente deja de ser niña para abrazar la vida adulta. "+"<br/>" +
+                "En tierras mexicanas es también cuando se \"presenta\" a una mujer en sociedad, es un rito de "+
+                "iniciación dentro de una sociedad patriarcal. Si la festejada es católica, la celebración se "+
+                "acompaña con una misa o una ceremonia religiosa, a la que sigue un baile pleno de simbolismos. "+"<br/>"+
+                "El vestido de la protagonista suele ser vaporoso y con estilo de princesa. El padre acompaña a la " + "<br/>"+
+                "festejada en el primer baile para luego \"entregarla\" a los \"chambelanes\” (hombres jóvenes) que bailan "+
+                "con ella distintas piezas, como representación del camino que recorrerá y los obstáculos que enfrentará "+
+                "para encontrar el amor y vivir en pareja. Un gran pastel coronado con una muñeca, vestida de forma idéntica "+
+                "a la quinceañera –la última muñeca que tendrá–, marca el inicio de la nueva vida."
+            }
+          
             break;
 
         case banner_Arquitectura: 
@@ -628,7 +647,21 @@ function bannerSeleccionado(banner)
             abrirPanelBanner();
             temaSeleccionado = "arquitectura";
 
+            if(document.documentElement.lang == "en"){
+                textoTitulo.innerHTML ="The Architecture of the Northeast";
+                textoPrincipal.innerHTML =
+                "The architecture of northeast Mexico is extremely rich in architectural styles, construction"+
+                "techniques and ways of living. This plurality is due to the different visual and stylistic"+
+                "influences that have flooded the region, in addition to the production, migratory and social"+
+                "processes that have taken place in the territory. In the Allende represented in the series,"+
+                "there is a strong presence of vernacular architecture that depicts the daily life of a"+
+                "population in constant transformation. The architecture in the series shows both the social"+
+                "and ideological differences."
 
+            }else
+            {
+
+            
             textoTitulo.innerHTML ="La arquitectura del noreste";
             textoPrincipal.innerHTML =
             "La arquitectura del noreste tiene una gran diversidad de tipologías arquitectónicas, "+
@@ -637,6 +670,7 @@ function bannerSeleccionado(banner)
             " y sociales que se han dado en el territorio. En el Allende representado en la serie, la arquitectura "+
             "vernácula es una fuerte presencia que franquea la vida diaria de una población en constante transformación. "+
             "La arquitectura en la serie marca las diferencias sociales y también las ideológicas."
+            }
             break;
 
         case banner_Moda: 
@@ -649,6 +683,22 @@ function bannerSeleccionado(banner)
             boton_video_3.style.visibility ="visible";
             boton_video_4.style.visibility ="visible";
             boton_video_5.style.visibility ="visible";
+
+           if(document.documentElement.lang == "en"){
+            textoTitulo.innerHTML ="Fashion";
+            textoPrincipal.innerHTML =
+            "The fashion of northern Mexico has a unique character and is a hybrid in response to the"+
+            "proximity to the United States, the cult of cowboy clothing and the visual culture shown in"+
+            "the film. The attachment to horses, rodeos and the countryside is reflected in the boots,"+
+            "hats and denim shirts worn by a large portion of the population. Coupled with the cowboy"+
+            "culture, the visual imagery associated with drug trafficking often referred to as \"buchona \","+
+            "has gradually filtered into everyday life and wardrobes. For this reason, the clothing of"+
+            "various characters from Somos. reflects this complex border phenomenon, a mixture of"+
+            "cultures, desires and appearances"
+           }else
+           {
+
+           
             textoTitulo.innerHTML ="La moda";
             textoPrincipal.innerHTML =
             "La moda norteña tiene un carácter singular e híbrido que responde a la cercanía con Estados Unidos, "+
@@ -658,6 +708,7 @@ function bannerSeleccionado(banner)
             "descrita por muchos como “buchona”, se ha filtrado poco a poco en la cotidianeidad y en los guardarropas. "+
             "Por ello, la vestimenta de varios personajes de "+"<i>"+"Somos."+"</i>"+"  refleja este complejo fenómeno fronterizo, una mezcla de "+
             "culturas, de deseos y apariencias."
+           }
             abrirPanelBanner();
 
             break;
@@ -670,6 +721,28 @@ function bannerSeleccionado(banner)
             boton_video_2.style.visibility ="visible";
             boton_video_3.style.visibility ="visible";
             boton_video_4.style.visibility ="visible";
+
+           if(document.documentElement.lang == "en")
+           {
+            textoTitulo.innerHTML ="Drinks";
+            textoPrincipal.innerHTML =
+            "Beer and sotol are two traditional drinks from northern Mexico, part of life and the social"+
+            "fabric of the area."+"<br/>"+
+            "At the end of the nineteenth century, a large brewery was founded in Nuevo Leon and"+
+            "kicked off the ongoing industrial production of beer in the region. As a result, the"+
+            "fermented drink is associated with the culture, and is customarily associated with both"+
+            "social and family gatherings. The extreme climate of the region has also favored the"+
+            "consumption of this beveargethat both refreshes and revitalizes."+"<br/>"+
+            "Sotol, in turn, is a liquor that is extracted by hand from the core of a cactus plant native"+
+            "to the desert area of northern Mexico. It is extremely popular with the working class,"+
+            "especially in rural areas."+"<br/>"+
+            "In Somos., the characters enjoy these concoctions at their social gatherings,work"+
+            "meetings and important events."
+           }
+           else
+           {
+
+           
             textoTitulo.innerHTML ="Las bebidas ";
             textoPrincipal.innerHTML =
             "La cerveza y el sotol son dos bebidas tradicionales del norte de México, parte de la vida y el imaginario social de la zona. "+
@@ -679,7 +752,7 @@ function bannerSeleccionado(banner)
             "El sotol, por su parte, es un aguardiente que se extrae de manera artesanal de la piña de una cactácea originaria de la zona "+
             "desértica del norte de México. Es muy socorrido por las clases populares, especialmente en áreas rurales. "+"<br/>"+
             "En "+"<i>"+"Somos."+"</i>"+" los personajes acompañan sus reuniones sociales, laborales y momentos cruciales con dichos brebajes."
-
+           }
             abrirPanelBanner();
 
             break;
@@ -689,13 +762,28 @@ function bannerSeleccionado(banner)
             temaSeleccionado = "popular";
 
             boton_video_1.style.visibility ="visible";
-            textoTitulo.innerHTML ="Los rótulos y la gráfica popular ";
-            textoPrincipal.innerHTML =
-            "Los rótulos, en su mayoría pintados a mano, siguen siendo un distintivo para negocios y locales comerciales "+
-            "en zonas rurales de México. A pesar de la estandarización de los medios gráficos impulsados por la tecnología, "+
-            "en muchas poblaciones se apuesta por los señalamientos trazados artesanalmente para generar una identidad original. "+"<br/>"+
-            "En "+"<i>"+"Somos."+"</i>"+" los gráficos comerciales acompañan la imagen del pueblo y fortalecen la cultura visual de la región. "+"<br/>"+
-            "Estos rótulos vitalizan los exteriores de los poblados alejados de las urbes."
+            if(document.documentElement.lang == "en")
+            {
+                textoTitulo.innerHTML ="Signs and Hand-Painted  Graphics";
+                textoPrincipal.innerHTML =
+                "Signs, most of them painted by hand, continue to be a hallmark for businesses and"+
+                "commercial premises in rural areas of Mexico. Despite the standardization of graphic"+
+                "media driven by technology, many towns still use signs drawn by hand to create an"+
+                "original identity. In Somos., commercial graphics are associated with the image of the"+
+                "town and they enhance the visual culture of the region. These signs bring vitality to the"+
+                "exteriors of the villages far from the cities."
+
+            }else
+            {
+
+                textoTitulo.innerHTML ="Los rótulos y la gráfica popular ";
+                textoPrincipal.innerHTML =
+                "Los rótulos, en su mayoría pintados a mano, siguen siendo un distintivo para negocios y locales comerciales "+
+                "en zonas rurales de México. A pesar de la estandarización de los medios gráficos impulsados por la tecnología, "+
+                "en muchas poblaciones se apuesta por los señalamientos trazados artesanalmente para generar una identidad original. "+"<br/>"+
+                "En "+"<i>"+"Somos."+"</i>"+" los gráficos comerciales acompañan la imagen del pueblo y fortalecen la cultura visual de la región. "+"<br/>"+
+                "Estos rótulos vitalizan los exteriores de los poblados alejados de las urbes."
+            }
             
             abrirPanelBanner();
 
@@ -709,15 +797,32 @@ function bannerSeleccionado(banner)
             boton_video_2.style.visibility ="visible";
             boton_video_3.style.visibility ="visible";
             boton_video_4.style.visibility ="visible";
-            textoTitulo.innerHTML ="La música norteña";
-            textoPrincipal.innerHTML =
-            "La música norteña es un género regional que ha viajado más allá de la frontera, su popularidad "+
-            "ha crecido de manera amplia. También conocida como música de banda, se caracteriza por el uso del "+
-            "acordeón y el bajo extremo y por las letras asociadas con la narración de las \"hazañas\" de los narcos, "+
-            "por ello uno de sus subgéneros ha recibido el mote de 'narcocorrido'; otra de sus características es "+
-            "romantizar la pobreza y anhelar el amor imposible. "+"<br/>"+
-            "La fusión de la música norteña y la música texana ha dado como resultado el género Tex mex, muy divulgado en ambos lados de la frontera. "+"<br/>"+
-            "La música norteña es parte de la identidad y la cultura de estos municipios fronterizos y en Somos. su presencia es tenue, pero continua."
+            if(document.documentElement.lang == "en")
+            {
+                textoTitulo.innerHTML ="Norteño Music";
+                textoPrincipal.innerHTML =
+                "Norteño music is a regional genre that has traveled beyond the border, with its popularity"+
+                "growing widely. Also known as banda music, it is characterized by the use of the"+
+                "accordion, extreme bass and lyrics associated with the \"exploits \" of narcos, which gave"+
+                "the nickname “narcocorrido” to one of its subgenres, Another one of its characteristics is "+
+                "romanticizing poverty and yearning for unattainable love. The fusion of Norteño music"+
+                "and Texan music has resulted in a Tex-Mex genre, which is very popular on both sides"+
+                "of the border. Norteño music is part of the identity and culture of these border towns, and"+
+                "in Somos. its presence is tenuous, though continuous."
+            }
+            else
+            {
+                textoTitulo.innerHTML ="La música norteña";
+                textoPrincipal.innerHTML =
+                "La música norteña es un género regional que ha viajado más allá de la frontera, su popularidad "+
+                "ha crecido de manera amplia. También conocida como música de banda, se caracteriza por el uso del "+
+                "acordeón y el bajo extremo y por las letras asociadas con la narración de las \"hazañas\" de los narcos, "+
+                "por ello uno de sus subgéneros ha recibido el mote de 'narcocorrido'; otra de sus características es "+
+                "romantizar la pobreza y anhelar el amor imposible. "+"<br/>"+
+                "La fusión de la música norteña y la música texana ha dado como resultado el género Tex mex, muy divulgado en ambos lados de la frontera. "+"<br/>"+
+                "La música norteña es parte de la identidad y la cultura de estos municipios fronterizos y en Somos. su presencia es tenue, pero continua."
+            }
+            
             
             abrirPanelBanner();
 
@@ -730,7 +835,24 @@ function bannerSeleccionado(banner)
             boton_video_3.style.visibility ="visible";
             boton_video_4.style.visibility ="visible";
             temaSeleccionado = "cultura";
+            
+            if(document.documentElement.lang == "en")
+            {
+                textoTitulo.innerHTML ="The Culture and Territory ";
+                textoPrincipal.innerHTML =
+                "Coahuila is a state in northeast Mexico, bordering Texas in the United States. Its imposing"+
+                "landscape is mostly desert, although it also has swamps, mountains, lagoons, forests and"+
+                "oases. The city of Allende is located in the area known as \"The Five Springs \", made up"+
+                "of the municipalities of Guerrero, Morelos, Nava, Piedras Negras, Sabinas and Zaragoza,"+
+                "which have a series of streams that feed the Escondido River. Its territory is vast and"+
+                "diverse, and the economy depends on livestock, agriculture and mining. The culture is a"+
+                "hybrid, with tremendous influence from life in the neighboring country to the north. In"+
+                "Somos., the landscape is a real and poetic reference that accompanies the characters"+
+                "and the tragedy."
+            }
+            else{
 
+            
             textoTitulo.innerHTML ="La cultura y el territorio ";
             textoPrincipal.innerHTML =
             "Coahuila se ubica en el noreste de México, es un estado fronterizo con Estados Unidos, que colinda con Texas. "+
@@ -740,6 +862,7 @@ function bannerSeleccionado(banner)
             "Su territorio es amplio y diverso, la economía depende de la ganadería, la agricultura y la minería; la cultura es "+
             "híbrida, con una gran influencia de lo que sucede en el país vecino. En "+"<i>"+"Somos"+"</i>"+". el paisaje es una referencia real y "+
             "poética que acompaña a los personajes y en la tragedia."
+            }
 
             abrirPanelBanner();
 
@@ -753,14 +876,30 @@ function bannerSeleccionado(banner)
         boton_video_4.style.visibility ="visible";
         temaSeleccionado = "ganadera";
 
-        textoTitulo.innerHTML ="La cultura ganadera ";
-        textoPrincipal.innerHTML =
-        "La ganadería es una de las principales actividades económicas del noreste de México, "+
-        "su producto vital no se reduce a la producción de carne, comprende también la de leche de bovino."+"<br/>"+
-        "La cultura que se ha generado en torno a la crianza de ganado y la alimentación regida por la carne de "+
-        "res es parte del imaginario y de los relatos cotidianos. "+"<br/>"+
-        "Los establos y las reses conforman el paisaje y la carne asada, más allá de un platillo regional es una "+
-        "actividad obligada para cerrar tratos y convivir en familia."
+        if(document.documentElement.lang == "en")
+        {
+            textoTitulo.innerHTML ="Cattle Ranching Culture";
+            textoPrincipal.innerHTML =
+            "Raising cattle is one of the main economic activities in northeastern Mexico. Its vital"+
+            "commodity is not limited to the production of meat, as it also includes cow’s milk. The"+
+            "dominant culture that has been developed around raising cattle and consuming beef is"+
+            "part of the imagery and daily stories. The stables and the cattle make up the landscape, "+
+            "while "+"<i>"+"carne asada"+"</i>"+" (a Mexican barbeque synonymous with grilled beef) is far more than a"+
+            "regional dish, and is an obligatory activity to close business deals and spend time together"+
+            "with the family. "
+
+        }else
+        {
+
+            textoTitulo.innerHTML ="La cultura ganadera ";
+            textoPrincipal.innerHTML =
+            "La ganadería es una de las principales actividades económicas del noreste de México, "+
+            "su producto vital no se reduce a la producción de carne, comprende también la de leche de bovino."+"<br/>"+
+            "La cultura que se ha generado en torno a la crianza de ganado y la alimentación regida por la carne de "+
+            "res es parte del imaginario y de los relatos cotidianos. "+"<br/>"+
+            "Los establos y las reses conforman el paisaje y la carne asada, más allá de un platillo regional es una "+
+            "actividad obligada para cerrar tratos y convivir en familia."
+        }
 
         abrirPanelBanner();
         enImagenDesplegada = 0;

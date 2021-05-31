@@ -17,7 +17,22 @@ body
     left: 0;
     outline: none;
 }
+.panelIdiomas {
+    background-color:rgba(255, 0, 0, 0);
+    font-family: 'riccione-serialbold', Arial, sans-serif;
+    font-weight:normal;
+    font-style:normal;
+    font-size: 15px;
 
+    position: absolute;
+    z-index: 999;
+    right: 0;
+    padding: 10px;
+}
+.panelIdiomas a{
+    color:black;
+   text-decoration:none;
+}
 
 .logoInicio
 {

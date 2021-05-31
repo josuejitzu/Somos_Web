@@ -336,7 +336,7 @@ botonEntrevistaCompleta.addEventListener('click',()=>{
     if(enEntrevistasCompletas)
     {
       enEntrevistasCompletas = false;
-      botonEntrevistaCompletaTitulo.innerHTML = "Entrevista completa";
+      botonEntrevistaCompletaTitulo.innerHTML = document.documentElement.lang == "en" ? "Complete interview ": "Entrevista completa";
       for (let i = 0; i < entrevistaCompleta1.length; i++) {
         var element = entrevistaCompleta1[i];
         element.style.visibility="hidden";
@@ -346,7 +346,7 @@ botonEntrevistaCompleta.addEventListener('click',()=>{
     {
 
       enEntrevistasCompletas = true;
-      botonEntrevistaCompletaTitulo.innerHTML = "Entrevista corta";
+      botonEntrevistaCompletaTitulo.innerHTML = document.documentElement.lang == "en" ? "Short interview ": "Entrevista corta";
     }
 })
 
