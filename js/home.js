@@ -357,7 +357,7 @@ function cambiarALobby(){
             var id = setInterval(frame, 1001);
             function frame(){
     
-                window.location.href = 'lobby.html';
+                window.location.href = document.documentElement.lang == "en" ? "lobby_en.html" : 'lobby.html';
             }
 
 }

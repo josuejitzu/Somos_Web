@@ -367,7 +367,7 @@ botonCerrar.addEventListener('click',()=>
 {
     console.log("cerrar");
     cambiarA("home");
-    window.location.href = "home.html";
+    window.location.href = document.documentElement.lang == "en" ? "home_en.html" : "home.html";
 
 
 })
