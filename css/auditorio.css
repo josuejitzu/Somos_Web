@@ -32,7 +32,7 @@
 
 .panelVideosCentro
     {
-        width:80%; 
+        width:70%; 
         height:80%;
         background-color:rgba(53, 53, 53, 0);
         overflow-y: scroll;
