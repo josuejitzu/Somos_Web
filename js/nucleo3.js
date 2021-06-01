@@ -570,15 +570,6 @@ panoramaN3_B.addEventListener('click',function(event)
 
 
 
-boton_fotografias_1.addEventListener('click',()=>{
-  panelFotos.style.visibility = "visible";  
-})
-botonSiguienteImagen.addEventListener('click',()=>{
-    siguienteImagen();
-})
-botonAneteriorImagen.addEventListener('click',()=>{
-    anteriorImagen();
-})
 
 const textoPrincipal = document.querySelector(".textoPrincipal");
 const textoTitulo = document.querySelector(".tituloTexto");
@@ -947,6 +938,21 @@ boton_video_2.addEventListener('click',()=>{cambiarVideo(temaSeleccionado,2)} );
 boton_video_3.addEventListener('click',()=>{cambiarVideo(temaSeleccionado,3)} );
 boton_video_4.addEventListener('click',()=>{cambiarVideo(temaSeleccionado,4)} );
 boton_video_5.addEventListener('click',()=>{cambiarVideo(temaSeleccionado,5)} );
+
+
+boton_fotografias_1.addEventListener('click',()=>{
+    panelFotos.style.visibility = "visible";  
+    enImagenDesplegada = 0;
+    cambiarImagen();
+  })
+  botonSiguienteImagen.addEventListener('click',()=>{
+      siguienteImagen();
+  })
+  botonAneteriorImagen.addEventListener('click',()=>{
+      anteriorImagen();
+  })
+  
+
 
 function cambiarVideo(tema,num){
     console.log("cambiando video");
