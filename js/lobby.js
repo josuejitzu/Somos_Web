@@ -3,7 +3,10 @@
 
 // import { GLTFLoader } from './three/examples/jsm/loaders/GLTFLoader.js'
 
-const panoramaLobbyA = new PANOLENS.ImagePanorama( 'src/img/360_amarillo/posicion01_6.jpg' );
+const panoramaA_src = document.documentElement.lang == 'en' ?  'src/img/360_En/posicion01_EN.jpg' : 'src/img/360_amarillo/posicion01_6.jpg'
+const panoramaB_src = document.documentElement.lang == 'en' ?  'src/img/360_En/posicion02_EN.jpg' : 'src/img/360_amarillo/posicion02_7.jpg' 
+
+const panoramaLobbyA = new PANOLENS.ImagePanorama( panoramaA_src);
 panoramaLobbyA.addEventListener( 'enter-fade-start', function(){
     viewer.tweenControlCenter(  new THREE.Vector3(4083.8273, -450, -2635.9018), 0 );
 
@@ -27,7 +30,7 @@ panoramaLobbyA.addEventListener('progress', function(e){
 
  });
 
-const panoramaLobbyB = new PANOLENS.ImagePanorama( 'src/img/360_amarillo/posicion02_7.jpg' );
+const panoramaLobbyB = new PANOLENS.ImagePanorama(panoramaB_src );
 panoramaLobbyB.addEventListener( 'enter-fade-start', function(){
     viewer.tweenControlCenter(  new THREE.Vector3(4000.00, -465.23, 100), 0 );
   } );
