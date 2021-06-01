@@ -976,7 +976,7 @@ cuadroPlano_13.addEventListener("hoverleave",()=>{
 
 
 cuadroPlano_14.addEventListener("hoverenter",()=>{
-    console.log("sobre mi");
+    console.log("sobre mi 14");
     // escalaNormal = cuadroPlano_17.scale;
     cuadroPlano_14.scale.set(cuadroPlano_14.scale.x * 1.05,cuadroPlano_14.scale.y *1.05,1);
 })
@@ -987,12 +987,14 @@ cuadroPlano_14.addEventListener("hoverleave",()=>{
 
 
 cuadroPlano_15.addEventListener("hoverenter",()=>{
-    console.log("sobre mi");
+    console.log("sobre mi 15");
     // escalaNormal = cuadroPlano_17.scale;
     cuadroPlano_15.scale.set(cuadroPlano_15.scale.x * 1.05,cuadroPlano_15.scale.y *1.05,1);
 })
 cuadroPlano_15.addEventListener("hoverleave",()=>{
-    cuadroPlano_15.scale.set(12.45, 17.63, 1);
+    // cuadroPlano_15.scale.set(12.45, 17.63, 1);
+    cuadroPlano_15.scale.set(22, 28, 1);
+    
     // cuadroPlano_17.scale.set(escalaNormal);
 })
 
