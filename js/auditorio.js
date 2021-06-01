@@ -58,7 +58,9 @@ infospotVideo.addEventListener('click',()=>{
 })
 panoramaLobby.add(infospotVideo);
 
-var infospotDinamicoA = new PANOLENS.Infospot(450,"src/img/iconos/iraNetflix_negro.png?v=123456781");
+
+var imgsrcNetflix = document.documentElement.lang == "en" ?  "src/img/iconos/gotoNetflix.png?v=123456781" : "src/img/iconos/iraNetflix_negro.png?v=123456781" ;
+var infospotDinamicoA = new PANOLENS.Infospot(450,imgsrcNetflix);
 infospotDinamicoA.position.set( 5000.00, -1200,  -1400);//y:-3220
 infospotDinamicoA.addEventListener('click',()=>{
     console.log("infospot dinamico A")
@@ -66,8 +68,10 @@ infospotDinamicoA.addEventListener('click',()=>{
  
 panoramaLobby.add(infospotDinamicoA)
 
-var infospotDinamicoB = new PANOLENS.Infospot(450,"src/img/iconos/irA_SitioMuseo_negro.png?v=123456782");
-infospotDinamicoB.position.set( 5000.00, -1200,  1310);
+var imgsrcMuseo = document.documentElement.lang == "en" ?  "src/img/iconos/gotoMuseumSite.png?v=123456781" : "src/img/iconos/irA_SitioMuseo_negro.png?v=123456782" ;
+
+var infospotDinamicoB = new PANOLENS.Infospot(450,imgsrcMuseo);
+infospotDinamicoB.position.set( 5000.00, -1200,  1290);
 infospotDinamicoB.addEventListener('click',()=>{
     console.log("infospot dinamico B")
 })
