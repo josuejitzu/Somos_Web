@@ -602,14 +602,14 @@ function buscarObjeto(objeto)
         case cuadroPlano_1: 
             objeto.material.map = texturaBN_1
             imagenGaleria.src = rutaImgen+galeriaRutaImagenes[0][0]
-            infoFoto.innerHTML = "En la locación de la carcel, fajina de bienvenida a Paquito"
+            infoFoto.innerHTML = document.documentElement.lang == 'en' ? "On the prison set, welcoming Paquito. ": "En la locación de la carcel, fajina de bienvenida a Paquito"
             autorFoto.innerHTML = maynne;
             console.log(imagenGaleria.src);
             break;
         case cuadroPlano_2: 
             objeto.material.map = texturaBN_2
             imagenGaleria.src = rutaImgen+galeriaRutaImagenes[1][0]
-            infoFoto.innerHTML = "Peinado: Equipo de maquillaje y peinado acomodando la peluca de Natalia Solián (Cindy)"
+            infoFoto.innerHTML = document.documentElement.lang == 'en' ? "Hairstyle: Hair and make-up team fixes Natalia Solián’s (Cindy) wig":"Peinado: Equipo de maquillaje y peinado acomodando la peluca de Natalia Solián (Cindy)"
             console.log(imagenGaleria.src);
             autorFoto.innerHTML = maynne;
 
@@ -617,7 +617,7 @@ function buscarObjeto(objeto)
         case cuadroPlano_3: 
             objeto.material.map = texturaBN_3
             imagenGaleria.src = rutaImgen+galeriaRutaImagenes[2][0]
-            infoFoto.innerHTML = "Libros: Algunos de los libros que se usaron para hacer investigación y escribir el guion."
+            infoFoto.innerHTML =document.documentElement.lang == 'en' ? "": "Libros: Algunos de los libros que se usaron para hacer investigación y escribir el guion."
             autorFoto.innerHTML = maynne;
             
             break;
@@ -626,33 +626,33 @@ function buscarObjeto(objeto)
             imagenGaleria.src = rutaImgen+galeriaRutaImagenes[3][0]
             autorFoto.innerHTML = maynne;
         
-            infoFoto.innerHTML = "Paisaje: Grabación de segunda unidad"
+            infoFoto.innerHTML =document.documentElement.lang == 'en' ? "Landscape: Filming the second unit.": "Paisaje: Grabación de segunda unidad"
         break;
         case cuadroPlano_5: 
             objeto.material.map = texturaBN_5
             imagenGaleria.src = rutaImgen+galeriaRutaImagenes[4][0]
-            infoFoto.innerHTML = "Carcel: Último día de filmación de la serie. Set de la Cárcel."
+            infoFoto.innerHTML =document.documentElement.lang == 'en' ? "Prison: Last day of filming of the series. Prison set.": "Carcel: Último día de filmación de la serie. Set de la Cárcel."
             autorFoto.innerHTML = maynne;
 
         break;
         case cuadroPlano_6: 
             objeto.material.map = texturaBN_6
             imagenGaleria.src = rutaImgen+galeriaRutaImagenes[5][0]
-            infoFoto.innerHTML = "Sillones 2: Filmación en el set Casa de Wilbur"
+            infoFoto.innerHTML = document.documentElement.lang == 'en' ? "Sofas 2: Filming on the set of Wilbur’s house.":"Sillones 2: Filmación en el set Casa de Wilbur"
             autorFoto.innerHTML = maynne;
 
         break;
         case cuadroPlano_7: 
             objeto.material.map = texturaBN_7
             imagenGaleria.src = rutaImgen+galeriaRutaImagenes[6][0]
-            infoFoto.innerHTML = "Cabras: Foto del corral en el set Casa de Silverio."
+            infoFoto.innerHTML = document.documentElement.lang == 'en' ? "" :"Cabras: Foto del corral en el set Casa de Silverio."
             autorFoto.innerHTML = maynne;
 
         break;
         case cuadroPlano_8: 
             objeto.material.map = texturaBN_8
             imagenGaleria.src = rutaImgen+galeriaRutaImagenes[7][0]
-            infoFoto.innerHTML = "Fiesta 2: Montando el set para la fiesta de XV años de Vanesa."
+            infoFoto.innerHTML = document.documentElement.lang == 'en' ? "" :"Fiesta 2: Montando el set para la fiesta de XV años de Vanesa."
             autorFoto.innerHTML = maynne;
 
 
@@ -660,7 +660,7 @@ function buscarObjeto(objeto)
         case cuadroPlano_9: 
             objeto.material.map = texturaBN_9
             imagenGaleria.src = rutaImgen+galeriaRutaImagenes[8][0]
-            infoFoto.innerHTML = "Tejones: Grabación del juego de los Tejones"
+            infoFoto.innerHTML = document.documentElement.lang == 'en' ? "Tejones: Filming the Tejones match.":"Tejones: Grabación del juego de los Tejones"
             autorFoto.innerHTML = maynne;
 
 
@@ -668,14 +668,14 @@ function buscarObjeto(objeto)
         case cuadroPlano_10: 
             objeto.material.map = texturaBN_10
             imagenGaleria.src = rutaImgen+galeriaRutaImagenes[9][0]
-            infoFoto.innerHTML = "Hector: Sesión de fotos de Armando Silva (Héctor) para intro de la serie."
+            infoFoto.innerHTML = document.documentElement.lang == 'en' ? "Hector: Armando Silva’s (Hector) photo session for the series’ intro.":"Hector: Sesión de fotos de Armando Silva (Héctor) para intro de la serie."
             autorFoto.innerHTML = maynne;
 
         break;
         case cuadroPlano_11: 
             objeto.material.map = texturaBN_11
             imagenGaleria.src = rutaImgen+galeriaRutaImagenes[10][0]
-            infoFoto.innerHTML = "Noche: Foto del coche de Benjamín durante un llamado nocturno."
+            infoFoto.innerHTML = document.documentElement.lang == 'en' ? "Night-time: Photograph of Benjamín’s car during a nocturnal scene. ":"Noche: Foto del coche de Benjamín durante un llamado nocturno."
             autorFoto.innerHTML = maynne;
 
 
@@ -683,33 +683,33 @@ function buscarObjeto(objeto)
         case cuadroPlano_12: 
             objeto.material.map = texturaBN_12
             imagenGaleria.src = rutaImgen+galeriaRutaImagenes[11][0]
-            infoFoto.innerHTML = "Mustang: Jero Medina (Benjamín) preparándose para grabar una escena."
+            infoFoto.innerHTML = document.documentElement.lang == 'en' ?"Mustang: Joero Medina (Bejamín) preparing to shoot a scene. ":"Mustang: Jero Medina (Benjamín) preparándose para grabar una escena."
             autorFoto.innerHTML = maynne;
 
         break;
         case cuadroPlano_13: 
             objeto.material.map = texturaBN_13
             imagenGaleria.src = rutaImgen+galeriaRutaImagenes[12][0]
-            infoFoto.innerHTML = "Fuego: Calles de Gómez Palacios durante la filmación de escenas del último capítulo."
+            infoFoto.innerHTML =document.documentElement.lang == 'en' ? "Fire: The streets of Gómez Palacios while filming the scenes for the final episode.": "Fuego: Calles de Gómez Palacios durante la filmación de escenas del último capítulo."
             autorFoto.innerHTML = maynne;
 
             break;
         case cuadroPlano_14: 
             objeto.material.map = texturaBN_14
             imagenGaleria.src = rutaImgen+galeriaRutaImagenes[13][0]
-            infoFoto.innerHTML = "Allende letrero: Reproducción del letrero que se encuentra a las afueras de Allende."
+            infoFoto.innerHTML =document.documentElement.lang == 'en' ? "Allende sign: A replica of the sign found outside Allende. " : "Allende letrero: Reproducción del letrero que se encuentra a las afueras de Allende."
             autorFoto.innerHTML = maynne;
             
             break;
         case cuadroPlano_15: 
             objeto.material.map = texturaBN_15
             imagenGaleria.src = rutaImgen+galeriaRutaImagenes[14][0]
-            infoFoto.innerHTML = "NAYELI foto de secuencia accesorios en el burdel"
+            infoFoto.innerHTML =document.documentElement.lang == 'en' ? "NAYELI: Sequence photo, brothel accesories." :"NAYELI foto de secuencia accesorios en el burdel"
         break;
         case cuadroPlano_16: 
             objeto.material.map = texturaBN_16
             imagenGaleria.src = rutaImgen+galeriaRutaImagenes[15][0]
-            infoFoto.innerHTML = "Fiesta 3: Montando el set para la fiesta de XV años de Vanesa."
+            infoFoto.innerHTML = document.documentElement.lang == 'en' ?"Party 3: Assembling the set for Vanessa’s fifteenth birthday party." :"Fiesta 3: Montando el set para la fiesta de XV años de Vanesa."
             autorFoto.innerHTML = maynne;
 
 
@@ -717,58 +717,58 @@ function buscarObjeto(objeto)
         case cuadroPlano_17: 
             objeto.material.map = texturaBN_17
             imagenGaleria.src = rutaImgen+galeriaRutaImagenes[16][0]
-            infoFoto.innerHTML = "En esta imagen está el crew de Somos. llegando al set: \"prisión\" en la mañana"
+            infoFoto.innerHTML =document.documentElement.lang == 'en' ? "This photo shows the crew of Somos. arriving on set: “prison” in the morning." : "En esta imagen está el crew de Somos. llegando al set: \"prisión\" en la mañana"
         break;
         case cuadroPlano_18: 
             objeto.material.map = texturaBN_18
             imagenGaleria.src = rutaImgen+galeriaRutaImagenes[17][0]
-            infoFoto.innerHTML = "Regreso saludable"
+            infoFoto.innerHTML = document.documentElement.lang == 'en' ? "A healthy return. " :"Regreso saludable"
             autorFoto.innerHTML = ignacio;
         break;
         case cuadroPlano_19: 
             objeto.material.map = texturaBN_19
             imagenGaleria.src = rutaImgen+galeriaRutaImagenes[18][0]
-            infoFoto.innerHTML = "Noches de silueta en el rancho"
+            infoFoto.innerHTML =document.documentElement.lang == 'en' ? "Silhouette nights on the ranch.": "Noches de silueta en el rancho"
             autorFoto.innerHTML = gilda;
         break;
         case cuadroPlano_20: 
             objeto.material.map = texturaBN_20
             imagenGaleria.src = rutaImgen+galeriaRutaImagenes[19][0]
-            infoFoto.innerHTML = "Bomberos: Foto en el set de SOMOS. durante una escena con los bomberos."
+            infoFoto.innerHTML = document.documentElement.lang == 'en' ? "Firefighters: Photo on the set of SOMOS. during a scene with the firefighters" :"Bomberos: Foto en el set de SOMOS. durante una escena con los bomberos."
             autorFoto.innerHTML = maynne;
 
         break;
         case cuadroPlano_21: 
             objeto.material.map = texturaBN_21
             imagenGaleria.src = rutaImgen+galeriaRutaImagenes[20][0]
-            infoFoto.innerHTML = "Esperando la noche"
+            infoFoto.innerHTML =document.documentElement.lang == 'en' ? "Waiting for Nightfall.": "Esperando la noche"
             autorFoto.innerHTML = ignacio;
 
         break;
         case cuadroPlano_22: 
             objeto.material.map = texturaBN_22
             imagenGaleria.src = rutaImgen+galeriaRutaImagenes[21][0]
-            infoFoto.innerHTML = "Caos en Canatlan";
+            infoFoto.innerHTML = document.documentElement.lang == 'en' ? "Chaos in Canatlan" :"Caos en Canatlan";
             autorFoto.innerHTML = ignacio;
 
         break;
         case cuadroPlano_23: 
             objeto.material.map = texturaBN_23
             imagenGaleria.src = rutaImgen+galeriaRutaImagenes[22][0]
-            infoFoto.innerHTML = "Final de la segunda unidad o splinter"
+            infoFoto.innerHTML =document.documentElement.lang == 'en' ? "End of the second unit or splinter." : "Final de la segunda unidad o splinter"
             autorFoto.innerHTML = ignacio;
 
         break;
         case cuadroPlano_24: 
             objeto.material.map = texturaBN_24
             imagenGaleria.src = rutaImgen+galeriaRutaImagenes[23][0]
-            infoFoto.innerHTML = "Descanso después de varios ensayos fiesta XV años de Vanesa"
+            infoFoto.innerHTML =document.documentElement.lang == 'en' ? "Taking a break after several rehearsals of Vanesa’s fifteenth birthday party.": "Descanso después de varios ensayos fiesta XV años de Vanesa"
 
         break;
         case cuadroPlano_25: 
             objeto.material.map = texturaBN_25
             imagenGaleria.src = rutaImgen+galeriaRutaImagenes[24][0]
-            infoFoto.innerHTML = "8 marzo marcha todas ahí presentes, por Daniela"
+            infoFoto.innerHTML = document.documentElement.lang == 'en' ? "March 8th protest, all present, for Daniela." :"8 marzo marcha todas ahí presentes, por Daniela"
         break;
         default:
             console.log("cuadro no encontrado");
