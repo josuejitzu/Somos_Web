@@ -111,6 +111,8 @@
 
     display: flex;
     flex-direction:column;
+    font-size: 30px;
+
 /* justify-content:flex-start; */
 
     /* align-items:flex-start; */
