@@ -277,7 +277,7 @@ banner_arquitectura_imagen.src = rutaBanners + "banner_arquitectura2.jpg";
 banner_musica_imagen.src = rutaBanners + "banner_musica2.jpg";
 banner_cultura_imagen.src = rutaBanners + "banner_cultura2.jpg";
 banner_ganadera_imagen.src = rutaBanners + "banner_ganadera2.jpg";
-banner_moda_imagen.src = rutaBanners + "banner_moda.jpg";
+banner_moda_imagen.src = rutaBanners + "banner_bota.jpg";
 banner_quince_imagen.src = rutaBanners + "banner_quinces.jpg";
 banner_bebidas_imagen.src = rutaBanners + "banner_bebida.jpg";
 
