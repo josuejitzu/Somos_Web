@@ -13,6 +13,38 @@ const loadingBarElement = document.querySelector('.loading-bar');
 const botonFlecha = document.querySelector('.botonFlecha');
 const botonIniciar = document.querySelector('.botonInicio');
 
+const displayCountdown = document.querySelector('.displayCountdown');
+//Cronometro
+var fechaFutura = new Date("2021-06-22 19:00");
+var fechaActual = Date.now();
+// var dia = fecha.getDay();
+// var horas = fecha.getHours();
+
+// get total seconds between the times
+var delta = Math.abs(fechaFutura - fechaActual ) / 1000;
+
+// calculate (and subtract) whole days
+var days = Math.floor(delta / 86400);
+delta -= days * 86400;
+
+// calculate (and subtract) whole hours
+var hours = Math.floor(delta / 3600) % 24;
+delta -= hours * 3600;
+
+// calculate (and subtract) whole minutes
+var minutes = Math.floor(delta / 60) % 60;
+delta -= minutes * 60;
+
+// what's left is seconds
+var seconds = delta % 60; 
+cuentaAtras();
+
+var countDownTime = true;
+
+console.log(days+":"+hours+":"+minutes+":"+seconds);
+//
+
+
 
 gsap.fromTo(botonFlecha, {autoAlpha: 0}, {autoAlpha: 1, duration: 2,repeat:-1,repeatDelay:0.5})
 gsap.to(botonFlecha, {delay:2, duration: 0.5,repeat:-1, repeatDelay:2,autoAlpha:0});
@@ -120,7 +152,7 @@ const loadingManager = new THREE.LoadingManager(
     (itemUrl, itemsLoaded, itemsTotal)=>{
         
         const progressRatio = itemsLoaded / itemsTotal
-        console.log(progressRatio)
+        // console.log(progressRatio)
         // loadingBarElement.style.transform = `scaleX(${progressRatio})`
         // bar1.set(progressRatio * 100)
     
@@ -230,7 +262,7 @@ const cursor = {
 // })
 //UPDATE TICK
 const clock = new THREE.Clock()
-
+var lastTime = clock.getElapsedTime();
 const tick = () =>
 {
     // console.log('tick')
@@ -243,12 +275,16 @@ const tick = () =>
     // {
     //     camera.position.x = cursor.x * 5;
     // }
-    
-  
+    if(countDownTime && Math.abs(elapsedTime - lastTime) >= 1.0 )
+    {
+        cuentaAtras();
+        lastTime = elapsedTime;
+    }
      // Render
     renderer.render(scene, camera)
+    // console.log(Math.abs(elapsedTime - lastTime) );
     // effectComposer.render();
-
+    // console.log(elapsedTime / clock.oldTime)
     window.requestAnimationFrame(tick)
 }
 
@@ -271,7 +307,7 @@ window.addEventListener('resize', () =>
             
     //         camera.fov = 90
     //     }
-    camera.updateProjectionMatrix()
+        camera.updateProjectionMatrix()
  
      // Update renderer
     renderer.setSize(sizes.width, sizes.height)
@@ -361,3 +397,67 @@ function cambiarALobby(){
             }
 
 }
+
+var fechaHoy = Date.now();
+
+function cuentaAtras(){
+    fechaActual = new Date();
+    //  delta = fechaFutura - fechaActual  / 1000;
+     delta = Math.abs(fechaFutura - fechaActual ) / 1000;
+
+// calculate (and subtract) whole days
+ days = Math.floor(delta / 86400);
+delta -= days * 86400;
+
+// calculate (and subtract) whole hours
+ hours = Math.floor(delta / 3600) % 24;
+delta -= hours * 3600;
+
+// calculate (and subtract) whole minutes
+ minutes = Math.floor(delta / 60) % 60;
+delta -= minutes * 60;
+
+// what's left is seconds
+ seconds = Math.floor( delta % 60); 
+
+
+if(hours < 10){hours = "0"+hours;}
+if(minutes < 10){minutes = "0"+minutes;}
+if(seconds < 10){seconds = "0"+seconds;}
+
+console.log(days+":"+hours+":"+minutes+":"+seconds);
+
+if(document.documentElement.lang == "en")
+{
+    displayCountdown.innerHTML = days+" days | "+hours+" : "+minutes+" : "+seconds.toString();
+
+}else{
+
+    displayCountdown.innerHTML = days+" días | "+hours+" : "+minutes+" : "+seconds.toString();
+}
+
+    // if(days <= 0 && hours <= 0 && minutes <= 0 && seconds <= 0)
+    // {
+    //     var panelCountdown = document.querySelector('.panelCountdown').style.visibility = 'hidden';
+    // } 
+    if( fechaActual.getTime() >= fechaFutura.getTime())
+    {
+        var panelCountdown = document.querySelector('.panelCountdown');
+        console.log("fecha superada");
+        gsap.to(panelCountdown,{duration:0.5,opacity:0}).eventCallback('onComplete',()=>{
+            panelCountdown.style.visibility ="hidden";
+        });
+        countDownTime = false;
+    }
+}
+
+setTimeout(function() { 
+    
+    var panelCountdown = document.querySelector('.panelCountdown');
+    console.log("fecha superada");
+    gsap.to(panelCountdown,{duration:0.5,opacity:0}).eventCallback('onComplete',()=>{
+        panelCountdown.style.visibility ="hidden";
+    });
+    countDownTime = false;
+
+}, 10000);

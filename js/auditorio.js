@@ -1,6 +1,51 @@
 const panoramaLobby = new PANOLENS.ImagePanorama( 'src/img/360/auditorio_04.jpg' );
 const botonCerrarVideo = document.querySelector(".botonCerrarVid");
 const panelVideo = document.querySelector(".panelVideos");
+
+const panelCountdown = document.querySelector('.panelCountdown');
+const panelVideoPlyr = document.querySelector('.panelVideosCentro');
+
+const videoPlayer =  new Plyr(document.querySelector('.player'));
+const imgVidConAudio_blanco ="src/img/simbolos/AUDIO.png";
+const imgVidSinAudio_blanco ="src/img/simbolos/SIN_AUDIO.png";
+const fbPlayer = document.querySelector(".fb-video ");
+
+let viewer;
+
+const panoramaContainer = document.getElementById( 'panorama-container' );
+// const galleryContainer = document.getElementById( 'gallery-container' );
+const mainContainer = document.getElementById( 'main-container' );
+const progressBar = document.getElementById( 'progress-bar' );
+// const player = new Plyr(document.querySelector('.player'));
+
+const botonMuteVideo = document.querySelector( '.botonMuteVideo')
+// const closeButton = panoramaContainer.querySelector( '.close' );
+const displayCountdown = document.querySelector('.displayCountdown');
+
+//Cronometro
+var fechaFutura = new Date("2021-06-22 19:30");
+var fechaActual = Date.now();
+var countDownTime = true;
+
+// get total seconds between the times
+var delta = Math.abs(fechaFutura - fechaActual ) / 1000;
+
+// calculate (and subtract) whole days
+var days = Math.floor(delta / 86400);
+delta -= days * 86400;
+
+// calculate (and subtract) whole hours
+var hours = Math.floor(delta / 3600) % 24;
+delta -= hours * 3600;
+
+// calculate (and subtract) whole minutes
+var minutes = Math.floor(delta / 60) % 60;
+delta -= minutes * 60;
+
+// what's left is seconds
+var seconds = delta % 60; 
+
+//Panorama sets
 panoramaLobby.addEventListener( 'enter-fade-start', function(){
     viewer.tweenControlCenter(  new THREE.Vector3(5000.00, -1776,  ), 0 );
   
@@ -27,21 +72,12 @@ panoramaLobby.addEventListener( 'infospot-animation-complete', function(){
     // infospotDinamicoB.hide(0);
 
 })
-const videoPlayer =  new Plyr(document.querySelector('.player'));
-const imgVidConAudio_blanco ="src/img/simbolos/AUDIO.png";
-const imgVidSinAudio_blanco ="src/img/simbolos/SIN_AUDIO.png";
-const fbPlayer = document.querySelector(".fb-video ");
+//////////
 
-let viewer;
 
-const panoramaContainer = document.getElementById( 'panorama-container' );
-// const galleryContainer = document.getElementById( 'gallery-container' );
-const mainContainer = document.getElementById( 'main-container' );
-const progressBar = document.getElementById( 'progress-bar' );
-// const player = new Plyr(document.querySelector('.player'));
+cuentaAtras();
 
-const botonMuteVideo = document.querySelector( '.botonMuteVideo')
-// const closeButton = panoramaContainer.querySelector( '.close' );
+//INFOSPOTS
 
 var infospotVideo;
 infospotVideo = new PANOLENS.Infospot(350,"src/img/simbolos/PLAY.png?v=123456781");
@@ -51,7 +87,12 @@ infospotVideo.addEventListener('click',()=>{
     console.log("spot video")
     panelVideo.style.visibility ="visible";
     gsap.to(panelVideo,{duration:0.5,opacity:1.0});
-    fbPlayer.style.pointerEvents = "all";
+    if(!countDownTime)
+    {
+        panelVideoPlyr.style.visibility ="visible"; 
+
+    }
+    // fbPlayer.style.pointerEvents = "all";
 
     callarMusica();
     // activarBotonesDinamicos();
@@ -77,7 +118,7 @@ infospotDinamicoB.addEventListener('click',()=>{
 })
 
 panoramaLobby.add(infospotDinamicoB) 
-
+///////////////////////////////////////////////////
 
 
 
@@ -141,27 +182,12 @@ function createWidget(){
 }
 
 function init () {
-    // Build up gallery 
-    // buildGallery();
-    // Setup panolens
+   
     setupPanolens();
 
     createWidget();
-
-    // Dispose panorama when close
-    // closeButton.addEventListener( 'click', function () {
-    //     disposePanorama();
-    //     progressBar.style.width = 0;
-    //     progressBar.style.opacity = 1;
-    //     panoramaContainer.classList.remove( 'open' );
-    // }, false );
-   
-
 }
-
-
 init();
-
 
 
 function activarBotonesDinamicos()
@@ -172,8 +198,8 @@ function activarBotonesDinamicos()
     infospotDinamicoA.show();     
     infospotDinamicoB.show();     
 
-
 }
+
 function desactivarBotonesDinamicos()
 {    infospotDinamicoA.hide();     
         infospotDinamicoB.hide();     
@@ -186,6 +212,8 @@ botonCerrarVideo.addEventListener("click",()=>{
     gsap.to(panelVideo,{duration:0.5,opacity:0.0}).eventCallback('onComplete',()=>{
         
         panelVideo.style.visibility ="hidden";
+                panelVideoPlyr.style.visibility ="hidden"; 
+
     });
 
 })
@@ -228,4 +256,79 @@ document.addEventListener('DOMContentLoaded', () => {
 	window.player = videoPlayer;
 });
 
+const tick =()=> {
 
+    if(countDownTime)
+    {
+        cuentaAtras();
+    }
+    window.requestAnimationFrame(tick);
+}
+tick();
+
+function cuentaAtras(){
+    fechaActual = new Date();
+    //  delta = fechaFutura - fechaActual  / 1000;
+     delta = Math.abs(fechaFutura - fechaActual ) / 1000;
+
+    // calculate (and subtract) whole days
+    days = Math.floor(delta / 86400);
+    delta -= days * 86400;
+
+    // calculate (and subtract) whole hours
+    hours = Math.floor(delta / 3600) % 24;
+    delta -= hours * 3600;
+
+    // calculate (and subtract) whole minutes
+    minutes = Math.floor(delta / 60) % 60;
+    delta -= minutes * 60;
+
+    // what's left is seconds
+    seconds = Math.floor( delta % 60); 
+
+    console.log(days+":"+hours+":"+minutes+":"+seconds);
+
+    if(document.documentElement.lang == "en")
+    {
+        displayCountdown.innerHTML = days+" days | "+hours+" : "+minutes+" : "+seconds.toString();
+
+    }else{
+
+        displayCountdown.innerHTML = days+" días | "+hours+" : "+minutes+" : "+seconds.toString();
+    }
+
+    
+    if( fechaActual.getTime() >= fechaFutura.getTime())
+    {
+        
+        countDownTime = false;
+
+        console.log("fecha superada");
+        gsap.to(panelCountdown,{duration:0.5,opacity:0}).eventCallback('onComplete',()=>{
+            panelCountdown.style.visibility ="hidden";
+            panelCountdown.style.width ="0%";
+            panelCountdown.style.height ="0%"
+
+            if(panelVideo.style.visibility == "visible")
+                panelVideoPlyr.style.visibility ="visible"; 
+             panelVideoPlyr.style.width = "70%";
+        });
+    }
+}
+
+setTimeout(function() { 
+    
+    
+    console.log("fecha superada");
+    gsap.to(panelCountdown,{duration:0.5,opacity:0}).eventCallback('onComplete',()=>{
+        panelCountdown.style.visibility ="hidden";
+        panelCountdown.style.width ="0%";
+        panelCountdown.style.height ="0%"
+
+        if(panelVideo.style.visibility == "visible")
+            panelVideoPlyr.style.visibility ="visible"; 
+         panelVideoPlyr.style.width = "70%";
+    });
+    countDownTime = false;
+
+}, 10000);
