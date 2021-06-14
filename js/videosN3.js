@@ -238,7 +238,7 @@ const video_bebidas_01 ={
     title: 'Example title',
     sources: [
       {
-        src: 'src/vids/nucleo3/moda/Somos_Season_1_A_Walk_with_the_Wolves_81024121_00074709_00080222_es_2_854.mp4',
+        src: 'src/vids/nucleo3/moda/Somos_Season_1_A_Walk_with_the_Wolves_81024121_00074709_00080222_854.mp4',
         type: 'video/mp4',
         size: 854,
       }
@@ -341,7 +341,7 @@ const video_bebidas_01 ={
     title: 'Example title',
     sources: [
       {
-        src: 'src/vids/nucleo3/musica/Somos_Season_1_Tell_the_Moon_to_Come_81024120_00233621_00241312_es_2.mp4',
+        src: 'src/vids/nucleo3/musica/Somos_Season_1_Tell_the_Moon_to_Come_81024120_00233621_00241312_es_2_854.mp4',
         type: 'video/mp4',
         size: 854,
       }
@@ -410,7 +410,7 @@ const video_bebidas_01 ={
     title: 'Example title',
     sources: [
       {
-        src: 'src/vids/nucleo3/quince/Somos_Season_1_The_Night_Belongs_to_Us_81024122_00442411_00450512_es_2.mp4',
+        src: 'src/vids/nucleo3/quince/Somos_Season_1_The_Night_Belongs_to_Us_81024122_00442411_00450512.mp4',
         type: 'video/mp4',
         size: 854,
       }
