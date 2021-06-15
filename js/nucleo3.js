@@ -1,6 +1,6 @@
 
 
-const panoramaN3_A_src = document.documentElement.lang == 'en' ?  'src/img/360_En/Nucleo03_posA_EN.jpg' : 'src/img/360/nucleo03_02.jpg';
+const panoramaN3_A_src = document.documentElement.lang == 'en' ?  'src/img/360_En/Nucleo03_posA_EN_2.jpg' : 'src/img/360_amarillo/nucleo03_A_04.jpg';
 const panoramaN3 = new PANOLENS.ImagePanorama( panoramaN3_A_src);
 panoramaN3.addEventListener( 'enter-fade-start', function(){
     viewer.tweenControlCenter(  new THREE.Vector3(5000.00, 0, 0), 0 );
