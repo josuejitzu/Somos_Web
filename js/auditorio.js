@@ -109,7 +109,7 @@ infospotDinamicoA.addEventListener('click',()=>{
  
 panoramaLobby.add(infospotDinamicoA)
 
-var imgsrcMuseo = document.documentElement.lang == "en" ?  "src/img/iconos/gotoMuseumSite.png?v=123456781" : "src/img/iconos/irA_SitioMuseo_negro.png?v=123456782" ;
+var imgsrcMuseo = document.documentElement.lang == "en" ?  "src/img/iconos/gotoMuseumSite.png?v=123456781" : "src/img/iconos/descubreMuseo.png?v=123456782" ;
 
 var infospotDinamicoB = new PANOLENS.Infospot(450,imgsrcMuseo);
 infospotDinamicoB.position.set( 5000.00, -1200,  1290);

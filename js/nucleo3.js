@@ -272,6 +272,7 @@ banner_ganadera_imagen.addEventListener('load',()=>{ textura_Ganadera.needsUpdat
 banner_moda_imagen.addEventListener('load',()=>{ texturaModa.needsUpdate = true})
 banner_quince_imagen.addEventListener('load',()=>{ texturaQuince.needsUpdate = true})
 banner_bebidas_imagen.addEventListener('load',()=>{textura_Bebidas.needsUpdate = true})
+banner_grafica_imagen.addEventListener('load',()=>{texturaGrafica.needsUpdate = true})
 
 banner_arquitectura_imagen.src = rutaBanners + "banner_arquitectura2.jpg";
 banner_musica_imagen.src = rutaBanners + "banner_musica2.jpg";
@@ -279,13 +280,14 @@ banner_cultura_imagen.src = rutaBanners + "banner_cultura2.jpg";
 banner_ganadera_imagen.src = rutaBanners + "banner_ganadera2.jpg";
 banner_moda_imagen.src = rutaBanners + "banner_bota.jpg";
 banner_quince_imagen.src = rutaBanners + "banner_quinces.jpg";
-banner_bebidas_imagen.src = rutaBanners + "banner_bebida.jpg";
+banner_bebidas_imagen.src = rutaBanners + "banner_corazon.jpg";
+banner_grafica_imagen.src = rutaBanners + "banner_bebida.jpg";
 
 const banner_quince_MAT =   new THREE.MeshBasicMaterial({map:texturaQuince,side:THREE.Front})
 const banner_Arquitectura_MAT =   new THREE.MeshBasicMaterial({color: 0xffffff,map:textura_Arquitectura,side:THREE.Front})
 const banner_Moda_MAT =   new THREE.MeshBasicMaterial({color: 0xffffff,map:texturaModa,side:THREE.Front})
 const banner_Bebidas_MAT =   new THREE.MeshBasicMaterial({map:textura_Bebidas,side:THREE.Front})
-const banner_Grafica_MAT =   new THREE.MeshBasicMaterial({color: 0x00ff00,side:THREE.Front})///verde
+const banner_Grafica_MAT =   new THREE.MeshBasicMaterial({map:texturaGrafica,side:THREE.Front})///verde
 const banner_Musica_MAT =    new THREE.MeshBasicMaterial({color: 0xffffff,map:textura_Musica,side:THREE.Front})
 const banner_Cultura_MAT =   new THREE.MeshBasicMaterial({color: 0xffffff,map:texturaCultura,side:THREE.Front})
 const banner_Ganadera_MAT =   new THREE.MeshBasicMaterial({color: 0xffffff,map:textura_Ganadera,side:THREE.Front})

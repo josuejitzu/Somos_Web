@@ -451,6 +451,8 @@ if(document.documentElement.lang == "en")
     }
 }
 
+
+///DEBUG
 setTimeout(function() { 
     
     var panelCountdown = document.querySelector('.panelCountdown');

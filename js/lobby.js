@@ -629,7 +629,7 @@ imageT3.addEventListener('load', () =>
 {
     textureT3.needsUpdate = true
 })
-imageT3.src =  document.documentElement.lang == 'en' ?   'src/img/Esferas_Texturas/TITULO_03_en.png' : 'src/img/Esferas_Texturas/TITULO_03.png'
+imageT3.src =  document.documentElement.lang == 'en' ?   'src/img/Esferas_Texturas/TITULO_03_en_2.png' : 'src/img/Esferas_Texturas/TITULO_03.png'
 
 const materialTextoN3 = new THREE.MeshBasicMaterial({
     color: 0xffffff,
