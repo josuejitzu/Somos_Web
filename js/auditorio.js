@@ -109,10 +109,10 @@ infospotDinamicoA.addEventListener('click',()=>{
  
 panoramaLobby.add(infospotDinamicoA)
 
-var imgsrcMuseo = document.documentElement.lang == "en" ?  "src/img/iconos/gotoMuseumSite.png?v=123456781" : "src/img/iconos/descubreMuseo.png?v=123456782" ;
+var imgsrcMuseo = document.documentElement.lang == "en" ?  "src/img/iconos/descubreMuseo_en.png?v=123456781" : "src/img/iconos/descubreMuseo.png?v=123456782" ;
 
 var infospotDinamicoB = new PANOLENS.Infospot(450,imgsrcMuseo);
-infospotDinamicoB.position.set( 5000.00, -1200,  1290);
+infospotDinamicoB.position.set( 5000.00, -1200,  1270);
 infospotDinamicoB.addEventListener('click',()=>{
     console.log("infospot dinamico B")
 })
@@ -146,7 +146,8 @@ function setupPanolens () {
              cameraFov:70,
              autoHideInfospot:false,
              renderer: new THREE.WebGLRenderer({antialias:true}),
-             initialLookAt:new THREE.Vector3(Math.PI/4,1,0.0)
+             initialLookAt:new THREE.Vector3(Math.PI/4,1,0.0),
+             
 
         } 
     );
