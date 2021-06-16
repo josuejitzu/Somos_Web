@@ -202,8 +202,28 @@
     flex-direction:row; 
     align-self: center;
     align-items:center;
-    background-color:rgba(22, 189, 92, 0)
+    background-color:rgba(22, 189, 92, 0);
+    font-family: 'riccione-serialregular', Arial, sans-serif;
+    font-weight:normal;
+    font-style:normal;
+    font-size: 18px;
+    line-height: 40px;
+    /* white-space: nowrap; */
+    word-spacing: 0px;
 }
+.panelBannerLogos h3
+{
+    font-family: 'riccione-serialregular', Arial, sans-serif;
+    font-weight:normal;
+    font-style:normal;
+    font-size: 18px;
+    line-height: 40px;
+    justify-content:center;
+    text-align:center;
+
+    /* white-space: nowr*/
+}
+
 .panelBannerLogos div
 {
   width:10%;
