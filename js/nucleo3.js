@@ -1,6 +1,6 @@
 
 
-const panoramaN3_A_src = document.documentElement.lang == 'en' ?  'src/img/360_En/Nucleo03_posA_EN_2.jpg' : 'src/img/360_amarillo/nucleo03_A_04.jpg';
+const panoramaN3_A_src = document.documentElement.lang == 'en' ?  'src/img/360_En/Nucleo03_posA_EN_3.jpg' : 'src/img/360_amarillo/nucleo03_A_05.jpg';
 const panoramaN3 = new PANOLENS.ImagePanorama( panoramaN3_A_src);
 panoramaN3.addEventListener( 'enter-fade-start', function(){
     viewer.tweenControlCenter(  new THREE.Vector3(5000.00, 0, 0), 0 );
@@ -61,8 +61,10 @@ const boton_fotografias_1 = document.querySelector(".botonFotografias");
 const imagenDesplegada = document.querySelector(".imagenDesplegada");
 const botonAneteriorImagen = document.querySelector(".flechaControl.atras");
 const botonSiguienteImagen = document.querySelector(".flechaControl.adelante");
+const botonAnteriorBanner = document.querySelector(".flechaControl.atrasBanner");
+const botonAdelanteBanner = document.querySelector(".flechaControl.adelanteBanner");
+const botonCerrarArtes = document.querySelector(".botonCerrarPanelArtes");
 let enImagenDesplegada = 0;
-
 console.log(botonSiguienteImagen);
 //cultura, arquitectura, moda, bebida, quince, musica,ganadera,popular
 let temaSeleccionado = "cultura";
@@ -280,8 +282,8 @@ banner_cultura_imagen.src = rutaBanners + "banner_cultura2.jpg";
 banner_ganadera_imagen.src = rutaBanners + "banner_ganadera2.jpg";
 banner_moda_imagen.src = rutaBanners + "banner_bota.jpg";
 banner_quince_imagen.src = rutaBanners + "banner_quinces.jpg";
-banner_bebidas_imagen.src = rutaBanners + "banner_corazon.jpg";
-banner_grafica_imagen.src = rutaBanners + "banner_bebida.jpg";
+banner_bebidas_imagen.src = rutaBanners + "banner_grafica.jpg";
+banner_grafica_imagen.src = rutaBanners + "banner_corazon.jpg";
 
 const banner_quince_MAT =   new THREE.MeshBasicMaterial({map:texturaQuince,side:THREE.Front})
 const banner_Arquitectura_MAT =   new THREE.MeshBasicMaterial({color: 0xffffff,map:textura_Arquitectura,side:THREE.Front})
@@ -374,9 +376,9 @@ hilo_Banner_Bebidas.scale.set(0.2,15,1);
 hilo_Banner_Bebidas.rotation.set(0,0,0);
 
 
-banner_Grafica.position.set(18,0,-22)
-banner_Grafica.scale.set(sizeBanner.x,sizeBanner.y,1)
-banner_Grafica.rotation.set(0,0.25,0);
+banner_Ganadero.position.set(18,0,-22)
+banner_Ganadero.scale.set(sizeBanner.x,sizeBanner.y,1)
+banner_Ganadero.rotation.set(0,0.25,0);
 hilo_Banner_Grafica.position.set(10,posY,-5.5);
 hilo_Banner_Grafica.scale.set(0.2,15,1);
 hilo_Banner_Grafica.rotation.set(0,0.25,0);
@@ -395,9 +397,9 @@ hilo_Banner_Cultura.position.set(20,posY,2.5);
 hilo_Banner_Cultura.scale.set(0.2,15,1);
 hilo_Banner_Cultura.rotation.set(0,-0.36,0);
 
-banner_Ganadero.position.set(4,0,12)
-banner_Ganadero.scale.set(sizeBanner.x,sizeBanner.y,1)
-banner_Ganadero.rotation.set(0,0.39,0);
+banner_Grafica.position.set(4,0,12)
+banner_Grafica.scale.set(sizeBanner.x,sizeBanner.y,1)
+banner_Grafica.rotation.set(0,0.39,0);
 
 gui.add(bannerGroup.position,"x").min(-500).max(500).step(0.01).name("positionGroupX")
 gui.add(bannerGroup.position,"y").min(-500).max(500).step(0.01).name("positionGroupY")
@@ -714,43 +716,72 @@ function bannerSeleccionado(banner)
 
         case banner_Bebidas: 
             console.log("banner_bebida")
-            temaSeleccionado = "bebidas";
+        //     temaSeleccionado = "bebidas";
 
-            boton_video_1.style.visibility ="visible";
-            boton_video_2.style.visibility ="visible";
-            boton_video_3.style.visibility ="visible";
-            boton_video_4.style.visibility ="visible";
+        //     boton_video_1.style.visibility ="visible";
+        //     boton_video_2.style.visibility ="visible";
+        //     boton_video_3.style.visibility ="visible";
+        //     boton_video_4.style.visibility ="visible";
 
-           if(document.documentElement.lang == "en")
-           {
-            textoTitulo.innerHTML ="Drinks";
-            textoPrincipal.innerHTML =
-            "Beer and sotol are two traditional drinks from northern Mexico, part of life and the social"+
-            "fabric of the area."+"<br/>"+
-            "At the end of the nineteenth century, a large brewery was founded in Nuevo Leon and"+
-            "kicked off the ongoing industrial production of beer in the region. As a result, the"+
-            "fermented drink is associated with the culture, and is customarily associated with both"+
-            "social and family gatherings. The extreme climate of the region has also favored the"+
-            "consumption of this beveargethat both refreshes and revitalizes."+"<br/>"+
-            "Sotol, in turn, is a liquor that is extracted by hand from the core of a cactus plant native"+
-            "to the desert area of northern Mexico. It is extremely popular with the working class,"+
-            "especially in rural areas."+"<br/>"+
-            "In Somos., the characters enjoy these concoctions at their social gatherings,work"+
-            "meetings and important events."
-           }
-           else
-           {
+        //    if(document.documentElement.lang == "en")
+        //    {
+        //     textoTitulo.innerHTML ="Drinks";
+        //     textoPrincipal.innerHTML =
+        //     "Beer and sotol are two traditional drinks from northern Mexico, part of life and the social"+
+        //     "fabric of the area."+"<br/>"+
+        //     "At the end of the nineteenth century, a large brewery was founded in Nuevo Leon and"+
+        //     "kicked off the ongoing industrial production of beer in the region. As a result, the"+
+        //     "fermented drink is associated with the culture, and is customarily associated with both"+
+        //     "social and family gatherings. The extreme climate of the region has also favored the"+
+        //     "consumption of this beveargethat both refreshes and revitalizes."+"<br/>"+
+        //     "Sotol, in turn, is a liquor that is extracted by hand from the core of a cactus plant native"+
+        //     "to the desert area of northern Mexico. It is extremely popular with the working class,"+
+        //     "especially in rural areas."+"<br/>"+
+        //     "In Somos., the characters enjoy these concoctions at their social gatherings,work"+
+        //     "meetings and important events."
+        //    }
+        //    else
+        //    {
 
            
-            textoTitulo.innerHTML ="Las bebidas ";
-            textoPrincipal.innerHTML =
-            "La cerveza y el sotol son dos bebidas tradicionales del norte de México, parte de la vida y el imaginario social de la zona. "+
-            "A finales del siglo xix una gran productora cervecera se estableció en Nuevo León y detonó la producción industrial sostenida que "+
-            "dio como resultado una cultura asociada con esta bebida fermentada, tanto que es costumbre acompañar las reuniones sociales y familiares"+
-            "con ella. El clima extremo de la región ha propiciado también el consumo de ese líquido que refresca y revitaliza. "+"<br/>"+
-            "El sotol, por su parte, es un aguardiente que se extrae de manera artesanal de la piña de una cactácea originaria de la zona "+
-            "desértica del norte de México. Es muy socorrido por las clases populares, especialmente en áreas rurales. "+"<br/>"+
-            "En "+"<i>"+"Somos."+"</i>"+" los personajes acompañan sus reuniones sociales, laborales y momentos cruciales con dichos brebajes."
+        //     textoTitulo.innerHTML ="Las bebidas ";
+        //     textoPrincipal.innerHTML =
+        //     "La cerveza y el sotol son dos bebidas tradicionales del norte de México, parte de la vida y el imaginario social de la zona. "+
+        //     "A finales del siglo xix una gran productora cervecera se estableció en Nuevo León y detonó la producción industrial sostenida que "+
+        //     "dio como resultado una cultura asociada con esta bebida fermentada, tanto que es costumbre acompañar las reuniones sociales y familiares"+
+        //     "con ella. El clima extremo de la región ha propiciado también el consumo de ese líquido que refresca y revitaliza. "+"<br/>"+
+        //     "El sotol, por su parte, es un aguardiente que se extrae de manera artesanal de la piña de una cactácea originaria de la zona "+
+        //     "desértica del norte de México. Es muy socorrido por las clases populares, especialmente en áreas rurales. "+"<br/>"+
+        //     "En "+"<i>"+"Somos."+"</i>"+" los personajes acompañan sus reuniones sociales, laborales y momentos cruciales con dichos brebajes."
+        //    }
+
+           //Cambio contenido por Grafica, es un hack
+           console.log("banner_grafica")
+           console.log("grafica")
+           temaSeleccionado = "popular";
+
+           boton_video_1.style.visibility ="visible";
+           if(document.documentElement.lang == "en")
+           {
+               textoTitulo.innerHTML ="Signs and Hand-Painted  Graphics";
+               textoPrincipal.innerHTML =
+               "Signs, most of them painted by hand, continue to be a hallmark for businesses and"+
+               "commercial premises in rural areas of Mexico. Despite the standardization of graphic"+
+               "media driven by technology, many towns still use signs drawn by hand to create an"+
+               "original identity. In Somos., commercial graphics are associated with the image of the"+
+               "town and they enhance the visual culture of the region. These signs bring vitality to the"+
+               "exteriors of the villages far from the cities."
+
+           }else
+           {
+
+               textoTitulo.innerHTML ="Los rótulos y la gráfica popular ";
+               textoPrincipal.innerHTML =
+               "Los rótulos, en su mayoría pintados a mano, siguen siendo un distintivo para negocios y locales comerciales "+
+               "en zonas rurales de México. A pesar de la estandarización de los medios gráficos impulsados por la tecnología, "+
+               "en muchas poblaciones se apuesta por los señalamientos trazados artesanalmente para generar una identidad original. "+"<br/>"+
+               "En "+"<i>"+"Somos."+"</i>"+" los gráficos comerciales acompañan la imagen del pueblo y fortalecen la cultura visual de la región. "+"<br/>"+
+               "Estos rótulos vitalizan los exteriores de los poblados alejados de las urbes."
            }
             abrirPanelBanner();
 
@@ -784,7 +815,9 @@ function bannerSeleccionado(banner)
                 "Estos rótulos vitalizan los exteriores de los poblados alejados de las urbes."
             }
             
-            abrirPanelBanner();
+            pannelBannerArtes.style.visibility = "visible";
+            gsap.to(pannelBannerArtes,{duration:0.5,opacity:1});
+            // abrirPanelBanner();
 
             break;
         case banner_Musica: 
@@ -1225,3 +1258,97 @@ function anteriorImagen()
     enImagenDesplegada--;
     cambiarImagen();
 }
+
+
+var banneTop = document.querySelector('.imgBanner_1');
+
+
+const pannelBannerArtes = document.querySelector(".pannelBannerArtes");
+const pannelBannerZoom = document.querySelector(".panelBannerZoom");
+const pannelArtes = document.querySelector(".panelArtes");
+const imgBannerZoom = document.querySelector(".imgBannerZoom");
+ botonAnteriorBanner;
+ botonAdelanteBanner;
+ botonCerrarArtes.addEventListener('click',()=>{
+     gsap.to(pannelBannerArtes,{duration:0.5,opacity:0}).eventCallback('onComplete',()=>{
+         pannelBannerArtes.style.visibility ="hidden";
+     })
+ });
+
+
+ const botonCerrarPanelBannerZoom = document.querySelector(".botonCerrarPanelBannerZoom");
+ botonCerrarPanelBannerZoom.addEventListener('click',()=>{
+    gsap.to(pannelBannerZoom,{duration:0.5,opacity:0}).eventCallback('onComplete',()=>{
+        pannelBannerZoom.style.visibility ="hidden";
+    })
+ })
+ 
+ const imgBanner_1 = document.querySelector(".imgBanner_1");
+ const imgBanner_2 = document.querySelector(".imgBanner_2");
+ const imgBanner_3 = document.querySelector(".imgBanner_3");
+ const imgBanner_4 = document.querySelector(".imgBanner_4");
+ const imgBanner_5 = document.querySelector(".imgBanner_5");
+ const imgBanner_6 = document.querySelector(".imgBanner_6");
+ const imgBanner_7 = document.querySelector(".imgBanner_7");
+ const imgBanner_8 = document.querySelector(".imgBanner_8");
+
+imgBanner_1.addEventListener('click',()=>{
+    pannelBannerZoom.style.visibility ="visible";
+
+    imgBannerZoom.src = 'src/img/nucleo_03/banner_arquitectura2.jpg';
+    gsap.to(pannelBannerZoom,{duration:0.5,opacity:1})
+ });
+ imgBanner_2.addEventListener('click',()=>{
+    pannelBannerZoom.style.visibility ="visible";
+
+    imgBannerZoom.src = 'src/img/nucleo_03/banner_grafica.jpg';
+    gsap.to(pannelBannerZoom,{duration:0.5,opacity:1})
+ });
+ imgBanner_3.addEventListener('click',()=>{
+    pannelBannerZoom.style.visibility ="visible";
+
+    imgBannerZoom.src = 'src/img/nucleo_03/banner_bota.jpg';
+    gsap.to(pannelBannerZoom,{duration:0.5,opacity:1})
+ });
+ imgBanner_4.addEventListener('click',()=>{
+    pannelBannerZoom.style.visibility ="visible";
+
+    imgBannerZoom.src = 'src/img/nucleo_03/banner_corazon.jpg';
+    gsap.to(pannelBannerZoom,{duration:0.5,opacity:1})
+ });
+ imgBanner_5.addEventListener('click',()=>{
+    pannelBannerZoom.style.visibility ="visible";
+
+    imgBannerZoom.src = 'src/img/nucleo_03/banner_cultura2.jpg';
+    gsap.to(pannelBannerZoom,{duration:0.5,opacity:1})
+ });
+ imgBanner_6.addEventListener('click',()=>{
+    pannelBannerZoom.style.visibility ="visible";
+
+    imgBannerZoom.src = 'src/img/nucleo_03/banner_ganadera2.jpg';
+    gsap.to(pannelBannerZoom,{duration:0.5,opacity:1})
+ });
+ imgBanner_7.addEventListener('click',()=>{
+    pannelBannerZoom.style.visibility ="visible";
+
+    imgBannerZoom.src = 'src/img/nucleo_03/banner_musica2.jpg';
+    gsap.to(pannelBannerZoom,{duration:0.5,opacity:1})
+ });
+ imgBanner_8.addEventListener('click',()=>{
+    pannelBannerZoom.style.visibility ="visible";
+
+    imgBannerZoom.src = 'src/img/nucleo_03/banner_quinces.jpg';
+    gsap.to(pannelBannerZoom,{duration:0.5,opacity:1})
+ });
+
+ botonAnteriorBanner.addEventListener('click',()=>{
+
+    document.querySelector('.panelArtes').scrollLeft -=70;
+    // gsap.to(pannelArtes,{duration:0.5,scrollTo: 40});
+ })
+botonAdelanteBanner.addEventListener('click',()=>{
+
+    document.querySelector('.panelArtes').scrollLeft +=70;
+
+
+})

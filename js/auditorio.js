@@ -102,7 +102,7 @@ panoramaLobby.add(infospotVideo);
 
 var imgsrcNetflix = document.documentElement.lang == "en" ?  "src/img/iconos/gotoNetflix.png?v=123456781" : "src/img/iconos/iraNetflix_negro.png?v=123456781" ;
 var infospotDinamicoA = new PANOLENS.Infospot(450,imgsrcNetflix);
-infospotDinamicoA.position.set( 5000.00, -1200,  -1400);//y:-3220
+infospotDinamicoA.position.set( 5000.00, -1200,  -1100);//y:-3220
 infospotDinamicoA.addEventListener('click',()=>{
     console.log("infospot dinamico A")
 })
@@ -112,7 +112,7 @@ panoramaLobby.add(infospotDinamicoA)
 var imgsrcMuseo = document.documentElement.lang == "en" ?  "src/img/iconos/descubreMuseo_en.png?v=123456781" : "src/img/iconos/descubreMuseo.png?v=123456782" ;
 
 var infospotDinamicoB = new PANOLENS.Infospot(450,imgsrcMuseo);
-infospotDinamicoB.position.set( 5000.00, -1200,  1270);
+infospotDinamicoB.position.set( 5000.00, -1200,  1100);
 infospotDinamicoB.addEventListener('click',()=>{
     console.log("infospot dinamico B")
 })

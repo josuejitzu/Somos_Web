@@ -429,7 +429,7 @@ console.log(days+":"+hours+":"+minutes+":"+seconds);
 
 if(document.documentElement.lang == "en")
 {
-    displayCountdown.innerHTML = days+" days | "+hours+" : "+minutes+" : "+seconds.toString();
+    displayCountdown.innerHTML = days+" días | "+hours+" : "+minutes+" : "+seconds.toString();
 
 }else{
 
