@@ -41,6 +41,8 @@ const navegacionInferiorN2 = document.querySelector(".navegacionInferiorN2")
 const botonCambiarPosA = document.querySelector(".cambiarPos");
 botonCambiarPosA.addEventListener("click",()=>{cambioPosicion("posicionA")});
 
+
+
 var infoSpotSize = 300;
 var infospotFotos;
 infospotFotos = new PANOLENS.Infospot(infoSpotSize,"src/img/iconos/mas_boton.png?v=123456781");
@@ -800,51 +802,7 @@ const sizes ={
 
 const mouse = new THREE.Vector2()
 
-// window.addEventListener('mousemove', (event) =>
-// {
-//     mouse.x = event.clientX / sizes.width * 2 - 1
-//     mouse.y = - (event.clientY / sizes.height) * 2 + 1
 
-//     // console.log(mouse)
-// })
-
-// const raycaster = new THREE.Raycaster()
-// const intersects = raycaster.intersectObjects([cuadroPlano_25,cuadroPlano_17])
-// console.log(intersects)
-
-// getRaycastViewCenter() → {THREE.Vector3}
-
-
-
-// registerEventListeners()
-// registerMouseAndTouchEvents()
-// onMouseMove(event)
-
-// var escalaNormal = new THREE.Vector3();
-
-// cuadroPlano_17.addEventListener("hoverenter",()=>{
-//     // console.log("sobre mi");
-//     // escalaNormal = cuadroPlano_17.scale;
-//     // // console.log(escalaNormal);
-//     // cuadroPlano_17.scale.set(cuadroPlano_17.scale.x * 1.05,cuadroPlano_17.scale.y *1.05,1);
-//     crecerObjeto(cuadroPlano_17);
-// })
-// cuadroPlano_17.addEventListener("hoverleave",()=>{
-//     // cuadroPlano_17.scale.set(90.08,48,1);
-//     // cuadroPlano_17.scale.set(escalaNormal.x,escalaNormal.y,escalaNormal.z);
-//     regresarEscala(cuadroPlano_17);
-// })
-
-// function crecerObjeto(obj) {
-//     escalaNormal = obj.scale;
-//     // console.log(escalaNormal);
-//     obj.scale.set(cuadroPlano_17.scale.x * 1.05,cuadroPlano_17.scale.y *1.05,1);
-// }
-// function regresarEscala(obj)
-// {
-//     obj.scale.set(escalaNormal.x,escalaNormal.y,escalaNormal.z);
-
-// }
 cuadroPlano_1.addEventListener("hoverenter",()=>{
     console.log("sobre mi");
     // escalaNormal = cuadroPlano_17.scale;
