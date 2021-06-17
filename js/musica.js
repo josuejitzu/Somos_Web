@@ -133,7 +133,7 @@ botonSilencio.addEventListener("click",()=>{
 
 
 
-if(nombrePagina == "nucleo2.html" || nombrePagina =="nucleo2.html")
+if(nombrePagina == "nucleo2.html" || nombrePagina =="nucleo2_en.html")
 {
     botonSilencioB = document.querySelector(".audioSilencioB");
     botonSilencioB.addEventListener("click",()=>{
