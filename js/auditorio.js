@@ -115,6 +115,8 @@ var infospotDinamicoB = new PANOLENS.Infospot(450,imgsrcMuseo);
 infospotDinamicoB.position.set( 5000.00, -1200,  1100);
 infospotDinamicoB.addEventListener('click',()=>{
     console.log("infospot dinamico B")
+    callarMusica();
+    window.location.href = 'https://museodigital.myt.org.mx/';
 })
 
 panoramaLobby.add(infospotDinamicoB) 
