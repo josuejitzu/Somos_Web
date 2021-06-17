@@ -307,7 +307,7 @@ const galeriaRutaImagenes = [
     [ "txt_02.jpg", "txt_02-bn.jpg"],
     [ "txt_03.jpg", "txt_03-bn.jpg"],
     [ "txt_04.jpg", "txt_04-bn.jpg"],
-    [ "txt_05.jpg", "txt_05-bn.jpg"],
+    [ "txt_05.jpeg", "txt_05-bn.jpg"],
     [ "txt_06.jpg", "txt_06-bn.jpg"],
     [ "txt_07.jpg", "txt_07-bn.jpg"],
     [ "txt_08.jpg", "txt_08-bn.jpg"],

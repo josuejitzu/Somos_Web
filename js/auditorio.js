@@ -289,6 +289,10 @@ function cuentaAtras(){
     // what's left is seconds
     seconds = Math.floor( delta % 60); 
 
+    if(hours < 10){hours = "0"+hours;}
+if(minutes < 10){minutes = "0"+minutes;}
+if(seconds < 10){seconds = "0"+seconds;}
+
     console.log(days+":"+hours+":"+minutes+":"+seconds);
 
     if(document.documentElement.lang == "en")
@@ -319,19 +323,19 @@ function cuentaAtras(){
     }
 }
 
-setTimeout(function() { 
+// setTimeout(function() { 
     
     
-    console.log("fecha superada");
-    gsap.to(panelCountdown,{duration:0.5,opacity:0}).eventCallback('onComplete',()=>{
-        panelCountdown.style.visibility ="hidden";
-        panelCountdown.style.width ="0%";
-        panelCountdown.style.height ="0%"
+//     console.log("fecha superada");
+//     gsap.to(panelCountdown,{duration:0.5,opacity:0}).eventCallback('onComplete',()=>{
+//         panelCountdown.style.visibility ="hidden";
+//         panelCountdown.style.width ="0%";
+//         panelCountdown.style.height ="0%"
 
-        if(panelVideo.style.visibility == "visible")
-            panelVideoPlyr.style.visibility ="visible"; 
-         panelVideoPlyr.style.width = "70%";
-    });
-    countDownTime = false;
+//         if(panelVideo.style.visibility == "visible")
+//             panelVideoPlyr.style.visibility ="visible"; 
+//          panelVideoPlyr.style.width = "70%";
+//     });
+//     countDownTime = false;
 
-}, 10000);
+// }, 10000);
