@@ -15,7 +15,8 @@ const botonIniciar = document.querySelector('.botonInicio');
 
 const displayCountdown = document.querySelector('.displayCountdown');
 //Cronometro
-var fechaFutura = new Date("2021-06-22 19:00");
+// var fechaFutura = new Date("2021-06-22 19:00");
+var fechaFutura = new Date("2021-06-18 19:15");
 var fechaFuturaParse = parseDate(fechaFutura);
 var fechaActual = Date.now();
 // var dia = fecha.getDay();
@@ -404,8 +405,8 @@ var fechaActualParse;
 function cuentaAtras(){
      fechaActual =  new Date();
      fechaActualParse = parseDate(fechaActual);
-     delta = fechaFutura - fechaActual  / 1000;
-     delta = Math.abs(fechaFutura - fechaActual ) / 1000;
+     delta = fechaFuturaParse - fechaActualParse  / 1000;
+     delta = Math.abs(fechaFuturaParse - fechaActualParse ) / 1000;
 
 // calculate (and subtract) whole days
  days = Math.floor(delta / 86400);
@@ -430,22 +431,29 @@ if(seconds < 10){seconds = "0"+seconds;}
 console.log(days+":"+hours+":"+minutes+":"+seconds);
 console.log (new Date('2011-04-12'.replace(/-/g, "/")));
 
-// if(document.documentElement.lang == "en")
-// {
-//     displayCountdown.innerHTML = days+" días | "+hours+" : "+minutes+" : "+seconds.toString();
+if(document.documentElement.lang == "en")
+{
+    displayCountdown.innerHTML = days+" días | "+hours+" : "+minutes+" : "+seconds.toString();
 
-// }else{
+}else{
 
-//     displayCountdown.innerHTML = days+" días | "+hours+" : "+minutes+" : "+seconds.toString();
-// }
- displayCountdown.innerHTML =fechaActualParse;
+    displayCountdown.innerHTML = days+" días | "+hours+" : "+minutes+" : "+seconds.toString();
+}
+//  displayCountdown.innerHTML =days+" días | "+hours+" : "+minutes+" : "+seconds.toString();;
 
 
-    // if(days <= 0 && hours <= 0 && minutes <= 0 && seconds <= 0)
+    
+    // if( fechaActual.getTime() >= fechaFutura.getTime())
     // {
-    //     var panelCountdown = document.querySelector('.panelCountdown').style.visibility = 'hidden';
-    // } 
-    if( fechaActual.getTime() >= fechaFutura.getTime())
+    //     var panelCountdown = document.querySelector('.panelCountdown');
+    //     console.log("fecha superada");
+    //     gsap.to(panelCountdown,{duration:0.5,opacity:0}).eventCallback('onComplete',()=>{
+    //         panelCountdown.style.visibility ="hidden";
+    //     });
+    //     countDownTime = false;
+    // }
+
+    if( fechaActualParse >= fechaFuturaParse)
     {
         var panelCountdown = document.querySelector('.panelCountdown');
         console.log("fecha superada");
