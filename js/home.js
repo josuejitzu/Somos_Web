@@ -16,6 +16,7 @@ const botonIniciar = document.querySelector('.botonInicio');
 const displayCountdown = document.querySelector('.displayCountdown');
 //Cronometro
 var fechaFutura = new Date("2021-06-22 19:00");
+var fechaFuturaParse = parseDate(fechaFutura);
 var fechaActual = Date.now();
 // var dia = fecha.getDay();
 // var horas = fecha.getHours();
@@ -399,10 +400,11 @@ function cambiarALobby(){
 }
 
 var fechaHoy = Date.now();
-
+var fechaActualParse;
 function cuentaAtras(){
-    fechaActual = new Date();
-    //  delta = fechaFutura - fechaActual  / 1000;
+     fechaActual =  new Date();
+     fechaActualParse = parseDate(fechaActual);
+     delta = fechaFutura - fechaActual  / 1000;
      delta = Math.abs(fechaFutura - fechaActual ) / 1000;
 
 // calculate (and subtract) whole days
@@ -426,15 +428,18 @@ if(minutes < 10){minutes = "0"+minutes;}
 if(seconds < 10){seconds = "0"+seconds;}
 
 console.log(days+":"+hours+":"+minutes+":"+seconds);
+console.log (new Date('2011-04-12'.replace(/-/g, "/")));
 
-if(document.documentElement.lang == "en")
-{
-    displayCountdown.innerHTML = days+" días | "+hours+" : "+minutes+" : "+seconds.toString();
+// if(document.documentElement.lang == "en")
+// {
+//     displayCountdown.innerHTML = days+" días | "+hours+" : "+minutes+" : "+seconds.toString();
 
-}else{
+// }else{
 
-    displayCountdown.innerHTML = days+" días | "+hours+" : "+minutes+" : "+seconds.toString();
-}
+//     displayCountdown.innerHTML = days+" días | "+hours+" : "+minutes+" : "+seconds.toString();
+// }
+ displayCountdown.innerHTML =fechaActualParse;
+
 
     // if(days <= 0 && hours <= 0 && minutes <= 0 && seconds <= 0)
     // {
@@ -462,4 +467,19 @@ if(document.documentElement.lang == "en")
 //     });
 //     countDownTime = false;
 
-// }, 10000);
+// }, 3000);
+
+function parseDate(dateString){
+    var time = Date.parse(dateString);
+    if(!time){
+        time = Date.parse(dateString.replace("T"," "));
+        if(!time){
+            bound = dateString.indexOf('T');
+            var dateData = dateString.slice(0, bound).split('-');
+            var timeData = dateString.slice(bound+1, -1).split(':');
+
+            time = Date.UTC(dateData[0],dateData[1]-1,dateData[2],timeData[0],timeData[1],timeData[2]);
+        }
+    }
+    return time;
+}

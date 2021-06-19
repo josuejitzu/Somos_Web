@@ -120,8 +120,8 @@ const panelGaleria = document.querySelector(".panelGaleria");
 
 
 //DEBUG infospots
- const gui = new dat.GUI();
- gui.close();
+//  const gui = new dat.GUI();
+//  gui.close();
 
 // gui.add(infospotSomos.position,"x").min(-5000).max(5000).step(0.0001).name("Somos_x")
 // gui.add(infospotSomos.position,"y").min(-5000).max(5000).step(0.0001).name("Somos_y")
@@ -401,72 +401,72 @@ banner_Grafica.position.set(4,0,12)
 banner_Grafica.scale.set(sizeBanner.x,sizeBanner.y,1)
 banner_Grafica.rotation.set(0,0.39,0);
 
-gui.add(bannerGroup.position,"x").min(-500).max(500).step(0.01).name("positionGroupX")
-gui.add(bannerGroup.position,"y").min(-500).max(500).step(0.01).name("positionGroupY")
-gui.add(bannerGroup.position,"z").min(-500).max(500).step(0.01).name("positionGroupZ")
-gui.add(bannerGroup.rotation,"y").min(-Math.PI).max(Math.PI).step(0.01).name("rotationGroupY")
+// gui.add(bannerGroup.position,"x").min(-500).max(500).step(0.01).name("positionGroupX")
+// gui.add(bannerGroup.position,"y").min(-500).max(500).step(0.01).name("positionGroupY")
+// gui.add(bannerGroup.position,"z").min(-500).max(500).step(0.01).name("positionGroupZ")
+// gui.add(bannerGroup.rotation,"y").min(-Math.PI).max(Math.PI).step(0.01).name("rotationGroupY")
 
-gui.add(banner_quince.position,"x").min(-500).max(500).step(0.01).name("1Quince_positionX")
-gui.add(banner_quince.position,"y").min(-500).max(500).step(0.01).name("1Quince_positionY")
-gui.add(banner_quince.position,"z").min(-500).max(500).step(0.01).name("1Quince_positionZ")
-// gui.add(banner_quince.scale,"x").min(-50).max(50).step(0.01).name("1Quince_scalaX")
-// gui.add(banner_quince.scale,"y").min(-50).max(50).step(0.01).name("1Quince_scalaY")
-// // gui.add(banner_quince.scale,"z").min(-50).max(50).step(0.01).name("positionZ")
-// // gui.add(banner_quince.rotation,"x").min(-Math.PI).max(Math.PI).step(0.01).name("rotacionX")
-gui.add(banner_quince.rotation,"y").min(-Math.PI).max(Math.PI).step(0.01).name("1Quince_rotacionY")
-// // gui.add(banner_quince.rotation,"z").min(-Math.PI).max(Math.PI).step(0.01).name("rotacionZ")
-
-
-
-gui.add(banner_Arquitectura.position,"x").min(-500).max(500).step(0.01).name("2Arquitectura_positionX")
-gui.add(banner_Arquitectura.position,"y").min(-500).max(500).step(0.01).name("2Arquitectura_positionY")
-gui.add(banner_Arquitectura.position,"z").min(-500).max(500).step(0.01).name("2Arquitectura_positionZ")
-// gui.add(banner_Arquitectura.scale,"x").min(-50).max(50).step(0.01).name("2Arquitectura_scalaX")
-gui.add(banner_Arquitectura.scale,"y").min(-50).max(50).step(0.01).name("2Arquitectura_scalaY")
-// gui.add(banner_Arquitectura.rotation,"y").min(-Math.PI).max(Math.PI).step(0.01).name("2Arquitectura_rotacionY")
-
-gui.add(banner_Moda.position,"x").min(-500).max(500).step(0.01).name("3Moda_positionX")
-gui.add(banner_Moda.position,"y").min(-500).max(500).step(0.01).name("3Moda_positionY")
-gui.add(banner_Moda.position,"z").min(-500).max(500).step(0.01).name("3Moda_positionZ")
-// gui.add(banner_Moda.scale,"x").min(-50).max(50).step(0.01).name("3Moda_scalaX")
-gui.add(banner_Moda.scale,"y").min(-50).max(50).step(0.01).name("3Moda_scalaY")
-// gui.add(banner_Moda.rotation,"y").min(-Math.PI).max(Math.PI).step(0.01).name("3Moda_rotacionY")
+// gui.add(banner_quince.position,"x").min(-500).max(500).step(0.01).name("1Quince_positionX")
+// gui.add(banner_quince.position,"y").min(-500).max(500).step(0.01).name("1Quince_positionY")
+// gui.add(banner_quince.position,"z").min(-500).max(500).step(0.01).name("1Quince_positionZ")
+// // gui.add(banner_quince.scale,"x").min(-50).max(50).step(0.01).name("1Quince_scalaX")
+// // gui.add(banner_quince.scale,"y").min(-50).max(50).step(0.01).name("1Quince_scalaY")
+// // // gui.add(banner_quince.scale,"z").min(-50).max(50).step(0.01).name("positionZ")
+// // // gui.add(banner_quince.rotation,"x").min(-Math.PI).max(Math.PI).step(0.01).name("rotacionX")
+// gui.add(banner_quince.rotation,"y").min(-Math.PI).max(Math.PI).step(0.01).name("1Quince_rotacionY")
+// // // gui.add(banner_quince.rotation,"z").min(-Math.PI).max(Math.PI).step(0.01).name("rotacionZ")
 
 
-gui.add(banner_Bebidas.position,"x").min(-500).max(500).step(0.01).name("4Bebidas_positionX")
-gui.add(banner_Bebidas.position,"y").min(-500).max(500).step(0.01).name("4Bebidas_positionY")
-gui.add(banner_Bebidas.position,"z").min(-500).max(500).step(0.01).name("4Bebidas_positionZ")
-// gui.add(banner_Bebidas.scale,"x").min(-50).max(50).step(0.01).name("4Bebidas_scalaX")
-gui.add(banner_Bebidas.scale,"y").min(-50).max(50).step(0.01).name("4Bebidas_scalaY")
-// gui.add(banner_Bebidas.rotation,"y").min(-Math.PI).max(Math.PI).step(0.01).name("4Bebidas_rotacionY")
 
-gui.add(banner_Grafica.position,"x").min(-500).max(500).step(0.01).name("5Grafica_positionX")
-gui.add(banner_Grafica.position,"y").min(-500).max(500).step(0.01).name("5Grafica_positionY")
-gui.add(banner_Grafica.position,"z").min(-500).max(500).step(0.01).name("5Grafica_positionZ")
-// gui.add(banner_Grafica.scale,"x").min(-50).max(50).step(0.01).name("5Grafica_scalaX")
-gui.add(banner_Grafica.scale,"y").min(-50).max(50).step(0.01).name("5Grafica_scalaY")
-// gui.add(banner_Grafica.rotation,"y").min(-Math.PI).max(Math.PI).step(0.01).name("5Grafica_rotacionY")
+// gui.add(banner_Arquitectura.position,"x").min(-500).max(500).step(0.01).name("2Arquitectura_positionX")
+// gui.add(banner_Arquitectura.position,"y").min(-500).max(500).step(0.01).name("2Arquitectura_positionY")
+// gui.add(banner_Arquitectura.position,"z").min(-500).max(500).step(0.01).name("2Arquitectura_positionZ")
+// // gui.add(banner_Arquitectura.scale,"x").min(-50).max(50).step(0.01).name("2Arquitectura_scalaX")
+// gui.add(banner_Arquitectura.scale,"y").min(-50).max(50).step(0.01).name("2Arquitectura_scalaY")
+// // gui.add(banner_Arquitectura.rotation,"y").min(-Math.PI).max(Math.PI).step(0.01).name("2Arquitectura_rotacionY")
 
-gui.add(banner_Musica.position,"x").min(-500).max(500).step(0.01).name("6Musica_positionX")
-gui.add(banner_Musica.position,"y").min(-500).max(500).step(0.01).name("6Musica_positionY")
-gui.add(banner_Musica.position,"z").min(-500).max(500).step(0.01).name("6Musica_positionZ")
-// gui.add(banner_Musica.scale,"x").min(-50).max(50).step(0.01).name("6Musica_scalaX")
-gui.add(banner_Musica.scale,"y").min(-50).max(50).step(0.01).name("6Musica_scalaY")
-// gui.add(banner_Musica.rotation,"y").min(-Math.PI).max(Math.PI).step(0.01).name("6Musica_rotacionY")
+// gui.add(banner_Moda.position,"x").min(-500).max(500).step(0.01).name("3Moda_positionX")
+// gui.add(banner_Moda.position,"y").min(-500).max(500).step(0.01).name("3Moda_positionY")
+// gui.add(banner_Moda.position,"z").min(-500).max(500).step(0.01).name("3Moda_positionZ")
+// // gui.add(banner_Moda.scale,"x").min(-50).max(50).step(0.01).name("3Moda_scalaX")
+// gui.add(banner_Moda.scale,"y").min(-50).max(50).step(0.01).name("3Moda_scalaY")
+// // gui.add(banner_Moda.rotation,"y").min(-Math.PI).max(Math.PI).step(0.01).name("3Moda_rotacionY")
 
-gui.add(banner_Cultura.position,"x").min(-500).max(500).step(0.01).name("7Cultura_positionX")
-gui.add(banner_Cultura.position,"y").min(-500).max(500).step(0.01).name("7Cultura_positionY")
-gui.add(banner_Cultura.position,"z").min(-500).max(500).step(0.01).name("7Cultura_positionZ")
-// gui.add(banner_Cultura.scale,"x").min(-50).max(50).step(0.01).name("7Cultura_scalaX")
-gui.add(banner_Cultura.scale,"y").min(-50).max(50).step(0.01).name("7Cultura_scalaY")
-// gui.add(banner_Cultura.rotation,"y").min(-Math.PI).max(Math.PI).step(0.01).name("7Cultura_rotacionY")
 
-gui.add(banner_Ganadero.position,"x").min(-500).max(500).step(0.01).name("8Ganadero_positionX")
-gui.add(banner_Ganadero.position,"y").min(-500).max(500).step(0.01).name("8Ganadero_positionY")
-gui.add(banner_Ganadero.position,"z").min(-500).max(500).step(0.01).name("8Ganadero_positionZ")
-gui.add(banner_Ganadero.scale,"x").min(-50).max(50).step(0.01).name("8Ganadero_scalaX")
-gui.add(banner_Ganadero.scale,"y").min(-50).max(50).step(0.01).name("8Ganadero_scalaY")
-gui.add(banner_Ganadero.rotation,"y").min(-Math.PI).max(Math.PI).step(0.01).name("8Ganad_rotacionY")
+// gui.add(banner_Bebidas.position,"x").min(-500).max(500).step(0.01).name("4Bebidas_positionX")
+// gui.add(banner_Bebidas.position,"y").min(-500).max(500).step(0.01).name("4Bebidas_positionY")
+// gui.add(banner_Bebidas.position,"z").min(-500).max(500).step(0.01).name("4Bebidas_positionZ")
+// // gui.add(banner_Bebidas.scale,"x").min(-50).max(50).step(0.01).name("4Bebidas_scalaX")
+// gui.add(banner_Bebidas.scale,"y").min(-50).max(50).step(0.01).name("4Bebidas_scalaY")
+// // gui.add(banner_Bebidas.rotation,"y").min(-Math.PI).max(Math.PI).step(0.01).name("4Bebidas_rotacionY")
+
+// gui.add(banner_Grafica.position,"x").min(-500).max(500).step(0.01).name("5Grafica_positionX")
+// gui.add(banner_Grafica.position,"y").min(-500).max(500).step(0.01).name("5Grafica_positionY")
+// gui.add(banner_Grafica.position,"z").min(-500).max(500).step(0.01).name("5Grafica_positionZ")
+// // gui.add(banner_Grafica.scale,"x").min(-50).max(50).step(0.01).name("5Grafica_scalaX")
+// gui.add(banner_Grafica.scale,"y").min(-50).max(50).step(0.01).name("5Grafica_scalaY")
+// // gui.add(banner_Grafica.rotation,"y").min(-Math.PI).max(Math.PI).step(0.01).name("5Grafica_rotacionY")
+
+// gui.add(banner_Musica.position,"x").min(-500).max(500).step(0.01).name("6Musica_positionX")
+// gui.add(banner_Musica.position,"y").min(-500).max(500).step(0.01).name("6Musica_positionY")
+// gui.add(banner_Musica.position,"z").min(-500).max(500).step(0.01).name("6Musica_positionZ")
+// // gui.add(banner_Musica.scale,"x").min(-50).max(50).step(0.01).name("6Musica_scalaX")
+// gui.add(banner_Musica.scale,"y").min(-50).max(50).step(0.01).name("6Musica_scalaY")
+// // gui.add(banner_Musica.rotation,"y").min(-Math.PI).max(Math.PI).step(0.01).name("6Musica_rotacionY")
+
+// gui.add(banner_Cultura.position,"x").min(-500).max(500).step(0.01).name("7Cultura_positionX")
+// gui.add(banner_Cultura.position,"y").min(-500).max(500).step(0.01).name("7Cultura_positionY")
+// gui.add(banner_Cultura.position,"z").min(-500).max(500).step(0.01).name("7Cultura_positionZ")
+// // gui.add(banner_Cultura.scale,"x").min(-50).max(50).step(0.01).name("7Cultura_scalaX")
+// gui.add(banner_Cultura.scale,"y").min(-50).max(50).step(0.01).name("7Cultura_scalaY")
+// // gui.add(banner_Cultura.rotation,"y").min(-Math.PI).max(Math.PI).step(0.01).name("7Cultura_rotacionY")
+
+// gui.add(banner_Ganadero.position,"x").min(-500).max(500).step(0.01).name("8Ganadero_positionX")
+// gui.add(banner_Ganadero.position,"y").min(-500).max(500).step(0.01).name("8Ganadero_positionY")
+// gui.add(banner_Ganadero.position,"z").min(-500).max(500).step(0.01).name("8Ganadero_positionZ")
+// gui.add(banner_Ganadero.scale,"x").min(-50).max(50).step(0.01).name("8Ganadero_scalaX")
+// gui.add(banner_Ganadero.scale,"y").min(-50).max(50).step(0.01).name("8Ganadero_scalaY")
+// gui.add(banner_Ganadero.rotation,"y").min(-Math.PI).max(Math.PI).step(0.01).name("8Ganad_rotacionY")
 
 
 // gui.add(hilo_Banner_Bebidas.position,"x").min(-500).max(500).step(0.01).name("7Cultura_positionX")
