@@ -23,8 +23,12 @@ const botonMuteVideo = document.querySelector( '.botonMuteVideo')
 const displayCountdown = document.querySelector('.displayCountdown');
 
 //Cronometro
-var fechaFutura = new Date("2021-06-22 19:30");
-var fechaActual = Date.now();
+// var fechaFutura = new Date("2021-06-22 19:30");
+// var fechaFutura = moment("2021-06-22 19:30",'YYYY-MM-DD HH:mm:ss').toDate();
+var fechaFutura = moment("2021-06-22 19:30",'YYYY-MM-DD HH:mm:ss').toDate();
+// var fechaFuturaParse = parseDate(fechaFutura);
+var fechaActual =moment( Date.now());
+var fechaActualParse;
 var countDownTime = true;
 
 // get total seconds between the times
@@ -271,6 +275,8 @@ tick();
 
 function cuentaAtras(){
     fechaActual = new Date();
+    fechaActual = moment(fechaActual);
+    // fechaActualParse = parseDate(fechaActual);
     //  delta = fechaFutura - fechaActual  / 1000;
      delta = Math.abs(fechaFutura - fechaActual ) / 1000;
 
@@ -304,8 +310,8 @@ if(seconds < 10){seconds = "0"+seconds;}
         displayCountdown.innerHTML = days+" días | "+hours+" : "+minutes+" : "+seconds.toString();
     }
 
-    
-    if( fechaActual.getTime() >= fechaFutura.getTime())
+    //if( fechaActualParse >= fechaFuturaParse)
+    if( fechaActual >= fechaFutura.getTime())
     {
         
         countDownTime = false;
@@ -339,3 +345,17 @@ if(seconds < 10){seconds = "0"+seconds;}
 //     countDownTime = false;
 
 // }, 10000);
+function parseDate(dateString){
+    var time = Date.parse(dateString);
+    if(!time){
+        time = Date.parse(dateString.replace("T"," "));
+        if(!time){
+            bound = dateString.indexOf('T');
+            var dateData = dateString.slice(0, bound).split('-');
+            var timeData = dateString.slice(bound+1, -1).split(':');
+
+            time = Date.UTC(dateData[0],dateData[1]-1,dateData[2],timeData[0],timeData[1],timeData[2]);
+        }
+    }
+    return time;
+}

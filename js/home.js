@@ -16,9 +16,9 @@ const botonIniciar = document.querySelector('.botonInicio');
 const displayCountdown = document.querySelector('.displayCountdown');
 //Cronometro
 // var fechaFutura = new Date("2021-06-22 19:00");
-var fechaFutura = new Date("2021-06-18 19:15");
-var fechaFuturaParse = parseDate(fechaFutura);
-var fechaActual = Date.now();
+var fechaFutura = moment("2021-06-22 19:00",'YYYY-MM-DD HH:mm:ss').toDate();
+
+var fechaActual = moment( Date.now());
 // var dia = fecha.getDay();
 // var horas = fecha.getHours();
 
@@ -404,9 +404,10 @@ var fechaHoy = Date.now();
 var fechaActualParse;
 function cuentaAtras(){
      fechaActual =  new Date();
-     fechaActualParse = parseDate(fechaActual);
-     delta = fechaFuturaParse - fechaActualParse  / 1000;
-     delta = Math.abs(fechaFuturaParse - fechaActualParse ) / 1000;
+     fechaActual = moment(fechaActual);
+    //  fechaActualParse = parseDate(fechaActual);
+     delta = fechaFutura- fechaActual  / 1000;
+     delta = Math.abs(fechaFutura - fechaActual ) / 1000;
 
 // calculate (and subtract) whole days
  days = Math.floor(delta / 86400);
@@ -453,7 +454,7 @@ if(document.documentElement.lang == "en")
     //     countDownTime = false;
     // }
 
-    if( fechaActualParse >= fechaFuturaParse)
+    if( fechaActual >= fechaFutura.getTime())
     {
         var panelCountdown = document.querySelector('.panelCountdown');
         console.log("fecha superada");
@@ -476,18 +477,3 @@ if(document.documentElement.lang == "en")
 //     countDownTime = false;
 
 // }, 3000);
-
-function parseDate(dateString){
-    var time = Date.parse(dateString);
-    if(!time){
-        time = Date.parse(dateString.replace("T"," "));
-        if(!time){
-            bound = dateString.indexOf('T');
-            var dateData = dateString.slice(0, bound).split('-');
-            var timeData = dateString.slice(bound+1, -1).split(':');
-
-            time = Date.UTC(dateData[0],dateData[1]-1,dateData[2],timeData[0],timeData[1],timeData[2]);
-        }
-    }
-    return time;
-}
