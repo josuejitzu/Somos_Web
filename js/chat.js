@@ -133,7 +133,7 @@ class CHAT {
         index: index
       }
 
-      parent.clearName();
+      parent.clearChatInputs();
       
       db.ref('chats/' + `message_${index}`).set(messageObject)
       .then(function() {          
@@ -146,8 +146,9 @@ class CHAT {
     return $('#chat_fullname').val();
   }
 
-  clearName() {
-    document.getElementById('chat_fullname').value = ''
+  clearChatInputs() {
+    document.getElementById('chat_fullname').value = '';
+    document.getElementById('chat_input_message').value = '';
   }
 
   showSuccessMessage() {
@@ -172,4 +173,9 @@ function showChatForm() {
 
 function closeSuccessMessage() {
   $('.chat-area').addClass('d-none');
+  // $('#chat-success-message').addclass('d-none');
+  $('#chat-success-message').addClass('d-none');
+  $('#chat_button_message').attr('disabled', false);
+  $('#chat-form').removeClass('d-none');
+  $('.panelBottom').removeClass('d-none');
 }
