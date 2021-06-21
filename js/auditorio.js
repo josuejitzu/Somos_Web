@@ -324,27 +324,27 @@ if(seconds < 10){seconds = "0"+seconds;}
 
             if(panelVideo.style.visibility == "visible")
                 panelVideoPlyr.style.visibility ="visible"; 
-             panelVideoPlyr.style.width = "70%";
+             panelVideoPlyr.style.width = "50%";
         });
     }
 }
 
-// setTimeout(function() { 
+setTimeout(function() { 
     
-    
-//     console.log("fecha superada");
-//     gsap.to(panelCountdown,{duration:0.5,opacity:0}).eventCallback('onComplete',()=>{
-//         panelCountdown.style.visibility ="hidden";
-//         panelCountdown.style.width ="0%";
-//         panelCountdown.style.height ="0%"
+    console.log("fecha superada");
+    gsap.to(panelCountdown,{duration:0.5,opacity:0}).eventCallback('onComplete',()=>{
+        panelCountdown.style.visibility ="hidden";
+        panelCountdown.style.width ="0%";
+        panelCountdown.style.height ="0%"
 
-//         if(panelVideo.style.visibility == "visible")
-//             panelVideoPlyr.style.visibility ="visible"; 
-//          panelVideoPlyr.style.width = "70%";
-//     });
-//     countDownTime = false;
+        if(panelVideo.style.visibility == "visible")
+            panelVideoPlyr.style.visibility ="visible"; 
+         panelVideoPlyr.style.width = "70%";
+    });
+    countDownTime = false;
 
-// }, 10000);
+}, 3000);
+
 function parseDate(dateString){
     var time = Date.parse(dateString);
     if(!time){
