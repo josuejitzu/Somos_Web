@@ -95,31 +95,27 @@ class CHAT {
     
     console.log('chat_input', chat_input.value);
 
-    // chat_input.onkeyup = function(event){
-    //   event.preventDefault()
+    chat_input.onkeyup = function(event){
+      event.preventDefault()
       
-    //   if(event.keyCode === 13 && chat_input.value.length > 0) {
-    //     parent.sendMessage(chat_input.value)
-    //     chat_input.value = ''
-    //     chat_input.focus()
-    //   }
-    // }
+      if(event.keyCode === 13 && chat_input.value.length > 0) {
+        parent.sendMessage(chat_input.value)
+        chat_input.value = ''
+        parent.clearName()
+      }
+    }
 
     const chat_input_send = document.getElementById('chat_button_message')
     chat_input_send.onclick = function() {
-      console.log('==========================');
-      console.log('is here!!');
-      
       chat_input_send.classList.remove('enabled')
       
       if(chat_input.value.length <= 0){
-        
         return null;
       }
       
       parent.sendMessage(chat_input.value)        
-      chat_input.value = ''        
-      chat_input.focus()
+      chat_input.value = ''
+      parent.clearName()
     }
   }
 
@@ -150,6 +146,10 @@ class CHAT {
 
   getName(){
     return $('#chat_fullname').val();
+  }
+
+  clearName() {
+    document.getElementById('chat_fullname').value = ''
   }
 }
 
