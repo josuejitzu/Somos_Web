@@ -1,0 +1,43 @@
+.chat-area {
+  position: absolute;
+  width: 340px;
+  right: 20px;
+  bottom: 75px;
+  border: 2px solid white;
+  padding: 15px 20px;
+}
+
+.form-group {
+  margin-bottom: 10px;
+}
+
+.btn-chat, .btn-chat-submit {
+  -webkit-border-radius: 7;
+  -moz-border-radius: 7;
+  border-radius: 7px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 16px;
+  background: #000000;
+  margin-right: 20px;
+  padding: 10px 20px 10px 20px;
+  border: solid #ffffff 2px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn-chat:hover {
+  background: #3b3b3b;
+  text-decoration: none;
+}
+
+input.chat-input {
+  border:none;
+  border-radius:4px;
+  width: 95%;
+  padding: 10px;
+}
+
+.btn-chat-submit {
+  width: 100%;
+}
