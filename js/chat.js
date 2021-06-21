@@ -100,7 +100,6 @@ class CHAT {
       
       if(event.keyCode === 13 && chat_input.value.length > 0) {
         parent.sendMessage(chat_input.value)
-        chat_input.value = ''
       }
     }
 
@@ -112,14 +111,15 @@ class CHAT {
         return null;
       }
       
-      parent.sendMessage(chat_input.value)        
-      chat_input.value = ''
+      parent.sendMessage(chat_input.value)
     }
   }
 
   sendMessage(message){
     const parent = this
-    
+
+    parent.loadingAnimation();
+
     if(parent.getName() == null && message == null){
       return
     }
@@ -151,8 +151,14 @@ class CHAT {
   }
 
   showSuccessMessage() {
-    $('#chat-form').addClass('d-none');
+    $('#chat-loading').addClass('d-none');
     $('#chat-success-message').removeClass('d-none');
+  }
+
+  loadingAnimation() {
+    $('#chat-form').addClass('d-none');
+    $('#chat-loading').removeClass('d-none');
+    $('#chat_button_message').attr('disabled', true);
   }
 }
 
@@ -162,4 +168,8 @@ app.enableMessageSending();
 function showChatForm() {
   $('.panelBottom').addClass('d-none');
   $('.chat-area').removeClass('d-none');
+}
+
+function closeSuccessMessage() {
+  $('.chat-area').addClass('d-none');
 }

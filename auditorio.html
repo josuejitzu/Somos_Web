@@ -74,7 +74,10 @@
         </div>
         <div class="chat-area d-none">
             <div id="chat-success-message" class="d-none text-center">
-                <p>¡Tu mensaje ha sido enviado correctamente!</p>
+                <p class="mb-20">¡Tu mensaje ha sido enviado correctamente!</p>
+                <p>
+                    <button onclick="closeSuccessMessage()" class="btn-chat btn-block btn-sm">Cerrar</button>
+                </p>
             </div>
             <div id="chat-form">
                 <div class="form-group">
@@ -83,7 +86,10 @@
                 <div class="form-group">
                     <input type="text" class="chat-input" id="chat_input_message" placeholder="¡Escribe tu mensaje aquí!">
                 </div>
-                <button id="chat_button_message" class="btn-chat-submit">Enviar mensaje</button>
+                <button id="chat_button_message" class="btn-chat btn-block">Enviar mensaje</button>
+            </div>
+            <div id="chat-loading" class="text-center d-none">
+                <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
             </div>
         </div>
         <div class="panelBottom">
