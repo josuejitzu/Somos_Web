@@ -163,8 +163,15 @@ class CHAT {
   }
 }
 
-const app = new CHAT();
-app.enableMessageSending();
+function startChatForSending() {
+  const app = new CHAT();
+  app.enableMessageSending();
+}
+
+function startChatForReading() {
+  const app = new CHAT();
+  app.refreshChat();
+}
 
 function showChatForm() {
   $('.panelBottom').addClass('d-none');

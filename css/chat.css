@@ -91,3 +91,24 @@ input.chat-input {
 .mb-20 {
   margin-bottom: 20px;
 }
+
+#chat_content_container {
+  height: 500px;
+  overflow-y: scroll;
+}
+
+.message_container {
+  margin-bottom: 3px;
+  background-color: #fdfdfd;
+  border: 1px solid #eee;
+  padding: 5px 10px;
+}
+
+.message_user_container p, .message_content_container p {
+  margin-bottom: 0;
+}
+
+.message_user_container p {
+  font-size: 11px;
+  font-weight: bold;;
+}
