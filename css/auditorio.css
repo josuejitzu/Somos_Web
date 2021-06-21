@@ -246,3 +246,18 @@
     pointer-events: none;
 
   }
+
+.panelBottom {
+    bottom: 10px;
+    position: absolute;
+    text-align: right;
+    width: 100%;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.d-none {
+    display: none;
+}

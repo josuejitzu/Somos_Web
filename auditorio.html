@@ -23,7 +23,15 @@
     <!-- <link rel="stylesheet" href="./css/lobby.css"> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="css/loadingio/loading-bar.css"/>
-    <script type="text/javascript" src="js/loadingio/loading-bar.js"></script>   
+    <script type="text/javascript" src="js/loadingio/loading-bar.js"></script>
+    
+    <!-- chat -->
+    <link rel="stylesheet" href="./css/chat.css">
+
+    <!-- firebase (chat) -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-analytics.js"></script>
 </head>
 <body> 
     <div class="panelCarga">
@@ -45,9 +53,8 @@
     </div>
     <div class="panelVideos">
         <div class="panelVideosLateral" >
-            <img class="botonCerrarVid" src="./src/img/simbolos/CERRAR.png" >
-            <img class="botonMuteVideo" src="./src/img/simbolos/AUDIO.png" >
-            
+            <img class="botonCerrarVid" src="./src/img/simbolos/CERRAR.png">
+            <img class="botonMuteVideo" src="./src/img/simbolos/AUDIO.png">
         </div>
         <div class="panelCountdown">
             <p>El video comenzará en:</p>
@@ -55,18 +62,38 @@
             <p class="displayCountdown">13 dias | 00:00.00</p>
         </div>
         <div class="panelVideosCentro">
-           
             <div class="marcoVideo" >
-
                 <video id="player" class="player" playsinline controls poster="./src/img/netflix_video_poster.jpg">
                     <source src="http://jitzu.mx/videos/somosAuditorio/SOMOS_ESP.mp4" type="video/mp4" />
                     <!-- <source src="/path/to/video.webm" type="video/webm" /> -->
                   
                     <!-- Captions are optional -->
                     <!-- <track kind="captions" label="English captions" src="/path/to/captions.vtt" srclang="en" default /> -->
-                  </video> 
-          
+                  </video>
             </div>
+        </div>
+        <div class="chat-area d-none">
+            <div id="chat-success-message" class="d-none text-center">
+                <p class="mb-20">¡Tu mensaje ha sido enviado correctamente!</p>
+                <p>
+                    <button onclick="closeSuccessMessage()" class="btn-chat btn-block btn-sm">Cerrar</button>
+                </p>
+            </div>
+            <div id="chat-form">
+                <div class="form-group">
+                    <input type="text" class="chat-input" id="chat_fullname" placeholder="Nombre">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="chat-input" id="chat_input_message" placeholder="¡Escribe tu mensaje aquí!">
+                </div>
+                <button id="chat_button_message" class="btn-chat btn-block">Enviar mensaje</button>
+            </div>
+            <div id="chat-loading" class="text-center d-none">
+                <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+            </div>
+        </div>
+        <div class="panelBottom">
+            <button onclick="showChatForm()" class="btn-chat">Chat</button>
         </div>
     </div>
 
@@ -91,9 +118,7 @@
         
     </div>
 
-  
-     
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js" integrity="sha512-nhY06wKras39lb9lRO76J4397CH1XpRSLfLJSftTeo3+q2vP7PaebILH9TqH+GRpnOhfAGjuYMVmVTOZJ+682w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <script src="./js/three.min.js"></script>
     <script src="./js/panolens.min.js"></script>
@@ -106,6 +131,8 @@
     <script src="./js/moment.js"></script>
     <script src="./js/auditorio.js"></script>
     <script src="./js/auditorioCall.js"></script>
-    
+
+    <script src="./js/chat.js"></script>
+    <script>startChatForSending();</script>
 </body>
 </html>
