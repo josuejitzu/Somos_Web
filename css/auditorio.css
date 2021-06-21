@@ -119,13 +119,6 @@
 
 }
 
-.panelBottom {
-    bottom: 10px;
-    position: absolute;
-    text-align: right;
-    width: 100%;
-}
-
 @media  (max-width:940px)
 {
     .panelVideos
@@ -253,3 +246,14 @@
     pointer-events: none;
 
   }
+
+.panelBottom {
+    bottom: 10px;
+    position: absolute;
+    text-align: right;
+    width: 100%;
+}
+
+.d-none {
+    display: none;
+}

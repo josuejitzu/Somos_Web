@@ -155,3 +155,8 @@ class CHAT {
 
 const app = new CHAT();
 app.enableMessageSending();
+
+function showChatForm() {
+  $('.panelBottom').addClass('d-none');
+  $('.chat-area').removeClass('d-none');
+}
