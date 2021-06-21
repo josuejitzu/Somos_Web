@@ -254,6 +254,10 @@
     width: 100%;
 }
 
+.text-center {
+    text-align: center;
+}
+
 .d-none {
     display: none;
 }

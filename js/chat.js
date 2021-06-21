@@ -101,7 +101,6 @@ class CHAT {
       if(event.keyCode === 13 && chat_input.value.length > 0) {
         parent.sendMessage(chat_input.value)
         chat_input.value = ''
-        parent.clearName()
       }
     }
 
@@ -115,7 +114,6 @@ class CHAT {
       
       parent.sendMessage(chat_input.value)        
       chat_input.value = ''
-      parent.clearName()
     }
   }
 
@@ -135,11 +133,11 @@ class CHAT {
         index: index
       }
 
-      console.log('messageObject', messageObject);
+      parent.clearName();
       
       db.ref('chats/' + `message_${index}`).set(messageObject)
       .then(function() {          
-        // parent.refresh_chat()
+        parent.showSuccessMessage()
       })
     })
   }
@@ -150,6 +148,11 @@ class CHAT {
 
   clearName() {
     document.getElementById('chat_fullname').value = ''
+  }
+
+  showSuccessMessage() {
+    $('#chat-form').addClass('d-none');
+    $('#chat-success-message').removeClass('d-none');
   }
 }
 
