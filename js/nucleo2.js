@@ -21,7 +21,8 @@ panoramaN2.addEventListener( 'enter-fade-start', function(){
     ocultarLoad();
 
  });
-const panoramaN2_B_src = document.documentElement.lang == 'en' ? 'src/img/360_EN/nucleo02_posB_EN.jpg'  : 'src/img/360_amarillo/nucleo02_closeup3.jpg' ;
+ //fijate bien en la ruta en ingles
+const panoramaN2_B_src = document.documentElement.lang == 'en' ? 'src/img/360_En/nucleo02_posB_EN.jpg'  : 'src/img/360_amarillo/nucleo02_closeup3.jpg' ;
 const panoramaN2_B = new PANOLENS.ImagePanorama( panoramaN2_B_src );
 panoramaN2_B.addEventListener( 'enter-fade-start', function(){
     viewer.tweenControlCenter(  new THREE.Vector3(5000.00, 200, 0), 0 );
@@ -238,10 +239,12 @@ function cambioPosicion(pos){
             navegacionInferior.style.visibility ="visible";
             navegacionInferiorN2.style.visibility ="hidden";
     
-    
+              gsap.to(fadeNegro,{delay:1.0,duration:0.75,opacity:0}).eventCallback('onComplete',()=>{
+                      fadeNegro.style.visibility = 'hidden';
+                 })
         }else if(pos =="posicionB")
         {
-            mostrarLoad();
+            //  mostrarLoad();
              navegacionInferior.style.visibility ="hidden";
              navegacionInferiorN2.style.visibility ="visible";
 
@@ -257,6 +260,7 @@ function cambioPosicion(pos){
                 if(pro >= 1)
                 {
                     // ocultarLoad();
+
                     panoramaN2_B.add(cuadroPlano_1); 
                     panoramaN2_B.add(cuadroPlano_2); 
                     // panoramaN2_B.add(cuadroPlano_3);
@@ -283,18 +287,18 @@ function cambioPosicion(pos){
                     panoramaN2_B.add(cuadroPlano_24);
                     panoramaN2_B.add(cuadroPlano_25);
                     
-                    gsap.to(fadeNegro,{delay:1.0,duration:0.75,opacity:0}).eventCallback('onComplete',()=>{
-                        fadeNegro.style.visibility = 'hidden';})
+                  
             
                 }
             })
+            gsap.to(fadeNegro,{delay:1.0,duration:0.75,opacity:0}).eventCallback('onComplete',()=>{
+                fadeNegro.style.visibility = 'hidden';})
+
 
     
         }
 
-        // gsap.to(fadeNegro,{delay:1.0,duration:0.75,opacity:0}).eventCallback('onComplete',()=>{
-        //     fadeNegro.style.visibility = 'hidden';
-        // })
+      
     })
    
 

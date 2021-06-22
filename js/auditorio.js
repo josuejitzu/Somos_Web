@@ -5,7 +5,10 @@ const panelVideo = document.querySelector(".panelVideos");
 const panelCountdown = document.querySelector('.panelCountdown');
 const panelVideoPlyr = document.querySelector('.panelVideosCentro');
 
-const videoPlayer =  new Plyr(document.querySelector('.player'));
+const videoPlayer =  new Plyr(document.querySelector('.player'),
+{
+   constrols: ['play-large', 'play', 'current-time', 'mute', 'volume', 'settings', 'fullscreen']
+});
 const imgVidConAudio_blanco ="src/img/simbolos/AUDIO.png";
 const imgVidSinAudio_blanco ="src/img/simbolos/SIN_AUDIO.png";
 const fbPlayer = document.querySelector(".fb-video ");
@@ -258,6 +261,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			// Caption support is still flaky. See: https://github.com/sampotts/plyr/issues/994
 			setTimeout(() => hls.subtitleTrack = videoPlayer.currentTrack, 50);
 		});
+        videoPlayer.controls = ['play-large', 'play', 'current-time', 'mute', 'volume', 'settings', 'fullscreen'];
 	}
 	
 	// Expose player so it can be used from the console
@@ -335,6 +339,8 @@ if(seconds < 10){seconds = "0"+seconds;}
             if(panelVideo.style.visibility == "visible")
                 panelVideoPlyr.style.visibility ="visible"; 
              panelVideoPlyr.style.width = "50%";
+
+             videoPlayer.play();
         });
     }
 }
@@ -350,6 +356,8 @@ setTimeout(function() {
         if(panelVideo.style.visibility == "visible")
             panelVideoPlyr.style.visibility ="visible"; 
          panelVideoPlyr.style.width = "70%";
+         videoPlayer.play();
+
     });
     countDownTime = false;
 
@@ -369,3 +377,5 @@ function parseDate(dateString){
     }
     return time;
 }
+
+videoPlayer.controls = ['play-large', 'play', 'current-time', 'mute', 'volume', 'settings', 'fullscreen'];

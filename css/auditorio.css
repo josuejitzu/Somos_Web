@@ -90,7 +90,10 @@
     /* --plyr-audio-control-color:#cc0000; */
     /* --plyr-video-control-color:#cc0000; */
 }
-   
+.plyr__progress { 
+    opacity: 0;
+    pointer-events: none;
+ }
  
 .panelCountdown
 {

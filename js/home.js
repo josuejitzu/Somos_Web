@@ -134,7 +134,7 @@ scene.add(camera)
 var bar1 = new ldBar("#barraCarga");
 var bar2 = document.getElementById("barraCarga").ldBar;
 // bar1.style.width = "100%";
- bar1.set(100)
+bar1.set(100)
 //EDificio Modelo
 const loadingManager = new THREE.LoadingManager(
     //cargado
@@ -478,13 +478,13 @@ if(document.documentElement.lang == "en")
 
 
 ///DEBUG
-setTimeout(function() { 
+// setTimeout(function() { 
     
-    var panelCountdown = document.querySelector('.panelCountdown');
-    console.log("fecha superada");
-    gsap.to(panelCountdown,{duration:0.5,opacity:0}).eventCallback('onComplete',()=>{
-        panelCountdown.style.visibility ="hidden";
-    });
-    countDownTime = false;
+//     var panelCountdown = document.querySelector('.panelCountdown');
+//     console.log("fecha superada");
+//     gsap.to(panelCountdown,{duration:0.5,opacity:0}).eventCallback('onComplete',()=>{
+//         panelCountdown.style.visibility ="hidden";
+//     });
+//     countDownTime = false;
 
-}, 3000);
+// }, 3000);
