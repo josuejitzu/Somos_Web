@@ -109,7 +109,7 @@ var infospotDinamicoA = new PANOLENS.Infospot(450,imgsrcNetflix);
 infospotDinamicoA.position.set( 5000.00, -1200,  -1100);//y:-3220
 infospotDinamicoA.addEventListener('click',()=>{
     console.log("infospot dinamico A")
-    window.location.href = "https://www.netflix.com/browse";
+    window.location.href = "https://www.netflix.com/search?q=somos&jbv=81008489";
 })
  
 panoramaLobby.add(infospotDinamicoA)
