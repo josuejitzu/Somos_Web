@@ -1,3 +1,13 @@
+#chat-messages {
+  position: absolute;
+  width: 330px;
+  height: 400px;
+  right: 20px;
+  bottom: 355px;
+  border: 2px solid white;
+  z-index: 9999;
+}
+
 .chat-area {
   position: absolute;
   width: 340px;
@@ -94,7 +104,7 @@ input.chat-input {
 }
 
 #chat_content_container {
-  height: 500px;
+  height: 300px;
   overflow-y: scroll;
 }
 
