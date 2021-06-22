@@ -109,6 +109,7 @@ var infospotDinamicoA = new PANOLENS.Infospot(450,imgsrcNetflix);
 infospotDinamicoA.position.set( 5000.00, -1200,  -1100);//y:-3220
 infospotDinamicoA.addEventListener('click',()=>{
     console.log("infospot dinamico A")
+    window.location.href = "https://www.netflix.com/browse";
 })
  
 panoramaLobby.add(infospotDinamicoA)
@@ -352,7 +353,7 @@ setTimeout(function() {
     });
     countDownTime = false;
 
-}, 3000);
+}, 10000);
 
 function parseDate(dateString){
     var time = Date.parse(dateString);
