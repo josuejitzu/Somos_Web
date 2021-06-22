@@ -38,3 +38,7 @@ function ocultarLoad(){
   document.querySelector(".panelCarga").style.opacity = 0.0;
   //document.querySelector(".panelCarga").style.visibility = "hidden";
 }
+function mostrarLoad(){
+  document.querySelector(".panelCarga").style.opacity = 1.0;
+
+}

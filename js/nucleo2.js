@@ -241,6 +241,7 @@ function cambioPosicion(pos){
     
         }else if(pos =="posicionB")
         {
+            mostrarLoad();
              navegacionInferior.style.visibility ="hidden";
              navegacionInferiorN2.style.visibility ="visible";
 
