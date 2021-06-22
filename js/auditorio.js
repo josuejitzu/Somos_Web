@@ -354,9 +354,12 @@ setTimeout(function() {
         panelCountdown.style.height ="0%"
 
         if(panelVideo.style.visibility == "visible")
+        {
             panelVideoPlyr.style.visibility ="visible"; 
+              videoPlayer.play();
+
+        }
          panelVideoPlyr.style.width = "70%";
-         videoPlayer.play();
 
     });
     countDownTime = false;
