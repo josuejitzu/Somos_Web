@@ -434,11 +434,22 @@ console.log (new Date('2011-04-12'.replace(/-/g, "/")));
 
 if(document.documentElement.lang == "en")
 {
-    displayCountdown.innerHTML = days+" días | "+hours+" : "+minutes+" : "+seconds.toString();
+    if(days<=0){
+        displayCountdown.innerHTML = hours+" : "+minutes+" : "+seconds.toString();
+
+    }else{
+
+        displayCountdown.innerHTML = days+" días | "+hours+" : "+minutes+" : "+seconds.toString();
+    }
 
 }else{
+    if(days<=0){
+        displayCountdown.innerHTML = hours+" : "+minutes+" : "+seconds.toString();
 
-    displayCountdown.innerHTML = days+" días | "+hours+" : "+minutes+" : "+seconds.toString();
+    }else{
+
+     displayCountdown.innerHTML = days+" días | "+hours+" : "+minutes+" : "+seconds.toString();
+    }
 }
 //  displayCountdown.innerHTML =days+" días | "+hours+" : "+minutes+" : "+seconds.toString();;
 

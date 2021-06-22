@@ -303,11 +303,20 @@ if(seconds < 10){seconds = "0"+seconds;}
 
     if(document.documentElement.lang == "en")
     {
-        displayCountdown.innerHTML = days+" days | "+hours+" : "+minutes+" : "+seconds.toString();
+        if(days<=0){
+            displayCountdown.innerHTML = hours+" : "+minutes+" : "+seconds.toString();
+    
+        }else{
+        displayCountdown.innerHTML = days+" day | "+hours+" : "+minutes+" : "+seconds.toString();
+        }
 
     }else{
-
+        if(days<=0){
+            displayCountdown.innerHTML = hours+" : "+minutes+" : "+seconds.toString();
+    
+        }else{
         displayCountdown.innerHTML = days+" días | "+hours+" : "+minutes+" : "+seconds.toString();
+        }
     }
 
     //if( fechaActualParse >= fechaFuturaParse)

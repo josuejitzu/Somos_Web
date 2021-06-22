@@ -34,7 +34,7 @@
 {
     width:0%; /* a 70% cuando llegue la fecha*/
     height:50%;
-    background-color:rgba(76, 126, 46, 0.652);
+    background-color:rgba(75, 126, 46, 0);
     overflow-y: scroll;
 
     display: flex;
