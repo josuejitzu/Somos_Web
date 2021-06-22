@@ -304,10 +304,10 @@ if(seconds < 10){seconds = "0"+seconds;}
     if(document.documentElement.lang == "en")
     {
         if(days<=0){
-            displayCountdown.innerHTML = hours+" : "+minutes+" : "+seconds.toString();
+             displayCountdown.innerHTML = hours+" : "+minutes+" : "+seconds.toString();
     
         }else{
-        displayCountdown.innerHTML = days+" day | "+hours+" : "+minutes+" : "+seconds.toString();
+             displayCountdown.innerHTML = days+" day | "+hours+" : "+minutes+" : "+seconds.toString();
         }
 
     }else{
@@ -315,7 +315,7 @@ if(seconds < 10){seconds = "0"+seconds;}
             displayCountdown.innerHTML = hours+" : "+minutes+" : "+seconds.toString();
     
         }else{
-        displayCountdown.innerHTML = days+" días | "+hours+" : "+minutes+" : "+seconds.toString();
+             displayCountdown.innerHTML = days+" días | "+hours+" : "+minutes+" : "+seconds.toString();
         }
     }
 

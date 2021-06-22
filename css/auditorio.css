@@ -15,7 +15,7 @@
     z-index:999;
     
     /* padding: 20px; */
-    text-align: justify;
+    /* text-align: justify; */
     color: white;
     /* left:5%;
     right:5%;*/
@@ -32,16 +32,16 @@
 
 .panelVideosCentro
 {
-    width:0%; /* a 70% cuando llegue la fecha*/
+    width:80%; /* a 70% cuando llegue la fecha*/
     height:50%;
     background-color:rgba(75, 126, 46, 0);
     overflow-y: scroll;
 
     display: flex;
     flex-direction:column;
-/* justify-content:flex-start; */
-
-    align-items:flex-start;
+    justify-content:flex-start;
+    flex-wrap: nowrap;
+    align-items:flex-end;
     visibility: hidden;
     /* margin: 30px auto; */
     /* pointer-events:none; */
@@ -52,7 +52,22 @@
         -ms-overflow-style: none;  /* IE and Edge */
         scrollbar-width: none;  /* Firefox */
  }
-
+.marcoVideo{
+     /* width: 100%; */
+     align-self: center;
+     background-color: rgba(255, 255, 255, 0);
+     display: flex;
+     position: absolute;
+     flex:2;
+     z-index: 999;
+     align-self: center;
+     width: 50%;
+    /* pointer-events:none; */
+     /* width: 100%; */
+     /* z-index: 999; */
+     /* align-self:center; */
+          
+ }
 .panelVideosLateral
 {
     background-color: rgba(15, 128, 53, 0); 
@@ -76,20 +91,7 @@
     /* --plyr-video-control-color:#cc0000; */
 }
    
- .marcoVideo{
-     /* width: 100%; */
-     align-self: center;
-     background-color: rgba(255, 255, 255, 0);
-     display: flex;
-     position: absolute;
-     z-index: 999;
-     align-self: center;
-    /* pointer-events:none; */
-     /* width: 100%; */
-     /* z-index: 999; */
-     /* align-self:center; */
-          
- }
+ 
 .panelCountdown
 {
     display: flex;
@@ -234,7 +236,7 @@
         width:20%;
     }
     .marcoVideo{
-        width: 100%;
+        width: 70%;
         /* align-self:center; */
              
     }
