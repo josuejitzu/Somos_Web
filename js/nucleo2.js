@@ -10,7 +10,7 @@ panoramaN2.addEventListener( 'enter-fade-start', function(){
   panoramaN2.addEventListener('progress', function(e){
     // hide the loader
     var pro = e.progress.loaded / e.progress.total;
-    console.log(pro)
+    console.log("carga panorama A:"+pro)
     bar1.set(pro*100);
 
     // ocultarLoad();
@@ -21,12 +21,27 @@ panoramaN2.addEventListener( 'enter-fade-start', function(){
     ocultarLoad();
 
  });
-const panoramaN2_B_src =document.documentElement.lang == 'en' ? 'src/img/360_EN/nucleo02_posB_EN.jpg'  : 'src/img/360_amarillo/nucleo02_closeup3.jpg' ;
+const panoramaN2_B_src = document.documentElement.lang == 'en' ? 'src/img/360_EN/nucleo02_posB_EN.jpg'  : 'src/img/360_amarillo/nucleo02_closeup3.jpg' ;
 const panoramaN2_B = new PANOLENS.ImagePanorama( panoramaN2_B_src );
 panoramaN2_B.addEventListener( 'enter-fade-start', function(){
     viewer.tweenControlCenter(  new THREE.Vector3(5000.00, 200, 0), 0 );
   } );
+// panoramaN2_B.addEventListener('progress',function(e){
+    
+//     var pro = e.progress.loaded / e.progress.total;
+//     console.log("carga panorama B:"+pro)
+//     bar1.set(pro*100);
+//     // if(pro >= 1)
+//     // {
+//     //     ocultarLoad();
 
+//     // }
+// })
+panoramaN2_B.addEventListener('load', function(e){
+    // hide the loader
+    ocultarLoad();
+
+ });
 let viewer;
 
 const mainContainer = document.getElementById( 'main-container' );
@@ -226,41 +241,59 @@ function cambioPosicion(pos){
     
         }else if(pos =="posicionB")
         {
-             viewer.setPanorama(panoramaN2_B);
              navegacionInferior.style.visibility ="hidden";
              navegacionInferiorN2.style.visibility ="visible";
+
+            
     
-             panoramaN2_B.add(cuadroPlano_1); 
-                panoramaN2_B.add(cuadroPlano_2); 
-                // panoramaN2_B.add(cuadroPlano_3);
-                panoramaN2_B.add(cuadroPlano_4);
-                panoramaN2_B.add(cuadroPlano_5); 
-                panoramaN2_B.add(cuadroPlano_6); 
-                panoramaN2_B.add(cuadroPlano_7);
-                //panoramaN2_B.add(cuadroPlano_8);
-                panoramaN2_B.add(cuadroPlano_9); 
-                panoramaN2_B.add(cuadroPlano_10); 
-                panoramaN2_B.add(cuadroPlano_11);
-                panoramaN2_B.add(cuadroPlano_12);
-                panoramaN2_B.add(cuadroPlano_13);
-                panoramaN2_B.add(cuadroPlano_14); 
-                panoramaN2_B.add(cuadroPlano_15);
-                panoramaN2_B.add(cuadroPlano_16);
-                panoramaN2_B.add(cuadroPlano_17);//CENTRO
-                panoramaN2_B.add(cuadroPlano_18); 
-                panoramaN2_B.add(cuadroPlano_19);
-                panoramaN2_B.add(cuadroPlano_20);
-                panoramaN2_B.add(cuadroPlano_21);
-                panoramaN2_B.add(cuadroPlano_22); 
-                panoramaN2_B.add(cuadroPlano_23);
-                panoramaN2_B.add(cuadroPlano_24);
-                panoramaN2_B.add(cuadroPlano_25);
+             
+             viewer.setPanorama(panoramaN2_B);
+             panoramaN2_B.addEventListener('progress',function(e){
+    
+                var pro = e.progress.loaded / e.progress.total;
+                console.log("carga panorama B:"+pro)
+                bar1.set(pro*100);
+                if(pro >= 1)
+                {
+                    // ocultarLoad();
+                    panoramaN2_B.add(cuadroPlano_1); 
+                    panoramaN2_B.add(cuadroPlano_2); 
+                    // panoramaN2_B.add(cuadroPlano_3);
+                    panoramaN2_B.add(cuadroPlano_4);
+                    panoramaN2_B.add(cuadroPlano_5); 
+                    panoramaN2_B.add(cuadroPlano_6); 
+                    panoramaN2_B.add(cuadroPlano_7);
+                    //panoramaN2_B.add(cuadroPlano_8);
+                    panoramaN2_B.add(cuadroPlano_9); 
+                    panoramaN2_B.add(cuadroPlano_10); 
+                    panoramaN2_B.add(cuadroPlano_11);
+                    panoramaN2_B.add(cuadroPlano_12);
+                    panoramaN2_B.add(cuadroPlano_13);
+                    panoramaN2_B.add(cuadroPlano_14); 
+                    panoramaN2_B.add(cuadroPlano_15);
+                    panoramaN2_B.add(cuadroPlano_16);
+                    panoramaN2_B.add(cuadroPlano_17);//CENTRO
+                    panoramaN2_B.add(cuadroPlano_18); 
+                    panoramaN2_B.add(cuadroPlano_19);
+                    panoramaN2_B.add(cuadroPlano_20);
+                    panoramaN2_B.add(cuadroPlano_21);
+                    panoramaN2_B.add(cuadroPlano_22); 
+                    panoramaN2_B.add(cuadroPlano_23);
+                    panoramaN2_B.add(cuadroPlano_24);
+                    panoramaN2_B.add(cuadroPlano_25);
+                    
+                    gsap.to(fadeNegro,{delay:1.0,duration:0.75,opacity:0}).eventCallback('onComplete',()=>{
+                        fadeNegro.style.visibility = 'hidden';})
+            
+                }
+            })
+
     
         }
 
-        gsap.to(fadeNegro,{delay:1.0,duration:0.5,opacity:0}).eventCallback('onComplete',()=>{
-            fadeNegro.style.visibility = 'hidden';
-        })
+        // gsap.to(fadeNegro,{delay:1.0,duration:0.75,opacity:0}).eventCallback('onComplete',()=>{
+        //     fadeNegro.style.visibility = 'hidden';
+        // })
     })
    
 
@@ -272,29 +305,7 @@ function cambioPosicion(pos){
 
 
 
-// const raycaster = new THREE.Raycaster();
 
-// const rayOrigin = new THREE.Vector3(1900,-500,-13.97)
-// const rayDirection = new THREE.Vector3(10, 0, 0)
-// rayDirection.normalize()
-
-// raycaster.set(rayOrigin, rayDirection)
-
-// const intersect = raycaster.intersectObject(cuadroPlano_1)
-// console.log(intersect)
-
-
-// const sizes = { width:window.innerWidth,height:window.innerHeight}
-// const mouse = new THREE.Vector2()
-
-// window.addEventListener('mousemove', (event) =>
-// {
-//     mouse.x = event.clientX / sizes.width * 2 - 1
-//     mouse.y = - (event.clientY / sizes.height) * 2 + 1
-
-//     console.log(mouse)
-// })
-//update
 
 
 var seleccion
