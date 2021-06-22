@@ -71,7 +71,7 @@ const videoJames ={
     title: 'Example title',
     sources: [
       {
-        src: 'http://jitzu.mx/videos/James_completo.mp4',
+        src: 'src/vids/completo_James_2.mp4',//'http://jitzu.mx/videos/James_completo.mp4',
         type: 'video/mp4',
         size: 1080,
       }
@@ -103,7 +103,7 @@ const videoJames ={
     title: 'Example title',
     sources: [
       {
-        src: 'http://jitzu.mx/videos/Monika_completo.mp4',
+        src:  'src/vids/completo_Monika_2.mp4',// 'http://jitzu.mx/videos/Monika_completo.mp4',
         type: 'video/mp4',
         size: 1080,
       }
@@ -135,7 +135,7 @@ const videoFernanda ={
     title: 'Example title',
     sources: [
       {
-        src: 'http://jitzu.mx/videos/Fernanada_completo.mp4',
+        src:  'src/vids/completo_Fernanda_2.mp4',//'http://jitzu.mx/videos/Fernanada_completo.mp4',
         type: 'video/mp4',
         size: 1080,
       }

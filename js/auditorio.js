@@ -353,7 +353,7 @@ setTimeout(function() {
     });
     countDownTime = false;
 
-}, 10000);
+}, 5000);
 
 function parseDate(dateString){
     var time = Date.parse(dateString);
