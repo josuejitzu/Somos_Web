@@ -19,7 +19,7 @@ function initializeFirebase() {
 
 class CHAT {
   refreshChat() {
-    const chat_content_container = document.getElementById('chat_content_container')
+    let chat_content_container = document.getElementById('chat_content_container')
 
     db.ref('chats/').on('value', function(messages_object) {        
       chat_content_container.innerHTML = ''        
@@ -53,26 +53,26 @@ class CHAT {
       })
 
       ordered.forEach(function(data) {
-        var name = data.name
-        var message = data.message
+        const name = data.name
+        const message = data.message
 
-        var message_container = document.createElement('div')
+        let message_container = document.createElement('div')
         message_container.setAttribute('class', 'message_container')
 
-        var message_inner_container = document.createElement('div')
+        let message_inner_container = document.createElement('div')
         message_inner_container.setAttribute('class', 'message_inner_container')
 
-        var message_user_container = document.createElement('div')
+        let message_user_container = document.createElement('div')
         message_user_container.setAttribute('class', 'message_user_container')
 
-        var message_user = document.createElement('p')
+        let message_user = document.createElement('p')
         message_user.setAttribute('class', 'message_user')
         message_user.textContent = `${name}`
 
-        var message_content_container = document.createElement('div')
+        let message_content_container = document.createElement('div')
         message_content_container.setAttribute('class', 'message_content_container')
 
-        var message_content = document.createElement('p')
+        let message_content = document.createElement('p')
         message_content.setAttribute('class', 'message_content')
         message_content.textContent = `${message}`
 
@@ -80,9 +80,8 @@ class CHAT {
         message_content_container.append(message_content)
         message_inner_container.append(message_user_container, message_content_container)
         message_container.append(message_inner_container)
-
         chat_content_container.append(message_container)
-      });        
+      });
       
       chat_content_container.scrollTop = chat_content_container.scrollHeight;
     })
