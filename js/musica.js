@@ -15,6 +15,9 @@ let pistaSeleccionadaC;
 var reproductorA, reproductorB, reproductorC;
 var playForzado = false;
 
+Howler.autoUnlock = true;
+Howler.html5PoolSize=50; 
+
 function obtenerNombrePagina(){
     var path = window.location.pathname;
     var page = path.split("/").pop();
@@ -335,11 +338,25 @@ var sound;
 ///i=pagina,j=desde que pista
 function reproducir(i,j)
 {
+ 
+    //  var blobUrl = window.createObjectURL();
      sound = new Howl({
         src: ["src/musica/"+ musciaPagina[i][1][j]],
         volume:0.5,
         autoplay:true,
         html5:true,
+        preload:true,
+        onload:function(){
+            sound.play();
+            if(Howler.ctx.state == "suspended")
+            {
+                
+                Howler.ctx.resume();
+                console.log("Howler resumed");
+
+            }
+            console.log("audio cargado");
+        },
         onend: function(){
             // console.log("pista fin");
             if(j + 1 == musciaPagina[0][0].length)
@@ -362,7 +379,9 @@ function reproducir(i,j)
         }
     
     })
-    sound.play();
+    // sound.play();
+    // if(Howler.ctx.state == "suspended")
+    //     Howler.ctx.resume();
     // sound.resume();
     if(muteado)
         sound.mute(true);
@@ -490,12 +509,7 @@ console.log("hola")
 //   });
 
 
-  if(Howler.ctx && Howler.ctx.state && Howler.ctx.state == "suspended") {
-    Howler.ctx.resume().then(function() {
-        console.log("AudioContext resumed!");
-        // fire your callback here
-    });
-}
+
 
 setTimeout(function() { 
     
@@ -510,7 +524,14 @@ setTimeout(function() {
     //     playForzado = true
 
     // }
+    if(Howler.ctx && Howler.ctx.state && Howler.ctx.state == "suspended") {
+        Howler.ctx.resume().then(function() {
+            console.log("AudioContext resumed!");
+            // fire your callback here
+        });
+    }
     sound.play();
+
 
 }, 100);
 
