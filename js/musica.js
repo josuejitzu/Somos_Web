@@ -13,6 +13,7 @@ let pistaSeleccionadaA;
 let pistaseleccionadaB;
 let pistaSeleccionadaC;
 var reproductorA, reproductorB, reproductorC;
+var playForzado = false;
 
 function obtenerNombrePagina(){
     var path = window.location.pathname;
@@ -337,7 +338,8 @@ function reproducir(i,j)
      sound = new Howl({
         src: ["src/musica/"+ musciaPagina[i][1][j]],
         volume:0.5,
-        html:true,
+        autoplay:true,
+        html5:true,
         onend: function(){
             // console.log("pista fin");
             if(j + 1 == musciaPagina[0][0].length)
@@ -351,10 +353,17 @@ function reproducir(i,j)
                     reproducir(i,j+1)
                 }
             }
+        },
+        onplayerror: function(){
+            sound.once('unlock',function(){
+                console.log("se forzo el play");
+                sound.play();
+            })
         }
     
     })
     sound.play();
+    // sound.resume();
     if(muteado)
         sound.mute(true);
 
@@ -452,10 +461,57 @@ function callarMusica(){
 
 window.addEventListener('load',()=>{
     // reproductorA.play();
+    // cargarPista();
 })
 
 document.addEventListener("DOMContentLoaded", function(event) {
     // console.log("DOM fully loaded and parsed");
     // reproductorA.play();
+    // cargarPista();
+
     // sound.play();
   });
+
+console.log("hola")
+//   sound.play();
+
+// window.addEventListener('mousemove', e => {
+//     if(!playForzado)
+//     {
+
+//         console.log("moviendose");
+//         if(sound.playing()==false)
+//         {
+//             cargarPista();
+//         }
+//         playForzado = true
+
+//     }
+//   });
+
+
+  if(Howler.ctx && Howler.ctx.state && Howler.ctx.state == "suspended") {
+    Howler.ctx.resume().then(function() {
+        console.log("AudioContext resumed!");
+        // fire your callback here
+    });
+}
+
+setTimeout(function() { 
+    
+    // if(!playForzado)
+    // {
+
+    //     console.log("moviendose");
+    //     if(sound.playing()==false)
+    //     {
+    //         cargarPista();
+    //     }
+    //     playForzado = true
+
+    // }
+    sound.play();
+
+}, 100);
+
+//test
