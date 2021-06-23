@@ -337,7 +337,8 @@ var sound;
 
 ///i=pagina,j=desde que pista
 function reproducir(i,j)
-{
+{   
+   
  
     //  var blobUrl = window.createObjectURL();
      sound = new Howl({
@@ -347,15 +348,15 @@ function reproducir(i,j)
         html5:true,
         preload:true,
         onload:function(){
-            sound.play();
             if(Howler.ctx.state == "suspended")
             {
                 
                 Howler.ctx.resume();
                 console.log("Howler resumed");
+                sound.play();
 
             }
-            console.log("audio cargado");
+            // console.log("audio cargado");
         },
         onend: function(){
             // console.log("pista fin");
@@ -379,9 +380,16 @@ function reproducir(i,j)
         }
     
     })
-    // sound.play();
-    // if(Howler.ctx.state == "suspended")
-    //     Howler.ctx.resume();
+    console.log(Howler.ctx.state);
+    if(Howler.ctx.state == "suspended"){
+
+        Howler.ctx.resume();
+        sound.play();
+
+    }else{
+        sound.play();
+
+    }
     // sound.resume();
     if(muteado)
         sound.mute(true);
@@ -478,18 +486,29 @@ function callarMusica(){
 
 }
 
-window.addEventListener('load',()=>{
-    // reproductorA.play();
-    // cargarPista();
-})
+// window.addEventListener('load',()=>{
+//     // reproductorA.play();
+//     // cargarPista();
+//     if(Howler.ctx && Howler.ctx.state && Howler.ctx.state == "suspended") {
+//         Howler.ctx.resume().then(function() {
+//             console.log("AudioContext resumed!");
+//             // fire your callback here
+//         });
+//     }
+// })
 
-document.addEventListener("DOMContentLoaded", function(event) {
-    // console.log("DOM fully loaded and parsed");
-    // reproductorA.play();
-    // cargarPista();
-
-    // sound.play();
-  });
+// document.addEventListener("DOMContentLoaded", function(event) {
+//     // console.log("DOM fully loaded and parsed");
+//     // reproductorA.play();
+//     // cargarPista();
+//     if(Howler.ctx && Howler.ctx.state && Howler.ctx.state == "suspended") {
+//         Howler.ctx.resume().then(function() {
+//             console.log("AudioContext resumed!");
+//             // fire your callback here
+//         });
+//     }
+//     // sound.play();
+//   });
 
 console.log("hola")
 //   sound.play();
@@ -498,10 +517,16 @@ console.log("hola")
 //     if(!playForzado)
 //     {
 
-//         console.log("moviendose");
-//         if(sound.playing()==false)
-//         {
-//             cargarPista();
+//         // console.log("moviendose");
+//         // if(sound.playing()==false)
+//         // {
+//         //     cargarPista();
+//         // }
+//         if(Howler.ctx && Howler.ctx.state && Howler.ctx.state == "suspended") {
+//             Howler.ctx.resume().then(function() {
+//                 console.log("AudioContext resumed!");
+//                 // fire your callback here
+//             });
 //         }
 //         playForzado = true
 
@@ -510,29 +535,20 @@ console.log("hola")
 
 
 
-
+//Funciono un rato despues siguio igual
 setTimeout(function() { 
     
-    // if(!playForzado)
-    // {
-
-    //     console.log("moviendose");
-    //     if(sound.playing()==false)
-    //     {
-    //         cargarPista();
-    //     }
-    //     playForzado = true
-
-    // }
-    if(Howler.ctx && Howler.ctx.state && Howler.ctx.state == "suspended") {
+   
+    if(Howler.ctx.state == "suspended") {
         Howler.ctx.resume().then(function() {
             console.log("AudioContext resumed!");
             // fire your callback here
         });
     }
-    sound.play();
+    if(sound.playing()== false)
+        sound.play();
 
 
-}, 100);
+}, 1000);
 
 //test
