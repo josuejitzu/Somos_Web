@@ -380,6 +380,10 @@ function reproducir(i,j)
         }
     
     })
+    sound.once('load', function(){
+        if(sound.playing()== false)
+            sound.play();
+      });
     console.log(Howler.ctx.state);
     if(Howler.ctx.state == "suspended"){
 
