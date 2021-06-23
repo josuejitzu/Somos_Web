@@ -12,7 +12,7 @@
     /* height:100%; */
     /* overflow-y: scroll; */
     background-color:rgba(0, 0, 0, 0.897); 
-    z-index:999;
+    z-index:99;
     
     /* padding: 20px; */
     /* text-align: justify; */
@@ -24,7 +24,7 @@
     display: flex;
     flex-direction: row;
     flex-wrap:nowrap;
-    justify-content:center;
+    /* justify-content:flex-start; */
     align-items:center;
     visibility: hidden;
     opacity: 0;
@@ -32,18 +32,19 @@
 
 .panelVideosCentro
 {
-    width:80%; /* a 70% cuando llegue la fecha*/
+    width:70%; /* a 70% cuando llegue la fecha*/
     height:50%;
-    background-color:rgba(75, 126, 46, 0);
+    background-color:rgba(93, 248, 4, 0);
     overflow-y: scroll;
 
     display: flex;
     flex-direction:column;
-    justify-content:flex-start;
-    flex-wrap: nowrap;
-    /* align-items:flex-end; */
+    justify-content:center;
+    /* flex-wrap: nowrap; */
+    align-self: center;
+    align-items:center;
     visibility: hidden;
-    /* margin: 30px auto; */
+    /* margin: 10% auto; */
     /* pointer-events:none; */
 
 }
@@ -58,20 +59,17 @@
      background-color: rgba(255, 255, 255, 0);
      display: flex;
      position: absolute;
-     flex:2;
-     z-index: 999;
-     align-self: center;
+     /* flex:2; */
+     z-index: 99;
+    
      width: 50%;
-    /* pointer-events:none; */
-     /* width: 100%; */
-     /* z-index: 999; */
-     /* align-self:center; */
+    
           
  }
 .panelVideosLateral
 {
     background-color: rgba(15, 128, 53, 0); 
-    width:15%; 
+    width:26%; 
     height:80%; 
     text-align:center;
 } 
@@ -84,22 +82,22 @@
 
 .plyr{
     /* visibility: hidden; */
-
+    /* align-self: center; */
     --plyr-color-main:#ff0000;
     /* --plyr-control-icon-size:1px; */
     /* --plyr-audio-control-color:#cc0000; */
     /* --plyr-video-control-color:#cc0000; */
 }
 .plyr__progress { 
-    opacity: 0;
-    pointer-events: none;
+    /* opacity: 0;
+    pointer-events: none; */
  }
  
 .panelCountdown
 {
     display: flex;
     position: absolute;
-    background-color: rgba(112, 41, 41, 0.508);
+    background-color: rgba(112, 41, 41, 0);
     
     flex-direction:column;
     /* flex-direction: column; */

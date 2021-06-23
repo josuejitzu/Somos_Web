@@ -613,15 +613,15 @@ function bannerSeleccionado(banner)
             if( document.documentElement.lang == "en")
             {
                 textoPrincipal.innerHTML =    
-                "Traditionally, the quinceañera is an important milestone in the life of a woman, as it is the"+
+                "Traditionally, the quinceañera is an important milestone in the life of a woman, as it is the "+
                 "moment of officially transitioning from a girl to embracing adult life."+"<br/>" +
-                "In Mexico, it is also when a woman is \"presented\" in society, an initiation rite within a"+
-                "patriarchal society. If the celebration is Catholic, then the event is accompanied by a mass"+
-                "or a religious ceremony, which is followed by a dance full of symbolism. The quinceañera"+
-                "dress is usually elaborate and has a princess style. The father accompanies his 15-yearold daughter in the first dance and then \"delivers\" her to the \"chambelanes\" (young men)"+
-                "who dance to different songs with her, as a representation of the path she will travel and"+
-                "the obstacles she will face to find love. A large cake is topped with a doll dressed"+
-                "identically to the young woman, the last doll she will ever have, marking the beginning of"+
+                "In Mexico, it is also when a woman is \"presented\" in society, an initiation rite within a "+
+                "patriarchal society. If the celebration is Catholic, then the event is accompanied by a mass "+
+                "or a religious ceremony, which is followed by a dance full of symbolism. The quinceañera "+
+                "dress is usually elaborate and has a princess style. The father accompanies his 15-yearold daughter in the first dance and then \"delivers\" her to the \"chambelanes\" (young men) "+
+                "who dance to different songs with her, as a representation of the path she will travel and "+
+                "the obstacles she will face to find love. A large cake is topped with a doll dressed "+
+                "identically to the young woman, the last doll she will ever have, marking the beginning of "+
                 "her new life."
             }
             else{
@@ -651,12 +651,12 @@ function bannerSeleccionado(banner)
             if(document.documentElement.lang == "en"){
                 textoTitulo.innerHTML ="The Architecture of the Northeast";
                 textoPrincipal.innerHTML =
-                "The architecture of northeast Mexico is extremely rich in architectural styles, construction"+
-                "techniques and ways of living. This plurality is due to the different visual and stylistic"+
-                "influences that have flooded the region, in addition to the production, migratory and social"+
-                "processes that have taken place in the territory. In the Allende represented in the series,"+
-                "there is a strong presence of vernacular architecture that depicts the daily life of a"+
-                "population in constant transformation. The architecture in the series shows both the social"+
+                "The architecture of northeast Mexico is extremely rich in architectural styles, construction "+
+                "techniques and ways of living. This plurality is due to the different visual and stylistic "+
+                "influences that have flooded the region, in addition to the production, migratory and social "+
+                "processes that have taken place in the territory. In the Allende represented in the series, "+
+                "there is a strong presence of vernacular architecture that depicts the daily life of a "+
+                "population in constant transformation. The architecture in the series shows both the social "+
                 "and ideological differences."
 
             }else
@@ -688,13 +688,13 @@ function bannerSeleccionado(banner)
            if(document.documentElement.lang == "en"){
             textoTitulo.innerHTML ="Fashion";
             textoPrincipal.innerHTML =
-            "The fashion of northern Mexico has a unique character and is a hybrid in response to the"+
-            "proximity to the United States, the cult of cowboy clothing and the visual culture shown in"+
+            "The fashion of northern Mexico has a unique character and is a hybrid in response to the "+
+            "proximity to the United States, the cult of cowboy clothing and the visual culture shown in "+
             "the film. The attachment to horses, rodeos and the countryside is reflected in the boots,"+
-            "hats and denim shirts worn by a large portion of the population. Coupled with the cowboy"+
+            "hats and denim shirts worn by a large portion of the population. Coupled with the cowboy "+
             "culture, the visual imagery associated with drug trafficking often referred to as \"buchona \","+
-            "has gradually filtered into everyday life and wardrobes. For this reason, the clothing of"+
-            "various characters from Somos. reflects this complex border phenomenon, a mixture of"+
+            "has gradually filtered into everyday life and wardrobes. For this reason, the clothing of "+
+            "various characters from Somos. reflects this complex border phenomenon, a mixture of "+
             "cultures, desires and appearances"
            }else
            {
@@ -765,11 +765,11 @@ function bannerSeleccionado(banner)
            {
                textoTitulo.innerHTML ="Signs and Hand-Painted  Graphics";
                textoPrincipal.innerHTML =
-               "Signs, most of them painted by hand, continue to be a hallmark for businesses and"+
-               "commercial premises in rural areas of Mexico. Despite the standardization of graphic"+
-               "media driven by technology, many towns still use signs drawn by hand to create an"+
-               "original identity. In Somos., commercial graphics are associated with the image of the"+
-               "town and they enhance the visual culture of the region. These signs bring vitality to the"+
+               "Signs, most of them painted by hand, continue to be a hallmark for businesses and "+
+               "commercial premises in rural areas of Mexico. Despite the standardization of graphic "+
+               "media driven by technology, many towns still use signs drawn by hand to create an "+
+               "original identity. In Somos., commercial graphics are associated with the image of the "+
+               "town and they enhance the visual culture of the region. These signs bring vitality to the "+
                "exteriors of the villages far from the cities."
 
            }else
@@ -796,11 +796,11 @@ function bannerSeleccionado(banner)
             {
                 textoTitulo.innerHTML ="Signs and Hand-Painted  Graphics";
                 textoPrincipal.innerHTML =
-                "Signs, most of them painted by hand, continue to be a hallmark for businesses and"+
-                "commercial premises in rural areas of Mexico. Despite the standardization of graphic"+
-                "media driven by technology, many towns still use signs drawn by hand to create an"+
-                "original identity. In Somos., commercial graphics are associated with the image of the"+
-                "town and they enhance the visual culture of the region. These signs bring vitality to the"+
+                "Signs, most of them painted by hand, continue to be a hallmark for businesses and "+
+                "commercial premises in rural areas of Mexico. Despite the standardization of graphic "+
+                "media driven by technology, many towns still use signs drawn by hand to create an "+
+                "original identity. In Somos., commercial graphics are associated with the image of the "+
+                "town and they enhance the visual culture of the region. These signs bring vitality to the "+
                 "exteriors of the villages far from the cities."
 
             }else
@@ -833,13 +833,13 @@ function bannerSeleccionado(banner)
             {
                 textoTitulo.innerHTML ="Norteño Music";
                 textoPrincipal.innerHTML =
-                "Norteño music is a regional genre that has traveled beyond the border, with its popularity"+
-                "growing widely. Also known as banda music, it is characterized by the use of the"+
-                "accordion, extreme bass and lyrics associated with the \"exploits \" of narcos, which gave"+
+                "Norteño music is a regional genre that has traveled beyond the border, with its popularity "+
+                "growing widely. Also known as banda music, it is characterized by the use of the "+
+                "accordion, extreme bass and lyrics associated with the \"exploits \" of narcos, which gave "+
                 "the nickname “narcocorrido” to one of its subgenres, Another one of its characteristics is "+
-                "romanticizing poverty and yearning for unattainable love. The fusion of Norteño music"+
-                "and Texan music has resulted in a Tex-Mex genre, which is very popular on both sides"+
-                "of the border. Norteño music is part of the identity and culture of these border towns, and"+
+                "romanticizing poverty and yearning for unattainable love. The fusion of Norteño music "+
+                "and Texan music has resulted in a Tex-Mex genre, which is very popular on both sides "+
+                "of the border. Norteño music is part of the identity and culture of these border towns, and "+
                 "in Somos. its presence is tenuous, though continuous."
             }
             else
@@ -872,14 +872,14 @@ function bannerSeleccionado(banner)
             {
                 textoTitulo.innerHTML ="The Culture and Territory ";
                 textoPrincipal.innerHTML =
-                "Coahuila is a state in northeast Mexico, bordering Texas in the United States. Its imposing"+
-                "landscape is mostly desert, although it also has swamps, mountains, lagoons, forests and"+
-                "oases. The city of Allende is located in the area known as \"The Five Springs \", made up"+
+                "Coahuila is a state in northeast Mexico, bordering Texas in the United States. Its imposing "+
+                "landscape is mostly desert, although it also has swamps, mountains, lagoons, forests and "+
+                "oases. The city of Allende is located in the area known as \"The Five Springs \", made up "+
                 "of the municipalities of Guerrero, Morelos, Nava, Piedras Negras, Sabinas and Zaragoza,"+
-                "which have a series of streams that feed the Escondido River. Its territory is vast and"+
-                "diverse, and the economy depends on livestock, agriculture and mining. The culture is a"+
-                "hybrid, with tremendous influence from life in the neighboring country to the north. In"+
-                "Somos., the landscape is a real and poetic reference that accompanies the characters"+
+                "which have a series of streams that feed the Escondido River. Its territory is vast and "+
+                "diverse, and the economy depends on livestock, agriculture and mining. The culture is a "+
+                "hybrid, with tremendous influence from life in the neighboring country to the north. In "+
+                "Somos., the landscape is a real and poetic reference that accompanies the characters "+
                 "and the tragedy."
             }
             else{
@@ -912,12 +912,12 @@ function bannerSeleccionado(banner)
         {
             textoTitulo.innerHTML ="Cattle Ranching Culture";
             textoPrincipal.innerHTML =
-            "Raising cattle is one of the main economic activities in northeastern Mexico. Its vital"+
-            "commodity is not limited to the production of meat, as it also includes cow’s milk. The"+
-            "dominant culture that has been developed around raising cattle and consuming beef is"+
+            "Raising cattle is one of the main economic activities in northeastern Mexico. Its vital "+
+            "commodity is not limited to the production of meat, as it also includes cow’s milk. The "+
+            "dominant culture that has been developed around raising cattle and consuming beef is "+
             "part of the imagery and daily stories. The stables and the cattle make up the landscape, "+
-            "while "+"<i>"+"carne asada"+"</i>"+" (a Mexican barbeque synonymous with grilled beef) is far more than a"+
-            "regional dish, and is an obligatory activity to close business deals and spend time together"+
+            "while "+"<i>"+"carne asada"+"</i>"+" (a Mexican barbeque synonymous with grilled beef) is far more than a "+
+            "regional dish, and is an obligatory activity to close business deals and spend time together "+
             "with the family. "
 
         }else

@@ -477,6 +477,19 @@ if(document.documentElement.lang == "en")
 }
 
 
+function desaparecerCountDownForzado(){
+    var panelCountdown = document.querySelector('.panelCountdown');
+    console.log("fecha superada");
+    gsap.to(panelCountdown,{duration:0.5,opacity:0}).eventCallback('onComplete',()=>{
+        panelCountdown.style.visibility ="hidden";
+    });
+    countDownTime = false;
+}
+
+
+desaparecerCountDownForzado();
+   
+
 ///DEBUG
 // setTimeout(function() { 
     
